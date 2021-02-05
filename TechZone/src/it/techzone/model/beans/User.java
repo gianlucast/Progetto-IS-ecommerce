@@ -5,7 +5,7 @@ private	long id,telefono;
 private	String nome,cognome,password,email,indirizzo,metodoPagamento;
 public User()
 {
-	
+	 
 }//costruttore vuoto
 
 
