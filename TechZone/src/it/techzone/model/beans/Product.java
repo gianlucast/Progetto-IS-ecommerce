@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Product {
 
-	public Product(long codice, float costo, ArrayList<Byte> immagine, String descrizione, String nomeProd, int quantita, String categoria, String tipo) {
+	public Product(long codice, float costo, byte[] immagine, String descrizione, String nomeProd, int quantita, String categoria, String tipo) {
 		
 		this.codice = codice;
 		this.costo = costo;
@@ -38,11 +38,11 @@ public class Product {
 		this.costo = costo;
 	}
 
-	public ArrayList<Byte> getImmagine() {
+	public byte[] getImmagine() {
 		return immagine;
 	}
 
-	public void setImmagine(ArrayList<Byte> immagine) {
+	public void setImmagine(byte[] immagine) {
 		this.immagine = immagine;
 	}
 
@@ -95,7 +95,7 @@ public class Product {
 
 	private long codice;
 	private float costo;
-	private ArrayList<Byte> immagine;
+	private byte[] immagine;
 	private String descrizione;
 	private String nomeProd;
 	private int quantita;
