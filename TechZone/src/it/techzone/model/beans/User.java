@@ -6,7 +6,7 @@ private	String nome,cognome,password,email,indirizzo,metodoPagamento;
 public User()
 {
 	
-}
+}//costruttore vuoto
 
 
 
@@ -21,7 +21,7 @@ public User(long id, long telefono, String nome, String cognome, String password
 	this.email = email;
 	this.indirizzo = indirizzo;
 	this.metodoPagamento = metodoPagamento;
-}
+}//costruttore completo
 
 public User(long telefono, String nome, String cognome, String password, String email, String indirizzo,
 		String metodoPagamento) {
@@ -33,56 +33,34 @@ public User(long telefono, String nome, String cognome, String password, String 
 	this.email = email;
 	this.indirizzo = indirizzo;
 	this.metodoPagamento = metodoPagamento;
-}
+}//costruttore senza ID
 
+
+//Metodi getters and setters
 public String getPassword() {
 	return password;
 }
-
-
-
 public void setPassword(String password) {
 	this.password = password;
 }
-
-
-
 public String getEmail() {
 	return email;
 }
-
-
-
 public void setEmail(String email) {
 	this.email = email;
 }
-
-
-
 public String getIndirizzo() {
 	return indirizzo;
 }
-
-
-
 public void setIndirizzo(String indirizzo) {
 	this.indirizzo = indirizzo;
 }
-
-
-
 public String getMetodoPagamento() {
 	return metodoPagamento;
 }
-
-
-
 public void setMetodoPagamento(String metodoPagamento) {
 	this.metodoPagamento = metodoPagamento;
 }
-
-
-
 public long getId() {
 	return id;
 }
