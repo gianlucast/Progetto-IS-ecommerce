@@ -10,6 +10,12 @@ public class ProductOrder {
 		super();
 	}
 
+	public ProductOrder(ProductCart productcart) {
+		prodotto=productcart.getProdotto();
+		costo=productcart.getProdotto().getCosto();
+		quantita=productcart.getQuantita();
+	}
+	
 	public ProductOrder(Product prodotto, float costo, int quantita) {
 		super();
 		this.prodotto = prodotto;
