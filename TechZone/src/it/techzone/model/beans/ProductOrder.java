@@ -18,7 +18,7 @@ public class ProductOrder {
 	}
 	
 	public Product getProdotto() {
-		return prodotto;
+		return prodotto; 
 	}
 	public void setProdotto(Product prodotto) {
 		this.prodotto = prodotto;
