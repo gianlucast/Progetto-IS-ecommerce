@@ -1,10 +1,12 @@
 package it.techzone.model.beans;
 
-//creato da gianluca, modificato da gerardo
+import java.util.ArrayList;
+
+//creato da gianluca, modificato da gerardo, rimodificato da gianluca
 
 public class Product {
 
-	public Product(long codice, float costo, String immagine, String descrizione, String nomeProd, int quantita, String categoria, String tipo) {
+	public Product(long codice, float costo, ArrayList<Byte> immagine, String descrizione, String nomeProd, int quantita, String categoria, String tipo) {
 		
 		this.codice = codice;
 		this.costo = costo;
@@ -36,11 +38,11 @@ public class Product {
 		this.costo = costo;
 	}
 
-	public String getImmagine() {
+	public ArrayList<Byte> getImmagine() {
 		return immagine;
 	}
 
-	public void setImmagine(String immagine) {
+	public void setImmagine(ArrayList<Byte> immagine) {
 		this.immagine = immagine;
 	}
 
@@ -93,7 +95,7 @@ public class Product {
 
 	private long codice;
 	private float costo;
-	private String immagine;
+	private ArrayList<Byte> immagine;
 	private String descrizione;
 	private String nomeProd;
 	private int quantita;
