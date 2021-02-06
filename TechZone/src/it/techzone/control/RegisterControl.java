@@ -25,13 +25,12 @@ public class RegisterControl extends HttpServlet {
           
 					try{  
 							
-							
 							um.saveUser(email, nome, cognome, psw, tele, address, payment);
           
 					}catch (Exception e2) {System.out.println(e2);}  
           
 				out.println("Registrazione completata");
-out.close();  
+				out.close();  
 }  
   
 }  
