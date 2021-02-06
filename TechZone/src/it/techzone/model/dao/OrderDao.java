@@ -186,10 +186,8 @@ public class OrderDao {
 		PreparedStatement preparedStatement = null;
 		Connection connection2 = null;
 		PreparedStatement preparedStatement2 = null;
-		ProductDAO prodmod=new ProductDAO();
 		UserDAO userdao=new UserDAO();
 		ArrayList<Order> ordini =new ArrayList<Order>();
-		ArrayList<ProductOrder> prodotti_ordinati=new ArrayList<ProductOrder>();
 		UtenteRegistrato utente=userdao.doRetrieveByMail(email);
 		if(utente==null) return null;
 		String selectSQL = "SELECT * FROM " + ORDER_TABLE + " WHERE idUtente = ?";
@@ -198,8 +196,6 @@ public class OrderDao {
 			preparedStatement = connection.prepareStatement(selectSQL);
 			preparedStatement.setLong(1, utente.getId());
 			ResultSet rs = preparedStatement.executeQuery();
-			Order ordine;
-			ProductOrder prodottoOrdine;
 			while(rs.next()) {
 				ordini.add(retrieveOrderById(rs.getLong("numeroOrdine")));
 			}

@@ -1,6 +1,5 @@
 package it.techzone.model.beans;
 
-import java.util.ArrayList;
 
 //creato da gianluca, modificato da gerardo, rimodificato da gianluca
 

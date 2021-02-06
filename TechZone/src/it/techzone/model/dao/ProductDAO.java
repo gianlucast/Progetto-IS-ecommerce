@@ -5,8 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
 import it.techzone.model.beans.Product;
 
 
@@ -29,6 +27,7 @@ public class ProductDAO {
 			ResultSet rs = preparedStatement.executeQuery();
 
 			while (rs.next()) {
+				p=new Product();
 				p.setCodice(id);
 				p.setCategoria(rs.getString("CATEGRIA"));
 				p.setTipo(rs.getString("TIPO"));
