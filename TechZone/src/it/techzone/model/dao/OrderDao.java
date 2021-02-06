@@ -35,7 +35,7 @@ public class OrderDao {
 			Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 			preparedStatement.setTimestamp(1, timestamp);
 			preparedStatement.setFloat(2, order.getTotale());
-			preparedStatement.setString(3, order.getStato());
+			preparedStatement.setString(3, "In preparazione");
 			preparedStatement.setLong(4, order.getUtente().getId());
 			
 			preparedStatement.executeUpdate();
