@@ -1,6 +1,7 @@
 package it.techzone.model.beans;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class Order {
@@ -8,7 +9,7 @@ public class Order {
 	
 	
 	
-	public Order(long numeroOrdine, Date dataInvio, Date dataArrivo, float totale, String stato, User utente,
+	public Order(long numeroOrdine, Timestamp dataInvio, Timestamp dataArrivo, float totale, String stato, UtenteRegistrato utente,
 			ArrayList<ProductOrder> prodotti) {
 		
 		this.numeroOrdine = numeroOrdine;
@@ -32,19 +33,19 @@ public class Order {
 		this.numeroOrdine = numeroOrdine;
 	}
 
-	public Date getDataInvio() {
+	public Timestamp getDataInvio() {
 		return dataInvio;
 	}
 
-	public void setDataInvio(Date dataInvio) {
+	public void setDataInvio(Timestamp dataInvio) {
 		this.dataInvio = dataInvio;
 	}
 
-	public Date getDataArrivo() {
+	public Timestamp getDataArrivo() {
 		return dataArrivo;
 	}
 
-	public void setDataArrivo(Date dataArrivo) {
+	public void setDataArrivo(Timestamp dataArrivo) {
 		this.dataArrivo = dataArrivo;
 	}
 
@@ -64,11 +65,11 @@ public class Order {
 		this.stato = stato;
 	}
 
-	public User getUtente() {
+	public UtenteRegistrato getUtente() {
 		return utente;
 	}
 
-	public void setUtente(User utente) {
+	public void setUtente(UtenteRegistrato utente) {
 		this.utente = utente;
 	}
 
@@ -89,10 +90,10 @@ public class Order {
 
 
 	private long numeroOrdine;
-	private Date dataInvio;
-	private Date dataArrivo;
+	private Timestamp dataInvio;
+	private Timestamp dataArrivo;
 	private float totale;
 	private String stato;
-	private User utente;
+	private UtenteRegistrato utente;
 	private ArrayList<ProductOrder> prodotti;
 }

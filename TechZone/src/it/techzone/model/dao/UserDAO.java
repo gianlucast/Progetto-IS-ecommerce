@@ -150,4 +150,76 @@ public class UserDAO {
 			}
 		}
 	}
+	
+	public synchronized UtenteRegistrato doRetrieveByMail(String email) throws SQLException {
+		Connection connection2=null;
+		PreparedStatement preparedStatement2 = null;
+		ResultSet rs;
+		UtenteRegistrato utente=null;
+		String query2="SELECT * FROM "+UTENTE_TABLE+" WHERE EMAIL=?";
+		
+		try {
+			
+			connection2=DriverManagerConnectionPool.getConnection();
+			preparedStatement2=connection2.prepareStatement(query2);
+			preparedStatement2.setString(1, email);
+			rs=preparedStatement2.executeQuery();
+			while(rs.next()) {
+				utente=new UtenteRegistrato();
+				utente.setId(rs.getLong("ID"));
+				utente.setCognome(rs.getString("COGNOME"));
+				utente.setNome(rs.getString("NOME"));
+				utente.setEmail(email);
+				utente.setPassword(rs.getString("PASSWORD"));
+				utente.setIndirizzo(rs.getString("INDIRIZZO"));
+				utente.setPagamento(rs.getString("metodoPagamento"));
+				utente.setTelefono(rs.getLong("TELEFONO"));
+			}
+			
+			return utente;
+		}finally {
+			try {
+				if (preparedStatement2 != null)
+					preparedStatement2.close();
+			} finally {
+				DriverManagerConnectionPool.releaseConnection(connection2);
+			}
+		}
+	}
+	
+	public synchronized UtenteRegistrato doRetrieveById(long id) throws SQLException {
+		Connection connection2=null;
+		PreparedStatement preparedStatement2 = null;
+		ResultSet rs;
+		UtenteRegistrato utente=null;
+		String query2="SELECT * FROM "+UTENTE_TABLE+" WHERE id=?";
+		
+		try {
+			
+			connection2=DriverManagerConnectionPool.getConnection();
+			preparedStatement2=connection2.prepareStatement(query2);
+			preparedStatement2.setFloat(1, id);
+			rs=preparedStatement2.executeQuery();
+			while(rs.next()) {
+				utente=new UtenteRegistrato();
+				utente.setId(rs.getLong("ID"));
+				utente.setCognome(rs.getString("COGNOME"));
+				utente.setNome(rs.getString("NOME"));
+				utente.setEmail(rs.getString("email"));
+				utente.setPassword(rs.getString("PASSWORD"));
+				utente.setIndirizzo(rs.getString("INDIRIZZO"));
+				utente.setPagamento(rs.getString("metodoPagamento"));
+				utente.setTelefono(rs.getLong("TELEFONO"));
+			}
+			
+			return utente;
+		}finally {
+			try {
+				if (preparedStatement2 != null)
+					preparedStatement2.close();
+			} finally {
+				DriverManagerConnectionPool.releaseConnection(connection2);
+			}
+		}
+	}
 }
