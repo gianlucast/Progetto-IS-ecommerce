@@ -11,7 +11,12 @@
     <res-auth>Container</res-auth>
   </resource-ref>
   <servlet>
-    <servlet-name>logincontrol</servlet-name>
+    <servlet-name>LoginControl</servlet-name>
     <servlet-class>it.techzone.control.LoginControl</servlet-class>
   </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>LoginControl</servlet-name>
+    <url-pattern>/logincontrol</url-pattern>
+  </servlet-mapping>
 </web-app>

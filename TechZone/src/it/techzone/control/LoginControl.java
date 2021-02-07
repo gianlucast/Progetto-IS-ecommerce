@@ -10,7 +10,7 @@ import it.techzone.model.beans.Manager;
 import it.techzone.model.beans.UtenteRegistrato;
 import it.techzone.model.models.UserManager;
 
-@WebServlet("logincontrol")
+@WebServlet("LoginControl")
 public class LoginControl extends HttpServlet{
 	static UserManager um=new UserManager(); 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) {
