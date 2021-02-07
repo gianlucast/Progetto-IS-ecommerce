@@ -21,7 +21,7 @@ public class LoginControl extends HttpServlet{
 			UtenteRegistrato u=um.authentication(email,password);
 			if(u==null) {
 				Manager m=um.authenticationManager(email, password);
-				if(m==null) {  
+				if(m==null) {   
 					session.setAttribute("alertMsg", "Corrispondenza non trovata");
 					response.sendRedirect("./Login.jsp");
 				}
