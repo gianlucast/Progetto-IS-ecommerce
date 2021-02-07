@@ -40,4 +40,9 @@ public class ProductManager {
 		productdao=new ProductDAO();
 		return productdao.doUpdate(p);
 	}
+	
+	public ArrayList<Product> getAllProducts(String ordinevisualizzazione) throws SQLException{
+		productdao=new ProductDAO();
+		return productdao.doRetrieveAll(ordinevisualizzazione);
+	}
 }

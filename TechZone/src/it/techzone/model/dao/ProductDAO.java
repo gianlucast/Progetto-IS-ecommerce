@@ -74,15 +74,15 @@ public class ProductDAO {
 		return (result != 0);
 	}
 
-	public synchronized ArrayList<Product> doRetrieveAll(String order) throws SQLException {
+	public synchronized ArrayList<Product> doRetrieveAll(String ordine) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ArrayList<Product> products = new ArrayList<Product>();
 
 		String selectSQL = "SELECT * FROM " + PRODUCT_TABLE;
 
-		if (order != null && !order.equals("")) {
-			selectSQL += " ORDER BY " + order;
+		if (ordine != null && !ordine.equals("")) {
+			selectSQL += " ORDER BY " + ordine;
 		}
 
 		try {
