@@ -14,19 +14,15 @@ public class DeleteProductControl extends HttpServlet {
 		
 		HttpSession session= request.getSession();
 		try {
-			if(session.getAttribute("man")!=null) {
-				Product prod= null;
-				if((prod= (Product) session.getAttribute("product"))!=null) {
+			if(session.getAttribute("manager")!=null) {
+				Product prod= (Product) session.getAttribute("product");
+			
 				
-					pm.deleteProduct(prod.getCodice());
-					session.setAttribute("alertMsg","Prodotto rimosso con successo");
-					response.sendRedirect("./Productmanagement.jsp");
-				}
-				else {
-					session.setAttribute("alertMsg","Prodotto già rimosso");
-					response.sendRedirect("./Productmanagement.jsp");
-				}
+				pm.deleteProduct(prod.getCodice());
+				session.setAttribute("alertMsg","Prodotto rimosso con successo");
+				response.sendRedirect("./Productmanagement.jsp");
 			}
+				
 			else {
 				session.setAttribute("alertMsg","Azione non autorizzata");
 				response.sendRedirect("./Homepage.jsp");

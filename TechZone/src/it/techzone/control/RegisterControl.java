@@ -9,12 +9,12 @@ import it.techzone.model.beans.UtenteRegistrato;
   
 public class RegisterControl extends HttpServlet {  
 	static UserManager um = new UserManager();
-	LoginControl log= new LoginControl();
+	
 	public void doGet(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException {  
 				
 				 
 				HttpSession session=request.getSession();
-				if(session.getAttribute("utente")==null&&session.getAttribute("man")==null) {
+				if(session.getAttribute("utente")==null&&session.getAttribute("manager")==null) {
 					String nome=request.getParameter("userName");  
 					String cognome=request.getParameter("userSurname");
 					String psw=request.getParameter("userPass");  
@@ -30,6 +30,8 @@ public class RegisterControl extends HttpServlet {
 							if( u==null) {
 								session.setAttribute("alertMsg", "Registrazione non effettuata, l'email inserita è già stata utilizzata");
 								response.sendRedirect("./RegisterPage.jsp");
+								
+								
 							}
 							else {
 								session.setAttribute("alertMsg", "Registrazione effettuata con successo");
