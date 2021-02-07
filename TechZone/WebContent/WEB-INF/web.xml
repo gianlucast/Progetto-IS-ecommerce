@@ -12,6 +12,6 @@
   </resource-ref>
   <servlet>
     <servlet-name>logincontrol</servlet-name>
-    <servlet-class>it.vinylzone.control.LoginControl</servlet-class>
+    <servlet-class>it.techzone.control.LoginControl</servlet-class>
   </servlet>
 </web-app>
