@@ -14,7 +14,7 @@ public class RegisterControl extends HttpServlet {
 				
 				 
 				HttpSession session=request.getSession();
-				if(session.getAttribute("user")==null) {
+				if(session.getAttribute("user")==null&&session.getAttribute("user")==null) {
 					String nome=request.getParameter("userName");  
 					String cognome=request.getParameter("userSurname");
 					String psw=request.getParameter("userPass");  
@@ -26,15 +26,15 @@ public class RegisterControl extends HttpServlet {
 				
           
 					try{  
-							
-							if( um.saveUser(email, nome, cognome, psw, tele, address, payment)==null) {
+						UtenteRegistrato u=um.saveUser(email, nome, cognome, psw, tele, address, payment);
+							if( u==null) {
 								session.setAttribute("alertMsg", "Registrazione non effettuata, l'email inserita è già stata utilizzata");
+								response.sendRedirect("./RegisterPage.jsp");
 							}
 							else {
 								session.setAttribute("alertMsg", "Registrazione effettuata con successo");
-								UtenteRegistrato u= um.authentication(email, psw);
+								session.setAttribute("utente", u);
 								response.sendRedirect("./Homepage.jsp");
-								
 								
 							}
           
