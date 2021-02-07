@@ -14,7 +14,7 @@ public class RegisterControl extends HttpServlet {
 				
 				 
 				HttpSession session=request.getSession();
-				if(session.getAttribute("utente")==null&&session.getAttribute("manager")==null) {
+				if(session.getAttribute("utente")==null&&session.getAttribute("man")==null) {
 					String nome=request.getParameter("userName");  
 					String cognome=request.getParameter("userSurname");
 					String psw=request.getParameter("userPass");  
