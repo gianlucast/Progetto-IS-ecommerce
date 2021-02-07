@@ -10,7 +10,7 @@ import it.techzone.model.beans.UtenteRegistrato;
 import it.techzone.model.models.UserManager;
 
 public class LoginControl extends HttpServlet{
-	static UserManager um=new UserManager();
+	static UserManager um=new UserManager(); 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) {
 		
 		String email=request.getParameter("email");
