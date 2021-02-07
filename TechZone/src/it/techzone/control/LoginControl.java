@@ -1,5 +1,6 @@
 package it.techzone.control;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,6 +10,7 @@ import it.techzone.model.beans.Manager;
 import it.techzone.model.beans.UtenteRegistrato;
 import it.techzone.model.models.UserManager;
 
+@WebServlet("logincontrol")
 public class LoginControl extends HttpServlet{
 	static UserManager um=new UserManager(); 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) {
