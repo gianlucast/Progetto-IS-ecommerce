@@ -33,6 +33,7 @@ public class UserOrderSearchControl extends HttpServlet{
 	    }
 		catch(Exception e) {
 			e.printStackTrace();
+			System.out.println("");
 		}
 	}
 	
