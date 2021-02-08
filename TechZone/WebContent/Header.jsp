@@ -13,7 +13,7 @@
 	<div id="container">
 		<div id="header">
 		<ul>
-		<li><div class="dis"><a href="Catalogo.jsp"><img src="./imgs/Vinyl_logo_white.png" style="width:100; height:100px;"></a></div>
+		<li><div class="dis"><a href="Catalogo.jsp"><img src="./img/logo_techzone.png" style="width:100; height:100px;"></a></div>
 		<li><h2 style="color:white">Benvenuti su TechZone</h2>
 		<li style="padding-left:260px;">
 					<form action="search" method="get" class="search"  onsubmit="return validateSearch()">

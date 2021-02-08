@@ -2,12 +2,12 @@
 	pageEncoding="UTF-8"%>
 
 <%
-	Collection<?> products = (Collection<?>) request.getAttribute("products");
+	Collection<?> products = (Collection<?>) request.getAttribute("prodotti");
 	if(products == null) {
 		response.sendRedirect("./productcontrol");	
 		return;
 	}
-	Product product = (Product) request.getAttribute("product");
+	Product product = (Product) request.getAttribute("prodotto");
 %>
 
 <!DOCTYPE html>
