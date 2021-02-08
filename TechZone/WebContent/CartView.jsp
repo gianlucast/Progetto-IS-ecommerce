@@ -38,8 +38,7 @@
 				<td><a href="product?action=changequantity&qt=<%=lista.get(i).getQuantita()+1%>&id=<%=lista.get(i).getProdotto().getCodice()%>"><button class="button">Aggiungi</button></a>
 				<td><a href="product?action=changequantity&qt=<%=lista.get(i).getQuantita()-1%>&id=<%=lista.get(i).getProdotto().getCodice()%>"><button class="button">Rimuovi</button></a>
 			</tr><%
-		}
-		%>
+		} %>
 		</table>
 		<hr>
 		<p align="right"> <%=cart.getPrezzoTotale()%></p>
