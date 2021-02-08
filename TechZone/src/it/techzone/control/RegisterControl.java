@@ -16,14 +16,19 @@ public class RegisterControl extends HttpServlet {
 				
 				 
 				HttpSession session=request.getSession();
-				if(session.getAttribute("utente")==null&&session.getAttribute("manager")==null) {
+				if(session.getAttribute("utente")==null&& session.getAttribute("manager")==null) {
 					String nome=request.getParameter("userName");  
 					String cognome=request.getParameter("userSurname");
 					String psw=request.getParameter("userPass");  
 					String email=request.getParameter("userEmail");  
 					String tel=request.getParameter("userPhone"); 
 					long tele= Integer.parseInt(tel);
-					String address=request.getParameter("userAddress");
+					String addressC=request.getParameter("userCountry");
+					String addressCi=request.getParameter("userCity");
+					String addressCa=request.getParameter("userCap");
+					String addressSt=request.getParameter("userStreet");
+					String address= addressC + addressCi + addressCa + addressSt;
+					
 					String payment=request.getParameter("userPayment");
 				
           
