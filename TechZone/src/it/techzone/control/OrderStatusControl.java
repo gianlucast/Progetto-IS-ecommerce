@@ -28,6 +28,7 @@ public class OrderStatusControl extends HttpServlet {
 				else {
 					session.setAttribute("alertMsg","Accesso non autorizzato");
 					response.sendRedirect("./HomePage.jsp");
+					System.out.println("prova");
 				}
 			}
 				
