@@ -30,6 +30,7 @@ public class OrderPlaceControl extends HttpServlet{
 						}else {
 							UtenteRegistrato user=(UtenteRegistrato) session.getAttribute("utente");
 							if(om.placeOrder(user, cart)) {
+								session.setAttribute("cart", null);
 								session.setAttribute("alertMsg", "Ordine effettuato con successo");
 								response.sendRedirect("./Homepage.jsp");
 							}else {

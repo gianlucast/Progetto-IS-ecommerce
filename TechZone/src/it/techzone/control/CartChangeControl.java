@@ -19,32 +19,32 @@ static ProductManager pm= new ProductManager();
 		
 		HttpSession session= request.getSession();
 		try {
-		if(session.getAttribute("manager")==null) {
-			if(session.getAttribute("product")!=null && !cm.cartExists(session) ) {
-				//aggiunta di un prodotto dalla sua pagina 
-					if (!cm.cartExists(session))cm.newCart(session);
-					else cm.retrieveCart(session);
-					Product p=(Product) session.getAttribute("product");
-					cm.modCart(p.getCodice(),1, session);
-					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("./Cart");
-					dispatcher.forward(request, response);
+			if(session.getAttribute("manager")==null) {
+				if(request.getParameter("product")!=null && !cm.cartExists(session) ) {
+					//aggiunta di un prodotto dalla sua pagina 
+						if (!cm.cartExists(session))cm.newCart(session);
+						else cm.retrieveCart(session);
+						Long idProd=Long.parseLong(request.getParameter("product"));
+						cm.modCart(idProd,1, session);
+						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("./CartPage");
+						dispatcher.forward(request, response);
+					}
+					
+				else if (cm.cartExists(session) && session.getAttribute("product")==null && request.getAttribute("change")!=null) {
+							//siamo nel carrello e si vuole modificare la quantità
+							int changeQ = Integer.parseInt(request.getParameter("change"));
+							long id= Long.parseLong(request.getParameter("idProd"));
+							//creato nuovo metodo in cartManager per la modifica del carrello, quello già presente è collegato
+							//ad addcart che non prevede la rimozione. Si potrebbe anche modificare il metodo già esistente, però 
+							// vediamo insieme
+							cm.changeQuantityCart(id, changeQ, session);
+							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("./CartPage");
+							dispatcher.forward(request, response);
+						
+						
 				}
 				
-			else if (cm.cartExists(session) && session.getAttribute("product")==null && request.getAttribute("change")!=null) {
-						//siamo nel carrello e si vuole modificare la quantità
-						int changeQ = Integer.parseInt((String) request.getAttribute("change"));
-						long id= Long.parseLong((String) request.getAttribute("idProd"));
-						//creato nuovo metodo in cartManager per la modifica del carrello, quello già presente è collegato
-						//ad addcart che non prevede la rimozione. Si potrebbe anche modificare il metodo già esistente, però 
-						// vediamo insieme
-						cm.changeQuantityCart(id, changeQ, session);
-						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("./Cart");
-						dispatcher.forward(request, response);
-					
-					
 			}
-			
-		}
 		}
 		catch(Exception e2) {}
 	}
