@@ -31,6 +31,7 @@ static ProductManager pm= new ProductManager();
 				}
 				
 			else if (cm.cartExists(session) && session.getAttribute("product")==null && request.getAttribute("change")!=null) {
+						//siamo nel carrello e si vuole modificare la quantità
 						int changeQ = Integer.parseInt((String) request.getAttribute("change"));
 						long id= Long.parseLong((String) request.getAttribute("idProd"));
 						//creato nuovo metodo in cartManager per la modifica del carrello, quello già presente è collegato
