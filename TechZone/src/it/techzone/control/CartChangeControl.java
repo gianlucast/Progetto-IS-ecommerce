@@ -45,6 +45,11 @@ static ProductManager pm= new ProductManager();
 				}
 				
 			}
+			else {
+				session.setAttribute("alertMsg","Accesso non autorizzato");
+				response.sendRedirect("./HomePage");
+				
+			}
 		}
 		catch(Exception e2) {}
 	}

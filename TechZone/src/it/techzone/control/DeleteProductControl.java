@@ -1,5 +1,6 @@
 package it.techzone.control;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +21,8 @@ public class DeleteProductControl extends HttpServlet {
 				
 				pm.deleteProduct(prod.getCodice());
 				session.setAttribute("alertMsg","Prodotto rimosso con successo");
-				response.sendRedirect("./Productmanagement.jsp");
+				RequestDispatcher requestD = getServletContext().getRequestDispatcher("./ProductManagement.jsp");
+				requestD.forward(request, response);
 			}
 				
 			else {

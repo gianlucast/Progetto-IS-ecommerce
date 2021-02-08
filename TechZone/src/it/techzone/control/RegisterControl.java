@@ -1,7 +1,9 @@
 package it.techzone.control;
 
 import java.io.*;  
-import java.sql.*;  
+import java.sql.*;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;  
 import javax.servlet.http.*;
 import it.techzone.model.models.UserManager;
@@ -36,7 +38,8 @@ public class RegisterControl extends HttpServlet {
 							else {
 								session.setAttribute("alertMsg", "Registrazione effettuata con successo");
 								session.setAttribute("utente", u);
-								response.sendRedirect("./Homepage.jsp");
+								RequestDispatcher requestD = getServletContext().getRequestDispatcher("./HomePage.jsp");
+								requestD.forward(request, response);
 								
 							}
           
