@@ -47,5 +47,12 @@ public class CartManager {
 		c.addToCart(p, quantita);
 		return true;
 	}
-	
+	public boolean changeQuantityCart(long idProd, int quantita, HttpSession sessione) throws SQLException {
+		if(!checkQuantity(idProd,quantita,sessione)) return false;
+		Cart c=(Cart)sessione.getAttribute("cart");
+		productdao=new ProductDAO();
+		Product p=productdao.retrieveProductById(idProd);
+		c.setQuantityInCart(p, quantita);
+		return true;
+	}
 }
