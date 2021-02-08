@@ -1,5 +1,5 @@
 <% if(session.getAttribute("user")!=null)
-	response.sendRedirect("Catalogo.jsp");
+	response.sendRedirect("Homepage.jsp");
 %>
 <html>
 	<head><title>Login-TechZone</title><link rel="icon" href="./imgs/logo_vinyl.png">
