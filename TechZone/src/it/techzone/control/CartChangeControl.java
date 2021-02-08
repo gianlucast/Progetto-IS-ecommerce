@@ -20,13 +20,13 @@ static ProductManager pm= new ProductManager();
 		HttpSession session= request.getSession();
 		try {
 			if(session.getAttribute("manager")==null) {
-				if(request.getParameter("product")!=null && !cm.cartExists(session) ) {
+				if(request.getParameter("product")!=null ) {
 					//aggiunta di un prodotto dalla sua pagina 
 						if (!cm.cartExists(session))cm.newCart(session);
 						else cm.retrieveCart(session);
 						Long idProd=Long.parseLong(request.getParameter("product"));
 						cm.modCart(idProd,1, session);
-						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("./CartPage");
+						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("./CartPage.jsp");
 						dispatcher.forward(request, response);
 					}
 					
@@ -38,7 +38,7 @@ static ProductManager pm= new ProductManager();
 							//ad addcart che non prevede la rimozione. Si potrebbe anche modificare il metodo già esistente, però 
 							// vediamo insieme
 							cm.changeQuantityCart(id, changeQ, session);
-							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("./CartPage");
+							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("./CartPage.jsp");
 							dispatcher.forward(request, response);
 						
 						
