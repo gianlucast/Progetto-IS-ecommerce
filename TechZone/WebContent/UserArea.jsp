@@ -61,71 +61,16 @@
 			</div>
 		</div>
 		<hr>
-		<!--  <div id="indirizzi" class="box">
-			<h2 align="left">I tuoi indirizzi</h2>
-			<button name="bottonenew_addr" id="bottonenew_addr" class="bottone" onclick="showformnewaddress('new_addr')">Aggiungi un nuovo indirizzo</button>
-			<div id="new_addr" style="display:none">
-			
-				<form action='address' method='post' name='formnuovoindirizzo' onsubmit="return valnuovoind()"><br><input type='hidden' name='action' value='addindirizzo'><br><label for='nome'>Nome:<input type='text' name='nome' id='nomeind'></label><span id="span1nome">Inserisci un nome valido (solo lettere, almeno 3)!</span><br><label for='cognome'>Cognome:<input type='text' name='cognome' id='cognomeind'></label><span id="span1cognome">Inserisci un cognome valido(solo lettere, almeno 3)!</span><br><label for='via'>Via:<input type='text' name='via' id='viaind'></label><span id="span1via">Inserisci una via valida(solo lettere, almeno 4)!</span><br><label for='numero civico'>Numero Civico:<input type='text' name='num_civ' id='num_civind'></label><span id="span1num_civ">Inserisci un numero civico valido(almeno 1 carattere, massimo 6)!</span><br><label for='cap'>Cap:<input type='text' name='cap' id='capind'></label><span id="span1cap">Inserisci un CAP(5 numeri)!</span><br><label for='comune'>Comune:<input type='text' name='comune' id='comuneind'></label><span id="span1comune">Inserisci un comune valido(solo lettere, almeno 2)!</span><br><input type='submit' name='mod' id='mod' value='Conferma'></form>
-			
-			</div>
-			<%
-			if(utente.getIndirizzo().equalsIgnoreCase("")){
-			%>
-			Non hai indirizzi.
-			<%}else{
-				
-			%>
-			<br><b>INDIRIZZO <%= utente.getIndirizzo() %></b>
-			<br><b>NOME</b>: <%=indirizzo.getNome() %>
-			 <br><b>COGNOME</b>: <%=indirizzo.getCognome() %>
-			<br><b>VIA</b>: <%=indirizzo.getVia() %>
-			<br><b>NUMERO CIVICO</b>: <%=indirizzo.getNumero_civico() %>
-			<br><b>CAP</b>: <%=indirizzo.getCap() %>
-			<br><b>COMUNE</b>: <%=indirizzo.getComune() %>
-			<button name="bottonemod_addr<%=i%>" id="bottonemod_addr <%=i%>" class="bottone" onclick="showformaddress('mod_addr<%=i%>')">Mostra modifica </button>
-			<a href="address?action=deleteaddress&indirizzo=<%= utente.getIndirizzo() %>"><button name="elimina" class="bottone">Elimina</button></a>
-			 <div id="mod_addr<%=i%>" style="display:none">
-			<form action="address" method="post" onsubmit="return valmodind()">
-				<br><input type="hidden" name="action" value="updateindirizzo">
-				<br><input type="hidden" name="idindirizzo" id="idindirizzo" value="<%=indirizzo.getIdindirizzo() %>">
-				<br><label for="nome">Nome:<input type="text" name="nome" id="nomeindmod" value="<%=indirizzo.getNome() %>"></label><span id="span2nome">Inserisci un nome valido (solo lettere, almeno 3)!</span>
-				<br><label for="cognome">Cognome:<input type="text" name="cognome" id="cognomeindmod"  value="<%=indirizzo.getCognome()%>"></label><span id="span2cognome">Inserisci un cognome valido(solo lettere, almeno 3)!</span>
-				<br><label for="via">Via:<input type="text" name="via" id="viaindmod" value="<%=indirizzo.getVia() %>"></label><span id="span2via">Inserisci una via valida(solo lettere, almeno 4)!</span>
-				<br><label for="numero civico">Numero Civico:<input type="text" name="num_civ" id="num_civindmod" value="<%=indirizzo.getNumero_civico() %>"></label><span id="span2num_civ">Inserisci un numero civico valido(almeno 1 carattere, massimo 6)!</span>
-				<br><label for="cap">Cap:<input type="text" name="cap" id="capindmod" value="<%=indirizzo.getCap() %>"></label><span id="span2cap">Inserisci un CAP(5 numeri)!</span>
-				<br><label for="comune">Comune:<input type="text" name="comune" id="comuneindmod" value="<%=indirizzo.getComune() %>"></label><span id="span2comune">Inserisci un comune valido(solo lettere, almeno 2)!</span>
-				<br><input type="submit" name="mod" id="mod" value="Conferma">
-			</form>
-			</div> 
 		
-		
-		
-		<%
-			}
-		}
-		%>
-		</div>-->
 		<hr>
-		<!--  <div id="carte" class="box">
-			<h2 align="left">Le tue carte</h2>
-			<button name="bottonenew_card" id="bottonenew_card" class="bottone" onclick="showformnewcard('new_card')">Aggiungi una nuova carta</button>
-			<div id="new_card" style="display:none">
-			<form action="user" method="post" onsubmit="return validatecarta()">
-				<input type="hidden" name="action" value="addcarta"><br><label for="codice">Codice:<input type="text" name="codice" id="codicecarta" placeholder="Codice a 16 cifre"></label><span id="spancarta">Il codice deve essere a 16 cifre!</span><br><label for="cvv">CVV:<input type="text" id="cvv" name="cvv" placeholder="Codice a 3 cifre"></label><span id="spancvv">Il cvv deve essere a 3 cifre!</span><br><label for="mese/anno">Mese/Anno scadenza<input type="number" name="mese" id="mese_scad" min="1" max="12">/<input type="number" id="anno_scad" name="anno" min="<%=new java.text.SimpleDateFormat("yyyy").format(new java.util.Date()) %>" max="<%=new java.text.SimpleDateFormat("yyyy").format(new java.util.Date())+10 %>"></label><br><input type="submit" value="Conferma inserimento carta">
-				</form>
-			</div>
-			<%
-			if(utente.getPagamento){
-			%> Non hai carte salvate!<% 	
-			}else{
+		  
 				%>
-					<br><b>CARTA <%=i+1 %>: <%=carta.getCodice()%></b> <a href="user?action=deletecarta&carta=<%=carta.getCodice() %>"><button name="elimina" class="bottone">Elimina</button></a>
+				
 				<%	
-				}
+				
 			}
 			%>
-		</div> -->
+		</div> 
 		<hr>
 		<div id="ordini" class="box">
 			<h2 align="left">I TUOI ORDINI</h2>
@@ -148,26 +93,26 @@
 				for(int i=0;i<ordini.size();i++) {
 					%>
 					<hr>
-					NUMERO ORDINE: <%= ordini.get(i).getCode()%><br>
-					DATA: <%=ordini.get(i).getData() %>
+					NUMERO ORDINE: <%= ordini.get(i).getNumeroOrdine()%><br>
+					DATA: <%= ordini.get(i).getDataArrivo() %>
 					<table>
 						<!--  <th>CODICE PRODOTTO-->
 						<th>NOME PRODOTTO
 						<th>QUANTITA'
 						<th>PREZZO TOTALE
 					<%
-					ArrayList<CartItem> elementi=ordini.get(i).getOrderline();
+					ArrayList<ProductOrder> elementi=ordini.get(i).getProdotti();
 					for(int j=0;j<elementi.size();j++) {
 					%>
 						<tr>
-						<!-- 	<td><%= elementi.get(j).getCode()%>-->
-							<td><%=elementi.get(j).getName()%>
-							<td> <%=elementi.get(j).getNum()%>
-							<td> <%=elementi.get(j).getTotalPrice()%> 
+						<!-- 	<td><%= elementi.get(j).getCodice%>-->
+							<td><%=elementi.get(j).getNomeProd()%>
+							<td> <%=elementi.get(j).getQuantita()%>
+							<td> <%=elementi.get(j).getCosto()%> 
 						</tr>
 					<% }%>
 					</table>
-					<a href="order?action=generatefattura&idorder=<%=ordini.get(i).getCode()%>"><button type="button" class="bottone">Stampa fattura</button></a>
+					<a href="order?action=generatefattura&idorder=<%=ordini.get(i).getCodice()%>"><button type="button" class="bottone">Stampa fattura</button></a>
 					<br><br>
 				<% }%>
 				
