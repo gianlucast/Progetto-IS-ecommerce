@@ -29,7 +29,7 @@ public class ProductDAO {
 			while (rs.next()) {
 				p=new Product();
 				p.setCodice(id);
-				p.setCategoria(rs.getString("CATEGRIA"));
+				p.setCategoria(rs.getString("CATEGORIA"));
 				p.setTipo(rs.getString("TIPO"));
 				p.setDescrizione(rs.getString("DESCRIZIONE"));
 				p.setNomeProd(rs.getString("nomeProd"));
