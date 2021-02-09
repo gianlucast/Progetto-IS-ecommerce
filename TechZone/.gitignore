@@ -2,3 +2,4 @@
 .classpath
 .settings/
 /build/
+/src/it/techzone/model/dao/DriverManagerConnectionPool.java
