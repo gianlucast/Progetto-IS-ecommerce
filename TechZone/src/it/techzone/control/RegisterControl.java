@@ -29,7 +29,11 @@ public class RegisterControl extends HttpServlet {
 					String addressSt=request.getParameter("userStreet");
 					String address= addressC + addressCi + addressCa + addressSt;
 					
-					String payment=request.getParameter("userPayment");
+					String paymentInst=request.getParameter("userPaymentInst");
+					String paymentCo=request.getParameter("userPaymentCode");
+					String paymentExp=request.getParameter("userPaymentExp");
+					String paymentCvv=request.getParameter("userPaymentCvv");
+					String payment=paymentInst+paymentCo+paymentExp+paymentCvv;
 				
           
 					try{  

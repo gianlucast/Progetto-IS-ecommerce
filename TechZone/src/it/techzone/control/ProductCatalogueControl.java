@@ -29,6 +29,7 @@ public class ProductCatalogueControl extends HttpServlet{
 							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/SearchPage.jsp");
 							dispatcher.forward(request, response);
 						}
+						// essenzialmente non sono la stessa cosa?
 						if(request.getParameter("by").equalsIgnoreCase("nome")){
 							ArrayList<Product> prodotti=pm.searchProductsByName(request.getParameter("q"));
 							request.setAttribute("prodotti", prodotti);
