@@ -2,16 +2,16 @@
 	pageEncoding="UTF-8"%>
 
 <%
-	Collection<?> products = (Collection<?>) request.getAttribute("productsearch");
+	Collection<?> products = (Collection<?>) request.getAttribute("prodotti");
 	if(products == null) {
-		response.sendRedirect("./product");	
+		response.sendRedirect("./productviewcontrol");	
 		return;
 	}
 %>
 
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.vinylzone.control.*,it.vinylzone.model.*"%>
+<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.techzone.control.*,it.techzone.model.beans.*"%>
 
 <head>
 	<meta charset="UTF-8">
@@ -21,7 +21,7 @@
 	<link rel="icon" href="./imgs/logo_vinyl.png">
 	<link rel="stylesheet" href="./css/cat.css">
 	<link rel="stylesheet" href="./css/slideshow.css">
-	<title>VinylZone</title>
+	<title>Techzone</title>
 </head>
 
 <body>
@@ -58,20 +58,20 @@
 					if (products != null && products.size() != 0) {
 						Iterator<?> it = products.iterator();
 						while (it.hasNext()) {
-							ProductBean bean = (ProductBean) it.next();
-							if(!bean.isDeleted()){
+							Product bean = (Product) it.next();
+							if(bean.getQuantita()>0){
 				%>
 				
 				
-					<!-- <td><%=bean.getCode()%></td>-->
+					<!-- <td><%=bean.getCodice()%></td>-->
 					
-					<!--<td><%=bean.getDesc()%></td>-->
+					<!--<td><%=bean.getDescrizione()%></td>-->
 					<td>
 					<div class="cont">
-					<div class="foto"><%if(bean.getPhoto()!=null){ %><img src="imgControl?id=<%=bean.getCode()%>" style="width:100px"><% }else{%><img src="./imgs/no_disc.png" style="width:100px"><%} %></div>
-					<div class="name"><%=bean.getName()%></div>
-					<div class="artist"><%= bean.getArtist()%></div>
-				    <a href="product?action=details&id=<%=bean.getCode()%>"><button class="button">Acquista</button></a></td>
+					<div class="foto"><%if(bean.getImmagine()!=null){ %><img src="imgControl?id=<%=bean.getCodice()%>" style="width:100px"><% }else{%><img src="./imgs/no_disc.png" style="width:100px"><%} %></div>
+					<div class="name"><%=bean.getNomeProd()%></div>
+					<div class="artist"><%= bean.getTipo() %></div>
+				    <a href="product?action=details&id=<%=bean.getCodice()%>"><button class="button">Acquista</button></a></td>
 					</div>
 					</div>
 						<%request.setAttribute("imgbean",bean);%>
