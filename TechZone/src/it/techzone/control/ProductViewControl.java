@@ -13,11 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import it.techzone.model.beans.Product;
 import it.techzone.model.models.ProductManager;
 
-public class ProductControl extends HttpServlet{
+public class ProductViewControl extends HttpServlet{
 	static ProductManager pm=new ProductManager();
 	public void doGet(HttpServletRequest request, HttpServletResponse response) {
 		try {
-			if(request.getParameter("idProd")==null&&request.getParameter("q")==null) {
+			if(request.getParameter("idProd")==null) {
 				ArrayList<Product> prodotti=pm.getAllProducts("");
 				request.setAttribute("prodotti", prodotti);
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/HomePage.jsp");
@@ -29,21 +29,7 @@ public class ProductControl extends HttpServlet{
 					request.setAttribute("prodotto", prodotto);
 					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ProductView.jsp");
 					dispatcher.forward(request, response);
-				}else {
-					if((request.getParameter("idProd")==null&&request.getParameter("q")!=null)) {
-						if(request.getParameter("by").equalsIgnoreCase("categoria")){
-							ArrayList<Product> prodotti=pm.searchProductsByCat(request.getParameter("q"));
-							request.setAttribute("prodotti", prodotti);
-							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/SearchPage.jsp");
-							dispatcher.forward(request, response);
-						}
-						if(request.getParameter("by").equalsIgnoreCase("nome")){
-							ArrayList<Product> prodotti=pm.searchProductsByName(request.getParameter("q"));
-							request.setAttribute("prodotti", prodotti);
-							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/SearchPage.jsp");
-							dispatcher.forward(request, response);
-						}
-					}
+				
 				}
 			}
 		
