@@ -1,0 +1,158 @@
+h2{font-family:impact;}
+
+#pagecontent{
+    position:relative;
+    min-height:100vh;
+}
+
+#contentwrap{
+    width:77%;
+    display:block;
+}
+
+.img{
+	margin-top:20px;
+    right:20px;
+    width-height: 20px;
+	
+}
+.button{
+  background: #ffbe7d;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px 5px;
+  border-radius: 5px;
+  display:block;
+  width:120% !important;
+}
+.button:hover {
+    cursor:pointer;
+    background: #ff7514;
+  } 
+  
+  
+  .containtot{
+    position:static;
+    
+  }
+ .container1{
+ 
+ background: #fff;
+ position: relative;
+ width:50%;
+ right: 40px;
+ top: 50px;
+		border: 2px outset black;
+		border-radius: 10px; 
+ 		border-right:0 px solid #000;
+        border-bottom: 0 px solid #000;
+        border-left:0 px solid #000;
+        border-top: 0 px solid #fff;
+        box-shadow: 0 20px 33px 0 rgba(1,0,0,0.2);
+        
+ }
+ 
+ .contenitore-box{
+position:relative;
+
+}
+ 	.box{
+	position:relative;
+	padding: 5px;
+	width: 30%;
+	margin: 8%;
+	border: 1px outset black;
+	border-radius: 10px;
+	border-right:0 px solid #000;
+        border-bottom: 0 px solid #000;
+        border-left:0 px solid #000;
+        border-top: 1 px solid #fff;
+        box-shadow: 0 20px 33px 0 rgba(1,0,0,0.2);
+	background-color:#ffbe7d;
+	
+	border-color: 5 px groove #000;
+	float: left;
+	}
+	
+	
+.containtext{
+	width: 25%;
+	margin-bottom: 0%;
+}
+
+.ok{
+	margin: top;
+}
+  
+.paragraph{
+	
+	font-family: Trajan Sans Pro; 
+	font-weight: bold;
+	font-size: 25;
+	color: black;
+	
+}
+
+.price{
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  background-color:#ff7514;
+  opacity: 0.8;
+  padding: 19px 33px;
+  font-size: 22px;
+  margin:top;
+	
+}
+@media screen and (max-width: 980px) {
+  .nav {
+    display:none;
+    
+  }
+  .container1
+  {
+  	margin-bottom:50px !important;
+  	right:0px !important;
+  	width:90% !important;
+  }
+  #contentwrap
+  {
+  width:70% !important;
+  }
+  .price
+  {
+  width:50%;
+  }
+  .containtext
+  {
+  width:50%;
+  }
+}
+@media screen and (max-width: 780px){
+	#contentwrap
+  {
+  width:100% !important;
+  }
+  .price
+  {
+  width:50%;
+  }
+  .containtext
+  {
+  width:50%;
+  }
+  }
+@media screen and (max-width: 1280px)
+{
+	
+	 .price
+  {
+  width:50%;
+  }
+  .containtext
+  {
+  width:50%;
+  }
+	
+}
