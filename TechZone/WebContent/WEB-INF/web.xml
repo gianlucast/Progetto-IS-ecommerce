@@ -16,8 +16,8 @@
   </servlet>
   
   <servlet>
-    <servlet-name>ProductControl</servlet-name>
-    <servlet-class>it.techzone.control.ProductControl</servlet-class>
+    <servlet-name>ProductViewControl</servlet-name>
+    <servlet-class>it.techzone.control.ProductViewControl</servlet-class>
   </servlet>
   
   <servlet>
@@ -31,8 +31,8 @@
   </servlet-mapping>
   
    <servlet-mapping>
-    <servlet-name>ProductControl</servlet-name>
-    <url-pattern>/productcontrol</url-pattern>
+    <servlet-name>ProductViewControl</servlet-name>
+    <url-pattern>/productviewcontrol</url-pattern>
   </servlet-mapping>
   
   <servlet-mapping>
