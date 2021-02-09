@@ -42,6 +42,7 @@ public class ProductCatalogueControl extends HttpServlet{
 		
 			catch (SQLException | ServletException | IOException e) {
 				e.printStackTrace();
+				System.out.println("");
 			}
 		}
 }
