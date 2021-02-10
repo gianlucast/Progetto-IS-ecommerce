@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import it.techzone.model.beans.Order;
 import it.techzone.model.beans.UtenteRegistrato;
-import it.techzone.model.models.OrderManager;
+import it.techzone.model.managers.OrderManager;
 
 public class ManagerOrderSearchIdControl extends HttpServlet{
 	static OrderManager om=new OrderManager();

@@ -6,8 +6,9 @@ import java.sql.*;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;  
 import javax.servlet.http.*;
-import it.techzone.model.models.UserManager;
+
 import it.techzone.model.beans.UtenteRegistrato;
+import it.techzone.model.managers.UserManager;
   
 public class RegisterControl extends HttpServlet {  
 	static UserManager um = new UserManager();

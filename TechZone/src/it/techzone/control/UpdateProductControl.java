@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import it.techzone.model.beans.Product;
-import it.techzone.model.models.ProductManager;
+import it.techzone.model.managers.ProductManager;
 
 public class UpdateProductControl {
  static ProductManager pm = new ProductManager();

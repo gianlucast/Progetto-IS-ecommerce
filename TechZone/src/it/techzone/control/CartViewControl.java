@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import it.techzone.model.models.CartManager;
-import it.techzone.model.models.ProductManager;
+import it.techzone.model.managers.CartManager;
+import it.techzone.model.managers.ProductManager;
 
 public class CartViewControl extends HttpServlet{
 	static CartManager cm=new CartManager();

@@ -8,8 +8,8 @@ import javax.servlet.http.HttpSession;
 
 import it.techzone.model.beans.Cart;
 import it.techzone.model.beans.Product;
-import it.techzone.model.models.CartManager;
-import it.techzone.model.models.ProductManager;
+import it.techzone.model.managers.CartManager;
+import it.techzone.model.managers.ProductManager;
 
 public class AddToCartControl extends HttpServlet {
 static CartManager cm= new CartManager();

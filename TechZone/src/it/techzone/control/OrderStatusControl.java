@@ -8,8 +8,8 @@ import javax.servlet.http.HttpSession;
 
 import it.techzone.model.beans.Cart;
 import it.techzone.model.beans.UtenteRegistrato;
-import it.techzone.model.models.OrderManager;
-import it.techzone.model.models.UserManager;
+import it.techzone.model.managers.OrderManager;
+import it.techzone.model.managers.UserManager;
 
 public class OrderStatusControl extends HttpServlet {
 	static OrderManager om = new OrderManager();

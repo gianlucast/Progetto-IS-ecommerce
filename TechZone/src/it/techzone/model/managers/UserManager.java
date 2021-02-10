@@ -1,4 +1,4 @@
-package it.techzone.model.models;
+package it.techzone.model.managers;
 import java.sql.SQLException;
 
 import it.techzone.model.beans.*;
