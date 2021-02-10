@@ -29,9 +29,8 @@
 			<br><div class="paragraph"><%=prodotto.getNomeProd() %></div>
 			<br><b>Tipo:</b> <%=prodotto.getTipo() %>
 			<div class="containtext">
-			<form action="product" method="post">
-				<input type="hidden" name="action" value="addtocart">
-				<input type="hidden" name="id" value="<%=prodotto.getCodice() %>">
+			<form action="addtocartcontrol" method="get">
+				<input type="hidden" name="product" value="<%=prodotto.getCodice() %>">
 				<%if(prodotto.getQuantita()>0){ %>
 				<br><div class="ok"> Quantità 
 				
