@@ -13,7 +13,10 @@
 		
 		<h2 class="int">Contatti</h2>
 		<p class="pp">Festa Gerardo: <i> g.festa22@studenti.unisa.it</i> <br> Astorino Gianluca: <i>g.astorino@studenti.unisa.it</i> <br> Federico Carmine: <i>c.federico14@studenti.unisa.it</i><br> Medaglia Emanuele: <i>e.medaglia@studenti.unisa.it</i></p> 
-		
+		<br>
+		<br>
+		<br>
+		<br>
 		 <jsp:include page="/Footer.jsp"/>
 	</body>
 	
