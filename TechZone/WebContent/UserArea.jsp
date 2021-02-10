@@ -120,10 +120,12 @@
 			<%}request.setAttribute("ordini",null); %>
 			
 	</div>
+	
 	<br><br>
 	<jsp:include page="/Footer.jsp"/>
-	</body>
-		
 	
-	<%} %>
+	</body>
+	
+	<%}%>	
+
 </html>

@@ -1,6 +1,9 @@
 html,body{margin:0;padding:0;}
 	body{margin:0; padding:0;background: #e2e2e0; color: #666;font: 16px/28px;font-family: 'Open Sans', sans-serif; line-height:22px;}
-	h1,h2{font-family:oswald;text-transform:uppercase;font-weight:normal;text-shadow: 0 0 10px #FFFFFF, 2px 2px 2px rgba(255,255,255,0);}
+	h1,h2{
+	
+	margin: 0;
+    font-family:oswald;text-transform:uppercase;font-weight:normal;text-shadow: 0 0 10px #FFFFF1, 2px 2px 2px rgba(255,255,255,0);}
 	a{color:#21aabd;text-decoration:none;}
 	a:hover{color:#333;text-decoration:underline;}
 	#container		{width: 100%;margin: 0 auto;background:#fff;}
@@ -23,7 +26,8 @@ html,body{margin:0;padding:0;}
 		}
 
 		li a {
-		  display: inline;
+		
+	      display: inline;
 		  color: white;
 		  text-align:center;
 		  padding: 14px 16px;

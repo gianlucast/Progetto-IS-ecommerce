@@ -7,6 +7,7 @@
 	<body>
 	<div background="./imgs/logounisa.gif">
 		<jsp:include page="/Header.jsp"/>
+		<br><br>
 		<h1 class="int">Chi siamo?</h1>
 		
 		<p class="pp"> TechZone è un sito che propone dei prodotti di ultima generazione, in un mondo in cui l'importanza della tecnologia è all'ordine del giorno cercando di soddisfare anche i clienti con più esigenze.</p>

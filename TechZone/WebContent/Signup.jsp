@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <% if(session.getAttribute("user")!=null)
-	response.sendRedirect("Homepage.jsp");
+	response.sendRedirect("HomePage.jsp");
 %>
 <!DOCTYPE html>
 <html>
@@ -17,7 +17,7 @@
 		</style>
 </head>
 	<body>
-		
+	
 		<script src="./scripts/singup_regex.js"></script>
 		<jsp:include page="/Header.jsp"/>
 		<%if(session.getAttribute("alertMsg")!=null){%>
@@ -25,21 +25,25 @@
 		<%session.setAttribute("alertMsg",""); %>
 	<%}%><br>
 	
-	   <form>
-  <div class="form-row">
-    <div class="form-group col-md-5">
-      <label for="inputEmail4">Nome</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-    </div>
-    <div class="form-group col-md-5">
-      <label for="inputPassword4">Cognome</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-    </div>
+	
   
   
+	   <form action="user" method="get" name="registrazione" onSubmit="return ValidateSignup()">
+	    <div class="form-row">
+    <div class="form-group col-md-5">
+      <label for="inputNome4">Nome</label>
+      <input type="text" class="form-control" id="inputNome4" placeholder="Inserisci nome" required>
+      <span id="spannome">Inserisci un nome valido (solo lettere, almeno 3)!</span>
+    </div>
+    <div class="form-group col-md-5">
+      <label for="inputSurname4">Cognome</label>
+      <input type="text" class="form-control" id="inputSurname4" placeholder="Inserisci cognome" required>
+      <span id="spancognome">Inserisci un cognome valido(solo lettere, almeno 3)!</span>
+      </div>
     <div class="form-group col-md-5">
       <label for="inputEmail4">Email</label>
       <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      <span id="spanmail">Inserisci una mail valida!</span>
     </div>
     <div class="form-group col-md-5">
       <label for="inputPassword4">Password</label>
@@ -59,7 +63,8 @@
       <label for="inputState">Paese</label>
       <select id="inputState" class="form-control">
         <option selected>Choose...</option>
-        <option>...</option>
+        <option>Italy</option>
+        <option>USA</option>
       </select>
     </div>
     <div class="form-group col-md-1">
@@ -77,7 +82,7 @@
         <input type="text" class="form-control" id="inputCity">
     </div>
     <div class="form-group col-md-4">
-      <label for="inputZip">EXP</label>
+      <label for="inputZip" >EXP</label>
       <input type="text" class="form-control" id="inputZip">
     </div>
     <div class="form-group col-md-1">
@@ -85,7 +90,12 @@
       <input type="text" class="form-control" id="inputZip">
     </div>
   </div>
- 
+  <div class="form-group col -md-4">
+  <label for="date">Scadenza</label>
+    <input type="date" id="date" class="form-control " placeholder="inserisci la data in formato mm/aaaa">
+    
+  </div>
+
   <div class="form-group">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -94,11 +104,18 @@
       </label>
     </div>
   </div>
+  
   <button type="submit" class="btn btn-primary">Sign in</button>
+		<label>Hai già un account? Effettua il <a href="Login.jsp">Login</a></label>
+		
+		</form>
+		<br><br><br>
+		<jsp:include page="/Footer.jsp"/>
+	</body>
+</html>
 
-	
 
-		<!--  <form action="user" method="post" name="registrazione" onSubmit="return ValidateSignup()">
+<!--  <form action="user" method="post" name="registrazione" onSubmit="return ValidateSignup()">
 		<table>
 			<tr><td><input type="hidden" name="action" value="signup"><td></tr>
 			<tr><td><label for="userEmail"><input type="text" id="userEmail" name="userEmail" placeholder="inserisci la mail" required></label><span id="spanmail">Inserisci una mail valida!</span></td></tr>
@@ -109,9 +126,3 @@
 			<tr><td><label for="submit"><input type="submit" value="Registrati"></label></td></tr>
 			</table>
 		</form> -->
-		<label>Hai già un account? Effettua il <a href="Login.jsp">Login</a></label>
-		</form>
-		<br><br><br>
-		<jsp:include page="/Footer.jsp"/>
-	</body>
-</html>
