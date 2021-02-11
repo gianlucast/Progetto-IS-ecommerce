@@ -30,6 +30,12 @@
   	<servlet-class>it.techzone.control.AddToCartControl</servlet-class>
   </servlet>
   
+  <servlet>
+  	<servlet-name>CartViewControl</servlet-name>
+  	<servlet-class>it.techzone.control.CartViewControl</servlet-class>
+  </servlet>
+  
+  
   <servlet-mapping>
     <servlet-name>LoginControl</servlet-name>
     <url-pattern>/logincontrol</url-pattern>
@@ -44,9 +50,14 @@
     <servlet-name>RegisterControl</servlet-name>
     <url-pattern>/user</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
   
+  <servlet-mapping>
     <servlet-name>AddToCartControl</servlet-name>
     <url-pattern>/addtocartcontrol</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>CartViewControl</servlet-name>
+    <url-pattern>/cartviewcontrol</url-pattern>
   </servlet-mapping>
 </web-app>

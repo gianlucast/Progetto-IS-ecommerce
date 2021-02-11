@@ -108,15 +108,24 @@ function ValidateTelefono()
 }
 
 function ValidateDate(){
-	
-	var scadenza = document.getElementById("scadenza").value;
-	if( /^(0[1-9]|[12][0-9]|3[01])[-/.](19|20)\d\d+$/.test(scadenza))
+	var data= new Date();
+	var scadenzamese = document.getElementById("inputZip").value;
+	var scandenzaanno = document.getElementById("inputZip").value;
+	if(data.getFullYear()>scadenzaanno.getFullYear())
+		{
+			return false;
+		}
+	else if(data.getFullYear()>scadenzaanno.getFullYear()&&data.getMonth()+1>scadenzamese.getMonth()+1)
+		{
+			return false;
+		}
+	else 
 	{
 		return true;
 	}
-	
-	$("#scadenza").focus();
+	$("#scadenzamese").focus();
     return (false)
+    $("#scadenzaanno").focus();
+    return (false)
+	
 }
-
-

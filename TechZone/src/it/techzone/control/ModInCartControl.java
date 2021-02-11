@@ -24,7 +24,7 @@ static ProductManager pm= new ProductManager();
 						int changeQ = Integer.parseInt(request.getParameter("change"));
 						long id= Long.parseLong(request.getParameter("idProd"));
 						cm.changeQuantityCart(id, changeQ, session);
-						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("./CartPage.jsp");
+						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("./CartView.jsp");
 						dispatcher.forward(request, response);
 						
 						

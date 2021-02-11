@@ -32,7 +32,7 @@ public class UpdateProductControl {
  			}
  			else {
  				session.setAttribute("alertMsg", "Accesso non autorizzato");
- 				response.sendRedirect("./Homepage.jsp");
+ 				response.sendRedirect("./HomePage.jsp");
  			}
  		}
  		

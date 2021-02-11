@@ -21,11 +21,11 @@ public class CartViewControl extends HttpServlet{
 		try {
 			if(session.getAttribute("manager")==null) {
 				if(!cm.cartExists(session)) cm.newCart(session);
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CartPage.jsp");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CartView.jsp");
 				dispatcher.forward(request, response);
 			}else {
 				session.setAttribute("alertMsg", "Non puoi accedere al carrello");
-				response.sendRedirect("Homepage.jsp");
+				response.sendRedirect("HomePage.jsp");
 			}
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block

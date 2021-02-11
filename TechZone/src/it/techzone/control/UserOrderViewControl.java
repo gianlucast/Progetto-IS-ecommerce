@@ -21,7 +21,7 @@ public class UserOrderViewControl extends HttpServlet{
 		try {
 			if(session.getAttribute("utente")==null) {
 				session.setAttribute("alertMsg", "Richiesta non valida");
-				response.sendRedirect("Homepage.jsp");
+				response.sendRedirect("HomePage.jsp");
 			}else {
 				if(request.getParameter("idOrd")==null) {
 					session.setAttribute("alertMsg", "Errore nella richiesta");
@@ -34,7 +34,7 @@ public class UserOrderViewControl extends HttpServlet{
 						ArrayList<Order> ordini=om.searchOrders(u.getEmail());
 						if(!ordini.contains(ordine)) {
 							session.setAttribute("alertMsg", "Richiesta non valida");
-							response.sendRedirect("Homepage.jsp");
+							response.sendRedirect("HomePage.jsp");
 						}else {
 							session.setAttribute("ordine",ordine);
 							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/OrderDetailPage.jsp");

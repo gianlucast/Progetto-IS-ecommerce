@@ -21,11 +21,11 @@ public class ManagerOrderViewControl extends HttpServlet{
 		try {
 			if(session.getAttribute("manager")==null) {
 				session.setAttribute("alertMsg", "Richiesta non valida");
-				response.sendRedirect("Homepage.jsp");
+				response.sendRedirect("HomePage.jsp");
 			}else {
 				if(request.getParameter("idOrd")==null) {
 					session.setAttribute("alertMsg", "Errore nella richiesta");
-					response.sendRedirect("Homepage.jsp");
+					response.sendRedirect("HomePage.jsp");
 				}else {
 						long idOrd=Long.parseLong(request.getParameter("idOrd"));
 						Order ordine=om.getOrderById(idOrd);

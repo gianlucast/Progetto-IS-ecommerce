@@ -22,7 +22,7 @@ public class ManagerOrderSearchMailControl extends HttpServlet{
 					
 					if(request.getParameter("mailOrd")==null) {
 						session.setAttribute("alertMsg", "Operazione non valida");
-						response.sendRedirect("Homepage.jsp");
+						response.sendRedirect("HomePage.jsp");
 					}
 					else {
 						

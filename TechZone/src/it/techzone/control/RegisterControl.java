@@ -57,7 +57,7 @@ public class RegisterControl extends HttpServlet {
           
 				}
 				
-				else response.sendRedirect("./Homepage.jsp");
+				else response.sendRedirect("./HomePage.jsp");
 						
 
   

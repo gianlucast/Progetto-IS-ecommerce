@@ -21,21 +21,21 @@ public class OrderPlaceControl extends HttpServlet{
 				}else {
 					if(session.getAttribute("cart")==null) {
 						session.setAttribute("alertMsg", "Errore, carrello vuoto");
-						response.sendRedirect("./Homepage.jsp");
+						response.sendRedirect("./HomePage.jsp");
 					}else {
 						Cart cart=(Cart) session.getAttribute("cart");
 						if(cart.getProductList().size()==0) {
 							session.setAttribute("alertMsg", "Errore, carrello vuoto");
-							response.sendRedirect("./Homepage.jsp");
+							response.sendRedirect("./HomePage.jsp");
 						}else {
 							UtenteRegistrato user=(UtenteRegistrato) session.getAttribute("utente");
 							if(om.placeOrder(user, cart)) {
 								session.setAttribute("cart", null);
 								session.setAttribute("alertMsg", "Ordine effettuato con successo");
-								response.sendRedirect("./Homepage.jsp");
+								response.sendRedirect("./HomePage.jsp");
 							}else {
 								session.setAttribute("alertMsg", "Errore nell'ordine.");
-								response.sendRedirect("./Homepage.jsp");
+								response.sendRedirect("./HomePage.jsp");
 							}
 						}
 					}
