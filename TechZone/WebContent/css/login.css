@@ -5,6 +5,16 @@ body,
 			height: 100%;
 			background: #60a3bc !important;
 		}
+		
+		.alertMsg{
+		
+		position:absolute;
+		top:100px;
+		left:100px;
+		
+		}
+		
+		
 		.user_card {
 			height: 400px;
 			width: 350px;

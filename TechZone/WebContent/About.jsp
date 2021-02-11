@@ -10,7 +10,7 @@
 		<br><br>
 		<h1 class="int">Chi siamo?</h1>
 		
-		<p class="pp"> TechZone è un sito che propone dei prodotti di ultima generazione, in un mondo in cui l'importanza della tecnologia è all'ordine del giorno cercando di soddisfare anche i clienti con più esigenze.</p>
+		<p class="pp"> TechZone è un sito che propone dei prodotti di ultima generazione, in un mondo in cui l'importanza della tecnologia è all'ordine del giorno e in cui si cerca di soddisfare anche i clienti con più esigenze.</p>
 	<!-- Altro testo(??) -->
 	<br>
 		</div>

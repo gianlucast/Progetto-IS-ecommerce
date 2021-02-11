@@ -1,8 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <% if(session.getAttribute("user")!=null)
 	response.sendRedirect("Homepage.jsp");
 %>
 
-<!------ Include the above in your HEAD tag ---------->
+<%
+	String errorType = (String) session.getAttribute("errorType");
+	String error = (String) session.getAttribute("error");
+%>
 
 <!DOCTYPE html>
 <html>
@@ -16,11 +21,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 </head>
-<body background="./imgs/sfondo.jpg">
-		<script src="./scripts/ValidateLogin.js"></script>
-		<jsp:include page="/Header.jsp"/>
+
+		
 
 <body>
+	<script src="./scripts/ValidateLogin.js"></script>
+	<jsp:include page="/Header.jsp"/>
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
@@ -31,7 +37,7 @@
 				</div>
 				<div class="d-flex justify-content-center form_container">
 				<%if(session.getAttribute("alertMsg")!=null){%>
-						<h3><font color="red"><%=session.getAttribute("alertMsg")%></font></h3> 
+						<h3><div class="alertMsg"><%=session.getAttribute("alertMsg")%></div></p></h3> 
 						<%session.setAttribute("alertMsg",""); %>
 						<%}%><br>
 						
@@ -41,15 +47,14 @@
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
 							<label for="mail"><input type="text" name="email" id="mail" class="form-control input_user" value="" placeholder="inserisci la mail" required></label>
-					<!-- 		<span id="spanmail">Questa non è una mail, perché farmi controllare?</span>-->
 						</div>
+						
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
 							<label for="password"><input type="password" name="password" id="password" class="form-control input_pass" value="" placeholder="inserisci la password" required></label>
-							<!--<span id="spanpassword">Questa password non può essere valida, perché farmi controllare?</span>-->
-						</div>			
+					    	</div>			
 		
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
@@ -57,10 +62,12 @@
 								<label class="custom-control-label" for="customControlInline">Remember me</label>
 							</div>
 						</div>
-							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="button" name="button" class="btn login_btn">Login</button>
+					<div class="d-flex justify-content-center mt-3 login_container">
+				 	<button type="submit" class="btn login_btn">Login</button>
 				   </div>
+				   </form>
 				</div>
+				
 		
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
@@ -68,10 +75,10 @@
 						
 					</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>
-	</form>
 	<jsp:include page="/Footer.jsp"/>
 </body>
 </html>

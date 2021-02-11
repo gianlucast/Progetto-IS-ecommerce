@@ -1,5 +1,6 @@
 package it.techzone.control;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,11 +19,13 @@ public class LoginControl extends HttpServlet{
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
 		HttpSession session=request.getSession();
+		session.setAttribute("errorType", null);
+		session.setAttribute("error", null);
 		
 		try {
 			if(session.getAttribute("utente")!=null||session.getAttribute("manager")!=null) {
 				session.setAttribute("alertMsg", "Hai già effettuato il login");
-				response.sendRedirect("./Homepage.jsp");
+				response.sendRedirect("./HomePage.jsp");
 			}else {
 				UtenteRegistrato u=um.authentication(email,password);
 				if(u==null) {
@@ -37,8 +40,11 @@ public class LoginControl extends HttpServlet{
 				}else 
 					session.setAttribute("utente", u);
 				session.setAttribute("alertMsg", "Login avvenuto con successo");
-				response.sendRedirect("./Homepage.jsp");
+				response.sendRedirect("./HomePage.jsp");
+				
+				
 			}
+		  
 			
 		}catch (Exception e2) {System.out.println(e2);} 
 	}
