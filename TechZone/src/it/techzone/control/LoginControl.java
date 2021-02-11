@@ -19,8 +19,6 @@ public class LoginControl extends HttpServlet{
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
 		HttpSession session=request.getSession();
-		session.setAttribute("errorType", null);
-		session.setAttribute("error", null);
 		
 		try {
 			if(session.getAttribute("utente")!=null||session.getAttribute("manager")!=null) {
