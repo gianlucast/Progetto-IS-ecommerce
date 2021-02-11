@@ -106,3 +106,17 @@ function ValidateTelefono()
     return (false)
  
 }
+
+function ValidateDate(){
+	
+	var scadenza = document.getElementById("scadenza").value;
+	if( /^(0[1-9]|[12][0-9]|3[01])[-/.](19|20)\d\d+$/.test(scadenza))
+	{
+		return true;
+	}
+	
+	$("#scadenza").focus();
+    return (false)
+}
+
+

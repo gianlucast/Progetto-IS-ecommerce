@@ -1,12 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<% if(session.getAttribute("user")!=null)
-	response.sendRedirect("Homepage.jsp");
-%>
-
-<%
-	String errorType = (String) session.getAttribute("errorType");
-	String error = (String) session.getAttribute("error");
+<% if(session.getAttribute("utente")!=null)
+	response.sendRedirect("HomePage.jsp");
 %>
 
 <!DOCTYPE html>
