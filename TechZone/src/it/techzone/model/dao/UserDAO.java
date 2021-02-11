@@ -10,7 +10,7 @@ import it.techzone.model.beans.UtenteRegistrato;
 import it.techzone.model.dao.DriverManagerConnectionPool;
 
 public class UserDAO {
-	private static final String UTENTE_TABLE = "techzone.`utenteregstrato`";
+	private static final String UTENTE_TABLE = "techzone.`utenteregistrato`";
 	private static final String MANAGER_TABLE = "techzone.`manager`";
 
 	
@@ -23,6 +23,7 @@ public class UserDAO {
 				+ "VALUES (?,?,?,SHA1(?),?,?,?);";
 		
 		try{
+			
 			connection=DriverManagerConnectionPool.getConnection();
 			preparedStatement=connection.prepareStatement(query);
 			preparedStatement.setString(1, user.getNome());
@@ -130,14 +131,17 @@ public class UserDAO {
 			preparedStatement=connection.prepareStatement(query1);
 			preparedStatement.setString(1, email);
 			rs=preparedStatement.executeQuery();
-			if(rs.next()) return true;
+			if(rs.next()) {
+				return true;
+			}
 			
 			connection2=DriverManagerConnectionPool.getConnection();
 			preparedStatement2=connection.prepareStatement(query2);
 			preparedStatement2.setString(1, email);
-			rs=preparedStatement.executeQuery();
-			if(rs.next()) return true;
-			
+			rs=preparedStatement2.executeQuery();
+			if(rs.next()) {
+				return true;
+			}
 			return false;
 		}finally {
 			try {

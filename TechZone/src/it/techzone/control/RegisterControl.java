@@ -13,7 +13,7 @@ import it.techzone.model.managers.UserManager;
 public class RegisterControl extends HttpServlet {  
 	static UserManager um = new UserManager();
 	
-	public void doGet(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException {  
+	public void doPost(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException {  
 				
 				 
 				HttpSession session=request.getSession();
@@ -21,35 +21,35 @@ public class RegisterControl extends HttpServlet {
 					String nome=request.getParameter("userName");  
 					String cognome=request.getParameter("userSurname");
 					String psw=request.getParameter("userPass");  
-					String email=request.getParameter("userEmail");  
+					String email=request.getParameter("userEmail"); 
 					String tel=request.getParameter("userPhone"); 
-					long tele= Integer.parseInt(tel);
+					long tele= Long.parseLong(tel);
 					String addressC=request.getParameter("userCountry");
 					String addressCi=request.getParameter("userCity");
 					String addressCa=request.getParameter("userCap");
 					String addressSt=request.getParameter("userStreet");
-					String address= addressC + addressCi + addressCa + addressSt;
+					String address= addressC + ", "+addressCi + ", "+addressCa + ", "+addressSt;
 					
 					String paymentInst=request.getParameter("userPaymentInst");
 					String paymentCo=request.getParameter("userPaymentCode");
-					String paymentExp=request.getParameter("userPaymentExp");
+					String paymentExpMonth=request.getParameter("userPaymentExpMonth");
+					String paymentExpyear=request.getParameter("userPaymentExpYear");
 					String paymentCvv=request.getParameter("userPaymentCvv");
-					String payment=paymentInst+paymentCo+paymentExp+paymentCvv;
+					String payment=paymentInst+", "+paymentCo+", "+paymentExpMonth+"/"+paymentExpMonth+", "+paymentCvv;
 				
           
 					try{  
 						UtenteRegistrato u=um.saveUser(email, nome, cognome, psw, tele, address, payment);
 							if( u==null) {
 								session.setAttribute("alertMsg", "Registrazione non effettuata, l'email inserita è già stata utilizzata");
-								response.sendRedirect("./RegisterPage.jsp");
+								response.sendRedirect("./Signup.jsp");
 								
 								
 							}
 							else {
 								session.setAttribute("alertMsg", "Registrazione effettuata con successo");
 								session.setAttribute("utente", u);
-								RequestDispatcher requestD = getServletContext().getRequestDispatcher("./HomePage.jsp");
-								requestD.forward(request, response);
+								response.sendRedirect("./HomePage.jsp");
 								
 							}
           

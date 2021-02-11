@@ -34,11 +34,14 @@ public class LoginControl extends HttpServlet{
 					}
 					else {
 						session.setAttribute("manager", m);
+						session.setAttribute("alertMsg", "Login avvenuto con successo");
+						response.sendRedirect("./HomePage.jsp");
 					}
-				}else 
+				}else {
 					session.setAttribute("utente", u);
-				session.setAttribute("alertMsg", "Login avvenuto con successo");
-				response.sendRedirect("./HomePage.jsp");
+					session.setAttribute("alertMsg", "Login avvenuto con successo");
+					response.sendRedirect("./HomePage.jsp");
+				}
 				
 				
 			}

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <% if(session.getAttribute("user")!=null)
+    <% if(session.getAttribute("user")!=null||session.getAttribute("manager")!=null)
 	response.sendRedirect("HomePage.jsp");
 %>
 <!DOCTYPE html>
@@ -27,46 +27,46 @@
 	
   
   
-	   <form action="user" method="get" name="registrazione" onSubmit="return ValidateSignup()">
+	   <form action="user" method="post" name="registrazione" onSubmit="return ValidateSignup()">
 	    <div class="form-row">
     <div class="form-group col-md-5">
       <label for="inputNome4">Nome</label>
-      <input type="text" class="form-control" id="inputNome4" placeholder="Inserisci nome" required>
+      <input type="text" class="form-control" id="inputNome4" placeholder="Inserisci nome" required name="userName">
       <span id="spannome">Inserisci un nome valido (solo lettere, almeno 3)!</span>
     </div>
     <div class="form-group col-md-5">
       <label for="inputSurname4">Cognome</label>
-      <input type="text" class="form-control" id="inputSurname4" placeholder="Inserisci cognome" required>
+      <input type="text" class="form-control" id="inputSurname4" placeholder="Inserisci cognome" required name="userSurname">
       <span id="spancognome">Inserisci un cognome valido(solo lettere, almeno 3)!</span>
       </div>
     <div class="form-group col-md-5">
       <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="userEmail">
       <span id="spanmail">Inserisci una mail valida!</span>
     </div>
     <div class="form-group col-md-5">
       <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="userPass">
     </div>    
     </div>
     <div class="form-row">
     <div class="form-group col-md-5">
     <label for="inputTelephone">Telefono</label>
-    <input type="text" class="form-control" id="inputTelephone" placeholder="Numero di telefono">
+    <input type="text" class="form-control" id="inputTelephone" placeholder="Numero di telefono" name="userPhone">
   </div>
   	<div class="form-group col-md-5">
     <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="userStreet">
   </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-5">
       <label for="inputCity">Città</label>
-      <input type="text" class="form-control" id="inputCity">
+      <input type="text" class="form-control" id="inputCity" name="userCity">
     </div>
     <div class="form-group col-md-4">
       <label for="inputState">Paese</label>
-      <select id="inputState" class="form-control">
+      <select id="inputState" class="form-control" name="userCountry">
         <option selected>Choose...</option>
         <option>Italy</option>
         <option>USA</option>
@@ -74,41 +74,32 @@
     </div>
     <div class="form-group col-md-1">
       <label for="inputZip">CAP</label>
-      <input type="text" class="form-control" id="inputZip">
+      <input type="text" class="form-control" id="inputZip" name="userCap">
     </div>
   </div>
    <div class="form-row">
     <div class="form-group col-md-5">
       <label for="inputCity">Metodo di pagamento</label>
-      <input type="text" class="form-control" id="inputCity">
+      <input type="text" class="form-control" id="inputCity" name="userPaymentInst">
     </div>
     <div class="form-group col-md-5">
       <label for="inputState">Codice</label>
-        <input type="text" class="form-control" id="inputCity">
+        <input type="text" class="form-control" id="inputCity" name="userPaymentCode">
     </div>
     <div class="form-group col-md-4">
-      <label for="inputZip" >EXP</label>
-      <input type="text" class="form-control" id="inputZip">
+      <label for="inputZip" >EXP MONTH</label>
+      <input type="number" class="form-control" id="inputZip" min="1" max="12"  name="userPaymentExpMonth">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputZip" >EXP YEAR</label>
+      <input type="number" class="form-control" id="inputZip" min="2021" name="userPaymentExpYear">
     </div>
     <div class="form-group col-md-1">
       <label for="inputZip">CVV</label>
-      <input type="text" class="form-control" id="inputZip">
+      <input type="number" class="form-control" id="inputZip" name="userPaymentCvv" maxlength="3" minlength="3">
     </div>
-  </div>
-  <div class="form-group col -md-4">
-  <label for="date">Scadenza</label>
-    <input type="text" id="date" class="form-control " placeholder="inserisci la data in formato mm/aaaa">
-    
   </div>
 
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
   
   <button type="submit" class="btn btn-primary">Sign in</button>
 		<label>Hai già un account? Effettua il <a href="Login.jsp">Login</a></label>
