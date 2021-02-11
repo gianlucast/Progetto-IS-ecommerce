@@ -16,12 +16,12 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) {
 		try { 
 			if(session.getAttribute("utente")==null&&session.getAttribute("manager")==null) {
 				session.setAttribute("alertMsg", "Errore, utente non loggato");
-				response.sendRedirect("./Homepage.jsp");
+				response.sendRedirect("./HomePage.jsp");
 			}else {
 				session.removeAttribute("utente");
-				session.removeAttribute("manger");
+				session.removeAttribute("manager");
 				session.setAttribute("alertMsg", "Logout effettuato con successo.");
-				response.sendRedirect("./Homepage.jsp");
+				response.sendRedirect("./HomePage.jsp");
 			}
 		}catch (Exception e2) {System.out.println(e2);} 
 	}

@@ -38,19 +38,19 @@
 		  <!-- Full-width images with number and caption text -->
 		  <div class="mySlides fade">
 		    <div class="numbertext">1 / 3</div>
-		    <img src="./img/iphone.jpeg" style="width:100%">
+		    <div class="immg1"><img src="./img/ps5.jpeg" style="width:80%"></div>
 		    <div class="text"></div>
 		  </div>
 		
 		  <div class="mySlides fade">
 		    <div class="numbertext">2 / 3</div>
-		    <img src="./img/ps5.jpeg" style="width:100%">
+		    <div class="immg2"><img src="./img/iphone.jpeg" style="width:60%"></div>
 		    <div class="text"></div>
 		  </div>
 		  
 		  <div class="mySlides fade">
 		    <div class="numbertext">3 / 3</div>
-		    <img src="./img/tablet.jpeg" style="width:100%">
+		    <div class="immg3"><img src="./img/tablet.jpeg" style="width:68%"></div>
 		    <div class="text"></div>
 		  </div>
 		

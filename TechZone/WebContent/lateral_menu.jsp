@@ -1,6 +1,6 @@
-<html>
+  <html>
 <head>
-<link rel="stylesheet" href="./css/menu.css">
+<link rel="stylesheet" href="./css/menu.css"> 
 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,10 +10,6 @@
 		
 			<nav class="nav">
 				
-			
-			
-            
-			
 			 <ul>
 			<li><p>Elettronica</p></li>
 			<a href="search?for=year&q=1950"><li>Smartphone</li></a>
@@ -36,5 +32,6 @@
 			  <br>
 			 <br>
 		 </div>
+		
 	</body>
-</html>
+</html> 

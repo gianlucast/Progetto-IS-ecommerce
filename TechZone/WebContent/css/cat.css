@@ -74,6 +74,26 @@ table td{
 	width:100px;
 	height:100px;
 }
+
+.immg1{
+	position:relative;
+	left:100px;
+	
+}
+
+.immg2{
+	position:relative;
+	left:185px;
+	
+}
+
+.immg3{
+	position:relative;
+	left:150px;
+	
+}
+
+
 .button {
   background: #ffbe7d;
   color: #fff;

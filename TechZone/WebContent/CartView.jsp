@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Carrello-VinylZone</title>
+	<title>Carrello-TechZone</title>
 	<link rel="icon" href="">
 	<link rel="stylesheet" href="./css/cartview.css">
 </head>
