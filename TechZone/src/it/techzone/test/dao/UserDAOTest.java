@@ -13,6 +13,7 @@ public class UserDAOTest extends TestCase{
 	private static PrintWriter pw;
 	private static UserDAO ud;
 	
+	
 	protected void setUp() throws Exception{
         ud = new UserDAO();
     }

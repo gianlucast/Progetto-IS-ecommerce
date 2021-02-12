@@ -26,8 +26,7 @@ static ProductManager pm= new ProductManager();
 						else cm.retrieveCart(session);
 						Long idProd=Long.parseLong(request.getParameter("product"));
 						cm.modCart(idProd,1, session);
-						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("./CartView.jsp");
-						dispatcher.forward(request, response);
+						response.sendRedirect("./CartView.jsp");
 					
 					
 				

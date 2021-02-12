@@ -24,8 +24,7 @@ static ProductManager pm= new ProductManager();
 						int changeQ = Integer.parseInt(request.getParameter("change"));
 						long id= Long.parseLong(request.getParameter("idProd"));
 						cm.changeQuantityCart(id, changeQ, session);
-						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("./CartView.jsp");
-						dispatcher.forward(request, response);
+						response.sendRedirect("./CartView.jsp");
 						
 						
 				}
@@ -33,7 +32,7 @@ static ProductManager pm= new ProductManager();
 			
 			else {
 				session.setAttribute("alertMsg","Accesso non autorizzato");
-				response.sendRedirect("./HomePage");
+				response.sendRedirect("./HomePage.jsp");
 				
 			}
 		}

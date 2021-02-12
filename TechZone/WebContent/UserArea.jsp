@@ -105,14 +105,14 @@
 					for(int j=0;j<elementi.size();j++) {
 					%>
 						<tr>
-						<!-- 	<td><%= elementi.get(j).getCodice%>-->
+						   <td><%= elementi.get(j).getCodice%>
 							<td><%=elementi.get(j).getNomeProd()%>
 							<td> <%=elementi.get(j).getQuantita()%>
 							<td> <%=elementi.get(j).getCosto()%> 
 						</tr>
 					<% }%>
 					</table>
-					<a href="order?action=generatefattura&idorder=<%=ordini.get(i).getCodice()%>"><button type="button" class="bottone">Stampa fattura</button></a>
+					
 					<br><br>
 				<% }%>
 				

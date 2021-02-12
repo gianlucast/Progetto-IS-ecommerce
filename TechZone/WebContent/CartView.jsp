@@ -35,8 +35,8 @@
 			<tr>
 				<td><img src="imgControl?id=<%=lista.get(i).getProdotto().getCodice()%>" style="width:100px"></td>
 				<td><%=lista.get(i).getProdotto().getNomeProd() %><td align="center"><%=lista.get(i).getQuantita()%><td align="center"><%=lista.get(i).getProdotto().getCosto() %>
-				<td><a href="product?action=changequantity&qt=<%=lista.get(i).getQuantita()+1%>&id=<%=lista.get(i).getProdotto().getCodice()%>"><button class="button">Aggiungi</button></a>
-				<td><a href="product?action=changequantity&qt=<%=lista.get(i).getQuantita()-1%>&id=<%=lista.get(i).getProdotto().getCodice()%>"><button class="button">Rimuovi</button></a>
+				<td><a href="modincartcontrol?change=<%=lista.get(i).getQuantita()+1%>&idProd=<%=lista.get(i).getProdotto().getCodice()%>"><button class="button">Aggiungi</button></a>
+				<td><a href="modincartcontrol?change=<%=lista.get(i).getQuantita()-1%>&idProd=<%=lista.get(i).getProdotto().getCodice()%>"><button class="button">Rimuovi</button></a>
 			</tr><%
 		} %>
 		</table>

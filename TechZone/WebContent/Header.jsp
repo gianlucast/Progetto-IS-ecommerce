@@ -31,7 +31,7 @@
 				<li style="float:right;padding:10px;"><a href="Login.jsp">Login</a>/<a href="Signup.jsp">Sign Up</a></li>
 				<% }else{%>
 				<li style="float:right;padding:10px;"><a href="UserArea.jsp">Area utente</a>
-				<li style="float:right;padding:10px;"><a href="user?action=logout">Logout</a>
+				<li style="float:right;padding:10px;"><a href="logoutcontrol">Logout</a>
 				<%} %>
 		</ul>
 		</div>

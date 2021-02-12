@@ -34,7 +34,16 @@
   	<servlet-name>CartViewControl</servlet-name>
   	<servlet-class>it.techzone.control.CartViewControl</servlet-class>
   </servlet>
+ 
+ <servlet>
+  	<servlet-name>LogoutControl</servlet-name>
+  	<servlet-class>it.techzone.control.LogoutControl</servlet-class>
+  </servlet> 
   
+  <servlet>
+  	<servlet-name>ModInCartControl</servlet-name>
+  	<servlet-class>it.techzone.control.ModInCartControl</servlet-class>
+  </servlet> 
   
   <servlet-mapping>
     <servlet-name>LoginControl</servlet-name>
@@ -59,5 +68,15 @@
   <servlet-mapping>
     <servlet-name>CartViewControl</servlet-name>
     <url-pattern>/cartviewcontrol</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>LogoutControl</servlet-name>
+    <url-pattern>/logoutcontrol</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ModInCartControl</servlet-name>
+    <url-pattern>/modincartcontrol</url-pattern>
   </servlet-mapping>
 </web-app>

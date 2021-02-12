@@ -1,5 +1,6 @@
 package it.techzone.control;
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -7,7 +8,7 @@ import javax.servlet.http.HttpSession;
 import it.techzone.model.beans.Manager;
 import it.techzone.model.beans.UtenteRegistrato;
 
-public class LogoutControl {
+public class LogoutControl extends HttpServlet{
 
 public void doGet(HttpServletRequest request, HttpServletResponse response) {
 
