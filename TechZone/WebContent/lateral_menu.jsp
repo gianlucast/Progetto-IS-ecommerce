@@ -12,16 +12,16 @@
 				
 			 <ul>
 			<li><p>Elettronica</p></li>
-			<a href="search?for=year&q=1950"><li>Smartphone</li></a>
-			 <a href="search?for=year&q=1960"><li>TV</li></a>
-			 <a href="search?for=year&q=1970"><li>Console</li></a>
-			 <a href="search?for=year&q=1980"><li>Tablet</li></a>
-			 <a href="search?for=year&q=1990"><li>Computer</li></a>
+			<a href="productcataloguecontrol?by=categoria&q=Smartphone"><li>Smartphone</li></a>
+			 <a href="productcataloguecontrol?by=categoria&q=TV"><li>TV</li></a>
+			 <a href="productcataloguecontrol?by=categoria&q=Console"><li>Console</li></a>
+			 <a href="productcataloguecontrol?by=categoria&q=Tablet"><li>Tablet</li></a>
+			 <a href="productcataloguecontrol?by=categoria&q=Computer"><li>Computer</li></a>
 			 <li><p>Altro</p></li>
-			 <a href="search?for=genre&q=indie"><li>Frigoriferi</li></a>
-			 <a href="search?for=genre&q=rock"><li>Fotografia</li></a>
-			 <a href="search?for=genre&q=pop"><li>Lavatrici</li></a>
-			 <a href="search?for=genre&q=rap"><li>Condizionatori</li></a>
+			 <a href="productcataloguecontrol?by=categoria&q=Frigoriferi"><li>Frigoriferi</li></a>
+			 <a href="productcataloguecontrol?by=categoria&q=Fotografia"><li>Fotografia</li></a>
+			 <a href="productcataloguecontrol?by=categoria&q=Lavatrici"><li>Lavatrici</li></a>
+			 <a href="productcataloguecontrol?by=categoria&q=Condizionatori"><li>Condizionatori</li></a>
 			 
 			
 			 </ul>

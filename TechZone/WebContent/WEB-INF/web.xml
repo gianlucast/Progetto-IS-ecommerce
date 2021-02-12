@@ -45,6 +45,16 @@
   	<servlet-class>it.techzone.control.ModInCartControl</servlet-class>
   </servlet> 
   
+  <servlet>
+  	<servlet-name>UserOrderViewControl</servlet-name>
+  	<servlet-class>it.techzone.control.UserOrderViewControl</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>ProductCatalogueControl</servlet-name>
+  	<servlet-class>it.techzone.control.ProductCatalogueControl</servlet-class>
+  </servlet> 
+  
   <servlet-mapping>
     <servlet-name>LoginControl</servlet-name>
     <url-pattern>/logincontrol</url-pattern>
@@ -78,5 +88,15 @@
   <servlet-mapping>
     <servlet-name>ModInCartControl</servlet-name>
     <url-pattern>/modincartcontrol</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>UserOrderViewControl</servlet-name>
+    <url-pattern>/userorderviewcontrol</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ProductCatalogueControl</servlet-name>
+    <url-pattern>/productcataloguecontrol</url-pattern>
   </servlet-mapping>
 </web-app>

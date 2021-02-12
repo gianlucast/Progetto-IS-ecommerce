@@ -26,7 +26,7 @@
 					</form>
 				
 				</li>
-				<li style="float:right;"><div class="dis"><a href="CartView.jsp"><img src="./imgs/boh.png.png" style="width:50px; height:50px;"></a></div>
+				<li style="float:right;"><div class="dis"><a href="CartView.jsp"><img src="./img/test_img.jpg" style="width:50px; height:50px;"></a></div>
 				<% if(session.getAttribute("utente")==null&&session.getAttribute("manager")==null){%>
 				<li style="float:right;padding:10px;"><a href="Login.jsp">Login</a>/<a href="Signup.jsp">Sign Up</a></li>
 				<% }else{%>

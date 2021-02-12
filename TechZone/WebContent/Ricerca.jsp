@@ -71,7 +71,7 @@
 					<div class="foto"><%if(bean.getImmagine()!=null){ %><img src="imgControl?id=<%=bean.getCodice()%>" style="width:100px"><% }else{%><img src="./imgs/no_disc.png" style="width:100px"><%} %></div>
 					<div class="name"><%=bean.getNomeProd()%></div>
 					<div class="artist"><%= bean.getTipo() %></div>
-				    <a href="product?action=details&id=<%=bean.getCodice()%>"><button class="button">Acquista</button></a></td>
+				    <a href="productviewcontrol=<%=bean.getCodice()%>"><button class="button">Acquista</button></a></td>
 					</div>
 					</div>
 						<%request.setAttribute("imgbean",bean);%>
