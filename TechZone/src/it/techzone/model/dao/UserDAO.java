@@ -50,6 +50,7 @@ public class UserDAO {
 		Connection connection=null;
 		PreparedStatement preparedStatement=null;
 		UtenteRegistrato u=null;
+		if(email==null||password==null||email==""||password=="") throw new SQLException();
 		String query="SELECT * FROM "+UTENTE_TABLE+" WHERE EMAIL=? AND `PASSWORD`=SHA1(?)";
 		
 		try {
@@ -85,6 +86,7 @@ public class UserDAO {
 	public synchronized Manager authenticateManager(String email, String password) throws SQLException {
 		Connection connection=null;
 		PreparedStatement preparedStatement=null;
+		if(email==null||password==null||email==""||password=="") throw new SQLException();
 		Manager u=null;
 		String query="SELECT * FROM "+MANAGER_TABLE+" WHERE EMAIL=? AND `PASSWORD`=SHA1(?)";
 		
@@ -122,6 +124,7 @@ public class UserDAO {
 		Connection connection2=null;
 		PreparedStatement preparedStatement=null;
 		PreparedStatement preparedStatement2 = null;
+		if(email==null||email=="") throw new SQLException();
 		ResultSet rs;
 		String query1="SELECT * FROM "+MANAGER_TABLE+" WHERE EMAIL=?";
 		String query2="SELECT * FROM "+UTENTE_TABLE+" WHERE EMAIL=?";

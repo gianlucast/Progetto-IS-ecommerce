@@ -1,12 +1,17 @@
 package it.techzone.test.dao;
 
+import static org.junit.Assert.assertNotEquals;
+
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import it.techzone.model.beans.Manager;
 import it.techzone.model.beans.UtenteRegistrato;
 import it.techzone.model.dao.UserDAO;
+import junit.framework.Test;
 import junit.framework.TestCase;
+import junit.framework.TestSuite;
+import org.junit.Assert.*;
 
 public class UserDAOTest extends TestCase{
 	
@@ -16,6 +21,12 @@ public class UserDAOTest extends TestCase{
 	
 	protected void setUp() throws Exception{
         ud = new UserDAO();
+    }
+	
+	public static Test suite(PrintWriter writer){
+        pw = writer;
+        return new TestSuite(UserDAOTest.class);
+
     }
 	
 	public void testDoSaveUser() throws SQLException{
@@ -36,8 +47,7 @@ public class UserDAOTest extends TestCase{
 		}catch(Exception e) {
 			fail("testdoSaveUser() not passed!");
 		}finally {
-            //DOVE LI VOGLIAMO SALVARE???
-            if(flag) pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+            if(flag) System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
         }
 	}
 	
@@ -51,13 +61,13 @@ public class UserDAOTest extends TestCase{
 		}
 		
 		try {
-			UtenteRegistrato user2=new UtenteRegistrato(3471658862l, "Michele", "Massara", "Micmassara1", "m.massara@gmail.com", "Mastercard, 9999888855556666, 06/2025, 777", "Italia, Novara, 28100, Via Roma 71");
+			UtenteRegistrato user2=new UtenteRegistrato(1,3270876971L, "Giovanni", "Simonini", "a4abe91512306f1e4f1f8e06d0b6684ac4cd5b66", "g.simonini@gmail.com", "Mastercard, 1111222233334444, 04/2026, 777", "Italia, Avellino, 83100, Viale Italia 12");
 			ud.doSaveUser(user2);
 			fail("testDoSaveUserException() (mail already used for UtenteRegistrato) not passed");
 		}catch(Exception e) {
 			
 		}
-		pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+		System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
 	}
 	
 	public void testAuthenticate() throws SQLException{
@@ -65,8 +75,8 @@ public class UserDAOTest extends TestCase{
 		boolean flag=false;
 		
 		try {
-			oracolo=new UtenteRegistrato(2,3477542769l, "Marcello", "Massara", "Mmassara1", "m.massara@gmail.com", "Mastercard, 9999888877776666, 06/2025, 777", "Italia, Novara, 28100, Via Roma 71");
-			utenteAutenticato=ud.authenticate("m.massara@gmail.com", "Mmassara1");
+			oracolo=new UtenteRegistrato(1,3270876971L, "Giovanni", "Simonini", "a4abe91512306f1e4f1f8e06d0b6684ac4cd5b66", "g.simonini@gmail.com", "Mastercard, 1111222233334444, 04/2026, 777", "Italia, Avellino, 83100, Viale Italia 12");
+			utenteAutenticato=ud.authenticate("g.simonini@gmail.com", "Testpassword1");
 			assertEquals(oracolo.getId(),utenteAutenticato.getId());
 			assertEquals(oracolo.getCognome(),utenteAutenticato.getCognome());
 			assertEquals(oracolo.getNome(),utenteAutenticato.getNome());
@@ -79,7 +89,7 @@ public class UserDAOTest extends TestCase{
 			fail("testAuthenticate() not passed!");
 		}finally {
             //DOVE LI VOGLIAMO SALVARE???
-            if(flag) pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+            if(flag) System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
         }
 	}
 	
@@ -108,11 +118,13 @@ public class UserDAOTest extends TestCase{
 			mail="testmail@test.test";
 			password="testPassword11";
 			UtenteRegistrato u=ud.authenticate(mail,password);
+
+			assertNotEquals(String.valueOf(u),String.valueOf(null));
 			fail("testAuthenticateException() (no UtenteRegistrato found in DB) not passed");
 		}catch(Exception e) {
 			
 		}
-		pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+		System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
 	}
 	
 	public void testAuthenticateManager() throws SQLException{
@@ -133,7 +145,7 @@ public class UserDAOTest extends TestCase{
 			fail("testAuthenticate() not passed!");
 		}finally {
             //DOVE LI VOGLIAMO SALVARE???
-            if(flag) pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+            if(flag) System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
         }
 	}
 	
@@ -152,6 +164,7 @@ public class UserDAOTest extends TestCase{
 			mail="";
 			password="";
 			Manager m=ud.authenticateManager(mail,password);
+			assertNotEquals(String.valueOf(m),String.valueOf(null));
 			fail("testAuthenticateManagerException() (empty mail e password) not passed");
 		}catch(Exception e) {
 			
@@ -162,11 +175,12 @@ public class UserDAOTest extends TestCase{
 			mail="testmail@test.test";
 			password="testPassword11";
 			Manager m=ud.authenticateManager(mail,password);
+			assertNotEquals(String.valueOf(m),String.valueOf(null));
 			fail("testAuthenticateManagerException() (no Manager found in DB) not passed");
 		}catch(Exception e) {
 			
 		}
-		pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+		System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
 	}
 	
 	public void testDoRetrieveByEmail() throws SQLException{
@@ -174,8 +188,8 @@ public class UserDAOTest extends TestCase{
 		boolean flag=false;
 		
 		try {
-			oracolo=new UtenteRegistrato(2,3477542769l, "Marcello", "Massara", "Mmassara1", "m.massara@gmail.com", "Mastercard, 9999888877776666, 06/2025, 777", "Italia, Novara, 28100, Via Roma 71");
-			utentedb=ud.doRetrieveByMail("m.massara@gmail.com");
+			oracolo=new UtenteRegistrato(1,3270876971L, "Giovanni", "Simonini", "a4abe91512306f1e4f1f8e06d0b6684ac4cd5b66", "g.simonini@gmail.com", "Mastercard, 1111222233334444, 04/2026, 777", "Italia, Avellino, 83100, Viale Italia 12");
+			utentedb=ud.doRetrieveByMail("g.simonini@gmail.com");
 			assertEquals(oracolo.getId(),utentedb.getId());
 			assertEquals(oracolo.getCognome(),utentedb.getCognome());
 			assertEquals(oracolo.getNome(),utentedb.getNome());
@@ -188,7 +202,7 @@ public class UserDAOTest extends TestCase{
 			fail("testDoRetrieveByEmail() not passed!");
 		}finally {
             //DOVE LI VOGLIAMO SALVARE???
-            if(flag) pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+            if(flag) System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
         }
 	}
 	
@@ -197,6 +211,7 @@ public class UserDAOTest extends TestCase{
 			String mail;
 			mail=null;
 			UtenteRegistrato u=ud.doRetrieveByMail(mail);
+			assertNotEquals(String.valueOf(u),String.valueOf(null));
 			fail("testDoRetrieveByMailException() (null mail e password) not passed");
 		}catch(Exception e) {
 			
@@ -205,6 +220,7 @@ public class UserDAOTest extends TestCase{
 			String mail;
 			mail="";
 			UtenteRegistrato u=ud.doRetrieveByMail(mail);
+			assertNotEquals(String.valueOf(u),String.valueOf(null));
 			fail("testDoRetrieveByMailException() (empty mail) not passed");
 		}catch(Exception e) {
 			
@@ -214,11 +230,12 @@ public class UserDAOTest extends TestCase{
 			String mail;
 			mail="testmail@test.test";
 			UtenteRegistrato u=ud.doRetrieveByMail(mail);
+			assertNotEquals(String.valueOf(u),String.valueOf(null));
 			fail("testDoRetrieveByMailException() (no UtenteRegistrato found in DB) not passed");
 		}catch(Exception e) {
 			
 		}
-		pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+		System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
 	}
 	
 	public void testDoRetrieveById() throws SQLException{
@@ -226,8 +243,8 @@ public class UserDAOTest extends TestCase{
 		boolean flag=false;
 		
 		try {
-			oracolo=new UtenteRegistrato(2,3477542769l, "Marcello", "Massara", "Mmassara1", "m.massara@gmail.com", "Mastercard, 9999888877776666, 06/2025, 777", "Italia, Novara, 28100, Via Roma 71");
-			utentedb=ud.doRetrieveById(2);
+			oracolo=new UtenteRegistrato(1,3270876971L, "Giovanni", "Simonini", "a4abe91512306f1e4f1f8e06d0b6684ac4cd5b66", "g.simonini@gmail.com", "Mastercard, 1111222233334444, 04/2026, 777", "Italia, Avellino, 83100, Viale Italia 12");
+			utentedb=ud.doRetrieveById(1);
 			assertEquals(oracolo.getId(),utentedb.getId());
 			assertEquals(oracolo.getCognome(),utentedb.getCognome());
 			assertEquals(oracolo.getNome(),utentedb.getNome());
@@ -240,7 +257,7 @@ public class UserDAOTest extends TestCase{
 			fail("testDoRetrieveById() not passed!");
 		}finally {
             //DOVE LI VOGLIAMO SALVARE???
-            if(flag) pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+            if(flag) System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
         }
 	}
 	
@@ -250,11 +267,12 @@ public class UserDAOTest extends TestCase{
 			Long id;
 			id=-1L;
 			UtenteRegistrato u=ud.doRetrieveById(id);
+			assertNotEquals(String.valueOf(u),String.valueOf(null));
 			fail("testDoRetrieveByIdException() (no UtenteRegistrato found in DB) not passed");
 		}catch(Exception e) {
 			
 		}
-		pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+		System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
 	}
 	
 	public void testCheckEmailUsed() throws SQLException{
@@ -271,7 +289,7 @@ public class UserDAOTest extends TestCase{
 			fail("testCheckEmailUsed() not passed!");
 		}finally {
             //DOVE LI VOGLIAMO SALVARE???
-            if(flag) pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+            if(flag) System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
         }
 		
 	}
@@ -280,12 +298,13 @@ public class UserDAOTest extends TestCase{
 		
 		try {
 			boolean test1=ud.checkEmailUsed(null);
+			assertEquals(test1,true);
 			fail("testCheckEmailUsedException() (null Email) not passed");
 		}catch(Exception e) {
 
 		}finally {
             //DOVE LI VOGLIAMO SALVARE???
-            pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+            System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
         }
 		
 	}
