@@ -4,6 +4,8 @@ package it.techzone.test.dao;
 import it.techzone.model.beans.Order;
 import it.techzone.model.beans.Product;
 
+import static org.junit.Assert.assertNotEquals;
+
 import java.io.PrintWriter;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,7 +22,7 @@ public class ProductDAOTest extends TestCase {
 	private static ProductDAO pd;
 	private static PrintWriter pw;
 	
-	public void setup () throws Exception{
+	public void setUp () throws Exception{
 		pd = new ProductDAO();
 	}
 	//aggiunta no 
@@ -29,38 +31,49 @@ public class ProductDAOTest extends TestCase {
 		Product oracolo = null, pi = null;
 		try {
 				
-				
-				oracolo=pd.retrieveProductById(10213);
-				assertEquals(10213, oracolo.getCodice());
+				oracolo=new Product();
+				oracolo.setCodice(1);
+				oracolo.setDescrizione("OnePlus Nord supporta il 5G. E' un prodotto della fascia media, ottimo per prestazioni e OS.");
+				oracolo.setNomeProd("OnePlus Nord 5G");
+				oracolo.setQuantita(15);
+				oracolo.setCategoria("Smartphone");
+				oracolo.setTipo("Android");
+				oracolo.setCosto(398.99F);
+				pi=pd.retrieveProductById(1);
+				assertEquals(pi.getCodice(), oracolo.getCodice());
+				assertEquals(pi.getDescrizione(), oracolo.getDescrizione());
+				assertEquals(pi.getNomeProd(), oracolo.getNomeProd());
+				assertEquals(pi.getQuantita(), oracolo.getQuantita());
+				assertEquals(pi.getCategoria(), oracolo.getCategoria());
+				assertEquals(pi.getTipo(), oracolo.getTipo());
+				assertEquals(pi.getCosto(), oracolo.getCosto());
 				
 				flag=true;
 		}
 			
 		catch(Exception e) {
-				if(flag==false) {
-					fail("testRetrieveProductbyId() not passed!");
-				}
-			}
-		finally {
+			fail("testRetrieveProductbyId() not passed!");
+				
+		}finally {
 				if(flag==true) {
-					pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+					System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
 				}
 		}
 	}
+	
 
 	public void testRetrieveProductByIdException() throws SQLException {
 		boolean flag=false;
-		Product oracolo = null, pi = null;
+		Product pi = null;
 		try {
-				
-				
-				oracolo=pd.retrieveProductById(-12312);
-				fail("testRetrieveProductbyIdException() not passed!(irregular id format!)");
+				pi=pd.retrieveProductById(-12312);
+				assertNotEquals(String.valueOf(pi),String.valueOf(null));
+				fail("testRetrieveProductbyIdException() not passed!(Id not found!)");
 				
 		}
 		catch(Exception e) {
 
-			pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+			System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
 		}
 	
 	}
@@ -73,103 +86,96 @@ public class ProductDAOTest extends TestCase {
 		boolean flag = false;
 
 		Product oracolo = null, pi = null;
-
+		boolean result;
 		try {
-				
-				pd.doDeleteProduct(10213);
-				pi=pd.retrieveProductById(10213);
-				flag = true;
-		} 
-		
-		catch(Exception e){
-				if(flag==false) {
-					pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
-					
-				
-			}
+			result=pd.doDeleteProduct(2);
+			assertTrue(result);
+			flag = true;
+		}catch(Exception e){
+			fail("testDoDeletProduct() not passed!");
 		}
 		finally {
-			if(flag==true) {
-				fail("testDoDeletProduct() not passed!");
-			}
-			}
-		
-		
+			if(flag)System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+		}
+			
 	}
+		
 
 	public void testDoDeleteProductException() throws SQLException {
 		
 		try {
-				pd.doDeleteProduct(-12323);
-				fail("testRetrieveProductbyIdException() not passed!(irregular id format!)");
+				boolean result=pd.doDeleteProduct(-12323);
+				assertTrue(result);
+				fail("testRetrieveProductbyIdException() not passed!(Id not found)");
 				
 		}
-		catch(Exception e) {
+		
+		catch(Throwable t) {
 			
 		}
-		
-		try {
-				pd.doDeleteProduct(213123312);
-				fail("testRetrieveProductbyIdException() not passed!(product doesn't exist!)");
-		}
-		catch(Exception e) {
-			pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
-		}
-		
+		System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
 	}
 
-/*	public void doRetrieveAll() throws SQLException {
+	public void testdoRetrieveAll() throws SQLException {
 		
+		ArrayList<Product> oracolo = new ArrayList<Product>();	
+		ArrayList<Product> retrieved;
+		oracolo.add(pd.retrieveProductById(1));
+		oracolo.add(pd.retrieveProductById(2));
+		oracolo.add(pd.retrieveProductById(3));
 		boolean flag = false;
-		
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		ArrayList<Product> products = new ArrayList<Product>();
-
-		String selectSQL = "SELECT * FROM " + PRODUCT_TABLE;
-
-		if (ordine != null && !ordine.equals("")) {
-			selectSQL += " ORDER BY " + ordine;
-		}
-
 		try {
-			connection = DriverManagerConnectionPool.getConnection();
-			preparedStatement = connection.prepareStatement(selectSQL);
-			ResultSet rs = preparedStatement.executeQuery();
-	
-			while(rs.next()) {
-				Product p=new Product();
-				p.setCodice(rs.getLong("codiceProdotto"));
-				p.setCategoria(rs.getString("CATEGORIA"));
-				p.setTipo(rs.getString("TIPO"));
-				p.setDescrizione(rs.getString("DESCRIZIONE"));
-				p.setNomeProd(rs.getString("nomeProd"));
-				p.setQuantita(rs.getInt("QUANTITA"));
-				p.setCosto(rs.getFloat("COSTO"));
-				p.setImmagine(rs.getBytes("IMMAGINE"));
-				products.add(p);
+				retrieved= pd.doRetrieveAll("");
+				Product retrProd, oracleProd;
+				for(int i=0;i<retrieved.size();i++) {
+					retrProd=retrieved.get(i);
+					oracleProd=retrieved.get(i);
+					assertEquals(retrProd.getCodice(), oracleProd.getCodice());
+					assertEquals(retrProd.getDescrizione(), oracleProd.getDescrizione());
+					assertEquals(retrProd.getNomeProd(), oracleProd.getNomeProd());
+					assertEquals(retrProd.getQuantita(), oracleProd.getQuantita());
+					assertEquals(retrProd.getCategoria(), oracleProd.getCategoria());
+					assertEquals(retrProd.getTipo(), oracleProd.getTipo());
+					assertEquals(retrProd.getCosto(), oracleProd.getCosto());
+					
+				}
+				flag=true;
 			}
-			return products;
-		}finally {
-			try {
-				if (preparedStatement != null)
-					preparedStatement.close();
-			} finally {
-				DriverManagerConnectionPool.releaseConnection(connection);
+			
+		catch(Exception e) {
+			if(flag==false) {
+				fail("testDoRetrieveAll() not passed!");
+			}
+		}
+		finally {
+			if(flag==true) {
+				System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
 			}
 		}
 	}
-??*/
-	public void testDoRetrieveByCat()   {
-		ArrayList<Product> oracolo = new ArrayList<Product>();		
-		boolean flag = true;
+	
+	
+	public void testDoRetrieveByCat() throws SQLException   {
+		ArrayList<Product> oracolo = new ArrayList<Product>();	
+		ArrayList<Product> retrieved;
+		Product articolo=pd.retrieveProductById(1);
+		oracolo.add(articolo);
+		boolean flag = false;
 		try {
-				oracolo= pd.doRetrieveByCat("videogiochi");
-				
-				 for (Product c : oracolo) {		
-						assertEquals("videogiochi",c.getCategoria());
-				  }
-				
+				retrieved= pd.doRetrieveByCat("Smartphone");
+				Product retrProd, oracleProd;
+				for(int i=0;i<retrieved.size();i++) {
+					retrProd=retrieved.get(i);
+					oracleProd=retrieved.get(i);
+					assertEquals(retrProd.getCodice(), oracleProd.getCodice());
+					assertEquals(retrProd.getDescrizione(), oracleProd.getDescrizione());
+					assertEquals(retrProd.getNomeProd(), oracleProd.getNomeProd());
+					assertEquals(retrProd.getQuantita(), oracleProd.getQuantita());
+					assertEquals(retrProd.getCategoria(), oracleProd.getCategoria());
+					assertEquals(retrProd.getTipo(), oracleProd.getTipo());
+					assertEquals(retrProd.getCosto(), oracleProd.getCosto());
+					
+				}
 				flag=true;
 			}
 			
@@ -178,18 +184,18 @@ public class ProductDAOTest extends TestCase {
 				fail("testDoRetrieveByCat() not passed!");
 			}
 		}
-	finally {
+		finally {
 			if(flag==true) {
-				pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+				System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
 			}
+		}
 	}
-}
 
 	public void testDoRetrieveByCatException() throws SQLException {
-		ArrayList<Product> oracolo = new ArrayList<Product>();	
+		ArrayList<Product> retrieved = new ArrayList<Product>();	
 		try {
-				oracolo=pd.doRetrieveByCat("123123");
-				fail("testRetrieveProductbyIdException() not passed!(irregular format!)");
+				retrieved=pd.doRetrieveByCat(null);
+				fail("testRetrieveProductbyCatException() not passed!(irregular format!)");
 				
 		}
 		catch(Exception e) {
@@ -197,63 +203,99 @@ public class ProductDAOTest extends TestCase {
 		}
 		
 		try {
-				oracolo=pd.doRetrieveByCat("alimentari");
-				fail("testRetrieveProductbyIdException() not passed!(category doesn't exist)");
+				retrieved=pd.doRetrieveByCat("alimentari");
+				boolean res=retrieved.size()>0;
+				assertTrue(res);
+				fail("testRetrieveProductbyCatException() not passed!(category doesn't exist)");
 		}
-		catch(Exception e) {
-			pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
-		}
-		
-}
-	
-	public void testDoRetrieveByName()   {
-		ArrayList<Product> oracolo = new ArrayList<Product>();
-		
-		
-		boolean flag = true;
-		try {	
-				oracolo= pd.doRetrieveByName("ps4");
-					
-					 for (Product c : oracolo) {
-						
-							assertEquals("ps4",c.getNomeProd());
-					 }
-					
-				flag=true;
-			}
+		catch(Throwable t) {
 			
-		catch(Exception e) {
+		}
+		System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+	}
+	
+	public void testDoRetrieveByName() throws SQLException{
+		ArrayList<Product> oracolo = new ArrayList<Product>();	
+		ArrayList<Product> retrieved;
+		oracolo.add(pd.retrieveProductById(1));
+		
+		
+		boolean flag = false;
+		try {	
+				retrieved= pd.doRetrieveByName("OnePlus Nord");
+					
+				Product retrProd, oracleProd;
+				for(int i=0;i<retrieved.size();i++) {
+					retrProd=retrieved.get(i);
+					oracleProd=retrieved.get(i);
+					assertEquals(retrProd.getCodice(), oracleProd.getCodice());
+					assertEquals(retrProd.getDescrizione(), oracleProd.getDescrizione());
+					assertEquals(retrProd.getNomeProd(), oracleProd.getNomeProd());
+					assertEquals(retrProd.getQuantita(), oracleProd.getQuantita());
+					assertEquals(retrProd.getCategoria(), oracleProd.getCategoria());
+					assertEquals(retrProd.getTipo(), oracleProd.getTipo());
+					assertEquals(retrProd.getCosto(), oracleProd.getCosto());
+					
+				}
+				flag=true;
+			
+		}catch(Exception e) {
 			if(flag==false) {
 				fail("testDoRetrieveByName() not passed!");
 			}
 		}
-	finally {
+		finally {
 			if(flag==true) {
-				pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+				System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
 			}
 		}
-}
+	}
 
+	public void testDoRetrieveByNameException() throws SQLException {
+		ArrayList<Product> retrieved = new ArrayList<Product>();	
+		try {
+				retrieved=pd.doRetrieveByName(null);
+				fail("testRetrieveProductbyNameException() not passed!(irregular format!)");
+				
+		}
+		catch(Exception e) {
+			
+		}
+		
+		try {
+				retrieved=pd.doRetrieveByName("TestNonPresente");
+				boolean res=retrieved.size()>0;
+				assertTrue(res);
+				fail("testRetrieveProductbyCatName() not passed!(category doesn't exist)");
+		}
+		catch(Throwable t) {
+			
+		}
+		System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+	}
 
 	
 	public void testDoUpdate() throws SQLException{
 		boolean flag=false;
 		Product oracolo = null, pi = null;
+		boolean risultato;
 		try {
-				
-				byte[] images = {(byte)0xe0, 0x4f, (byte)0xd0};
-				oracolo=new Product(10213,490, images,"console next gen ","ps4",10,"videogiochi","console");
-				pd.doUpdate(oracolo);
-				pi=pd.retrieveProductById(10213);
-				assertEquals(pi.getCodice(), oracolo.getCodice());
-				assertEquals(pi.getCosto(), oracolo.getCosto());
-				assertEquals(pi.getTipo(), oracolo.getTipo());
-				assertEquals(pi.getImmagine(),oracolo.getImmagine());
-				assertEquals(pi.getDescrizione(),oracolo.getDescrizione());
-				assertEquals(pi.getQuantita(),oracolo.getQuantita());
-				assertEquals(pi.getNomeProd(),oracolo.getNomeProd());
-				assertEquals(pi.getCategoria(),oracolo.getCategoria());
-				flag=true;
+			
+			oracolo=pd.retrieveProductById(3);
+			oracolo.setQuantita(9);
+			
+			risultato=pd.doUpdate(oracolo);
+			assertEquals(risultato,true);
+			pi=pd.retrieveProductById(3);
+			assertEquals(pi.getCodice(), oracolo.getCodice());
+			assertEquals(pi.getCosto(), oracolo.getCosto());
+			assertEquals(pi.getTipo(), oracolo.getTipo());
+			assertEquals(pi.getImmagine(),oracolo.getImmagine());
+			assertEquals(pi.getDescrizione(),oracolo.getDescrizione());
+			assertEquals(pi.getQuantita(),oracolo.getQuantita());
+			assertEquals(pi.getNomeProd(),oracolo.getNomeProd());
+			assertEquals(pi.getCategoria(),oracolo.getCategoria());
+			flag=true;
 		}
 			
 		catch(Exception e) {
@@ -263,42 +305,37 @@ public class ProductDAOTest extends TestCase {
 			}
 		finally {
 				if(flag==true) {
-					pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+					System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
 				}
 				
 		}
-}
+	}
 
 
 
-public void testDoUpdateException() throws SQLException{
-	Product aggiornamento;
-	
-	try {
-		aggiornamento=null;
-		pd.doUpdate(aggiornamento);
-		fail("testDoUpdateOrderException() (product not valid!) not passed");
-	}catch(Exception e) {
+	public void testDoUpdateException() throws SQLException{
+		Product aggiornamento;
+		boolean risultato;
+		try {
+			aggiornamento=null;
+			risultato=pd.doUpdate(aggiornamento);
+			assertNotEquals(String.valueOf(risultato),String.valueOf(0));
+			fail("testDoUpdateOrderException() (product not valid!) not passed");
+		}catch(Exception e) {
+			
+		}
 		
-	}
-	
-	try {
-		byte[] images = {(byte)0xe0, 0x4f, (byte)0xd0};
-		aggiornamento= new Product(-10213,490, images,"console next gen ","ps4",10,"videogiochi","console");
-		fail("testDoUpdateOrderException() (Product's id isn't valid) not passed");
-	}catch(Exception e) {
+		try {
+			byte[] images = {(byte)0xe0, 0x4f, (byte)0xd0};
+			aggiornamento= new Product(-10213,490, images,"console next gen ","ps4",10,"videogiochi","console");
+			risultato=pd.doUpdate(aggiornamento);
+			assertNotEquals(String.valueOf(risultato),true);
+			fail("testDoUpdateOrderException() (Product's id isn't valid) not passed");
+		}catch(Throwable t) {
+			
+		}
 		
+		System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
 	}
-	
-	try {
-		byte[] images = {(byte)0xe0, 0x4f, (byte)0xd0};
-		aggiornamento= new Product(10213,490, images,"console next gen ","ps4",10,"pincopallo","console");
-		fail("testDoUpdateOrderException() (Product's category isn't valid) not passed");
-	}catch(Exception e) {
-		
-	}
-	
-	pw.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
-}
 
 }

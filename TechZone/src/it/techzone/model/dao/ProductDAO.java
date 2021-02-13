@@ -115,6 +115,7 @@ public class ProductDAO {
 
 	public ArrayList<Product> doRetrieveByCat(String cat) {
 		try (Connection con = DriverManagerConnectionPool.getConnection()) {
+			if(cat==null||cat=="") throw new SQLException();
 			PreparedStatement ps = con.prepareStatement(
 					"SELECT * FROM "+PRODUCT_TABLE+" WHERE categoria=?");
 			ps.setString(1, cat);
@@ -140,6 +141,7 @@ public class ProductDAO {
 	
 	public ArrayList<Product> doRetrieveByName(String nameProd) {
 		try (Connection con = DriverManagerConnectionPool.getConnection()) {
+			if(nameProd==null||nameProd=="") throw new SQLException();
 			PreparedStatement ps = con.prepareStatement(
 					"SELECT * FROM "+PRODUCT_TABLE+" WHERE MATCH(nomeProd) AGAINST(? IN BOOLEAN MODE)");
 			ps.setString(1, nameProd);
@@ -177,9 +179,10 @@ public class ProductDAO {
 			preparedStatement.setString(4, prodotto.getCategoria());
 			preparedStatement.setString(5, prodotto.getTipo());
 			preparedStatement.setFloat(6, prodotto.getCosto());
-			preparedStatement.executeUpdate();
+			preparedStatement.setLong(7, prodotto.getCodice());
+			int result=preparedStatement.executeUpdate();
 			connection.commit();
-			return true;
+			return (result>0);
 		}finally {
 			try {
 				if (preparedStatement != null)
