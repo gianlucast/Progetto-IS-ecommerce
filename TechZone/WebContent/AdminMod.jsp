@@ -2,11 +2,11 @@
 	pageEncoding="UTF-8"%>
 
 <%
-	if(session.getAttribute("user")==null){
+	if(session.getAttribute("utente")==null){
 		session.setAttribute("redirect","AdminMod.jsp");
 		response.sendRedirect("Login.jsp");
 	}else{
-		UtenteRegistrato user=(UtenteRegistrato)session.getAttribute("user");
+		UtenteRegistrato user=(UtenteRegistrato)session.getAttribute("utente");
 		//if(!user.getEmail().isManager()) response.sendRedirect("Catalogo.jsp"); da mettere filter
 	/*	else{
 			Collection<?> products = (Collection<?>) request.getAttribute("products");
@@ -63,9 +63,9 @@
 			<td><%=prod.getCode()%></td>
 			<td><%=prod.getName()%></td>
 			<td><%=prod.getDesc()%></td>
-			<td><a href="admin?action=delete&id=<%=prod.getCodice() %>">Delete</a><br>
-				<a href="admin?action=modify&id=<%=prod.getCodice()%>">Modify</a><br>
-				<a href="product?action=details&id=<%=prod.getCodice()%>">Details</a></td>
+			<td><a href="deleteproductcontrol=<%=prod.getCodice() %>">Delete</a><br>
+				<a href="updateproductcontrol=<%=prod.getCodice()%>">Modify</a><br>
+				<a href="productviewcontrol=<%=prod.getCodice()%>">Details</a></td>
 				<%
 				//System.out.println(bean.getName());
 				request.setAttribute("imgbean",bean);%>
