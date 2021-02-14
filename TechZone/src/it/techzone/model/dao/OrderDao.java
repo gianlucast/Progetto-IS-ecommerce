@@ -26,7 +26,7 @@ public class OrderDao {
 		PreparedStatement preparedStatement2 = null;
 		
 		String insertSQL="INSERT INTO "+ORDER_TABLE+" (dataInvio, totale, stato, idUtente) "
-				+ "VALUES (?,?,?.?.?)";
+				+ "VALUES (?,?,?,?)";
 		
 		try {
 			
@@ -85,6 +85,7 @@ public class OrderDao {
 	}
 	
 	public boolean doUpdateOrder(Order order) throws SQLException {
+		if(order.getNumeroOrdine()<0) throw new SQLException();
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		String query="";
@@ -119,6 +120,7 @@ public class OrderDao {
 	}
 	
 	public Order retrieveOrderById(long id) throws SQLException {
+		if(id<0) throw new SQLException();
 		Order ordine=null;
 		ArrayList<ProductOrder> prodotti=new ArrayList<ProductOrder>();
 		ProductDAO productdao=new ProductDAO();
@@ -146,7 +148,7 @@ public class OrderDao {
 				if(ordine.getStato().equalsIgnoreCase("Consegnato"))
 					ordine.setDataArrivo(rs.getTimestamp("dataArrivo"));
 				else
-					ordine.setDataArrivo(rs.getTimestamp(null));
+					ordine.setDataArrivo(null);
 				ordine.setTotale(rs.getFloat("totale"));
 				ordine.setUtente(userdao.doRetrieveById(rs.getLong("idUtente")));
 				
@@ -182,6 +184,7 @@ public class OrderDao {
 	
 	
 	public ArrayList<Order> retrieveOrdersByMail(String email) throws SQLException{
+		if(email==null||email=="") throw new SQLException();
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		Connection connection2 = null;
