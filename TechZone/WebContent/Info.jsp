@@ -1,27 +1,136 @@
+<!DOCTYPE html>
 <html>
-	<head>
-	<title>Info e contatti</title>
-	<link rel="stylesheet" href="./css/about.css"> <link rel="icon" href="./imgs/logo_vinyl.png">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	</head>
-	
-	<body>
-		<jsp:include page="/Header.jsp"/>
+    <head>
+        <title>Info e contatti</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Boostrap Core CSS-->
+        <link rel="stylesheet" href="css/bootstrap.min.css"> 
+        
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="css/main.css">
+        
+
+        <!-- Google fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open%20Sans:400,700,600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>        
+    </head>
+    
+    <body>
+    
+	<jsp:include page="/Header.jsp"/>
 		<br><br>
-		<h1 class="int">Sede</h1>
 		
-		<p class="pp"><i>UNISA, edificio F3/F2<br> Fisciano (SA)</i> <br> Italia</p> 
-	<br>
+	<header class="intro">
+    </header>
 		
-		<h2 class="int">Contatti</h2>
-		<p class="pp">Festa Gerardo: <i> g.festa22@studenti.unisa.it</i> <br> Astorino Gianluca: <i>g.astorino@studenti.unisa.it</i> <br> Federico Carmine: <i>c.federico14@studenti.unisa.it</i><br> Medaglia Emanuele: <i>e.medaglia@studenti.unisa.it</i></p> 
-		<br>
-		<br>
-		<br>
-		<br>
-		 <jsp:include page="/Footer.jsp"/>
-	</body>
-	
-</html>
+      
+    <div class="container">
+      <div class="row padding-inner"> 
+             
+             <!-- Column1 -->
+             <div class="col-md-6 col-sm-12">
+             
+                   <div class="thumbnail">
+                  <h3> Sede</h3>
+                  <br>
+                  <p><span class="text">UNISA</span>, edificio F3/F2</p>
+                  <p>Fisciano(SA)</p>
+                  <p>Italia</p>
+                  <img src="img/unisainform.jpg" class="img-about">
+				   </div>
+             </div>
+             
+             <!-- /column1 -->
+              
+             <!-- Column2 -->
+             <div class="col-md-6 col-sm-12">
+             <img src="img/unisa-salerno.jpg" class="img-about">
+             </div>
+             <!-- /column2 -->
+
+                   
+       </div><!-- /row -->
+    </div><!-- /container -->
+      
+      
+      
+    <!-- Team -->
+     <div class="container team-top">
+        <div class="border"></div>
+
+    
+        <h3> Contatti</h3>
+        <div class="row">
+
+            <!-- Team Members -->
+            <div class="col-md-4 col-sm-4 img-thumbnail-photo-top">
+            	<div class="thumbnail">
+            
+                        <div class="caption">
+                            <h3 class="our-team-names">Gerardo Festa<br>
+                               
+                            </h3>
+                            <p>g.festa22@studenti.unisa.it</p>
+                        </div>
+                 </div>
+                
+            </div>
+             <div class="col-md-4 col-sm-4 img-thumbnail-photo-top">
+             	<div class="thumbnail">
+            
+                        <div class="caption">
+                            <h3 class="our-team-names">Gianluca Astorino<br>
+                               
+                            </h3>
+                            <p>g.astorino@studenti.unisa.it</p>
+                        </div>
+                   </div>
+                
+            </div>
+            <div class="col-md-4 col-sm-4 img-thumbnail-photo-top">
+            	<div class="thumbnail">
+             	
+            
+                        <div class="caption">
+                            <h3 class="our-team-names">Carmine Federico<br>
+                               
+                            </h3>
+                            <p>c.federico14@studenti.unisa.it</p>
+                        </div>
+                  </div>
+                
+            </div>
+            <div class="col-md-4 col-sm-4 img-thumbnail-photo-top">
+            	<div class="thumbnail">
+            
+                        <div class="caption">
+                            <h3 class="our-team-names">Emanuele Medaglia<br>
+                               
+                            </h3>
+                            <p>e.medaglia@studenti.unisa.it</p>
+                        </div>
+                </div>
+            </div>
+            
+     
+        </div>
+        <!-- /row -->
+     </div>
+     <!-- /container -->
+
+	<br><br><br>
+         
+         <jsp:include page="/Footer.jsp"/>
+         
+     <script src="js/jquery-1.11.0.js"></script>
+
+	 <script src="js/bootstrap.min.js"></script>
+
+     <script src="js/smoothscroll.js"></script>
+
+
+    </body>
+    </html>

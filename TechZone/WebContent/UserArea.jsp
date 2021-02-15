@@ -5,7 +5,12 @@
 <% 
 	
 	if(session.getAttribute("utente")==null){
-		System.out.println("USER AREA HA TROVATO USER VUOTO");
+		
+		%>
+		
+          <p>USER AREA HA TROVATO USER VUOTO</p>
+          
+          <% 
 		response.sendRedirect("./Login.jsp");
 	}
 	else{
@@ -16,54 +21,145 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-	<link rel="icon" href="./imgs/logo_vinyl.png">
-		<meta charset="ISO-8859-1">
-		<title>User Area-TechZone</title>
-		<link rel="stylesheet" href="./css/userarea.css">
-	<style>
-		span{
-			display:none;
-			color:red
-		}
-	</style>
-	</head>
-	<body>
-	<script src="./scripts/showforms.js"></script>
-	<script src="./scripts/orderfilter.js"></script>
-	<script src="./scripts/UserAreaValidator.js"></script>
+    <head>
+        <title>Area utente</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Boostrap Core CSS-->
+        <link rel="stylesheet" href="css/bootstrap.min.css"> 
+        
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="css/main.css">
+        
+
+        <!-- Google fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open%20Sans:400,700,600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>        
+    </head>
+    <body>
+    
 	<jsp:include page="/Header.jsp"/>
-	<%if(session.getAttribute("alertMsg")!=null){%>
+		<br><br>
+		
+		<%if(session.getAttribute("alertMsg")!=null){%>
 		<h3><font color="red"><%=session.getAttribute("alertMsg")%></font></h3> 
 		<%session.setAttribute("alertMsg",""); 
 		session.setAttribute("redirect","UserArea.jsp");%><br>
 	<%}%>
-	<div id="informazioni" class="box">
-			<h2 align="left">Le tue informazioni</h2>
-			<div id="info">
-			<br><b>Nome:</b> <%=utente.getNome() %>
-			<br><b>Cognome:</b> <%=utente.getCognome() %>
-			<br><b>Telefono:</b> <%=utente.getTelefono() %>
-			<br><b>Email:</b> <%=utente.getEmail() %>
-			
-			</div>
-			<br>
-			</div>
-		<hr>
+
+	<div class="container">
+      <div class="row padding-inner"> 
+             
+             <!-- Column1 -->
+             <div class="col-md-6 col-sm-12">
+             	
+                  
+                  <p class="block">Le tue informazioni</p>
+                  
+                  <div class="thumbnail">
+                  
+                  <p><b>Nome:</b> <%=utente.getNome() %></p>
+				  <p><b>Cognome:</b> <%=utente.getCognome() %></p>
+				  <p><b>Telefono:</b> <%=utente.getTelefono() %></p>
+				  <p><b>Email:</b> <%=utente.getEmail() %></p>    
+                 
+            	 </div>
+            </div>
+            
+            
+            <div class="col-md-6 col-sm-12">
+            
+            <p class="block">I tuoi ordini</p>
+            <div class="thumbnail">
+            
+            
+	
+	<% if(session.getAttribute("ordini")==null){%>
 		
-		<hr>
-		  
-				
-				
-				<%	
-				
+		<a href="userordersearchcontrol"><button class="button">Mostra ordini</button></a>
+		
+		
+	<% 	}
+		else{
+			ArrayList<Order> orders = (ArrayList<Order>) session.getAttribute("ordini");
+		    if(orders.size()==0){%>
+		    
+		    <p> Non ci sono ordini </p>
+		    	
+		<%  } else {
+			
+			for(Order o : orders){
+		
+		%>
+		
+				 <p><b>Numero dell'ordine:</b> <%=o.getNumeroOrdine() %></p>
+				  <p><b>Data di invio:</b> <%=o.getDataInvio() %></p>
+				  <p><b>Stato:</b> <%=o.getStato() %></p>
+				  <br>
+				  <a href="userorderviewcontrol?idOrd=<%=o.getNumeroOrdine()%>"><button class="button">Mostra dettagli</button></a>
+				  <br><br>
+		
+		<%
+		
 			}
+			
+		}
+		    
+		
 			%>
-		</div> 
 		
 	
-	<br><br>
-	<jsp:include page="/Footer.jsp"/>
-	</body>	
+             
+            
+ 		</div>
+ 		
+            
+    </div>
+    
+    <%
+    	}
+	}
 
-</html>
+	session.setAttribute("ordini", null);
+	
+		%>
+		
+		
+   </div>
+   
+   
+	<br><br>
+	<br><br><br><br><br><br>
+	<jsp:include page="/Footer.jsp"/>
+	
+	
+	</body>	
+	
+	 
+
+</html>	
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

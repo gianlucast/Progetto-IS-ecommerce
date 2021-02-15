@@ -10,85 +10,51 @@
 	Product product = (Product) request.getAttribute("prodotto");
 %>
 
+
+
 <!DOCTYPE html>
 <html>
+
 <%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.techzone.control.*,it.techzone.model.beans.*"%>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="icon" href="./imgs/logo_vinyl.png">
-	<link rel="stylesheet" href="./css/cat.css">
-	<link rel="stylesheet" href="./css/slideshow.css">
-	<title>TechZone</title>
-</head>
+    <head>
+        <title>TechZone-HomePage</title>
 
-<body onload="showSlides(1)">
-	
-	
-	<div id="pagecontent">
-	<jsp:include page="/Header.jsp"/>
-	<!-- SLIDESHOW START -->
-			<script src="./scripts/slideshow.js"></script>
-		
-		    <div class="slideshow-container">
-		
-		  <!-- Full-width images with number and caption text -->
-		  <div class="mySlides fade">
-		    <div class="numbertext">1 / 3</div>
-		    <div class="immg1"><img src="./img/ps5.jpeg" style="width:80%"></div>
-		    <div class="text"></div>
-		  </div>
-		
-		  <div class="mySlides fade">
-		    <div class="numbertext">2 / 3</div>
-		    <div class="immg2"><img src="./img/iphone.jpeg" style="width:60%"></div>
-		    <div class="text"></div>
-		  </div>
-		  
-		  <div class="mySlides fade">
-		    <div class="numbertext">3 / 3</div>
-		    <div class="immg3"><img src="./img/tablet.jpeg" style="width:68%"></div>
-		    <div class="text"></div>
-		  </div>
-		
-		<!-- Next and previous buttons -->
-		  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-		  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-		
-		</div>
-		<br>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Boostrap Core CSS-->
+        <link rel="stylesheet" href="css/bootstrap.min.css"> 
+        
+        <link rel="icon" href="./imgs/logo_techzone.png">
+        <link rel="stylesheet" href="./css/main.css">
+        
+        
 
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div>
-	<!-- SLIDESHOW END -->
-	
-	<jsp:include page="/lateral_menu.jsp"/>
-		<div id="contentwrap">
-		<%if(session.getAttribute("alertMsg")!=null){%>
+        <!-- Google fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open%20Sans:400,700,600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>        
+    </head>
+    
+    <body>
+    <jsp:include page="/Header.jsp"/> 
+    
+     <!-- Portfolio -->
+
+    <div class="container port-top">
+    	<%if(session.getAttribute("alertMsg")!=null){%>
 		<h3><font color="red"><%=session.getAttribute("alertMsg")%></font></h3> 
 		<%session.setAttribute("alertMsg",""); 
 		session.setAttribute("redirect",null);
 		%>
-	<%}%>
-			<table>
-			<tr>
-			<div class="productbox">
-					<!--  <th>Code <a href="product?sort=code">Sort</a></th>
-					<th>Name <a href="product?sort=name">Sort</a></th>
-					<th>Description <a href="product?sort=description">Sort</a></th>
-					<th>Action</th>
-					<th>Picture</th>-->
-				
+		<%}%>
+    
+		<div class="row">
+			<div class="col-md-4 col-sm-6">
+				<div class="portfolio-item">
 				<%
-					if(products==null) %>Products null
-				<%  if(products.size()==0)  %>Products size 0
+					if(products==null) %> Products null
+				<%  if(products.size()==0)  %> Products size 0
 				<%
 					if (products != null && products.size() != 0) {
 						Iterator<?> it = products.iterator();
@@ -97,22 +63,26 @@
 							if(bean.getQuantita()>0){
 				%>
 				
+					<div class="portfolio-image">
+						<div class="foto"><%if(bean.getImmagine()!=null){ %>
+						<img src="imgControl?id=<%=bean.getCodice()%>" style="width:250px">
+						<% }else{%>
+						<img src="./imgs/no_disc.png" style="width:250px">
+						<%} %>
+						</div>	
+						
+					</div>
 				
-					<!-- <td><%=bean.getCodice()%></td>-->
+			        <div class="portfolio-info-fade">
+			        <ul>
+                        
+           			<li class="name"><%=bean.getNomeProd()%></li>
+					<li class="category"><%= bean.getCategoria()%></li>
+					<br><br>
+				    <li class="acquista"><a href="productviewcontrol?idProd=<%=bean.getCodice()%>" class="portfolio-btn">ACQUISTA</a></li>
 					
-					<!--<td><%=bean.getDescrizione()%></td>-->
-					<td>
-					<div class="cont">
-					<div class="foto"><%if(bean.getImmagine()!=null){ %><img src="imgControl?id=<%=bean.getCodice()%>" style="width:100px"><% }else{%><img src="./imgs/no_disc.png" style="width:100px"><%} %></div>
-					<div class="name"><%=bean.getNomeProd()%></div>
-					<div class="category"><%= bean.getCategoria()%></div>
-				    <a href="productviewcontrol?idProd=<%=bean.getCodice()%>"><button class="button">Acquista</button></a></td>
-					</div>
-					</div>
 						<%request.setAttribute("imgbean",bean);%>
 					
-					
-				
 				
 				<%
 							}	
@@ -126,12 +96,50 @@
 				<%
 					}
 				%>
-				</tr>
-			</table>
-			</div>
-		<br><br>
-	<jsp:include page="/Footer.jsp"/>
+				
+					</ul>
+					</div>
+					
+					
+					 
+					
+				</div>	
+				</div>
+		    </div>
 	</div>
 	
-</body>
-</html>
+	<br><br><br>
+		    
+	<jsp:include page="/Footer.jsp"/>	
+	 <!-- jQuery Version 1.11.0 -->
+     <script src="js/jquery-1.11.0.js"></script>
+     
+     <!-- Boostrap JS -->
+	 <script src="js/bootstrap.min.js"></script>
+     
+     <!-- Smooth scroll JS -->
+     <script src="js/smoothscroll.js"></script>
+	
+	
+	   
+	 </body>
+    </html>	    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

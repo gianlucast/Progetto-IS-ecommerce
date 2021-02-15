@@ -55,6 +55,16 @@
   	<servlet-class>it.techzone.control.ProductCatalogueControl</servlet-class>
   </servlet> 
   
+  <servlet>
+    <servlet-name>OrderPlaceControl</servlet-name>
+    <servlet-class>it.techzone.control.OrderPlaceControl</servlet-class>
+  </servlet>
+  
+   <servlet>
+    <servlet-name>UserOrderSearchControl</servlet-name>
+    <servlet-class>it.techzone.control.UserOrderSearchControl</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
     <servlet-name>LoginControl</servlet-name>
     <url-pattern>/logincontrol</url-pattern>
@@ -99,4 +109,16 @@
     <servlet-name>ProductCatalogueControl</servlet-name>
     <url-pattern>/productcataloguecontrol</url-pattern>
   </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>OrderPlaceControl</servlet-name>
+    <url-pattern>/orderplacecontrol</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+    <servlet-name>UserOrderSearchControl</servlet-name>
+    <url-pattern>/userordersearchcontrol</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>

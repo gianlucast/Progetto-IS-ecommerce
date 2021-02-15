@@ -1,17 +1,30 @@
 <%@ page language="java" %>
     <%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.techzone.control.*,it.techzone.model.beans.*"%>
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
-	<title>Carrello-TechZone</title>
-	<link rel="icon" href="">
-	<link rel="stylesheet" href="./css/cartview.css">
-</head>
+	 <head>
+        <title>Carrello-TechZone</title>
+
+         <meta charset="ISO-8859-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Boostrap Core CSS-->
+        <link rel="stylesheet" href="css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <link rel="icon" href="./imgs/logo_techzone.png">
+        <link rel="stylesheet" href="./css/main.css">
+     
+        <link href='http://fonts.googleapis.com/css?family=Open%20Sans:400,700,600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>        
+    </head>
+
 <body>
-	<script src="./scripts/cart_scripts.js"></script>
-	<script src="./scripts/showforms.js"></script>
-	<jsp:include page="Header.jsp"/>
+	
+	<jsp:include page="/Header.jsp"/>
 	<% HttpSession sessione=request.getSession(); 
 		if(sessione.getAttribute("cart")==null) sessione.setAttribute("cart", new Cart());
 		Cart cart=(Cart)sessione.getAttribute("cart");
@@ -49,20 +62,30 @@
 		%>
 		
 		
-	  	<form action="order" method="post" name="placeorder">
-		<input type="hidden" name="action" value="place">
+	  	<form action="orderplacecontrol" method="post" name="placeorder">
 		<input type="submit" value="Checkout"><br><br><br><br>
 		</form>	
 				
 		<%}else{ %>
 			
-		<br><br><a href="order?action=place"><input type="button" value="CheckOut"></a>
+		<br><br><a href="orderplacecontrol"><input type="button" class="button" value="CheckOut"></a>
 		<br><br>
 		
 		<%}
 	}	
 	%>
-	
+	<br><br><br>
 	<jsp:include page="Footer.jsp"/>
+	
+	<script src="js/jquery-1.11.0.js"></script>
+     
+     <!-- Boostrap JS -->
+	 <script src="js/bootstrap.min.js"></script>
+     
+     <!-- Smooth scroll JS -->
+     <script src="js/smoothscroll.js"></script>
+	
+	
+	
 </body>
 </html>

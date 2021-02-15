@@ -1,6 +1,14 @@
-#nav		{width:100%;background:#9c9c9c;color:#000;}
+#nav		{
+	width: 100%;
+	background: #bec3c7;
+	background-image:url(../img/pattern.jpg);
+	
+
+
+}
 		#nav a		{color:#fff; padding:15px 20px;display:inline-block; text-decoration:none; text-transform:uppercase;font-family:oswald;}
 		#nav a:hover{background:#333;}
+		
 		
 		.footer {
 		  left: 0;

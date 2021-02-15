@@ -25,11 +25,7 @@
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
-				<div class="d-flex justify-content-center">
-					<div class="brand_logo_container">
-					   <img src="./img/logo_techzone.png" style="width:100%" class="brand_logo" alt="Logo">
-					</div>
-				</div>
+				<br><br>
 				<div class="d-flex justify-content-center form_container">
 				<%if(session.getAttribute("alertMsg")!=null){%>
 						<h3><div class="alertMsg"><%=session.getAttribute("alertMsg")%></div></p></h3> 
@@ -37,26 +33,22 @@
 						<%}%><br>
 						
 					<form action="logincontrol" method="get">
+					
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<span class="input-group-text"><i class="fas fa-user "></i></span>
 							</div>
-							<label for="mail"><input type="text" name="email" id="mail" class="form-control input_user" value="" placeholder="inserisci la mail" required></label>
+							<input type="text" name="email" id="mail" height="20px" class="form-control input_user" value="" placeholder="inserisci la mail" required>
 						</div>
 						
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<label for="password"><input type="password" name="password" id="password" class="form-control input_pass" value="" placeholder="inserisci la password" required></label>
+							<input type="password" name="password" id="password" class="form-control input_pass" value="" placeholder="inserisci la password" required>
 					    	</div>			
 		
-						<div class="form-group">
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">Remember me</label>
-							</div>
-						</div>
+						
 					<div class="d-flex justify-content-center mt-3 login_container">
 				 	<button type="submit" class="btn login_btn">Login</button>
 				   </div>
@@ -74,6 +66,10 @@
 			</div>
 		</div>
 	</div>
+	
+	<br><br><br>
+	<br>
+	
 	<jsp:include page="/Footer.jsp"/>
 </body>
 </html>

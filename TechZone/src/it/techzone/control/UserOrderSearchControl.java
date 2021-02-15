@@ -23,7 +23,7 @@ public class UserOrderSearchControl extends HttpServlet{
 					
 						ArrayList<Order> ordini=om.searchOrders(u.getEmail());
 						session.setAttribute("ordini",ordini);
-						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/OrdersPage.jsp");
+						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/UserArea.jsp");
 						dispatcher.forward(request, response);
 					}
 				else {

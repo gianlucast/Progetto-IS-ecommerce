@@ -26,7 +26,7 @@
 	
 	
   
-  
+<div class="container h-100">
 	   <form action="user" method="post" name="registrazione" onSubmit="return ValidateSignup()">
 	    <div class="form-row">
     <div class="form-group col-md-5">
@@ -101,11 +101,13 @@
   </div>
 
   
-  <button type="submit" class="btn btn-primary">Sign in</button>
+  <button type="submit" class="btn-primary">Sign in</button>
 		<label>Hai già un account? Effettua il <a href="Login.jsp">Login</a></label>
 		
 		</form>
 		<br><br><br>
+</div>		
+
 		<jsp:include page="/Footer.jsp"/>
 	</body>
 </html>
