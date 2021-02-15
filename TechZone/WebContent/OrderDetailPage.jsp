@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.techzone.control.*,it.techzone.model.beans.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" import="java.util.*,it.techzone.control.*,it.techzone.model.beans.*"%>
     
 <!DOCTYPE html>
 <html>
 
 <% 
-	if(request.getAttribute("ordine")==null) response.sendRedirect("UserArea.jsp");
+	if(session.getAttribute("ordine")==null) response.sendRedirect("UserArea.jsp");
 	else{
 		Order order = (Order)session.getAttribute("ordine");
 %>

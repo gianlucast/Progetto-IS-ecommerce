@@ -129,7 +129,7 @@ public class ProductDAOTest extends TestCase {
 				Product retrProd, oracleProd;
 				for(int i=0;i<retrieved.size();i++) {
 					retrProd=retrieved.get(i);
-					oracleProd=retrieved.get(i);
+					oracleProd=oracolo.get(i);
 					assertEquals(retrProd.getCodice(), oracleProd.getCodice());
 					assertEquals(retrProd.getDescrizione(), oracleProd.getDescrizione());
 					assertEquals(retrProd.getNomeProd(), oracleProd.getNomeProd());
@@ -166,7 +166,7 @@ public class ProductDAOTest extends TestCase {
 				Product retrProd, oracleProd;
 				for(int i=0;i<retrieved.size();i++) {
 					retrProd=retrieved.get(i);
-					oracleProd=retrieved.get(i);
+					oracleProd=oracolo.get(i);
 					assertEquals(retrProd.getCodice(), oracleProd.getCodice());
 					assertEquals(retrProd.getDescrizione(), oracleProd.getDescrizione());
 					assertEquals(retrProd.getNomeProd(), oracleProd.getNomeProd());
@@ -227,7 +227,7 @@ public class ProductDAOTest extends TestCase {
 				Product retrProd, oracleProd;
 				for(int i=0;i<retrieved.size();i++) {
 					retrProd=retrieved.get(i);
-					oracleProd=retrieved.get(i);
+					oracleProd=oracolo.get(i);
 					assertEquals(retrProd.getCodice(), oracleProd.getCodice());
 					assertEquals(retrProd.getDescrizione(), oracleProd.getDescrizione());
 					assertEquals(retrProd.getNomeProd(), oracleProd.getNomeProd());

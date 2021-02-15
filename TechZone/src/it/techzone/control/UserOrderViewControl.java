@@ -32,7 +32,11 @@ public class UserOrderViewControl extends HttpServlet{
 					
 						UtenteRegistrato u=(UtenteRegistrato)session.getAttribute("utente");
 						ArrayList<Order> ordini=om.searchOrders(u.getEmail());
-						if(!ordini.contains(ordine)) {
+						boolean flag=false;
+						for(int i=0;i<ordini.size();i++) {
+							if(ordini.get(i).getNumeroOrdine()==ordine.getNumeroOrdine()) flag=true;
+						}
+						if(!flag) {
 							session.setAttribute("alertMsg", "Richiesta non valida");
 							response.sendRedirect("HomePage.jsp");
 						}else {
