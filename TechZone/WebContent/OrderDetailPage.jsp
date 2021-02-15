@@ -33,37 +33,36 @@
 
 	<div class="section padding-inner">
 	    	<div class="container">
-				<div class="row">
-					
-					
-					
-                    <!-- Project Info Column -->
-					<div class="portfolio-item-description col-sm-6">
-					
-					<p><b>Numero dell'ordine:</b> <%=order.getNumeroOrdine() %></p>
-                    <p><b>Stato:</b> <%=order.getStato() %></p>	
-    				<p><b>Prezzo totale:</b> <%=order.getTotale() %></p>
-    				
-				<%  for(int i=0; i<order.getProdotti().size(); i++){ %>
-		
-				 	<p><b>Nome:</b> <%=order.getProdotti().get(i).getProdotto().getNomeProd() %></p>
-				 	<p><b>Tipo:</b> <%=order.getProdotti().get(i).getProdotto().getTipo() %></p>
-				 	<p><b>Categoria:</b> <%=order.getProdotti().get(i).getProdotto().getCategoria() %></p>
-				 	<p><b>Quantita':</b> <%=order.getProdotti().get(i).getProdotto().getQuantita() %></p>
-				 	<p><b>Costo:</b> <%=order.getProdotti().get(i).getProdotto().getCosto() %></p>
-				 	
-				 	</div>
-				 	
-				 	<div class="col-sm-6">
-						<div class="portfolio-item">
-							<div class="portfolio-image">
-								<a href="#"><img src="imgControl?id=<%=order.getProdotti().get(i).getProdotto().getImmagine() %>" alt="Project Name"></a>
-							</div>
-						</div>
-					</div>
-		
-		
-				<%
+	    			<font size="5"><b>Numero dell'ordine:</b> <%=order.getNumeroOrdine() %></font><br/>
+                    <font size="5"><b>Stato:</b> <%=order.getStato() %></font><br/>
+    				<font size="5"><b>Prezzo totale:</b> <%=order.getTotale() %></font><br/>
+	    	<br><br><br>
+				<!--  <div class="row"> -->
+				
+				<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Nome</th>
+      <th scope="col">Quantità</th>
+      <th scope="col">Costo</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%  for(int i=0; i<order.getProdotti().size(); i++){ %>
+    <div class="row"> 
+      <th scope="row">1</th>
+      <td><%=order.getProdotti().get(i).getProdotto().getNomeProd() %></td>
+      <td><%=order.getProdotti().get(i).getQuantita() %></td>
+      <td><%=order.getProdotti().get(i).getCosto() %></td>
+      <td><a href="#"><img src="imgControl?id=<%=order.getProdotti().get(i).getProdotto().getCodice() %>" alt="Project Name" width=100px height=100px></a></td>
+    </div>
+    
+    
+  </tbody>
+</table>
+
+		<%
 		
 			}
 			
@@ -82,6 +81,10 @@
               
                 
         </div>
+					
+					
+					
+           
                 
                 <br><br><br>
                  <script src="js/jquery-1.11.0.js"></script>
