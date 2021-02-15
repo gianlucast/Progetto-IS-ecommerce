@@ -17,7 +17,7 @@ public class ProductDAO {
 	public synchronized Product retrieveProductById(long id) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
-		String selectSQL = "SELECT * FROM " +PRODUCT_TABLE+ " WHERE codiceProdotto = ? AND eliminato=0";
+		String selectSQL = "SELECT * FROM " +PRODUCT_TABLE+ " WHERE codiceProdotto = ?";
 		Product p=null;
 		try {
 			connection = DriverManagerConnectionPool.getConnection();
