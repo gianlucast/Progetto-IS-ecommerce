@@ -162,7 +162,7 @@ public void getOrderById() {
 				
 				
 				assertEquals(c.getProdotti(), oracolo.getProdotti());
-				assertEquals(c.getStato(),"in preparazione");
+				assertEquals(c.getStato(),oracolo.getStato());
 				assertEquals(c.getTotale(),oracolo.getTotale());
 				assertEquals(c.getUtente().getId(),oracolo.getUtente().getId());
 				assertEquals(c.getNumeroOrdine(),oracolo.getNumeroOrdine());
@@ -199,14 +199,11 @@ public void getOrderByIdTestException() {
 }
 public void checkStatusTest() {
 	boolean flag=false;
-	Order oracolo1= od.retrieveOrderById(1);
-	Order oracolo2=od.retrieveOrderById(2);
-	Order oracolo3=od.retrieveOrderById(3);
-	Order oracolo4=od.retrieveOrderById(4);
-	Order oracolo5=od.retrieveOrderById(5);
-	Order oracolo6=od.retrieveOrderById(6);
-	//ogni ordine ha uno stato differente per controllare i diversi casi di test
+	
+	
 	try {
+		//ogni ordine ha uno stato differente per controllare i diversi casi di test
+			
 			boolean res;
 			res=om.checkStatus(1, "Spedito");
 			assertTrue(res);
@@ -239,4 +236,46 @@ public void checkStatusTest() {
 	}
 }
 
+public void changeStatusTest() {
+	Order oracolo;
+	boolean flag=false;
+	try {
+		boolean res;
+		oracolo=new Order();
+		oracolo.setNumeroOrdine(3L);
+		oracolo.setDataArrivo(null);
+		oracolo.setDataInvio(new Timestamp(1613086483317L));
+		oracolo.setStato("Spedito"); //questo sarà lo stato dopo averlo cambiato
+		oracolo.setTotale(398.99F);
+		oracolo.setUtente(ud.doRetrieveByMail("g.simonini@gmail.com"));
+		ArrayList<ProductOrder> prodottiOrdinati=new ArrayList<ProductOrder>();
+		prodottiOrdinati.add(new ProductOrder(pd.retrieveProductById(1),398.99F,1));
+		oracolo.setProdotti(prodottiOrdinati);
+		
+		res=om.changeStatus(oracolo.getNumeroOrdine(), "butta il pacco da un ponte");
+		assertFalse(res);
+		
+		res=om.changeStatus(oracolo.getNumeroOrdine(), "Spedito");
+		assertTrue(res);
+		
+		Order c = od.retrieveOrderById(3L);
+		
+		assertEquals(c.getProdotti(), oracolo.getProdotti());
+		assertEquals(c.getStato(),oracolo.getStato());
+		assertEquals(c.getTotale(),oracolo.getTotale());
+		assertEquals(c.getUtente().getId(),oracolo.getUtente().getId());
+		assertEquals(c.getNumeroOrdine(),oracolo.getNumeroOrdine());
+		
+		
+		flag=true;
+		
+	}
+	catch(Exception e) {
+		fail("changeStatusTest() not passed!");
+		
+	}
+	finally {
+		System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+	}
+}
 }
