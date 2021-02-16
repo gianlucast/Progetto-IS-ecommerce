@@ -3,6 +3,8 @@ package it.techzone.model.managers;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import org.apache.commons.validator.routines.EmailValidator;
+
 import com.mysql.cj.xdevapi.Result;
 
 import it.techzone.model.beans.Cart;
@@ -18,10 +20,11 @@ import it.techzone.model.dao.OrderDao;
 public class OrderManager {
 	
 	private OrderDao orderdao;
+	private EmailValidator emailVal=EmailValidator.getInstance();
 
 	
 	public boolean placeOrder(UtenteRegistrato user,  Cart cart) throws SQLException{
-		
+		if(user==null||cart==null||cart.getProductList().size()==0) return false;
 		orderdao = new OrderDao();
 		ArrayList<ProductOrder> ordinati= new ArrayList<ProductOrder>();
 		    for(ProductCart c : cart.getProductList()) ordinati.add(new ProductOrder(c));
@@ -36,7 +39,7 @@ public class OrderManager {
 	}
 	
 	public ArrayList<Order> searchOrders(String email) throws SQLException{
-		
+		if(email==""||email==null||!emailVal.isValid(email)) return null;
 		orderdao = new OrderDao();
 		return orderdao.retrieveOrdersByMail(email);
 		
@@ -50,10 +53,10 @@ public class OrderManager {
 	}
 	
 	public boolean checkStatus(long idOrder, String status) throws SQLException{
-		
 		orderdao = new OrderDao();
 		Order order = orderdao.retrieveOrderById(idOrder);
-		
+		if(order==null) return false;
+		if(status==null||status=="") return false;
 		if (order.getStato().equalsIgnoreCase("In preparazione")) {
 				   if(status.equalsIgnoreCase("Spedito")) 
 				      return true;
