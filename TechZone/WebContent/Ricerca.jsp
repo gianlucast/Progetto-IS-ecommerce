@@ -18,8 +18,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="icon" href="./imgs/logo_vinyl.png">
-	<link rel="stylesheet" href="./css/cat.css">
+	<link rel="icon" href="./img/logo_techzone.png">
 	<link rel="stylesheet" href="./css/slideshow.css">
 	<title>Techzone</title>
 </head>
@@ -33,7 +32,6 @@
 	
 
 	
-	<jsp:include page="/lateral_menu.jsp"/>
 		<div id="contentwrap">
 		<h3>Risultati della ricerca: </h3>
 		<%if(session.getAttribute("alertMsg")!=null){%>

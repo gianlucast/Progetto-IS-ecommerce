@@ -51,17 +51,17 @@
   <tbody>
   <%  for(int i=0; i<order.getProdotti().size(); i++){ %>
     <div class="row"> 
-      <th scope="row">1</th>
-      <td><%=order.getProdotti().get(i).getProdotto().getNomeProd() %></td>
-      <td><%=order.getProdotti().get(i).getQuantita() %></td>
-      <td><%=order.getProdotti().get(i).getCosto() %></td>
-      <td><a href="#"><img src="imgControl?id=<%=order.getProdotti().get(i).getProdotto().getCodice() %>" alt="Project Name" width=100px height=100px></a></td>
+   	 <tr>
+     	 <th scope="row"><%= i+1 %></th>
+     	 <td><%=order.getProdotti().get(i).getProdotto().getNomeProd() %></td>
+    	  <td><%=order.getProdotti().get(i).getQuantita() %></td>
+     	 <td><%=order.getProdotti().get(i).getCosto() %></td>
+   	   <td><a href="productviewcontrol?idProd=<%=order.getProdotti().get(i).getProdotto().getCodice()%>"><img src="imgControl?id=<%=order.getProdotti().get(i).getProdotto().getCodice() %>" alt="Project Name" width=100px height=100px></a></td>
+     </tr>
     </div>
     
     
-  </tbody>
-</table>
-
+ 
 		<%
 		
 			}
@@ -71,6 +71,8 @@
 		
 			%>	
 					
+					 </tbody>
+</table>
 					
 					
 					

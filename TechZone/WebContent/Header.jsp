@@ -22,8 +22,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 		
-				<li><form action="search" method="get" class="search"  onsubmit="return validateSearch()">
-	<!-- DA MODIFICARE -->		<input type="text" name="for" value="nameandartist" hidden>
+				<li><form action="productcataloguecontrol" method="get" class="search"  onsubmit="return validateSearch()">
+	<!-- DA MODIFICARE -->		<input type="text" name="by" value="nome" hidden>
 						<div id="contenitore_search">
 							<input type="text" name="q" list="ricerca-datalist" placeholder="Ricerca" onkeyup="ricerca(this.value)" id="s">
 							<button type="submit" id="bottone_ricerca"><i class="fa fa-search" aria-hidden="true"></i></button>
