@@ -143,8 +143,8 @@ public class ProductDAO {
 		try (Connection con = DriverManagerConnectionPool.getConnection()) {
 			if(nameProd==null||nameProd=="") throw new SQLException();
 			PreparedStatement ps = con.prepareStatement(
-					"SELECT * FROM "+PRODUCT_TABLE+" WHERE MATCH(nomeProd) AGAINST(? IN BOOLEAN MODE)");
-			ps.setString(1, nameProd);
+					"SELECT * FROM "+PRODUCT_TABLE+" WHERE nomeProd LIKE ? ");
+			ps.setString(1, "%"+nameProd+"%");
 			ArrayList<Product> prodotti = new ArrayList<Product>();
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
