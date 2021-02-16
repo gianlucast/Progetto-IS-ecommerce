@@ -50,8 +50,7 @@
 		<%}%>
     
 		<div class="row">
-			<div class="col-md-4 col-sm-6">
-				<div class="portfolio-item">
+				
 				<%
 					if(products==null) %> Products null
 				<%  if(products.size()==0)  %> Products size 0
@@ -61,15 +60,20 @@
 						while (it.hasNext()) {
 							Product bean = (Product) it.next();
 							if(bean.getQuantita()>0){
-				%>
+			%>
+			
+			<div class="col-md-4 col-sm-6">
+				
+				<div class="portfolio-item">
+				
 				
 					<div class="portfolio-image">
 						<div class="foto"><%if(bean.getImmagine()!=null){ %>
-						<img src="imgControl?id=<%=bean.getCodice()%>" style="width:250px">
+						<img src="imgControl?id=<%=bean.getCodice()%>" style="width:250px ; height:250px">
 						<% }else{%>
 						<img src="./imgs/no_disc.png" style="width:250px">
 						<%} %>
-						</div>	
+					</div>	
 						
 					</div>
 				
@@ -83,7 +87,18 @@
 					
 						<%request.setAttribute("imgbean",bean);%>
 					
+			
 				
+					</ul>
+					</div>
+					
+					
+					 
+					
+				</div>	
+				</div>
+				
+					
 				<%
 							}	
 						}
@@ -97,14 +112,6 @@
 					}
 				%>
 				
-					</ul>
-					</div>
-					
-					
-					 
-					
-				</div>	
-				</div>
 		    </div>
 	</div>
 	

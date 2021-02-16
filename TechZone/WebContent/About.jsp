@@ -61,35 +61,35 @@
             <!-- Team Members -->
             <div class="col-md-4 col-sm-4 img-thumbnail-photo-top">
                 <div class="thumbnail">
-                    <img src="img/gerardo.png" alt="Jane Doe"/>
+                    <img src="img/gerardo.png" alt="Jane Doe"/ style="width:250px; height:250px">
                         <div class="caption">
                             <h3 class="our-team-names">Gerardo Festa<br>
                                <small class="job-title">Back-end developer</small>
                             </h3>
-                            <p>...</p>
+                       
                         </div>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4 img-thumbnail-photo-top">
                 <div class="thumbnail">
-                    <img src="img/gianluca.png" alt="Jane Doe"/>
+                    <img src="img/gianluca.png" alt="Jane Doe"/ style="width:250px; height:250px">
                         <div class="caption">
                             <h3 class="our-team-names">Gianluca Astorino<br>
                                <small class="job-title">Front-end developer</small>
                             </h3>
-                            <p>...
+                           
                             </p>
                         </div>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4 img-thumbnail-photo-top"> 
                 <div class="thumbnail">
-                    <img src="img/carmine.png" alt="Jane Doe"/>
+                    <img src="img/carmine.png" alt="Jane Doe"/ style="width:250px; height:250px">
                         <div class="caption">
                             <h3 class="our-team-names">Carmine Federico<br>
                                <small class="job-title">Front-end developer</small>
                             </h3>
-                            <p>...
+                           
                         </div>
                 </div>
             </div>
@@ -101,12 +101,11 @@
            
             <div class="col-md-4 col-sm-4 img-thumbnail-photo-top"> 
                 <div class="thumbnail">
-                    <img src="img/emanuele.png" alt="Jane Doe"/>
+                    <img src="img/emanuele.png" alt="Jane Doe"/ style="width:250px; height:250px">
                         <div class="caption">
                             <h3 class="our-team-names">Emanuele Medaglia<br>
                                <small class="job-title">Back-end developer</small>
-                            </h3>
-                            <p>...
+                            </h3>           
                         </div>
                 </div>
             </div>
@@ -128,6 +127,8 @@
         <!-- /row -->
      </div>
      <!-- /container -->
+     
+   <br><br><br> 
 
          
          <jsp:include page="/Footer.jsp"/>
