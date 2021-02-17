@@ -20,7 +20,7 @@ public class UserManager {
 			return null;
 		}
 		String tel=""+telefono;
-		if(tel.length()!=10) {
+		if(tel.length()<8||tel.length()>12) {
 			return null;
 		}
 		userdao=new UserDAO();

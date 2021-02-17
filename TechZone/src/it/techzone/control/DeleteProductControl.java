@@ -16,12 +16,12 @@ public class DeleteProductControl extends HttpServlet {
 		HttpSession session= request.getSession();
 		try {
 			if(session.getAttribute("manager")!=null) {
-				Product prod= (Product) session.getAttribute("product");
+				long idProd= (long) request.getAttribute("idProd");
 			
 				
-				pm.deleteProduct(prod.getCodice());
+				pm.deleteProduct(idProd);
 				session.setAttribute("alertMsg","Prodotto rimosso con successo");
-				RequestDispatcher requestD = getServletContext().getRequestDispatcher("./ProductManagement.jsp");
+				RequestDispatcher requestD = getServletContext().getRequestDispatcher("./AdminMod.jsp");
 				requestD.forward(request, response);
 			}
 				
