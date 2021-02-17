@@ -80,6 +80,11 @@
     <servlet-class>it.techzone.control.ManagerOrderViewControl</servlet-class>
   </servlet>
   
+  <servlet>
+    <servlet-name>OrderStatusControl</servlet-name>
+    <servlet-class>it.techzone.control.OrderStatusControl</servlet-class>
+  </servlet>
+  
   
   <servlet-mapping>
     <servlet-name>LoginControl</servlet-name>
@@ -149,6 +154,11 @@
   <servlet-mapping>
     <servlet-name>ManagerOrderViewControl</servlet-name>
     <url-pattern>/managerorderviewcontrol</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>OrderStatusControl</servlet-name>
+    <url-pattern>/orderstatuscontrol</url-pattern>
   </servlet-mapping>
   
   

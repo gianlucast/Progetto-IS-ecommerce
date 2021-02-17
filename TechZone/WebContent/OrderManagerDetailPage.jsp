@@ -35,7 +35,8 @@
 	    	<div class="container">
 	    			<font size="5"><b>Numero dell'ordine:</b> <%=order.getNumeroOrdine() %></font><br/>
                     <font size="5"><b>Stato:</b> <%=order.getStato() %></font><br/> 
-                   	 <form action="orderstatuscontrol?orderId=<%= order.getNumeroOrdine() %>">
+                   	 <form action="orderstatuscontrol">
+                   	 	<input type="hidden" name="orderId" value="<%= order.getNumeroOrdine() %>">
                     	<select name="changeStatus">
                     		<option value="In Preparazione">In Preparazione</option>
                     		<option value="Spedito">Spedito</option>

@@ -31,7 +31,9 @@ public class ManagerOrderSearchIdControl extends HttpServlet{
 								session.setAttribute("alertMsg", "Ordine non trovato");
 								response.sendRedirect("OrdersPage.jsp");
 							}else {
-								session.setAttribute("ordine", o);
+								ArrayList<Order> array=new ArrayList<Order>();
+								array.add(o);
+								session.setAttribute("ordini", array);
 								RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/OrdersManagerPage.jsp");
 								dispatcher.forward(request, response);
 							}
