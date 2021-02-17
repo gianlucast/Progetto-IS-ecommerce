@@ -65,6 +65,22 @@
     <servlet-class>it.techzone.control.UserOrderSearchControl</servlet-class>
   </servlet>
   
+  <servlet>
+    <servlet-name>ManagerOrderSearchIdControl</servlet-name>
+    <servlet-class>it.techzone.control.ManagerOrderSearchIdControl</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>ManagerOrderSearchMailControl</servlet-name>
+    <servlet-class>it.techzone.control.ManagerOrderSearchMailControl</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>ManagerOrderViewControl</servlet-name>
+    <servlet-class>it.techzone.control.ManagerOrderViewControl</servlet-class>
+  </servlet>
+  
+  
   <servlet-mapping>
     <servlet-name>LoginControl</servlet-name>
     <url-pattern>/logincontrol</url-pattern>
@@ -115,9 +131,24 @@
     <url-pattern>/orderplacecontrol</url-pattern>
   </servlet-mapping>
   
-    <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>UserOrderSearchControl</servlet-name>
     <url-pattern>/userordersearchcontrol</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ManagerOrderSearchIdControl</servlet-name>
+    <url-pattern>/managerordersearchidcontrol</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ManagerOrderSearchMailControl</servlet-name>
+    <url-pattern>/managerordersearchmailcontrol</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ManagerOrderViewControl</servlet-name>
+    <url-pattern>/managerorderviewcontrol</url-pattern>
   </servlet-mapping>
   
   
