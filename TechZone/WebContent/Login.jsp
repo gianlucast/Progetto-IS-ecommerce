@@ -36,16 +36,18 @@
 					
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user "></i></span>
-							</div>
+								<span class="input-group-text"><i class="fas fa-user fa-lg"></i></span>
+							
 							<input type="text" name="email" id="mail" height="20px" class="form-control input_user" value="" placeholder="inserisci la mail" required>
+							</div>
 						</div>
 						
 						<div class="input-group mb-2">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
+								<span class="input-group-text"><i class="fas fa-key fa-lg"></i></span>
+							
 							<input type="password" name="password" id="password" class="form-control input_pass" value="" placeholder="inserisci la password" required>
+							</div>
 					    	</div>			
 		
 						

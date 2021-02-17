@@ -38,6 +38,7 @@
     
     <body>
     <jsp:include page="/Header.jsp"/> 
+    <jsp:include page="/lateral_menu.jsp"/><br><br><br><br>
     
      <!-- Portfolio -->
 

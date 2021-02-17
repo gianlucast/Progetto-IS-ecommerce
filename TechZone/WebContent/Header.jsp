@@ -28,22 +28,27 @@
             
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-		
+				
 				<li><form action="productcataloguecontrol" method="get" class="search"  onsubmit="return validateSearch()">
 	        		<input type="text" name="by" value="nome" hidden>
 						<div id="contenitore_search">
 							<input type="text" name="q" list="ricerca-datalist" placeholder="Ricerca" onkeyup="ricerca(this.value)" id="s">
 							<button type="submit" id="bottone_ricerca"><i class="fa fa-search" aria-hidden="true"></i></button>
 						</div>
+						
 						<datalist id="ricerca-datalist"></datalist>
 					</form></li>
 				
 				
 				<% if(session.getAttribute("utente")==null&&session.getAttribute("manager")==null){%>
+				
 				<li><a href="Login.jsp">Login</a></li>
 				<li><a href="Signup.jsp">Sign Up</a></li>
-				<% }else{%>
+				<% }if(session.getAttribute("utente")!=null){%>
 				<li><a href="UserArea.jsp">Area utente</a>
+				<li><a href="logoutcontrol">Logout</a>
+				<%} else if(session.getAttribute("manager")!=null){%>
+				<li><a href="OrdersManagerPage.jsp">Area Manager</a>
 				<li><a href="logoutcontrol">Logout</a>
 				<%} %>
 				<li><a href="CartView.jsp"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></a></li>

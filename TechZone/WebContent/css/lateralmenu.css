@@ -1,0 +1,60 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 91.5%;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidepanel a {
+
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+.sidepanel p {
+	font-size: 25px;
+	text-transform: capitalize;
+    font-family: 'Josefin Sans', sans-serif;
+    color:white;
+}
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.openbtn {
+  font-size: 35px;
+  cursor: pointer;
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  float:left !important;
+  background-color: transparent;
+}
+
+.openbtn:hover {
+  color:#16a6b6;
+}
+.openbtn:active
+{
+	border:none !important;
+}

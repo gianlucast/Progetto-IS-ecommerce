@@ -64,7 +64,6 @@
 				<a href="updateproductcontrol=<%=prod.getCodice()%>">Modify</a><br>
 				<a href="productviewcontrol=<%=prod.getCodice()%>">Details</a></td>
 				<%
-				//System.out.println(bean.getName());
 				request.setAttribute("imgbean", prod);%>
 			<td><%if(prod.getImmagine()!=null){ %><img src="imgControl?id=<%=prod.getCodice()%>" style="width:100px"><% }else{%><img src="./imgs/no_disc.png" style="width:100px"><%} %></td>
 		</tr>
