@@ -11,6 +11,7 @@
 <body>
 
 <div id="mySidepanel" class="sidepanel">
+ <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <p>Elettronica</p>
             <a href="productcataloguecontrol?by=categoria&q=Smartphone">Smartphone</a>
              <a href="productcataloguecontrol?by=categoria&q=TV">TV</a>
@@ -24,7 +25,8 @@
              <a href="productcataloguecontrol?by=categoria&q=Condizionatori">Condizionatori</a>
 </div>
 
-<button class="openbtn" onclick="openNav()">☰  </button>  
+<button class="openbtn" onclick="openNav()">☰  </button> 
+
 
 
 <script>
