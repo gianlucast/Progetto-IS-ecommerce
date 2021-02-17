@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import it.techzone.model.beans.Product;
 import it.techzone.model.managers.ProductManager;
 
-public class UpdateProductControl {
+public class UpdateProductControl extends HttpServlet{
  static ProductManager pm = new ProductManager();
  
  	public void doGet(HttpServletRequest request, HttpServletResponse response) {
