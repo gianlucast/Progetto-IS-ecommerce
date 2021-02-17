@@ -30,7 +30,7 @@ public class ManagerOrderViewControl extends HttpServlet{
 						long idOrd=Long.parseLong(request.getParameter("idOrd"));
 						Order ordine=om.getOrderById(idOrd);
 						session.setAttribute("ordine",ordine);
-						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/OrderDetailPage.jsp");
+						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/OrderManagerDetailPage.jsp");
 						dispatcher.forward(request, response);
 					}
 				}

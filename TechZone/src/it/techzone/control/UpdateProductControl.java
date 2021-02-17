@@ -28,7 +28,7 @@ public class UpdateProductControl {
  			
  				pm.updateProduct(code, descrizione, nomeProd, quantity, categoria, tipo, cost);
  				session.setAttribute("alertMsg", "Modifica effettuata");
- 				response.sendRedirect("./Productmanagement.jsp");
+ 				response.sendRedirect("./AdminMod.jsp");
  			}
  			else {
  				session.setAttribute("alertMsg", "Accesso non autorizzato");

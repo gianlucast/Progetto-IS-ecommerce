@@ -32,7 +32,7 @@ public class ManagerOrderSearchIdControl extends HttpServlet{
 								response.sendRedirect("OrdersPage.jsp");
 							}else {
 								session.setAttribute("ordine", o);
-								RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/OrdersPage.jsp");
+								RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/OrdersManagerPage.jsp");
 								dispatcher.forward(request, response);
 							}
 						}
