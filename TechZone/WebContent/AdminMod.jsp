@@ -81,12 +81,12 @@
 			<td><%=prod.getCodice() %></td>
 			<td><%=prod.getNomeProd() %></td>
 			<td><%=prod.getDescrizione() %></td>
-			<td><a href="deleteproductcontrol=<%=prod.getCodice() %>">Elimina</a><br>
-				<a href="updateproductcontrol=<%=prod.getCodice()%>">Modifica</a><br>
-				<a href="productviewcontrol=<%=prod.getCodice()%>">Dettagli</a></td>
+			<td><a href="deleteproductcontrol?idProd=<%=prod.getCodice() %>">Elimina</a><br>
+				<a href="updateproductcontrol?idProd=<%=prod.getCodice()%>">Modifica</a><br>
+				<a href="productviewcontrol?idProd=<%=prod.getCodice()%>">Dettagli</a></td>
 				<%
 				request.setAttribute("imgbean", prod);%>
-			<td><%if(prod.getImmagine()!=null){ %><img src="imgControl?id=<%=prod.getCodice()%>" style="width:1000px"><% }else{%><img src="./imgs/no_disc.png" style="width:100px"><%} %></td>
+			<td><%if(prod.getImmagine()!=null){ %><img src="imgControl?id=<%=prod.getCodice()%>" style="width:100px"><% }else{%><img src="./imgs/no_disc.png" style="width:100px"><%} %></td>
 		</tr>
 		<%
 			  }	

@@ -85,6 +85,11 @@
     <servlet-class>it.techzone.control.OrderStatusControl</servlet-class>
   </servlet>
   
+  <servlet>
+    <servlet-name>UpdateProductControl</servlet-name>
+    <servlet-class>it.techzone.control.UpdateProductControl</servlet-class>
+  </servlet>
+  
   
   <servlet-mapping>
     <servlet-name>LoginControl</servlet-name>
@@ -159,6 +164,11 @@
   <servlet-mapping>
     <servlet-name>OrderStatusControl</servlet-name>
     <url-pattern>/orderstatuscontrol</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>UpdateProductControl</servlet-name>
+    <url-pattern>/updateproductcontrol</url-pattern>
   </servlet-mapping>
   
   

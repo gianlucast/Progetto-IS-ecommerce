@@ -38,7 +38,7 @@
                     <%if(!order.getStato().equalsIgnoreCase("Consegnato")&&!order.getStato().equalsIgnoreCase("Pacco smarrito")){ %>
                    	 <form action="orderstatuscontrol">
                    	 	<input type="hidden" name="orderId" value="<%= order.getNumeroOrdine() %>">
-                    	<select name="changeStatus">
+                    	<select name="changeStatus" class="form-select form-select-sm" aria-label=".form-select-sm example">
                     		<option value="In Preparazione">In Preparazione</option>
                     		<option value="Spedito">Spedito</option>
                     		<option value="In Consegna">In consegna</option>
@@ -46,7 +46,8 @@
                     		<option value="Pacco smarrito">Pacco smarrito</option>
                     		<option value="Consegnato">Consegnato</option>
                     	</select>
-                    	<input type="submit" value="Cambia Stato">
+                    	<br><br>
+                    	<input type="submit" class="btn-primary" value="Cambia Stato">
                    	 </form>
                    	 <%} %>
     				<font size="5"><b>Prezzo totale:</b> <%=order.getTotale() %></font><br/>

@@ -49,9 +49,9 @@
 		session.setAttribute("redirect",null);
 		%>
 		<%}%>
-    
+
 		<div class="row">
-				
+				    
 				<%
 					if(products==null) %> Products null
 				<%  if(products.size()==0)  %> Products size 0
@@ -71,6 +71,7 @@
 					<div class="portfolio-image">
 						<div class="foto"><%if(bean.getImmagine()!=null){ %>
 						<img src="imgControl?id=<%=bean.getCodice()%>" style="width:250px ; height:250px">
+						
 						<% }else{%>
 						<img src="./imgs/no_disc.png" style="width:250px">
 						<%} %>

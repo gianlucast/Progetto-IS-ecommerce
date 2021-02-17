@@ -31,8 +31,8 @@
         <link rel="stylesheet" href="css/bootstrap.min.css"> 
         
         <!-- Main CSS -->
-        <link rel="stylesheet" href="css/main.css">
         
+        <link rel="stylesheet" href="./css/main.css">
 
         <!-- Google fonts -->
         <link href='http://fonts.googleapis.com/css?family=Open%20Sans:400,700,600' rel='stylesheet' type='text/css'>
@@ -51,15 +51,22 @@
 
 	<div class="container">
       <div class="row padding-inner"> 
+      <div class="form-group col-md-5">
+      <label for="inputState">Id Ordine</label>
       <form action="managerordersearchidcontrol">
-     	 <input type="text" name="idOrd" placeholder="inserisci id ordine">
-         <input type="submit" value="Ricerca">
+     	 <input type="text" class="form-control" id="inputCity" name="idOrd" placeholder="Inserisci id ordine">
+     	 <br>
+         <input type="submit" class="btn-primary" value="Ricerca">
       </form>
+      </div>
+      <div class="form-group col-md-5">
+      <label for="inputState">Email</label>
       <form action="managerordersearchmailcontrol">
-     	 <input type="text" name="mailOrd" placeholder="inserisci mail utente">
-         <input type="submit" value="Ricerca">
+     	 <input type="text" class="form-control" id="inputCity" name="mailOrd" placeholder="Inserisci mail utente">
+     	 <br>
+         <input type="submit" class="btn-primary" value="Ricerca">
       </form>
-            
+      </div>
             
             <div class="col-md-6 col-sm-12">
             

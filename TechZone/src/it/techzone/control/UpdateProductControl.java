@@ -1,5 +1,6 @@
 package it.techzone.control;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,7 +15,7 @@ public class UpdateProductControl extends HttpServlet{
  		HttpSession session = request.getSession();
  		try {
  			if(session.getAttribute("manager")!=null) {
- 				if(request.getParameter("action").equalsIgnoreCase("mod")){
+ 				if(request.getParameter("action")!=null){
 	 				String categoria= request.getParameter("categoria");
 	 				String codice= request.getParameter("codice");
 	 				long code = Long.parseLong(codice);
@@ -32,8 +33,11 @@ public class UpdateProductControl extends HttpServlet{
  				}else {
  					if(request.getParameter("idProd")!=null) {
  						long idProd=Long.parseLong(request.getParameter("idProd"));
- 						request.setAttribute("prodotto", pm.retrieveProduct(idProd));
- 	 					response.sendRedirect("./ModifyProduct.jsp");
+ 						Product prodotto=pm.retrieveProduct(idProd);
+ 						request.setAttribute("prodotto", prodotto);
+ 						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ModifyProduct.jsp");
+ 						dispatcher.forward(request, response);
+
  					}else {
  						session.setAttribute("alertMsg", "Errore nella richiesta");
  		 				response.sendRedirect("./AdminMod.jsp");
