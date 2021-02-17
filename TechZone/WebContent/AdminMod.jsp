@@ -2,19 +2,16 @@
 	pageEncoding="UTF-8"%>
 
 <%
-	if(session.getAttribute("utente")==null){
-		session.setAttribute("redirect","AdminMod.jsp");
-		response.sendRedirect("Login.jsp");
-	}else{
+	if(session.getAttribute("manager")==null){
+		response.sendRedirect("/HomePage.jsp");
+	}
 		UtenteRegistrato user=(UtenteRegistrato)session.getAttribute("utente");
-		//if(!user.getEmail().isManager()) response.sendRedirect("Catalogo.jsp"); da mettere filter
-	/*	else{
-			Collection<?> products = (Collection<?>) request.getAttribute("products");
+		Collection<?> products = (Collection<?>) request.getAttribute("products");
 			if(products == null) {
 				response.sendRedirect("./admin");	
 				return;
 			}
-			Product product = (Product) request.getAttribute("product"); */
+			Product product = (Product) request.getAttribute("product"); 
 	
 %>
 
@@ -57,23 +54,23 @@
 				Iterator<?> it = products.iterator();
 				while (it.hasNext()) {
 					Product prod = (Product) it.next();
-					if(!prod.getQuantita()==0){
+					
 		%>
 		<tr>
-			<td><%=prod.getCode()%></td>
-			<td><%=prod.getName()%></td>
-			<td><%=prod.getDesc()%></td>
+			<td><%=prod.getCodice() %></td>
+			<td><%=prod.getNomeProd() %></td>
+			<td><%=prod.getDescrizione() %></td>
 			<td><a href="deleteproductcontrol=<%=prod.getCodice() %>">Delete</a><br>
 				<a href="updateproductcontrol=<%=prod.getCodice()%>">Modify</a><br>
 				<a href="productviewcontrol=<%=prod.getCodice()%>">Details</a></td>
 				<%
 				//System.out.println(bean.getName());
-				request.setAttribute("imgbean",bean);%>
+				request.setAttribute("imgbean", prod);%>
 			<td><%if(prod.getImmagine()!=null){ %><img src="imgControl?id=<%=prod.getCodice()%>" style="width:100px"><% }else{%><img src="./imgs/no_disc.png" style="width:100px"><%} %></td>
 		</tr>
 		<%
-					}	
-				}
+			  }	
+				
 			} else {
 		%>
 		<tr>
@@ -127,20 +124,20 @@
 		<input name="cat" type="text" maxlength="20" id="catmod"required value="<%=mod.getCategoria()%>"><span id="spancatmod">Minimo 2 caratteri, massimo 20</span><br>
 	
 		<label for="description">Description:</label><br>
-		<input type="text" name="description" id="descmod" required value="<%=mod.getDesc()%>"><span id="spandescmod">Minimo 4 caratteri</span><br>
+		<input type="text" name="description" id="descmod" required value="<%=mod.getDescrizione() %>"><span id="spandescmod">Minimo 4 caratteri</span><br>
 		
 		<label for="price">Price:</label><br> 
-		<input name="price" type="number" min="0" id="pricemod" value="<%=mod.getPrice()%>" required><span id="spanpricemod">Non sotto lo zero</span><br>
+		<input name="price" type="number" min="0" id="pricemod" value="<%=mod.getCosto() %>" required><span id="spanpricemod">Non sotto lo zero</span><br>
 
 		<label for="quantity">Quantity:</label><br> 
-		<input name="quantity" type="number" min="0" id="quantitymod" value="<%=mod.getQuantity()%>" required><span id="spanquantitymod">Non sotto lo zero</span><br>
+		<input name="quantity" type="number" min="0" id="quantitymod" value="<%=mod.getQuantita() %>" required><span id="spanquantitymod">Non sotto lo zero</span><br>
 		
 		<input type="submit" value="Modifica"><input type="reset" value="Ripristina modifiche">
 
 	</form>
 	
 	<hr>
-	<%}}} %>
+	<%} %>
 	
 	<h3>Visualizzazione ordini:</h3>
 	
@@ -182,7 +179,7 @@
 						<th>QUANTITA'
 						<th>PREZZO TOTALE
 					<%
-					ArrayList<ProductCart> elementi=ordini.get(i).getProdotti();
+					ArrayList<ProductOrder> elementi= ordini.get(i).getProdotti();
 					for(int j=0;j<elementi.size();j++) { 
 					%>
 						<tr>
@@ -194,10 +191,12 @@
 					<% }%>
 					</table>
 					<br><br>
-				<% }%>
+			<% }%>
 				
 				</div>
-			<%}request.setAttribute("ordini",null); %>
+		<%}request.setAttribute("ordini",null); %>
+			
+			
 	
 	<br><br>
 	<jsp:include page="/Footer.jsp"/>

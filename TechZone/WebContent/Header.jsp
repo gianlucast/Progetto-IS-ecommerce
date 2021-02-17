@@ -6,6 +6,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/bootstrap.min.css"> 
+        <link rel="icon" href="./imgs/logo_techzone.png">
+        <link rel="stylesheet" href="./css/main.css">
+
+        <!-- Google fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open%20Sans:400,700,600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>     
 	
 </head>
 
@@ -23,7 +30,7 @@
                 <ul class="nav navbar-nav">
 		
 				<li><form action="productcataloguecontrol" method="get" class="search"  onsubmit="return validateSearch()">
-	<!-- DA MODIFICARE -->		<input type="text" name="by" value="nome" hidden>
+	        		<input type="text" name="by" value="nome" hidden>
 						<div id="contenitore_search">
 							<input type="text" name="q" list="ricerca-datalist" placeholder="Ricerca" onkeyup="ricerca(this.value)" id="s">
 							<button type="submit" id="bottone_ricerca"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -56,6 +63,14 @@
     </div>
     <!-- /intro text -->
 
+
+  <script src="js/jquery-1.11.0.js"></script>
+     
+     <!-- Boostrap JS -->
+	 <script src="js/bootstrap.min.js"></script>
+     
+     <!-- Smooth scroll JS -->
+     <script src="js/smoothscroll.js"></script>
 </body>
 </html>
 
