@@ -37,13 +37,28 @@
 		<%session.setAttribute("alertMsg","");
 		session.setAttribute("redirect","CartView.jsp");%>
 	<%}%><br>
-	<h1>Il tuo carrello:</h1><br>
+	<p class="block" style="font-size:40px">Il tuo carrello:</p><br>
 	<% if(cart.getProductList().size()==0){%>
 	<h2>Vuoto, aggiungi qualcosa!</h2>
 	<%
-	}else{%> <table ><tr><th>FOTO<th>NOME<th>QTA'<th>PREZZO</th></tr><%
-		for(int i=0;i<lista.size();i++){
-			if(lista.get(i).getQuantita()==0) response.sendRedirect("./product?action=changequantity&qt=0&id="+lista.get(i).getProdotto().getCodice());	
+	}else{%> 
+	
+	
+					<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Foto</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Quantità</th>
+      <th scope="col">Prezzo</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+ <%  for(int i=0;i<lista.size();i++){ %>
+  
+  			<div class="row"> 
+		<%	if(lista.get(i).getQuantita()==0) response.sendRedirect("./product?action=changequantity&qt=0&id="+lista.get(i).getProdotto().getCodice());	
 			%>
 			<tr>
 				<td><img src="imgControl?id=<%=lista.get(i).getProdotto().getCodice()%>" style="width:100px"></td>
@@ -52,6 +67,7 @@
 				<td><a href="modincartcontrol?change=<%=lista.get(i).getQuantita()-1%>&idProd=<%=lista.get(i).getProdotto().getCodice()%>"><button class="button">Rimuovi</button></a>
 			</tr><%
 		} %>
+  
 		</table>
 		<hr>
 		<p align="right"> <%=cart.getPrezzoTotale()%></p>
@@ -72,8 +88,8 @@
 		<br><br>
 		
 		<%}
-	}	
-	%>
+		
+	}%>
 	<br><br><br>
 	<jsp:include page="Footer.jsp"/>
 	

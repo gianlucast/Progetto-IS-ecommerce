@@ -23,6 +23,20 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="icon" href="./imgs/logo_vinyl.png">
 	<title>TechZone</title>
+	
+	 <link rel="stylesheet" href="css/bootstrap.min.css"> 
+        
+        <link rel="icon" href="./imgs/logo_techzone.png">
+        <link rel="stylesheet" href="./css/main.css">
+        
+        
+
+        <!-- Google fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open%20Sans:400,700,600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'> 
+	
+	
+	
 	<style>
 	span{
 		display:none;
@@ -35,20 +49,26 @@
 	<script src="./scripts/orderfilter.js"></script>
 	<script src="./scripts/AdminModValidator.js"></script>
 	<jsp:include page="/Header.jsp"/>
+	
 	<%if(session.getAttribute("alertMsg")!=null){%>
 		<h3><font color="red"><%=session.getAttribute("alertMsg")%></font></h3> 
 		<%session.setAttribute("alertMsg",""); %>
 	<%}%><br>
-	<h2>Products</h2>
-	<a href="admin">List</a>
-	<table border="1">
-		<tr>
-			<th>Code</th>
-			<th>Name </th>
-			<th>Description</th>
-			<th>Action</th>
-			<th>Picture</th>
-		</tr>
+	<p class="block" font-size="40px">Prodotti</p>
+	
+	<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Codice</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrizione</th>
+      <th scope="col">Operazione</th>
+      <th scope="col">Foto</th>
+    </tr>
+  </thead>
+
+	<tbody>
+
 		<%
 			if (products != null && products.size() != 0) {
 				Iterator<?> it = products.iterator();
@@ -56,16 +76,17 @@
 					Product prod = (Product) it.next();
 					
 		%>
+		<div class="row"> 
 		<tr>
 			<td><%=prod.getCodice() %></td>
 			<td><%=prod.getNomeProd() %></td>
 			<td><%=prod.getDescrizione() %></td>
-			<td><a href="deleteproductcontrol=<%=prod.getCodice() %>">Delete</a><br>
-				<a href="updateproductcontrol=<%=prod.getCodice()%>">Modify</a><br>
-				<a href="productviewcontrol=<%=prod.getCodice()%>">Details</a></td>
+			<td><a href="deleteproductcontrol=<%=prod.getCodice() %>">Elimina</a><br>
+				<a href="updateproductcontrol=<%=prod.getCodice()%>">Modifica</a><br>
+				<a href="productviewcontrol=<%=prod.getCodice()%>">Dettagli</a></td>
 				<%
 				request.setAttribute("imgbean", prod);%>
-			<td><%if(prod.getImmagine()!=null){ %><img src="imgControl?id=<%=prod.getCodice()%>" style="width:100px"><% }else{%><img src="./imgs/no_disc.png" style="width:100px"><%} %></td>
+			<td><%if(prod.getImmagine()!=null){ %><img src="imgControl?id=<%=prod.getCodice()%>" style="width:1000px"><% }else{%><img src="./imgs/no_disc.png" style="width:100px"><%} %></td>
 		</tr>
 		<%
 			  }	
@@ -77,7 +98,8 @@
 		</tr>
 		<%
 			}
-		%> </table>
+		%> 
+		</table>
 
 	<hr>
 	<% if (request.getAttribute("mod")!=null){ 
