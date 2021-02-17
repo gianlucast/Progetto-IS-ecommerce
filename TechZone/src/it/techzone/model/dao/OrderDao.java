@@ -166,6 +166,8 @@ public class OrderDao {
 					prodotti.add(new ProductOrder(prodotto,costo,quantita));
 				}
 				ordine.setProdotti(prodotti);
+				connection.commit();
+				connection2.commit();
 			}
 			return ordine;
 		}finally {
@@ -202,6 +204,7 @@ public class OrderDao {
 			while(rs.next()) {
 				ordini.add(retrieveOrderById(rs.getLong("numeroOrdine")));
 			}
+			connection.commit();
 		}finally {
 			try {
 				if (preparedStatement != null)
@@ -213,6 +216,7 @@ public class OrderDao {
 				DriverManagerConnectionPool.releaseConnection(connection2);
 			}
 		}
+		connection.commit();
 		return ordini;
 	}
 		

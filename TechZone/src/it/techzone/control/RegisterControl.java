@@ -35,7 +35,7 @@ public class RegisterControl extends HttpServlet {
 					String paymentExpMonth=request.getParameter("userPaymentExpMonth");
 					String paymentExpyear=request.getParameter("userPaymentExpYear");
 					String paymentCvv=request.getParameter("userPaymentCvv");
-					String payment=paymentInst+", "+paymentCo+", "+paymentExpMonth+"/"+paymentExpMonth+", "+paymentCvv;
+					String payment=paymentInst+", "+paymentCo+", "+paymentExpMonth+"/"+paymentExpyear+", "+paymentCvv;
 				
           
 					try{  

@@ -37,6 +37,7 @@ public class ProductDAO {
 				p.setCosto(rs.getFloat("COSTO"));
 				p.setImmagine(rs.getBytes("IMMAGINE"));
 			}
+			connection.commit();
 			return p;
 		}finally {
 			try {
@@ -102,6 +103,7 @@ public class ProductDAO {
 				p.setImmagine(rs.getBytes("IMMAGINE"));
 				products.add(p);
 			}
+			connection.commit();
 			return products;
 		}finally {
 			try {
@@ -133,6 +135,7 @@ public class ProductDAO {
 				p.setImmagine(rs.getBytes("IMMAGINE"));
 				prodotti.add(p);
 			}
+			con.commit();
 			return prodotti;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -159,6 +162,7 @@ public class ProductDAO {
 				p.setImmagine(rs.getBytes("IMMAGINE"));
 				prodotti.add(p);
 			}
+			con.commit();
 			return prodotti;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);

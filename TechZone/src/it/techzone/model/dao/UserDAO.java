@@ -71,6 +71,7 @@ public class UserDAO {
 				u.setPagamento(rs.getString("metodoPagamento"));
 				u.setTelefono(rs.getLong("TELEFONO"));
 			}
+			connection.commit();
 			return u;
 		}finally {
 			try {
@@ -107,6 +108,7 @@ public class UserDAO {
 				u.setSupportEmail(rs.getString("SUPPORTEMAIL"));
 				u.setTelefono(rs.getLong("TELEFONO"));
 			}
+			connection.commit();
 			return u;
 		}finally {
 			try {
@@ -143,8 +145,10 @@ public class UserDAO {
 			preparedStatement2.setString(1, email);
 			rs=preparedStatement2.executeQuery();
 			if(rs.next()) {
+				connection.commit();
 				return true;
 			}
+			connection.commit();
 			return false;
 		}finally {
 			try {
@@ -182,7 +186,7 @@ public class UserDAO {
 				utente.setPagamento(rs.getString("metodoPagamento"));
 				utente.setTelefono(rs.getLong("TELEFONO"));
 			}
-			
+			connection2.commit();
 			return utente;
 		}finally {
 			try {
@@ -218,7 +222,7 @@ public class UserDAO {
 				utente.setPagamento(rs.getString("metodoPagamento"));
 				utente.setTelefono(rs.getLong("TELEFONO"));
 			}
-			
+			connection2.commit();
 			return utente;
 		}finally {
 			try {

@@ -35,6 +35,7 @@
 	    	<div class="container">
 	    			<font size="5"><b>Numero dell'ordine:</b> <%=order.getNumeroOrdine() %></font><br/>
                     <font size="5"><b>Stato:</b> <%=order.getStato() %></font><br/> 
+                    <%if(!order.getStato().equalsIgnoreCase("Consegnato")&&!order.getStato().equalsIgnoreCase("Pacco smarrito")){ %>
                    	 <form action="orderstatuscontrol">
                    	 	<input type="hidden" name="orderId" value="<%= order.getNumeroOrdine() %>">
                     	<select name="changeStatus">
@@ -47,6 +48,7 @@
                     	</select>
                     	<input type="submit" value="Cambia Stato">
                    	 </form>
+                   	 <%} %>
     				<font size="5"><b>Prezzo totale:</b> <%=order.getTotale() %></font><br/>
 	    	<br><br><br>
 				<!--  <div class="row"> -->
