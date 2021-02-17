@@ -5,10 +5,10 @@
 	if(session.getAttribute("manager")==null){
 		response.sendRedirect("/HomePage.jsp");
 	}
-		UtenteRegistrato user=(UtenteRegistrato)session.getAttribute("utente");
-		Collection<?> products = (Collection<?>) request.getAttribute("products");
+		
+		Collection<?> products = (Collection<?>) request.getAttribute("prodotti");
 			if(products == null) {
-				response.sendRedirect("./admin");	
+				response.sendRedirect("./productviewcontrol");	
 				return;
 			}
 			Product product = (Product) request.getAttribute("product"); 
@@ -79,31 +79,7 @@
 		<%
 			}
 		%> </table>
-		<h2>Insert</h2>
-		<form action="admin" method="post" enctype="multipart/form-data" onsubmit="return valinsert()">
-		<input type="hidden" name="action" value="insert"> 
-		
-		<label for="name">Name:</label><br> 
-		<input name="name" type="text" maxlength="30" id="nameins" required placeholder="enter name"><span id="spannameins">Minimo 4 caratteri, massimo 30</span><br> 
-		
-		<label for="description">Description:</label><br>
-		<input type="text" name="description" id="descins" required placeholder="enter description"><span id="spandescins">Minimo 4 caratteri</span><br>
-		
-		<label for="type">Type:</label><br> 
-		<input name="type" type="text" maxlength="20" id="typeins" required placeholder="enter type"><span id="spantypeins">Minimo 2 caratteri, massimo 20</span><br>
-		
-		<label for="cat">Category:</label><br> 
-		<input name="cat" type="number" maxlength="4" id="catins" required placeholder="enter cat"><span id="spancatins">Anno valido</span><br>  
-		
-		<label for="price">Price:</label><br> 
-		<input name="price" type="number" min="0" id="priceins" value="0" required><span id="spanpriceins">Non sotto lo zero</span><br>
 
-		<label for="quantity">Quantity:</label><br> 
-		<input name="quantity" type="number" min="1" value="1"  id="quantityins" required><span id="spanquantityins">Non sotto lo zero</span><br>
-		<input class="file" type="file" name="talkPhoto" value="" maxlength="255"><br>
-		<input type="submit" value="Add"><input type="reset" value="Reset">
-
-	</form>
 	<hr>
 	<% if (request.getAttribute("mod")!=null){ 
 		Product mod=(Product)request.getAttribute("mod");
@@ -139,64 +115,6 @@
 	<hr>
 	<%} %>
 	
-	<h3>Visualizzazione ordini:</h3>
-	
-	<a href="admin?action=showallorders"><button id="mostraordini" class="bottone">Mostra tutti gli ordini</button></a><br>
-	<form action="admin" method="get" onsubmit="return valricercautente()">
-		<input type="text" name="action" value="showordersbyuser" hidden>
-		<label for="utenterichiesto">Ricerca per utente: </label><input type="text" placeholder="Inserisci l'utente" id="ricercaordinenome" name="utenterichiesto"><span id="spanutenterichiesto">Inserisci una mail corretta</span>
-		<input type="submit" value="ricerca">
-	</form><br>
-	<form action="admin" method="get" onsubmit="return valricercakey()">
-		<input type="text" name="action" value="showorderbykey" hidden>
-		<label for="key">Ricerca per numero ordine: </label><input type="text" placeholder="Inserisci #ordine" id="key" name="key">
-		<input type="submit" value="ricerca"><span id="spankey">Inserisci un valore numerico</span>
-	</form><br>
-			
-			<br><br>
-			
-			<%if(request.getAttribute("ordini")==null){ %>
-				<div id="ordinifiltrati" style="display:none">
-			<%}else{ %>
-				<div id="ordinifiltrati">
-			<%} %>
-			<br><br>
-			<%if(request.getAttribute("ordini")==null){ %>
-			
-			
-			<%}else{
-				%><%
-				
-				ArrayList<Order> ordini=(ArrayList<Order>)request.getAttribute("ordini");
-				for(int i=0;i<ordini.size();i++) {
-					%>
-					<hr>
-					NUMERO ORDINE: <%= ordini.get(i).getNumeroOrdine()%><br>
-					UTENTE: <%=ordini.get(i).getUtente().getEmail() %>
-					<table>
-						<!--  <th>CODICE PRODOTTO-->
-						<th>NOME PRODOTTO
-						<th>QUANTITA'
-						<th>PREZZO TOTALE
-					<%
-					ArrayList<ProductOrder> elementi= ordini.get(i).getProdotti();
-					for(int j=0;j<elementi.size();j++) { 
-					%>
-						<tr>
-						<!-- 	<td><%= elementi.get(j).getProdotto().getCodice() %>-->
-							<td><%=elementi.get(j).getProdotto().getNomeProd() %>
-							<td> <%=elementi.get(j).getProdotto().getQuantita() %>
-							<td> <%=elementi.get(j).getProdotto().getCosto() %> 
-						</tr>
-					<% }%>
-					</table>
-					<br><br>
-			<% }%>
-				
-				</div>
-		<%}request.setAttribute("ordini",null); %>
-			
-			
 	
 	<br><br>
 	<jsp:include page="/Footer.jsp"/>
