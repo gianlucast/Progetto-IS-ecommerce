@@ -14,21 +14,31 @@ public class UpdateProductControl {
  		HttpSession session = request.getSession();
  		try {
  			if(session.getAttribute("manager")!=null) {
- 			
- 				String categoria= request.getParameter("categoria");
- 				String codice= request.getParameter("codice");
- 				long code = Long.parseLong(codice);
- 				String costo= request.getParameter("costo");
- 				float cost= Float.parseFloat(costo);
- 				String descrizione = request.getParameter("descrizione");
- 				String nomeProd = request.getParameter("nomeprod");
- 				String quantità = request.getParameter("quantità");
- 				int quantity = Integer.parseInt(quantità);
- 				String tipo= request.getParameter("tipo");
- 			
- 				pm.updateProduct(code, descrizione, nomeProd, quantity, categoria, tipo, cost);
- 				session.setAttribute("alertMsg", "Modifica effettuata");
- 				response.sendRedirect("./AdminMod.jsp");
+ 				if(request.getParameter("action").equalsIgnoreCase("mod")){
+	 				String categoria= request.getParameter("categoria");
+	 				String codice= request.getParameter("codice");
+	 				long code = Long.parseLong(codice);
+	 				String costo= request.getParameter("costo");
+	 				float cost= Float.parseFloat(costo);
+	 				String descrizione = request.getParameter("descrizione");
+	 				String nomeProd = request.getParameter("nomeprod");
+	 				String quantità = request.getParameter("quantità");
+	 				int quantity = Integer.parseInt(quantità);
+	 				String tipo= request.getParameter("tipo");
+	 			
+	 				pm.updateProduct(code, descrizione, nomeProd, quantity, categoria, tipo, cost);
+	 				session.setAttribute("alertMsg", "Modifica effettuata");
+	 				response.sendRedirect("./AdminMod.jsp");
+ 				}else {
+ 					if(request.getParameter("idProd")!=null) {
+ 						long idProd=Long.parseLong(request.getParameter("idProd"));
+ 						request.setAttribute("prodotto", pm.retrieveProduct(idProd));
+ 	 					response.sendRedirect("./ModifyProduct.jsp");
+ 					}else {
+ 						session.setAttribute("alertMsg", "Errore nella richiesta");
+ 		 				response.sendRedirect("./AdminMod.jsp");
+ 					}
+ 				}
  			}
  			else {
  				session.setAttribute("alertMsg", "Accesso non autorizzato");
