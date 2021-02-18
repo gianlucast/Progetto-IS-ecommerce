@@ -32,41 +32,45 @@
     <div class="form-group col-md-5">
       <label for="inputNome4">Nome</label>
       <input type="text" class="form-control" id="inputNome4" placeholder="Inserisci nome" required name="userName">
-      <span id="spannome">Inserisci un nome valido (solo lettere, almeno 3)!</span>
+   	  <span id="spannome" style="display:none">inserisci una mail valida. </span>
     </div>
     <div class="form-group col-md-5">
       <label for="inputSurname4">Cognome</label>
       <input type="text" class="form-control" id="inputSurname4" placeholder="Inserisci cognome" required name="userSurname">
-      <span id="spancognome">Inserisci un cognome valido(solo lettere, almeno 3)!</span>
+      <span id="spancognome" style="display:none">inserisci una mail valida. </span>
       </div>
     <div class="form-group col-md-5">
       <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="userEmail">
-      <span id="spanmail">Inserisci una mail valida!</span>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required name="userEmail">
+      <span id="spanmail" style="display:none">inserisci una mail valida. </span>
     </div>
     <div class="form-group col-md-5">
       <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="userPass">
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Password" required name="userPass">
+      <span id="spanpassword" style="display:none">inserisci una mail valida. </span>
     </div>    
     </div>
     <div class="form-row">
     <div class="form-group col-md-5">
     <label for="inputTelephone">Telefono</label>
-    <input type="text" class="form-control" id="inputTelephone" placeholder="Numero di telefono" name="userPhone">
+    <input type="text" class="form-control" id="inputTelephone" placeholder="Numero di telefono" required name="userPhone">
+    <span id="spantelefono" style="display:none">inserisci una mail valida. </span>
   </div>
   	<div class="form-group col-md-5">
     <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="userStreet">
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required name="userStreet">
+    <span id="spanindirizzo" style="display:none">inserisci una mail valida. </span>
   </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-5">
       <label for="inputCity">Città</label>
-      <input type="text" class="form-control" id="inputCity" name="userCity">
+      <input type="text" class="form-control" id="inputCity" required name="userCity">
+      <span id="spancity" style="display:none">inserisci una mail valida. </span>
     </div>
     <div class="form-group col-md-4">
       <label for="inputState">Paese</label>
-      <select id="inputState" class="form-control" name="userCountry">
+      <select id="inputState" class="form-control" required name="userCountry">
         <option selected>Choose...</option>
         <option>Italy</option>
         <option>USA</option>
@@ -74,29 +78,42 @@
     </div>
     <div class="form-group col-md-1">
       <label for="inputZip">CAP</label>
-      <input type="text" class="form-control" id="inputZip" name="userCap">
+      <input type="text" class="form-control" id="inputZip" required name="userCap">
+      <span id="spanzip" style="display:none">inserisci una mail valida. </span>
     </div>
   </div>
    <div class="form-row">
     <div class="form-group col-md-5">
       <label for="inputCity">Metodo di pagamento</label>
-      <input type="text" class="form-control" id="inputCity" name="userPaymentInst">
+      <select id="inputPayment" class="form-control" required name="userPayment">
+        <option selected>Choose...</option>
+        <option>Postepay</option>
+        <option>Mastercard</option>
+        <option>Bancomat</option>
+        <option>Visa</option>
+        <option>Unicredit</option>
+        <option>Paypal</option>
+      </select>
     </div>
     <div class="form-group col-md-5">
       <label for="inputState">Codice</label>
-        <input type="text" class="form-control" id="inputCity" name="userPaymentCode">
+        <input type="text" class="form-control" id="inputCode" required name="userPaymentCode">
+        <span id="spancode" style="display:none">inserisci una mail valida. </span>
     </div>
     <div class="form-group col-md-4">
       <label for="inputZip" >EXP MONTH</label>
-      <input type="number" class="form-control" id="inputZip" min="1" max="12"  name="userPaymentExpMonth">
+      <input type="number" class="form-control" id="inputMonth" min="1" max="12"  required name="userPaymentExpMonth">
+      <span id="spanmonth" style="display:none">inserisci una mail valida. </span>
     </div>
     <div class="form-group col-md-4">
       <label for="inputZip" >EXP YEAR</label>
-      <input type="number" class="form-control" id="inputZip" min="2021" name="userPaymentExpYear">
+      <input type="number" class="form-control" id="inputYear" min="2021" required name="userPaymentExpYear">
+      <span id="spanyear" style="display:none">inserisci una mail valida. </span>
     </div>
     <div class="form-group col-md-1">
       <label for="inputZip">CVV</label>
-      <input type="number" class="form-control" id="inputZip" name="userPaymentCvv" maxlength="3" minlength="3">
+      <input type="number" class="form-control" id="inputCvv" required name="userPaymentCvv" maxlength="3" minlength="3">
+      <span id="spancvv" style="display:none">inserisci una mail valida. </span>
     </div>
   </div>
 
