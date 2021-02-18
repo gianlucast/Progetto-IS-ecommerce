@@ -16,13 +16,12 @@ public class DeleteProductControl extends HttpServlet {
 		HttpSession session= request.getSession();
 		try {
 			if(session.getAttribute("manager")!=null) {
-				long idProd= (long) request.getAttribute("idProd");
+				long idProd= Long.parseLong(request.getParameter("idProd"));
 			
 				
 				pm.deleteProduct(idProd);
 				session.setAttribute("alertMsg","Prodotto rimosso con successo");
-				RequestDispatcher requestD = getServletContext().getRequestDispatcher("./AdminMod.jsp");
-				requestD.forward(request, response);
+				response.sendRedirect("./AdminMod.jsp");
 			}
 				
 			else {
@@ -32,7 +31,7 @@ public class DeleteProductControl extends HttpServlet {
 		}
 		
 	}
-		catch (Exception e2) {System.out.println(e2);}
+		catch (Exception e2) {e2.printStackTrace();}
 	
 
 }
