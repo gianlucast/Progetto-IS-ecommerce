@@ -73,21 +73,21 @@
 				</div>
                 <!-- End Row -->
                 </td>
+                <br><br><br>
+                <center>
+                <h1 style="text-align:center; font-family: 'Josefin Sans', sans-serif">Modifica prodotto:</h1>
+                <br><br><br>
                 <td>
-                <div class="container h-100">
-                <form action="updateproductcontrol" class="form-group col-md-1" method="get">
-                <input type="hidden" value="mod">
-                <div class="form-group col-md-5">
+                <div class="container h-100" style="position:center">
+                <form action="updateproductcontrol" class="form-group col-md-12" method="get">
+                <input type="hidden" name="action" value="mod">
+                <div class="form-group< col-md-5">
                 <label for="inputZip">Nome prodotto</label>
                 <input type="text" class="form-control" id="inputZip" name="nomeprod" value="<%= prodotto.getNomeProd() %>">
                 </div>
                 <div class="form-group col-md-5">
-                <label for="inputZip">Descrizione</label>
-                <textarea class="form-control" id="inputZip" name="descrizione" value="<%= prodotto.getDescrizione() %>" ></textarea>
-                </div>
-                <div class="form-group col-md-5">
                 <label for="inputZip">Quantità</label>
-                <input type="number" class="form-control" id="inputZip" name="quantità" value="<%= prodotto.getQuantita() %>" >
+                <input type="number" class="form-control" id="inputZip" name="quantita" value="<%= prodotto.getQuantita() %>" >
                 </div>
                 <div class="form-group col-md-5">
                 <label for="inputZip">Tipo</label>
@@ -99,16 +99,24 @@
                 </div>
                 <div class="form-group col-md-5">
                 <label for="inputZip">Codice</label>
-                <input type="number" class="form-control" id="inputZip" name="codice" value="<%= prodotto.getCodice() %>">
+                <input type="number" class="form-control" id="inputZip" name="codice" readonly value="<%= prodotto.getCodice() %>">
                 </div>
                 <div class="form-group col-md-5">
                 <label for="inputZip">Categoria</label>
                 <input type="text" class="form-control" id="inputZip" name="categoria" value="<%= prodotto.getCategoria() %>">
                 </div>
+                 <div class="form-group col-md-8">
+                <label for="inputZip">Descrizione</label>
+                <textarea class="form-control" id="inputZip" name="descrizione" style="height:250px"><%= prodotto.getDescrizione() %></textarea>
+                </div>
                 <br><br><br>
+                <input type="submit" class="btn-primary" value="Conferma modifiche">
+                <br><br><br>
+                <input type="reset" class="btn-primary" value="Reset">
                 </form>
                 </div>
                 </td>
+                </center>
                 </tr>
                 </tbody>
                 <br><br><br>
