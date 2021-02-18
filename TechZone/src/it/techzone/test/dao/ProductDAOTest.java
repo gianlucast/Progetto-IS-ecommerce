@@ -121,7 +121,9 @@ public class ProductDAOTest extends TestCase {
 		ArrayList<Product> oracolo = new ArrayList<Product>();	
 		ArrayList<Product> retrieved;
 		oracolo.add(pd.retrieveProductById(1));
-		oracolo.add(pd.retrieveProductById(2));
+		if(pd.retrieveProductById(2)!=null) {
+			oracolo.add(pd.retrieveProductById(2));
+		}
 		oracolo.add(pd.retrieveProductById(3));
 		boolean flag = false;
 		try {
@@ -130,20 +132,22 @@ public class ProductDAOTest extends TestCase {
 				for(int i=0;i<retrieved.size();i++) {
 					retrProd=retrieved.get(i);
 					oracleProd=oracolo.get(i);
+					if(retrProd==null) System.out.println("retrprod null");
+					if(oracleProd==null) System.out.println("oracleprod null");
 					assertEquals(retrProd.getCodice(), oracleProd.getCodice());
 					assertEquals(retrProd.getDescrizione(), oracleProd.getDescrizione());
 					assertEquals(retrProd.getNomeProd(), oracleProd.getNomeProd());
 					assertEquals(retrProd.getQuantita(), oracleProd.getQuantita());
 					assertEquals(retrProd.getCategoria(), oracleProd.getCategoria());
 					assertEquals(retrProd.getTipo(), oracleProd.getTipo());
-					assertEquals(retrProd.getCosto(), oracleProd.getCosto());
-					
+					assertEquals(retrProd.getCosto(), oracleProd.getCosto());					
 				}
 				flag=true;
 			}
 			
 		catch(Exception e) {
 			if(flag==false) {
+				e.printStackTrace();
 				fail("testDoRetrieveAll() not passed!");
 			}
 		}

@@ -24,11 +24,19 @@ private static ProductManager pm;
     }
 	
 	public void testRetrieveProduct() {
-		Product oracolo=new Product(2,1285.99F,null,"Frigorifero Samsung smart, tecnologico e stupefacente.","Samsung FrigoT21",12,"Elettrodomestici","Frigo");
+		Product oracolo;
 		Product pi;
 		boolean flag=false;
 		try {
-			pi=pm.retrieveProduct(2);
+			oracolo=new Product();
+			oracolo.setCodice(1);
+			oracolo.setDescrizione("OnePlus Nord supporta il 5G. E' un prodotto della fascia media, ottimo per prestazioni e OS.");
+			oracolo.setNomeProd("OnePlus Nord 5G");
+			oracolo.setQuantita(15);
+			oracolo.setCategoria("Smartphone");
+			oracolo.setTipo("Android");
+			oracolo.setCosto(398.99F);
+			pi=pm.retrieveProduct(1);
 			assertEquals(pi.getCodice(), oracolo.getCodice());
 			assertEquals(pi.getDescrizione(), oracolo.getDescrizione());
 			assertEquals(pi.getNomeProd(), oracolo.getNomeProd());
@@ -149,8 +157,8 @@ private static ProductManager pm;
 		
 		boolean flag = false;
 		try {
-			oracolo.add(pm.retrieveProduct(2));
-			retrieved= pm.searchProductsByCat("Elettrodomestici");
+			oracolo.add(pm.retrieveProduct(3));
+			retrieved= pm.searchProductsByCat("Televisori e monitor");
 				
 			Product retrProd, oracleProd;
 			for(int i=0;i<retrieved.size();i++) {
@@ -385,7 +393,8 @@ private static ProductManager pm;
 		boolean flag = false;
 		try {
 			oracolo.add(pm.retrieveProduct(1));
-			oracolo.add(pm.retrieveProduct(2));
+			if(pm.retrieveProduct(2)!=null)
+				oracolo.add(pm.retrieveProduct(2));
 			oracolo.add(pm.retrieveProduct(3));
 			retrieved= pm.getAllProducts("");
 			Product retrProd, oracleProd;

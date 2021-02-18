@@ -53,11 +53,16 @@ public class RegisterControl extends HttpServlet {
 								
 							}
           
-					}catch (Exception e2) {System.out.println(e2);}
+					}catch (Exception e2) {
+						System.out.println(e2);
+						session.setAttribute("alertMsg", "Registrazione fallita.");
+						response.sendRedirect("./Signup.jsp");
+					}
           
+				}else {
+					session.setAttribute("alertMsg", "Sei già loggato.");
+					response.sendRedirect("./HomePage.jsp");
 				}
-				
-				else response.sendRedirect("./HomePage.jsp");
 						
 
   
