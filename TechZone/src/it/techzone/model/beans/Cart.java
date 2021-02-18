@@ -71,6 +71,7 @@ public class Cart {
 		int pos=isInCart(prodotto);
 		if(pos==-1) return false;
 		productList.remove(pos);
+		calcolaPrezzoTotale();
 		return true;
 	}
 
