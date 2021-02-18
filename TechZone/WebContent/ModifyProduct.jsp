@@ -79,7 +79,7 @@
                 <br><br><br>
                 <td>
                 <div class="container h-100" style="position:center">
-                <form action="updateproductcontrol" class="form-group col-md-12" method="get">
+                <form action="updateproductcontrol" class="form-group col-md-12" method="get" onSubmit="validateMod()">
                 <input type="hidden" name="action" value="mod">
                 <div class="form-group< col-md-5">
                 <label for="inputZip">Nome prodotto</label>

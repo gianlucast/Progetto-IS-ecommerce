@@ -22,9 +22,10 @@ function validatelog(){
 	
 	 var mail=document.getElementById("mail").value;
 	 var pass=document.getElementById("password").value;
-	 if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)&&mail.length<255)
+	 if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)&&mail.length<64)
 	  {
-		 if (pass.length>5)
+		 if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{6,18}$/.test(pass))
+			 
 		  {
 			 return true;
 		  }

@@ -28,17 +28,17 @@
 				<br><br>
 				<div class="d-flex justify-content-center form_container">
 				<%if(session.getAttribute("alertMsg")!=null){%>
-						<h3><div class="alertMsg"><%=session.getAttribute("alertMsg")%></div></p></h3> 
+						<h3><div class="alertMsg"><%=session.getAttribute("alertMsg")%></div></h3> 
 						<%session.setAttribute("alertMsg",""); %>
 						<%}%><br>
 						
-					<form action="logincontrol" method="get">
+					<form action="logincontrol" method="get" onsubmit="return validatelog()">
 					
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user fa-lg"></i></span>
 							
-							<input type="text" name="email" id="mail" height="20px" class="form-control input_user" value="" placeholder="inserisci la mail" required>
+							<input type="text" name="email" id="mail" height="20px" class="form-control input_user" value="" placeholder="inserisci la mail" required><span id="spanmail" style="display:none">inserisci una mail valida. </span>
 							</div>
 						</div>
 						
@@ -46,7 +46,7 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key fa-lg"></i></span>
 							
-							<input type="password" name="password" id="password" class="form-control input_pass" value="" placeholder="inserisci la password" required>
+							<input type="password" name="password" id="password" class="form-control input_pass" value="" placeholder="inserisci la password" required><span id="spanpassword" style="display:none">inserisci correttamente la password (Una lettera maiuscola, una minuscola e un numero minimo 6 caratteri.)</span>
 							</div>
 					    	</div>			
 		
