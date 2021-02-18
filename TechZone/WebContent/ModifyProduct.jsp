@@ -29,6 +29,7 @@
     
     <body>
     <tbody>
+    <tr>
     <td>
     <jsp:include page="/Header.jsp"/> 
     
@@ -60,12 +61,12 @@
 							<form action="addtocartcontrol" method="get">
 								<input type="hidden" name="product" value="<%=prodotto.getCodice() %>">
 								<li class="list-group-item"><b>Prezzo: </b><%= prodotto.getCosto() %>€</li>
-								<br><input type="submit" class="button" value="Aggiungi al carrello">
+							
 							</form>
 	
 						</ul>
 						
-					<% } %>
+					
                         	
 					</div>
 					<!-- End Project Info Column -->
@@ -73,19 +74,45 @@
                 <!-- End Row -->
                 </td>
                 <td>
+                <div class="container h-100">
                 <form action="updateproductcontrol" class="form-group col-md-1" method="get">
                 <input type="hidden" value="mod">
-                <input type="text" class="form-control" id="inputZip" name="nomeprod" >
-                <input type="text" class="form-control" id="inputZip" name="descrizione" >
-                <input type="number" class="form-control" id="inputZip" name="quantità" >
-                <input type="text" class="form-control" id="inputZip" name="tipo" >
-                <input type="number" class="form-control" id="inputZip" name="costo" >
-                <input type="number" class="form-control" id="inputZip" name="codice" >
-                <input type="text" class="form-control" id="inputZip" name="categoria" >
-                
+                <div class="form-group col-md-5">
+                <label for="inputZip">Nome prodotto</label>
+                <input type="text" class="form-control" id="inputZip" name="nomeprod" value="<%= prodotto.getNomeProd() %>">
+                </div>
+                <div class="form-group col-md-5">
+                <label for="inputZip">Descrizione</label>
+                <textarea class="form-control" id="inputZip" name="descrizione" value="<%= prodotto.getDescrizione() %>" ></textarea>
+                </div>
+                <div class="form-group col-md-5">
+                <label for="inputZip">Quantità</label>
+                <input type="number" class="form-control" id="inputZip" name="quantità" value="<%= prodotto.getQuantita() %>" >
+                </div>
+                <div class="form-group col-md-5">
+                <label for="inputZip">Tipo</label>
+                <input type="text" class="form-control" id="inputZip" name="tipo" value="<%= prodotto.getTipo() %>" >
+                </div>
+                <div class="form-group col-md-5">
+                <label for="inputZip">Costo</label>
+                <input type="number" class="form-control" id="inputZip" name="costo" value="<%= prodotto.getCosto() %>" >
+                </div>
+                <div class="form-group col-md-5">
+                <label for="inputZip">Codice</label>
+                <input type="number" class="form-control" id="inputZip" name="codice" value="<%= prodotto.getCodice() %>">
+                </div>
+                <div class="form-group col-md-5">
+                <label for="inputZip">Categoria</label>
+                <input type="text" class="form-control" id="inputZip" name="categoria" value="<%= prodotto.getCategoria() %>">
+                </div>
+                <br><br><br>
                 </form>
+                </div>
+                </td>
+                </tr>
                 </tbody>
                 <br><br><br>
+                <% } %>
                  <script src="js/jquery-1.11.0.js"></script>
      
 	 <script src="js/bootstrap.min.js"></script>
