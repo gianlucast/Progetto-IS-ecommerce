@@ -17,7 +17,7 @@ public class ProductDAO {
 	public synchronized Product retrieveProductById(long id) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
-		String selectSQL = "SELECT * FROM " +PRODUCT_TABLE+ " WHERE codiceProdotto = ?";
+		String selectSQL = "SELECT * FROM " +PRODUCT_TABLE+ " WHERE codiceProdotto = ? AND eliminato=0";
 		Product p=null;
 		try {
 			connection = DriverManagerConnectionPool.getConnection();
@@ -80,7 +80,7 @@ public class ProductDAO {
 		PreparedStatement preparedStatement = null;
 		ArrayList<Product> products = new ArrayList<Product>();
 
-		String selectSQL = "SELECT * FROM " + PRODUCT_TABLE;
+		String selectSQL = "SELECT * FROM " + PRODUCT_TABLE+" WHERE eliminato=0";
 
 		if (ordine != null && !ordine.equals("")) {
 			selectSQL += " ORDER BY " + ordine;
@@ -119,7 +119,7 @@ public class ProductDAO {
 		try (Connection con = DriverManagerConnectionPool.getConnection()) {
 			if(cat==null||cat=="") throw new SQLException();
 			PreparedStatement ps = con.prepareStatement(
-					"SELECT * FROM "+PRODUCT_TABLE+" WHERE categoria=?");
+					"SELECT * FROM "+PRODUCT_TABLE+" WHERE categoria=? AND eliminato=0");
 			ps.setString(1, cat);
 			ArrayList<Product> prodotti = new ArrayList<Product>();
 			ResultSet rs = ps.executeQuery();
@@ -146,7 +146,7 @@ public class ProductDAO {
 		try (Connection con = DriverManagerConnectionPool.getConnection()) {
 			if(nameProd==null||nameProd=="") throw new SQLException();
 			PreparedStatement ps = con.prepareStatement(
-					"SELECT * FROM "+PRODUCT_TABLE+" WHERE nomeProd LIKE ? ");
+					"SELECT * FROM "+PRODUCT_TABLE+" WHERE nomeProd LIKE ? AND eliminato=0");
 			ps.setString(1, "%"+nameProd+"%");
 			ArrayList<Product> prodotti = new ArrayList<Product>();
 			ResultSet rs = ps.executeQuery();
