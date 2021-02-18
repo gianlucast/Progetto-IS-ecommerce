@@ -41,7 +41,7 @@ public class RegisterControl extends HttpServlet {
 					try{  
 						UtenteRegistrato u=um.saveUser(email, nome, cognome, psw, tele, address, payment);
 							if( u==null) {
-								session.setAttribute("alertMsg", "Registrazione non effettuata, l'email inserita è già stata utilizzata");
+								session.setAttribute("alertMsg", "Registrazione fallita.");
 								response.sendRedirect("./Signup.jsp");
 								
 								

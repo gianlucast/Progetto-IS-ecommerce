@@ -23,8 +23,8 @@ public class UpdateProductControl extends HttpServlet{
 	 				float cost= Float.parseFloat(costo);
 	 				String descrizione = request.getParameter("descrizione");
 	 				String nomeProd = request.getParameter("nomeprod");
-	 				String quantità = request.getParameter("quantità");
-	 				int quantity = Integer.parseInt(quantità);
+	 				String quantita = request.getParameter("quantita");
+	 				int quantity = Integer.parseInt(quantita);
 	 				String tipo= request.getParameter("tipo");
 	 			
 	 				pm.updateProduct(code, descrizione, nomeProd, quantity, categoria, tipo, cost);
