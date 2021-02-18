@@ -31,8 +31,8 @@
         <link rel="stylesheet" href="css/bootstrap.min.css"> 
         
         <!-- Main CSS -->
+        <link rel="stylesheet" href="css/main.css">
         
-        <link rel="stylesheet" href="./css/main.css">
 
         <!-- Google fonts -->
         <link href='http://fonts.googleapis.com/css?family=Open%20Sans:400,700,600' rel='stylesheet' type='text/css'>
@@ -43,34 +43,29 @@
 	<jsp:include page="/Header.jsp"/>
 		<br><br>
 		
+		<h1 style="font-family:'Josefin Sans', sans-serif; text-align:center">Ricerca ordini</h1>
+		
+		
 		<%if(session.getAttribute("alertMsg")!=null){%>
 		<h3><font color="red"><%=session.getAttribute("alertMsg")%></font></h3> 
 		<%session.setAttribute("alertMsg",""); 
 		session.setAttribute("redirect","OrdersManagerPage.jsp");%><br>
 	<%}%>
-
+	<center>
 	<div class="container">
       <div class="row padding-inner"> 
-      <div class="form-group col-md-5">
-      <label for="inputState">Id Ordine</label>
       <form action="managerordersearchidcontrol">
-     	 <input type="text" class="form-control" id="inputCity" name="idOrd" placeholder="Inserisci id ordine">
-     	 <br>
-         <input type="submit" class="btn-primary" value="Ricerca">
+     	 <input type="text" class="casella" name="idOrd" placeholder="inserisci id ordine">
+         <input type="submit" class="button" value="Ricerca">
       </form>
-      </div>
-      <div class="form-group col-md-5">
-      <label for="inputState">Email</label>
       <form action="managerordersearchmailcontrol">
-     	 <input type="text" class="form-control" id="inputCity" name="mailOrd" placeholder="Inserisci mail utente">
-     	 <br>
-         <input type="submit" class="btn-primary" value="Ricerca">
+     	 <input type="text" class="casella" name="mailOrd" placeholder="inserisci mail utente">
+         <input type="submit" class="button"value="Ricerca">
       </form>
-      </div>
             
-            <div class="col-md-6 col-sm-12">
+            <br><br><br>
+            <p class="block">Risultati:</p>
             
-            <p class="block">Ricerca ordini</p>
             <div class="thumbnail">
             
             
@@ -83,17 +78,17 @@
 			ArrayList<Order> orders = (ArrayList<Order>) session.getAttribute("ordini");
 		    if(orders.size()==0){ %>
 		    
-		    <p> Non sono stati trovati ordini </p>
+		    <p style="font-family:'Josefin Sans', sans-serif"> Non sono stati trovati ordini </p>
 		    	
 		<%  } else {
 			
 			for(Order o : orders){
 		
 		%>
-				 <p><b>Mail utente:</b><%= o.getUtente().getEmail() %>
-				 <p><b>Numero dell'ordine:</b> <%=o.getNumeroOrdine() %></p>
-				  <p><b>Data di invio:</b> <%=o.getDataInvio() %></p>
-				  <p><b>Stato:</b> <%=o.getStato() %></p>
+				 <p style="font-family:'Josefin Sans', sans-serif"><b>Mail utente:</b> <%= o.getUtente().getEmail() %>
+				 <p style="font-family:'Josefin Sans', sans-serif"><b>Numero dell'ordine:</b> <%=o.getNumeroOrdine() %></p>
+				  <p style="font-family:'Josefin Sans', sans-serif"><b>Data di invio:</b> <%=o.getDataInvio() %></p>
+				  <p style="font-family:'Josefin Sans', sans-serif"><b>Stato:</b> <%=o.getStato() %></p>
 				  <br>
 				  <a href="managerorderviewcontrol?idOrd=<%=o.getNumeroOrdine()%>"><button class="button">Mostra dettagli / Cambia stato</button></a>
 				  <br><br>
@@ -114,7 +109,7 @@
  		</div>
  		
             
-    </div>
+    
     
     <%
     	}
@@ -124,8 +119,8 @@
 	
 		%>
 		
-		
    </div>
+   </center>
    
    
 	<br><br>
