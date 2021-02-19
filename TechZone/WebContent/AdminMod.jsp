@@ -105,36 +105,7 @@
 	<% if (request.getAttribute("mod")!=null){ 
 		Product mod=(Product)request.getAttribute("mod");
 		request.setAttribute("mod",mod);
-	%>
-		<h2>MODIFY PRODUCT <%=mod.getCodice()%>  </h2>
-		
-		<form action="admin" method="post" enctype="multipart/form-data" onsubmit="return valmodify()">
-		<input type="hidden" name="action" value="update"> 
-		<input type="hidden" name="code" value="<%=mod.getCodice()%>">
-		<label for="name">Name:</label><br> 
-		<input name="name" type="text" maxlength="30" id="namemod" required value="<%=mod.getNomeProd() %>"><span id="spannamemod">Minimo 4 caratteri, massimo 30</span><br>
-		 
-		<label for="type">Type:</label><br> 
-		<input name="type" type="text" maxlength="30" id="typemod" required value="<%=mod.getTipo()%>"><span id="spantypemod">Minimo 4 caratteri, massimo 30</span><br>
-		 
-		<label for="cat">Categoria:</label><br> 
-		<input name="cat" type="text" maxlength="20" id="catmod"required value="<%=mod.getCategoria()%>"><span id="spancatmod">Minimo 2 caratteri, massimo 20</span><br>
-	
-		<label for="description">Description:</label><br>
-		<input type="text" name="description" id="descmod" required value="<%=mod.getDescrizione() %>"><span id="spandescmod">Minimo 4 caratteri</span><br>
-		
-		<label for="price">Price:</label><br> 
-		<input name="price" type="number" min="0" id="pricemod" value="<%=mod.getCosto() %>" required><span id="spanpricemod">Non sotto lo zero</span><br>
-
-		<label for="quantity">Quantity:</label><br> 
-		<input name="quantity" type="number" min="0" id="quantitymod" value="<%=mod.getQuantita() %>" required><span id="spanquantitymod">Non sotto lo zero</span><br>
-		
-		<input type="submit" value="Modifica"><input type="reset" value="Ripristina modifiche">
-
-	</form>
-	
-	<hr>
-	<%} %>
+	   } %>
 	
 	
 	<br><br>

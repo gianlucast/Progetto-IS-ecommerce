@@ -21,6 +21,8 @@
 
         <link rel="stylesheet" href="css/main.css">
         
+        <script src="./scripts/ValidateModifyProduct.js"></script>
+        
 
         <!-- Google fonts -->
         <link href='http://fonts.googleapis.com/css?family=Open%20Sans:400,700,600' rel='stylesheet' type='text/css'>
@@ -56,14 +58,7 @@
 						
 						<ul class="list-group">
 							<li class="list-group-item"><b>Tipo:</b> <%=prodotto.getTipo() %></li>
-							<li class="list-group-item"><b>Categoria:</b> <%=prodotto.getCategoria() %></li>
-							
-							<form action="addtocartcontrol" method="get">
-								<input type="hidden" name="product" value="<%=prodotto.getCodice() %>">
-								<li class="list-group-item"><b>Prezzo: </b><%= prodotto.getCosto() %>€</li>
-							
-							</form>
-	
+							<li class="list-group-item"><b>Categoria:</b> <%=prodotto.getCategoria() %></li>	
 						</ul>
 						
 					
@@ -79,35 +74,37 @@
                 <br><br><br>
                 <td>
                 <div class="container h-100" style="position:center">
-                <form action="updateproductcontrol" class="form-group col-md-12" method="get" onSubmit="validateMod()">
+                
+                <form action="updateproductcontrol" class="form-group col-md-12" method="get" onsubmit="ValidateModifyProduct()">
+                
                 <input type="hidden" name="action" value="mod">
                 <div class="form-group< col-md-5">
                 <label for="inputZip">Nome prodotto</label>
-                <input type="text" class="form-control" id="inputZip" name="nomeprod" value="<%= prodotto.getNomeProd() %>">
+                <input type="text" class="form-control" id="inputNameProd" name="nomeprod" value="<%= prodotto.getNomeProd() %>">
                 </div>
                 <div class="form-group col-md-5">
                 <label for="inputZip">Quantità</label>
-                <input type="number" class="form-control" id="inputZip" name="quantita" value="<%= prodotto.getQuantita() %>" >
+                <input type="number" class="form-control" id="inputQuant" name="quantita" value="<%= prodotto.getQuantita() %>" >
                 </div>
                 <div class="form-group col-md-5">
                 <label for="inputZip">Tipo</label>
-                <input type="text" class="form-control" id="inputZip" name="tipo" value="<%= prodotto.getTipo() %>" >
+                <input type="text" class="form-control" id="inputTipo" name="tipo" value="<%= prodotto.getTipo() %>" >
                 </div>
                 <div class="form-group col-md-5">
                 <label for="inputZip">Costo</label>
-                <input type="number" class="form-control" id="inputZip" name="costo" value="<%= prodotto.getCosto() %>" >
+                <input type="number" class="form-control" id="inputCosto" name="costo" value="<%= prodotto.getCosto() %>" >
                 </div>
                 <div class="form-group col-md-5">
                 <label for="inputZip">Codice</label>
-                <input type="number" class="form-control" id="inputZip" name="codice" readonly value="<%= prodotto.getCodice() %>">
+                <input type="number" class="form-control" id="inputCodice" name="codice" readonly value="<%= prodotto.getCodice() %>">
                 </div>
                 <div class="form-group col-md-5">
                 <label for="inputZip">Categoria</label>
-                <input type="text" class="form-control" id="inputZip" name="categoria" value="<%= prodotto.getCategoria() %>">
+                <input type="text" class="form-control" id="inputCat" name="categoria" value="<%= prodotto.getCategoria() %>">
                 </div>
                  <div class="form-group col-md-8">
                 <label for="inputZip">Descrizione</label>
-                <textarea class="form-control" id="inputZip" name="descrizione" style="height:250px"><%= prodotto.getDescrizione() %></textarea>
+                <textarea class="form-control" id="inputDescr" name="descrizione" style="height:250px"><%= prodotto.getDescrizione() %></textarea>
                 </div>
                 <br><br><br>
                 <input type="submit" class="btn-primary" value="Conferma modifiche">

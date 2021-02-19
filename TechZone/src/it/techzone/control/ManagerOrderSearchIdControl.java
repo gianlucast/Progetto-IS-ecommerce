@@ -29,7 +29,7 @@ public class ManagerOrderSearchIdControl extends HttpServlet{
 							Order o=om.getOrderById(Long.parseLong(request.getParameter("idOrd")));
 							if(o==null) {
 								session.setAttribute("alertMsg", "Ordine non trovato");
-								response.sendRedirect("OrdersPage.jsp");
+								response.sendRedirect("OrdersManagerPage.jsp");
 							}else {
 								ArrayList<Order> array=new ArrayList<Order>();
 								array.add(o);

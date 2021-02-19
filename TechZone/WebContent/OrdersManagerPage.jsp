@@ -23,6 +23,8 @@
 <html>
     <head>
         <title>Area Manager</title>
+        
+        <script src="./scripts/ValidateOrderSearch.js"></script>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,13 +56,16 @@
 	<center>
 	<div class="container">
       <div class="row padding-inner"> 
-      <form action="managerordersearchidcontrol">
-     	 <input type="text" class="casella" name="idOrd" placeholder="inserisci id ordine">
+      <form action="managerordersearchidcontrol" onsubmit="return ValidateOrderSearchByIdOrd()">
+     	 <input type="text" class="casella" name="idOrd" id="inputOrdine" placeholder="Inserisci id ordine">
+     	 <span id="spanidord" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci un valido id dell'ordine(solo numeri)</span>
          <input type="submit" class="button" value="Ricerca">
       </form>
-      <form action="managerordersearchmailcontrol">
-     	 <input type="text" class="casella" name="mailOrd" placeholder="inserisci mail utente">
+      <br>
+      <form action="managerordersearchmailcontrol" onsubmit="return ValidateOrderSearchByEmail()">
+     	 <input type="text" class="casella" name="mailOrd" id="inputEmail" placeholder="Inserisci mail utente">
          <input type="submit" class="button"value="Ricerca">
+          <span id="spanmailord" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci una mail valida (usa la @) </span>
       </form>
             
             <br><br><br>
