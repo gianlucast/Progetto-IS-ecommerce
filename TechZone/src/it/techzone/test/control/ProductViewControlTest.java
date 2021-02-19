@@ -1,3 +1,6 @@
+//ProductViewControlTest
+
+
 package it.techzone.test.control;
 
 import static org.junit.Assert.assertEquals;
@@ -122,7 +125,7 @@ public class ProductViewControlTest extends Mockito{
 	    	flag=true;
     	}catch(Exception e) {
 			e.printStackTrace();
-			fail("testLogout() not passed!");
+			fail("testProductViewControlNoIdProd() not passed!");
 		}finally {
             if(flag) System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
         }
@@ -149,7 +152,7 @@ public class ProductViewControlTest extends Mockito{
 	    	flag=true;
     	}catch(Exception e) {
 			e.printStackTrace();
-			fail("testLogout() not passed!");
+			fail("testProductViewControl not passed!");
 		}finally {
             if(flag) System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
         }
