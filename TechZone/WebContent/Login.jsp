@@ -38,16 +38,22 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user fa-lg"></i></span>
 							
-							<input type="text" name="email" id="mail" height="20px" class="form-control input_user" value="" placeholder="inserisci la mail" required><span id="spanmail" style="display:none">inserisci una mail valida. </span>
+							<input type="text" name="email" id="mail" height="20px" class="form-control input_user" value="" placeholder="inserisci la mail" required>
+							
+							
 							</div>
+							<p><span id="spanmail" style="display:none;font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci una mail valida. </span></p>
 						</div>
 						
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key fa-lg"></i></span>
 							
-							<input type="password" name="password" id="password" class="form-control input_pass" value="" placeholder="inserisci la password" required><span id="spanpassword" style="display:none">inserisci correttamente la password (Una lettera maiuscola, una minuscola e un numero minimo 6 caratteri.)</span>
+							<input type="password" name="password" id="password" class="form-control input_pass" value="" placeholder="inserisci la password" required>
+		
 							</div>
+							<p><span id="spanpassword" style="display:none;font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci correttamente la password <br>(Una lettera maiuscola, una minuscola <br>e un numero minimo 6 caratteri.)</span></p>
+							
 					    	</div>			
 		
 						

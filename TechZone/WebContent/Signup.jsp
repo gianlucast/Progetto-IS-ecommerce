@@ -27,46 +27,46 @@
 	
   
 <div class="container h-100">
-	   <form action="user" method="post" name="registrazione" onSubmit="return ValidateSignup()">
+	   <form action="user" method="post" name="registrazione" onsubmit="return ValidateSignup()">
 	    <div class="form-row">
     <div class="form-group col-md-5">
       <label for="inputNome4">Nome</label>
       <input type="text" class="form-control" id="inputNome4" placeholder="Inserisci nome" required name="userName">
-   	  <span id="spannome" style="display:none">inserisci una mail valida. </span>
+   	  <span id="spannome" style="display:none; font-family: 'Josefin Sans', sans-serif;">Inserisci un nome valido (solo caratteri). </span>
     </div>
     <div class="form-group col-md-5">
       <label for="inputSurname4">Cognome</label>
       <input type="text" class="form-control" id="inputSurname4" placeholder="Inserisci cognome" required name="userSurname">
-      <span id="spancognome" style="display:none">inserisci una mail valida. </span>
+      <span id="spancognome" style="display:none ; font-family: 'Josefin Sans', sans-serif;">Inserisci un cognome valido (solo caratteri). </span>
       </div>
     <div class="form-group col-md-5">
       <label for="inputEmail4">Email</label>
       <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required name="userEmail">
-      <span id="spanmail" style="display:none">inserisci una mail valida. </span>
+      <span id="spanmail" style="display:none; font-family: 'Josefin Sans', sans-serif;">Inserisci una mail valida (usa la @) </span>
     </div>
     <div class="form-group col-md-5">
       <label for="inputPassword4">Password</label>
       <input type="password" class="form-control" id="inputPassword4" placeholder="Password" required name="userPass">
-      <span id="spanpassword" style="display:none">inserisci una mail valida. </span>
+      <span id="spanpassword" style="display:none; font-family: 'Josefin Sans', sans-serif;">Inserisci una password valida (fra  ) </span>
     </div>    
     </div>
     <div class="form-row">
     <div class="form-group col-md-5">
     <label for="inputTelephone">Telefono</label>
     <input type="text" class="form-control" id="inputTelephone" placeholder="Numero di telefono" required name="userPhone">
-    <span id="spantelefono" style="display:none">inserisci una mail valida. </span>
+    <span id="spantelefono" style="display:none; font-family: 'Josefin Sans', sans-serif;">inserisci una mail valida. </span>
   </div>
   	<div class="form-group col-md-5">
     <label for="inputAddress">Address</label>
     <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required name="userStreet">
-    <span id="spanindirizzo" style="display:none">inserisci una mail valida. </span>
+    <span id="spanindirizzo" style="display:none; font-family: 'Josefin Sans', sans-serif;">inserisci una mail valida. </span>
   </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-5">
       <label for="inputCity">Città</label>
       <input type="text" class="form-control" id="inputCity" required name="userCity">
-      <span id="spancity" style="display:none">inserisci una mail valida. </span>
+      <span id="spancity" style="display:none; font-family: 'Josefin Sans', sans-serif;">inserisci una mail valida. </span>
     </div>
     <div class="form-group col-md-4">
       <label for="inputState">Paese</label>
@@ -79,7 +79,7 @@
     <div class="form-group col-md-1">
       <label for="inputZip">CAP</label>
       <input type="text" class="form-control" id="inputZip" required name="userCap">
-      <span id="spanzip" style="display:none">inserisci una mail valida. </span>
+      <span id="spanzip" style="display:none; font-family: 'Josefin Sans', sans-serif;">inserisci una mail valida. </span>
     </div>
   </div>
    <div class="form-row">
@@ -98,22 +98,22 @@
     <div class="form-group col-md-5">
       <label for="inputState">Codice</label>
         <input type="text" class="form-control" id="inputCode" required name="userPaymentCode">
-        <span id="spancode" style="display:none">inserisci una mail valida. </span>
+        <span id="spancode" style="display:none; font-family: 'Josefin Sans', sans-serif;">inserisci una mail valida. </span>
     </div>
     <div class="form-group col-md-4">
       <label for="inputZip" >EXP MONTH</label>
       <input type="number" class="form-control" id="inputMonth" min="1" max="12"  required name="userPaymentExpMonth">
-      <span id="spanmonth" style="display:none">inserisci una mail valida. </span>
+      <span id="spanmonth" style="display:none; font-family: 'Josefin Sans', sans-serif;">inserisci una mail valida. </span>
     </div>
     <div class="form-group col-md-4">
       <label for="inputZip" >EXP YEAR</label>
       <input type="number" class="form-control" id="inputYear" min="2021" required name="userPaymentExpYear">
-      <span id="spanyear" style="display:none">inserisci una mail valida. </span>
+      <span id="spanyear" style="display:none; font-family: 'Josefin Sans', sans-serif;">inserisci una mail valida. </span>
     </div>
     <div class="form-group col-md-1">
       <label for="inputZip">CVV</label>
       <input type="number" class="form-control" id="inputCvv" required name="userPaymentCvv" maxlength="3" minlength="3">
-      <span id="spancvv" style="display:none">inserisci una mail valida. </span>
+      <span id="spancvv" style="display:none; font-family: 'Josefin Sans', sans-serif;">inserisci una mail valida. </span>
     </div>
   </div>
 

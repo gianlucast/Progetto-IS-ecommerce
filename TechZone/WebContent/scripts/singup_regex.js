@@ -70,194 +70,207 @@ function ValidateSignup(){
 	});
 	
 	$("#inputAddress").blur(function(){
-	    $("#spanindirizzo").css("display", "inline")
+	    $("#spanindirizzo").css("display", "none")
 	});
 	
 	$("#inputCity").blur(function(){
-	    $("#spancity").css("display", "inline")
+	    $("#spancity").css("display", "none")
 	});
 	
 	$("#inputZip").blur(function(){
-	    $("#spanzip").css("display", "inline")
+	    $("#spanzip").css("display", "none")
 	});
 	
 	$("#inputCode").blur(function(){
-	    $("#spancode").css("display", "inline")
+	    $("#spancode").css("display", "none")
 	});
 	
 	$("#inputMonth").blur(function(){
-	    $("#spanmonth").css("display", "inline")
+	    $("#spanmonth").css("display", "none")
 	});
 	
 	$("#inputYear").blur(function(){
-	    $("#spanyear").css("display", "inline")
+	    $("#spanyear").css("display", "none")
 	});
 	
 	$("#inputCvv").blur(function(){
-	    $("#spancvv").css("display", "inline")
+	    $("#spancvv").css("display", "none")
 	});
 	
-	return(ValidateEmail()&&ValidateName()&&ValidateSurname()&&ValidatePassword()&&ValidateTelephone()&&ValidateDate()&&ValidateCAP()&&ValidateCvv()&&ValidateCode()&&ValidateCity()&&ValidateAddress() );
+	return(ValidateEmail()&&ValidateName()&&ValidateSurname()&&ValidatePassword()&&ValidateTelephone()&&ValidateAddress()&&ValidateCity()&&ValidateCAP()&&ValidateCode()&&ValidateDate()&&ValidateCvv());
 }
 
 
 
-function ValidateEmail() 
-{
+function ValidateEmail() {
+	alert("Entrato in validateEmail");
  var mail=document.getElementById("inputEmail4").value;
  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)&&mail.length<64)
   {
 	 return true;
   }
     $("#inputEmail4").focus();
-    return (false)
+    return (false);
  
 }
 
-function ValidatePassword() 
-{
+function ValidatePassword() {
+	alert("Entrato in validatePassword");
  var pass=document.getElementById("inputPassword4").value;
- if(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/.test(pass)){
+ if(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,18}$/.test(pass)){
 	
 	return true;
  
  	}
     $("#inputPassword4").focus();
-    return (false)
+    return (false);
  
 }
 
 
 function ValidateName(){
+	alert("Entrato in validateName");
+	var nome=document.getElementById("inputNome4").value;
 
-var nome=document.getElementById("inputNome4").value;
-
-if(/^[A-Za-z]+$/.test(nome)){
+	if(/^[A-Za-z]+$/.test(nome)){
 	
 	return true;
-}
+	}
 
 $("#inputNome4").focus();
-    return (false)
+    return (false);
 
 }
 
 function ValidateSurname(){
-
+alert("Entrato in validateSuname");
 var cognome=document.getElementById("inputSurname4").value;
 
-if(/^[A-Za-z]+$/.test(cognome)){
+	if(/^[A-Za-z]+$/.test(cognome)){
 	
 	return true;
-}
+	}
 
 $("#inputSurname4").focus();
-    return (false)
+    return (false);
 
 }
 
 
 
 function ValidateDate(){
+	alert("Entrato in validateDate");
 	var data= new Date();
 	var scadenzamese = document.getElementById("inputMonth").value;
 	var scandenzaanno = document.getElementById("inputYear").value;
 	if(data.getFullYear()>scadenzaanno.getFullYear())
 		{
-			return false;
+			 $("#inputMonth").focus();
+
+   			 $("#inputYear").focus();
+
+			  return false;
 		}
 	else if(data.getFullYear()==scadenzaanno.getFullYear()&&data.getMonth()+1>scadenzamese.getMonth()+1)
 		{
-			return false;
+			 $("#inputMonth").focus();
+
+  			  $("#inputYear").focus();
+ 
+		  	return false;
 		}
 	else 
 	{
 		return true;
 	}
 	$("#inputMonth").focus();
-    return (false)
+
     $("#inputYear").focus();
-    return (false)
+    return (false);
 	
 }
 
 function ValidateCAP(){
-	
+	alert("Entrato in validateCAP");
 	var cap = document.getElementById("inputZip").value;
-	if(/^[0-9]\{5\}$/.test(cap)){
+	if(/^\d{5}$/.test(cap)){
 		
 		return true;
 	}
 	
-	$("#cap").focus();
-    return (false)
+	$("#inputZip").focus();
+    return (false);
 	
 	
 }
 
 function ValidateTelephone(){
-	
+	alert("Entrato in validateTelephone");
 	var telephone = document.getElementById("inputTelephone").value;
-	if(/^[0-9]\{10\}$/.test(telephone)){
+	if(/^\d{10}$/.test(telephone)){
 		
 		return true;
 	}
 	
 	$("#inputTelephone").focus();
-    return (false)
+    return (false);
 	
 }
 
 function ValidateCvv(){
-	
+	alert("Entrato in validateCvv");
 	var cvv = document.getElementById("inputCvv").value;
-	if(/^[0-9]\{3\}$/.test(cvv)){
+	if(/^\d{3}$/.test(cvv)){
 		
 		return true;
 	}
 	
 	$("#inputCvv").focus();
-    return (false)
+    return (false);
 	
 }
 
 function ValidateCode(){
-	
+	alert("Entrato in validateCode");
 	var code = document.getElementById("inputCode").value;
-	if(/^[0-9]\{16\}$/.test(cvv)){
+	if(/^\d{16}$/.test(code)){
 		
 		return true;
 	}
 	
 	$("#inputCode").focus();
-    return (false)
+    return (false);
 	
 }
 
 function ValidateCity(){
+	
+	alert("Entrato in validateCity");
 	
 	var city = document.getElementById("inputCity").value;
 	
 	if(/^[A-Za-z]+$/.test(city)){
 	
 	return true;
-}
+	}
 
 	$("#inputCity").focus();
-    return (false)
+    return (false);
 }
 
 function ValidateAddress(){
 	
+	alert("Entrato in validateAddress");
+	
 	var address = document.getElementById("inputAddress").value;
 	
-	if(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/.test(address)){
+	if(/^(?:[A-Za-z]+)(?:[A-Za-z0-9 _]{5,64})$/.test(address)){
 		
 		return true;
 	}
 	
 	$("#inputAddress").focus();
-    return (false)
+    return (false);
 	
 }
 
