@@ -75,24 +75,28 @@
                 <td>
                 <div class="container h-100" style="position:center">
                 
-                <form action="updateproductcontrol" class="form-group col-md-12" method="get" onsubmit="ValidateModifyProduct()">
+                <form action="updateproductcontrol" class="form-group col-md-12" method="get" onsubmit="return ValidateModifyProduct()">
                 
                 <input type="hidden" name="action" value="mod">
                 <div class="form-group< col-md-5">
                 <label for="inputZip">Nome prodotto</label>
                 <input type="text" class="form-control" id="inputNameProd" name="nomeprod" value="<%= prodotto.getNomeProd() %>">
+                <span id="spannameprod" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Minimo 5, massimo 64 (tra caratteri e numeri) </span>
                 </div>
                 <div class="form-group col-md-5">
                 <label for="inputZip">Quantità</label>
-                <input type="number" class="form-control" id="inputQuant" name="quantita" value="<%= prodotto.getQuantita() %>" >
+                <input type="number" class="form-control" id="inputQuant" name="quantita" value="<%= prodotto.getQuantita() %>">
+                <span id="spanquant" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Minimo 1, massimo 99 cifre(non sotto lo zero). Dopo la ,/. solo due cifre.</span>
                 </div>
                 <div class="form-group col-md-5">
                 <label for="inputZip">Tipo</label>
                 <input type="text" class="form-control" id="inputTipo" name="tipo" value="<%= prodotto.getTipo() %>" >
+                <span id="spantipo" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Solo caratteri</span>
                 </div>
                 <div class="form-group col-md-5">
                 <label for="inputZip">Costo</label>
-                <input type="number" class="form-control" id="inputCosto" name="costo" value="<%= prodotto.getCosto() %>" >
+                <input type="number" step="0.01" class="form-control" id="inputCosto" name="costo" value="<%= prodotto.getCosto() %>" >
+                <span id="spancosto" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i>Minimo 1, non sotto lo zero</span>
                 </div>
                 <div class="form-group col-md-5">
                 <label for="inputZip">Codice</label>
@@ -101,10 +105,12 @@
                 <div class="form-group col-md-5">
                 <label for="inputZip">Categoria</label>
                 <input type="text" class="form-control" id="inputCat" name="categoria" value="<%= prodotto.getCategoria() %>">
+                <span id="spancat" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Solo caratteri</span>
                 </div>
                  <div class="form-group col-md-8">
                 <label for="inputZip">Descrizione</label>
                 <textarea class="form-control" id="inputDescr" name="descrizione" style="height:250px"><%= prodotto.getDescrizione() %></textarea>
+                <span id="spandescr" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Minimo 5 caratteri, massimo 1000 (fra caratteri, numeri, simboli..)</span>
                 </div>
                 <br><br><br>
                 <input type="submit" class="btn-primary" value="Conferma modifiche">

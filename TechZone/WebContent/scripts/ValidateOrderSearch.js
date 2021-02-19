@@ -16,7 +16,9 @@ return ValidateEmail();
 	
 	
 function ValidateEmail() {
+	
  	var mail=document.getElementById("inputEmail").value;
+
  	if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)&&mail.length<64)
  		 {
 		  return true;
@@ -36,9 +38,8 @@ function ValidateEmail() {
 
 function ValidateIdOrd(){
 	
-	alert("Entrato in idOrd");
 	var idord=document.getElementById("inputOrdine").value;
-	if (/^\d{3}$/.match(idOrd))
+	if (/^\d{3}$/.test(idord))
 	{
 		return true;
 	}

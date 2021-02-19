@@ -5,7 +5,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
 
 function ValidateModifyProduct(){	
 
-return (ValidateNameProd()&&ValidateQuantity()&&ValidateTipo()&&ValidateCosto()&&ValidateCategoria()&&ValidateDescrizione())
+return (ValidateNameProd()&&ValidateQuantity()&&ValidateTipo()&&ValidateCosto()&&ValidateCategoria()&&ValidateDescrizione());
 
 }
 
@@ -27,6 +27,8 @@ function ValidateNameProd(){
 	});
 	
 	$("#inputNameProd").focus();
+	
+	
     return (false);
 }
 
@@ -36,6 +38,7 @@ function ValidateQuantity(){
 	
 	if(/^\d{1,99}$/.test(quantity)){
 		
+	
 		return true;
 	}
 	
@@ -48,6 +51,8 @@ function ValidateQuantity(){
 	});
 	
 	$("#inputQuant").focus();
+	
+	
     return (false);
 
 }
@@ -57,6 +62,7 @@ function ValidateTipo(){
 	var tipo = document.getElementById("inputTipo").value;
 	
 	if(/^[A-Za-z]+$/.test(tipo)){
+		
 		
 		return true;
 	}
@@ -70,6 +76,8 @@ function ValidateTipo(){
 	});
 	
 	$("#inputTipo").focus();
+	
+	
     return (false);
 	
 }
@@ -78,9 +86,15 @@ function ValidateCosto(){
 	
 	var costo = document.getElementById("inputCosto").value;
 	
-	if(/ /.test(tipo)){
+	if(/^\d+(.\d{1,2})?$/.test(costo)){
 		
-		return true;
+		if(costo>0){
+		
+			
+			return true;
+		
+		}	
+		
 	}
 	
 	$("#inputCosto").focus(function(){
@@ -92,6 +106,8 @@ function ValidateCosto(){
 	});
 	
 	$("#inputCosto").focus();
+	
+	
     return (false);
 	
 }
@@ -100,8 +116,9 @@ function ValidateCategoria(){
 	
 	var categoria = document.getElementById("inputCat").value;
 	
-	if(/^[A-Za-z]+$/.test(tipo)){
+	if(/^[A-Za-z]+$/.test(categoria)){
 		
+	
 		return true;
 	}
 	
@@ -114,15 +131,18 @@ function ValidateCategoria(){
 	});
 	
 	$("#inputCat").focus();
+	
+	
     return (false);
 	
 }
 
 function ValidateDescrizione(){
 	
-	var categoria = document.getElementById("inputDescr").value;
+	var descr = document.getElementById("inputDescr").value;
 	
-	if(/^(?:[A-Za-z]+)(?:[A-Za-z0-9 _]{5,64})$/.test(tipo)){
+	if(descr.length<1000&&descr.length>5){
+		
 		
 		return true;
 	}
@@ -136,6 +156,8 @@ function ValidateDescrizione(){
 	});
 	
 	$("#inputDescr").focus();
+	
+	
     return (false);
 	
 }

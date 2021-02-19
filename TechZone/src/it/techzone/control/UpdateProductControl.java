@@ -29,7 +29,7 @@ public class UpdateProductControl extends HttpServlet{
 	 			
 	 				pm.updateProduct(code, descrizione, nomeProd, quantity, categoria, tipo, cost);
 	 				session.setAttribute("alertMsg", "Modifica effettuata");
-	 				response.sendRedirect("./AdminMod.jsp");
+	 				response.sendRedirect("./ModifyProduct.jsp");
  				}else {
  					if(request.getParameter("idProd")!=null) {
  						long idProd=Long.parseLong(request.getParameter("idProd"));

@@ -58,8 +58,8 @@
       <div class="row padding-inner"> 
       <form action="managerordersearchidcontrol" onsubmit="return ValidateOrderSearchByIdOrd()">
      	 <input type="text" class="casella" name="idOrd" id="inputOrdine" placeholder="Inserisci id ordine">
-     	 <span id="spanidord" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci un valido id dell'ordine(solo numeri)</span>
          <input type="submit" class="button" value="Ricerca">
+         <span id="spanidord" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci un valido id dell'ordine(solo numeri)</span>
       </form>
       <br>
       <form action="managerordersearchmailcontrol" onsubmit="return ValidateOrderSearchByEmail()">
