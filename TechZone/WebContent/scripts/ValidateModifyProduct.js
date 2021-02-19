@@ -5,7 +5,7 @@ document.getElementsByTagName('head')[0].appendChild(script);
 
 function ValidateModifyProduct(){	
 
-return 
+return (ValidateNameProd()&&ValidateQuantity()&&ValidateTipo()&&ValidateCosto()&&ValidateCategoria()&&ValidateDescrizione())
 
 }
 
@@ -92,6 +92,50 @@ function ValidateCosto(){
 	});
 	
 	$("#inputCosto").focus();
+    return (false);
+	
+}
+
+function ValidateCategoria(){
+	
+	var categoria = document.getElementById("inputCat").value;
+	
+	if(/^[A-Za-z]+$/.test(tipo)){
+		
+		return true;
+	}
+	
+	$("#inputCat").focus(function(){
+	    $("#spancat").css("display", "inline")
+	});
+	
+	$("#inputCat").blur(function(){
+	    $("#spancat").css("display", "none")
+	});
+	
+	$("#inputCat").focus();
+    return (false);
+	
+}
+
+function ValidateDescrizione(){
+	
+	var categoria = document.getElementById("inputDescr").value;
+	
+	if(/^(?:[A-Za-z]+)(?:[A-Za-z0-9 _]{5,64})$/.test(tipo)){
+		
+		return true;
+	}
+	
+	$("#inputDescr").focus(function(){
+	    $("#spandescr").css("display", "inline")
+	});
+	
+	$("#inputDescr").blur(function(){
+	    $("#spandescr").css("display", "none")
+	});
+	
+	$("#inputDescr").focus();
     return (false);
 	
 }
