@@ -27,8 +27,10 @@ public class UpdateProductControl extends HttpServlet{
 	 				int quantity = Integer.parseInt(quantita);
 	 				String tipo= request.getParameter("tipo");
 	 			
-	 				pm.updateProduct(code, descrizione, nomeProd, quantity, categoria, tipo, cost);
-	 				session.setAttribute("alertMsg", "Modifica effettuata");
+	 				if(pm.updateProduct(code, descrizione, nomeProd, quantity, categoria, tipo, cost))
+	 					session.setAttribute("alertMsg", "Modifica effettuata");
+	 				else
+	 					session.setAttribute("alertMsg", "Errore nella modifica");
 	 				response.sendRedirect("./ModifyProduct.jsp");
  				}else {
  					if(request.getParameter("idProd")!=null) {
