@@ -82,8 +82,8 @@ public class CartViewControlTest extends Mockito {
     	
     }
 
-	
-    public void testViewNotManager() {
+	@Test
+    public void testCartView() {
     	boolean flag = false;
     	try {
     			when(request.getSession()).thenReturn(session);
@@ -98,14 +98,16 @@ public class CartViewControlTest extends Mockito {
     	}
     	catch(Exception e) {
     		e.printStackTrace();
-    		fail("testViewNotManager() not passed!");
+    		fail("testCartView() not passed!");
     	}
     
-    finally {
-        if(flag==true) System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+	    finally {
+	        if(flag==true) System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+	    }
     }
-    }
-    public void testViewManager() {
+	
+	@Test
+    public void testCartViewFail() {
     	boolean flag=false;
     	
     	try {
@@ -118,21 +120,21 @@ public class CartViewControlTest extends Mockito {
 	    	servlet.doGet(request, response);
 	    	ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
     		verify(response).sendRedirect(captor.capture());
-    		assertEquals("./HomePage.jsp", captor.getValue());
+    		assertEquals("HomePage.jsp", captor.getValue());
     		assertEquals("Non puoi accedere al carrello", sessioneMap.get("alertMsg"));
     		flag=true;
     		
-   }
-   catch(Exception e ) {
-	   e.printStackTrace();
-	   fail("testViewManager() not passed!");
-   }
-   finally {
-	   if(flag==true) {
-		   System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
 	   }
-   }
-    }
+	   catch(Exception e ) {
+		   e.printStackTrace();
+		   fail("testCartViewFail() (manager asks for the function) not passed!");
+	   }
+	   finally {
+		   if(flag==true) {
+			   System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
+		   }
+	   }
+	}
     
 }
 

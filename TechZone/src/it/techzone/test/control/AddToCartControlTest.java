@@ -70,14 +70,15 @@ public class AddToCartControlTest extends Mockito {
     }).when(session).setAttribute(anyString(), any());
     }
     
-    public void testNotManager() throws IOException {
+    @Test
+    public void testAddToCart() throws IOException {
     	Cart a;
     	boolean flag1 = false, flag2=false;
     	try {
     			sessioneMap=new HashMap<String, Object>();
     	
     			when(request.getSession()).thenReturn(session);
-    			when(request.getParameter("idProd")).thenReturn("1");
+    			when(request.getParameter("product")).thenReturn("1");
     			assertEquals(sessioneMap.get("utente"),null);
     	
     			AddToCartControl servlet = new AddToCartControl();
@@ -90,7 +91,7 @@ public class AddToCartControlTest extends Mockito {
     			a= (Cart) sessioneMap.get("cart");
     			assertEquals(a.getProductList().get(0).getProdotto().getCodice(),1);
     			assertEquals(a.getProductList().get(0).getQuantita(),1);
-    			assertEquals(a.getPrezzoTotale(),398.99,0);
+    			assertEquals(a.getPrezzoTotale(),398.99,1);
     		
     		
     			flag1= true;
@@ -98,7 +99,7 @@ public class AddToCartControlTest extends Mockito {
     	
     	catch(Exception e) {
     				e.printStackTrace();
-    				fail("testNotManager() not passed!");
+    				fail("testAddToCart() not passed!");
     	}
     	
     	try {
@@ -106,23 +107,21 @@ public class AddToCartControlTest extends Mockito {
     			a=new Cart();
     			session.setAttribute("cart", a);
     			sessioneMap=new HashMap<String, Object>();
+    			sessioneMap.put("cart", a);
     	    	
         		when(request.getSession()).thenReturn(session);
         		when(request.getParameter("idProd")).thenReturn("1");
         		assertEquals(sessioneMap.get("utente"),null);
         		AddToCartControl servlet = new AddToCartControl();
         		servlet.doGet(request, response);
-        		ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
         	
-        		verify(response).sendRedirect(captor.capture());
-        		assertEquals("./CartView.jsp", captor.getValue());
         		a= (Cart) sessioneMap.get("cart");
         		assertEquals(a.getProductList().get(0).getProdotto().getCodice(),1);
         		assertEquals(a.getProductList().get(0).getQuantita(),1);
-        		assertEquals(a.getPrezzoTotale(),398.99,0);
+        		assertEquals(a.getPrezzoTotale(),398.99,1);
         		
         		
-        		flag1= true;
+        		flag2= true;
         		
     		
     	}
@@ -139,7 +138,9 @@ public class AddToCartControlTest extends Mockito {
     		
     	}
     }
-   public void testYesManager()  {
+    
+    @Test
+   public void testAddToCartFail()  {
 	   boolean flag= false;
 	   try {
 		   
@@ -159,7 +160,7 @@ public class AddToCartControlTest extends Mockito {
 	   }
 	   catch(Exception e ) {
 		   e.printStackTrace();
-		   fail("testYesManager() not passed!");
+		   fail("testYAddToCartFail() (manager asks for the add) not passed!");
 	   }
 	   finally {
 		   if(flag==true) {
