@@ -103,7 +103,6 @@ function ValidateSignup(){
 
 
 function ValidateEmail() {
-	alert("Entrato in validateEmail");
  var mail=document.getElementById("inputEmail4").value;
  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)&&mail.length<64)
   {
@@ -115,83 +114,75 @@ function ValidateEmail() {
 }
 
 function ValidatePassword() {
-	alert("Entrato in validatePassword");
  var pass=document.getElementById("inputPassword4").value;
  if(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,18}$/.test(pass)){
 	
 	return true;
  
- 	}
-    $("#inputPassword4").focus();
-    return (false);
+ }
+ $("#inputPassword4").focus();
+ return (false);
  
 }
 
 
 function ValidateName(){
-	alert("Entrato in validateName");
 	var nome=document.getElementById("inputNome4").value;
 
 	if(/^[A-Za-z]+$/.test(nome)){
-	
-	return true;
+
+		return true;
 	}
 
-$("#inputNome4").focus();
-    return (false);
+	$("#inputNome4").focus();
+		return (false);
 
 }
 
 function ValidateSurname(){
-alert("Entrato in validateSuname");
-var cognome=document.getElementById("inputSurname4").value;
+	var cognome=document.getElementById("inputSurname4").value;
 
 	if(/^[A-Za-z]+$/.test(cognome)){
 	
 	return true;
 	}
 
-$("#inputSurname4").focus();
-    return (false);
-
+	$("#inputSurname4").focus();
+	return (false);
+	
 }
 
 
 
 function ValidateDate(){
-	alert("Entrato in validateDate");
 	var data= new Date();
 	var scadenzamese = document.getElementById("inputMonth").value;
-	var scandenzaanno = document.getElementById("inputYear").value;
-	if(data.getFullYear()>scadenzaanno.getFullYear())
-		{
+	var scadenzaanno = document.getElementById("inputYear").value;
+	if(data.getFullYear()>scadenzaanno){
 			 $("#inputMonth").focus();
 
    			 $("#inputYear").focus();
 
 			  return false;
-		}
-	else if(data.getFullYear()==scadenzaanno.getFullYear()&&data.getMonth()+1>scadenzamese.getMonth()+1)
-		{
-			 $("#inputMonth").focus();
+	}else{ 
+		if(data.getFullYear()==scadenzaanno){
 
-  			  $("#inputYear").focus();
- 
-		  	return false;
+			if(data.getMonth()+1>=scadenzamese){
+				$("#inputMonth").focus();
+				$("#inputYear").focus();
+				return false;
+			}
 		}
-	else 
-	{
 		return true;
 	}
 	$("#inputMonth").focus();
-
     $("#inputYear").focus();
     return (false);
 	
 }
 
 function ValidateCAP(){
-	alert("Entrato in validateCAP");
+
 	var cap = document.getElementById("inputZip").value;
 	if(/^\d{5}$/.test(cap)){
 		
@@ -205,7 +196,7 @@ function ValidateCAP(){
 }
 
 function ValidateTelephone(){
-	alert("Entrato in validateTelephone");
+
 	var telephone = document.getElementById("inputTelephone").value;
 	if(/^\d{10}$/.test(telephone)){
 		
@@ -231,7 +222,6 @@ function ValidateCvv(){
 }
 
 function ValidateCode(){
-	alert("Entrato in validateCode");
 	var code = document.getElementById("inputCode").value;
 	if(/^\d{16}$/.test(code)){
 		
@@ -244,8 +234,7 @@ function ValidateCode(){
 }
 
 function ValidateCity(){
-	
-	alert("Entrato in validateCity");
+
 	
 	var city = document.getElementById("inputCity").value;
 	
@@ -260,7 +249,6 @@ function ValidateCity(){
 
 function ValidateAddress(){
 	
-	alert("Entrato in validateAddress");
 	
 	var address = document.getElementById("inputAddress").value;
 	
