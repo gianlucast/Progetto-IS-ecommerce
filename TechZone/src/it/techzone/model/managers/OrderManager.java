@@ -13,6 +13,7 @@ import it.techzone.model.beans.ProductCart;
 import it.techzone.model.beans.ProductOrder;
 import it.techzone.model.beans.UtenteRegistrato;
 import it.techzone.model.dao.OrderDao;
+import it.techzone.model.dao.ProductDAO;
 
 //fatto da gianniggio
 
@@ -20,14 +21,21 @@ import it.techzone.model.dao.OrderDao;
 public class OrderManager {
 	
 	private OrderDao orderdao;
+	private ProductDAO productdao;
 	private EmailValidator emailVal=EmailValidator.getInstance();
 
 	
 	public boolean placeOrder(UtenteRegistrato user,  Cart cart) throws SQLException{
 		if(user==null||cart==null||cart.getProductList().size()==0) return false;
 		orderdao = new OrderDao();
+		productdao=new ProductDAO();
 		ArrayList<ProductOrder> ordinati= new ArrayList<ProductOrder>();
-		    for(ProductCart c : cart.getProductList()) ordinati.add(new ProductOrder(c));
+		    for(ProductCart c : cart.getProductList()) {
+		    	long codiceProd=c.getProdotto().getCodice();
+		    	if(productdao.retrieveProductById(codiceProd)==null) return false;
+		    	if(productdao.retrieveProductById(codiceProd).getQuantita()<c.getQuantita()) return false;
+		    	ordinati.add(new ProductOrder(c));
+		    }
 		    Order order = new Order();
 		    order.setUtente(user);
 		    order.setProdotti(ordinati);

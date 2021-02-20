@@ -24,16 +24,18 @@ public class ImgControl extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			try {
-				Product prod=pm.retrieveProduct(Long.parseLong(request.getParameter("id")));
-				//System.out.println(prod.getName());
-				byte[] photo=prod.getImmagine();
-				ServletOutputStream out = response.getOutputStream();
-				if(photo != null)
-				{
-					out.write(photo);
-					response.setContentType("image/jpeg");			
+				if(request.getParameter("id")!=null) {
+					Product prod=pm.retrieveProduct(Long.parseLong(request.getParameter("id")));
+					//System.out.println(prod.getName());
+					byte[] photo=prod.getImmagine();
+					ServletOutputStream out = response.getOutputStream();
+					if(photo != null)
+					{
+						out.write(photo);
+						response.setContentType("image/jpeg");			
+					}
+					out.close();
 				}
-				out.close();
 			} catch (NumberFormatException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
