@@ -17,12 +17,18 @@ public class OrderStatusControl extends HttpServlet {
 			HttpSession session = request.getSession();
 				try {
 				if(session.getAttribute("manager")!=null) {
-					long id = Long.parseLong(request.getParameter("orderId"));
-					if(om.changeStatus(id, request.getParameter("changeStatus"))) {
-						session.setAttribute("alertMsg", "Modifica avvenuta con successo");
-						response.sendRedirect("./OrdersManagerPage.jsp");
+					if(request.getParameter("orderId")!=null) {
+						long id = Long.parseLong(request.getParameter("orderId"));
+						if(om.changeStatus(id, request.getParameter("changeStatus"))) {
+							session.setAttribute("alertMsg", "Modifica avvenuta con successo");
+							response.sendRedirect("./OrdersManagerPage.jsp");
+						}else {
+							session.setAttribute("alertMsg", "Modifica fallita");
+							
+							response.sendRedirect("./OrdersManagerPage.jsp");
+						}
 					}else {
-						session.setAttribute("alertMsg", "Modifica fallita");
+						session.setAttribute("alertMsg", "Richiesta non valida");
 						
 						response.sendRedirect("./OrdersManagerPage.jsp");
 					}
