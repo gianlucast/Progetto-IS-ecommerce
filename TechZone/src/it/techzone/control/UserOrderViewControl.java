@@ -29,7 +29,10 @@ public class UserOrderViewControl extends HttpServlet{
 				}else {
 					long idOrd=Long.parseLong(request.getParameter("idOrd"));
 					Order ordine=om.getOrderById(idOrd);
-					
+					if(ordine==null) {
+						session.setAttribute("alertMsg", "Richiesta non valida");
+						response.sendRedirect("HomePage.jsp");
+					}else {
 						UtenteRegistrato u=(UtenteRegistrato)session.getAttribute("utente");
 						ArrayList<Order> ordini=om.searchOrders(u.getEmail());
 						boolean flag=false;
@@ -47,7 +50,7 @@ public class UserOrderViewControl extends HttpServlet{
 					}
 				}
 			}
-			catch(Exception e) {
+		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}

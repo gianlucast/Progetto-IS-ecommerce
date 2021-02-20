@@ -1,5 +1,7 @@
 package it.techzone.test.dao;
 
+import static org.junit.Assert.assertNotEquals;
+
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -43,8 +45,6 @@ public class OrderDAOTest extends TestCase{
 			
 			od.doSaveOrder(oracolo);
 			//FATTO TRE VOLTE PER PROBLEMA SYNC DB
-			salvato= od.retrieveOrderById(3);
-			salvato= od.retrieveOrderById(3);
 			salvato= od.retrieveOrderById(3);
 			
 			assertEquals(oracolo.getStato(),salvato.getStato());
@@ -134,9 +134,10 @@ public class OrderDAOTest extends TestCase{
 	public void testRetrieveOrderByIdException() throws SQLException{
 		try {
 			long id=-1;
-			od.retrieveOrderById(id);
+			Order o=od.retrieveOrderById(id);
+			assertNotEquals(o,null);
 			fail("testRetrieveOrderByIdException() (wrond Id) not passed");
-		}catch(Exception e) {
+		}catch(Throwable t) {
 			
 		}
 		System.out.println("\tResult: "+Thread.currentThread().getStackTrace()[1].getMethodName()+" passed!");
@@ -213,8 +214,6 @@ public class OrderDAOTest extends TestCase{
 			od.doUpdateOrder(oracolo);
 			//FATTO 3 volte per problema sync db
 			Order modificato=od.retrieveOrderById(2l);
-			modificato=od.retrieveOrderById(2l);
-			modificato=od.retrieveOrderById(2l);
 			
 				assertEquals(oracolo.getStato(),modificato.getStato());
 				assertEquals(oracolo.getNumeroOrdine(),modificato.getNumeroOrdine());

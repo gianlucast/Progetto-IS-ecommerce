@@ -66,8 +66,6 @@ public class OrderManagerTest extends TestCase {
 			boolean result = om.placeOrder(utente, carrello);
 			assertTrue(result);
 			Order d = od.retrieveOrderById(3);
-			d = od.retrieveOrderById(3);
-			d = od.retrieveOrderById(3);
 			ProductOrder prodottoOrdineSalvato;
 			ProductOrder prodottoOrdineOracolo;
 			for(int i=0;i<d.getProdotti().size();i++) {

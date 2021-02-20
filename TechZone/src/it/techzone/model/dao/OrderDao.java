@@ -120,7 +120,7 @@ public class OrderDao {
 	}
 	
 	public Order retrieveOrderById(long id) throws SQLException {
-		if(id<0) throw new SQLException();
+		//if(id<0) throw new SQLException();
 		Order ordine=null;
 		ArrayList<ProductOrder> prodotti=new ArrayList<ProductOrder>();
 		ProductDAO productdao=new ProductDAO();
