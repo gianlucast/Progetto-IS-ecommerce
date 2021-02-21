@@ -94,7 +94,7 @@ public class ManagerOrderSearchMailControlTest extends Mockito {
     			sessioneMap=new HashMap<String, Object>();
     			sessioneMap.put("manager", new Manager());
     			when(request.getSession()).thenReturn(session);
-    			when(request.getParameter("mailOrd")).thenReturn("pincopallo@gmail.com");
+    			when(request.getParameter("mailOrd")).thenReturn("g.simonini@gmail.com");
     			assertNotEquals(sessioneMap.get("manager"),null);
     			when(sg.getServletContext()).thenReturn(context);	
     			when(context.getRequestDispatcher(anyString())).thenReturn(dispatcher);
@@ -126,7 +126,6 @@ public class ManagerOrderSearchMailControlTest extends Mockito {
     				}
     			}
     		
-    		
     			flag1= true;
     			
     			
@@ -140,17 +139,11 @@ public class ManagerOrderSearchMailControlTest extends Mockito {
     	try {
     			sessioneMap=new HashMap<String, Object>();
     			sessioneMap.put("manager", new Manager());
-			
     			when(request.getSession()).thenReturn(session);
-    			when(request.getParameter("idOrder")).thenReturn("asdasdaadsada@gmail.com");
-    			assertNotEquals(sessioneMap.get("manager"),null);
-    			ManagerOrderSearchIdControl servlet = new ManagerOrderSearchIdControl();
+    			when(request.getParameter("mailOrd")).thenReturn("g.fantozzi@gmail.com");
+    			ManagerOrderSearchMailControl servlet = new ManagerOrderSearchMailControl();
     			servlet.doGet(request, response);
-    			ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
-    			verify(response).sendRedirect(captor.capture());
-    			assertEquals("OrdersManagerPage.jsp", captor.getValue());
-	    	
-    			assertEquals("Ordine non trovato",sessioneMap.get("AlertMsg"));
+    			assertEquals(sessioneMap.get("alertMsg"),"Nessun ordine trovato per la mail: g.fantozzi@gmail.com");
     			flag2=true;
         		
     		
@@ -175,14 +168,16 @@ public class ManagerOrderSearchMailControlTest extends Mockito {
 	   try {
 		   
 	   			sessioneMap=new HashMap<String, Object>();
+		    	
+		    	when(request.getSession()).thenReturn(session);
 		    	assertEquals(sessioneMap.get("manager"),null);
 		    	ManagerOrderSearchIdControl servlet = new ManagerOrderSearchIdControl();
-    			servlet.doGet(request, response);
+
     			ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
+    			servlet.doGet(request, response);
     			verify(response).sendRedirect(captor.capture());
-    			assertEquals("HomePage.jsp", captor.getValue());
-	    	
-    			assertEquals("Operazione non valida",sessioneMap.get("AlertMsg"));
+    			assertEquals("./HomePage.jsp", captor.getValue());
+    			assertEquals("Operazione non autorizzata",sessioneMap.get("alertMsg"));
         		flag=true;
         		
 	   }

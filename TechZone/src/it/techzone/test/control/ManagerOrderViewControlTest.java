@@ -75,7 +75,7 @@ public class ManagerOrderViewControlTest extends Mockito {
 		}
 	}).when(session).getAttribute(anyString());
 	
-	Mockito.doAnswer(new Answer<Object>(){
+		Mockito.doAnswer(new Answer<Object>(){
         @Override
         public Object answer(InvocationOnMock invocation) throws Throwable {
             String key = (String) invocation.getArguments()[0];
@@ -94,7 +94,7 @@ public class ManagerOrderViewControlTest extends Mockito {
     			sessioneMap=new HashMap<String, Object>();
     			sessioneMap.put("manager", new Manager());
     			when(request.getSession()).thenReturn(session);
-    			when(request.getParameter("idOrder")).thenReturn("1");
+    			when(request.getParameter("idOrd")).thenReturn("1");
     			assertNotEquals(sessioneMap.get("manager"),null);
     			when(sg.getServletContext()).thenReturn(context);	
     			when(context.getRequestDispatcher(anyString())).thenReturn(dispatcher);
@@ -103,11 +103,13 @@ public class ManagerOrderViewControlTest extends Mockito {
     			servlet.init(sg);
     	    	servlet.doGet(request, response);
     	    	
-    			assertNotNull(sessioneMap.get("ordini"));
+    			assertNotNull(sessioneMap.get("ordine"));
     			
-    			a = om.getOrderById(1);//da aggiungere
+    			a = om.getOrderById(1);
     			Order b = (Order)sessioneMap.get("ordine");
+    			assertNotEquals(sessioneMap.get("ordine"),null);
     			assertEquals(a.getNumeroOrdine(), b.getNumeroOrdine());
+    			
     			assertEquals(a.getDataArrivo(),b.getDataArrivo());
     			assertEquals(a.getDataInvio(),b.getDataInvio());
     			assertEquals(a.getStato(),b.getStato());
@@ -121,11 +123,7 @@ public class ManagerOrderViewControlTest extends Mockito {
     					assertEquals(ap.getQuantita(),bp.getQuantita());
     							
     			}
-    					
     				
-    			
-    		
-    		
     			flag1= true;
     			
     			
@@ -141,15 +139,12 @@ public class ManagerOrderViewControlTest extends Mockito {
     			sessioneMap.put("manager", new Manager());
 			
     			when(request.getSession()).thenReturn(session);
-    			when(request.getParameter("idOrder")).thenReturn("1210312300");
+    			when(request.getParameter("idOrd")).thenReturn(null);
     			assertNotEquals(sessioneMap.get("manager"),null);
     			ManagerOrderViewControl servlet = new ManagerOrderViewControl();
     			servlet.doGet(request, response);
-    			ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
-    			verify(response).sendRedirect(captor.capture());
-    			assertEquals("OrdersManagerPage.jsp", captor.getValue());
 	    	
-    			assertEquals("Ordine non trovato",sessioneMap.get("AlertMsg"));
+    			assertEquals("Errore nella richiesta",sessioneMap.get("alertMsg"));
     			flag2=true;
         		
     		
@@ -175,13 +170,14 @@ public class ManagerOrderViewControlTest extends Mockito {
 		   
 	   			sessioneMap=new HashMap<String, Object>();
 		    	assertEquals(sessioneMap.get("manager"),null);
+    			when(request.getSession()).thenReturn(session);
 		    	ManagerOrderViewControl servlet = new ManagerOrderViewControl();
     			servlet.doGet(request, response);
     			ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
     			verify(response).sendRedirect(captor.capture());
-    			assertEquals("HomePage.jsp", captor.getValue());
+    			assertEquals("./HomePage.jsp", captor.getValue());
 	    	
-    			assertEquals("Operazione non valida",sessioneMap.get("AlertMsg"));
+    			assertEquals("Richiesta non valida",sessioneMap.get("alertMsg"));
         		flag=true;
         		
 	   }

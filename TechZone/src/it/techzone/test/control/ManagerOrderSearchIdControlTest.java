@@ -1,6 +1,7 @@
 package it.techzone.test.control;
 
 import static org.junit.Assert.assertEquals;
+
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
@@ -31,11 +32,14 @@ import it.techzone.model.beans.Product;
 import it.techzone.model.beans.ProductOrder;
 import it.techzone.model.beans.Manager;
 import it.techzone.model.beans.UtenteRegistrato;
+import it.techzone.model.dao.UserDAO;
 import it.techzone.model.managers.OrderManager;
 import it.techzone.model.managers.ProductManager;
+import it.techzone.model.managers.UserManager;
 
 public class ManagerOrderSearchIdControlTest extends Mockito {
 	private static OrderManager om = new OrderManager();
+	private static UserDAO uDao = new UserDAO();
 	
 	@Mock
     HttpServletRequest request;
@@ -87,13 +91,15 @@ public class ManagerOrderSearchIdControlTest extends Mockito {
     
     @Test
     public void testYManagerYId() throws IOException {
-    	Order a;
+    	Order a=null;
     	boolean flag1 = false, flag2=false;
     	try {
     			sessioneMap=new HashMap<String, Object>();
-    			sessioneMap.put("manager", new Manager());
+    			Manager man = new Manager();
+    			man.setEmail("giuseppe@techzone.it");
+    			sessioneMap.put("manager", man);
     			when(request.getSession()).thenReturn(session);
-    			when(request.getParameter("idOrder")).thenReturn("1");
+    			when(request.getParameter("idOrd")).thenReturn("1");
     			assertNotEquals(sessioneMap.get("manager"),null);
     			when(sg.getServletContext()).thenReturn(context);	
     			when(context.getRequestDispatcher(anyString())).thenReturn(dispatcher);
@@ -101,10 +107,8 @@ public class ManagerOrderSearchIdControlTest extends Mockito {
     			ManagerOrderSearchIdControl servlet = new ManagerOrderSearchIdControl();
     			servlet.init(sg);
     	    	servlet.doGet(request, response);
-    	    	
-    			assertNotNull(sessioneMap.get("ordini"));
-    			
-    			a = om.getOrderById(1);//da aggiungere
+    			assertNotEquals(sessioneMap.get("ordini"),null);
+    			a = om.getOrderById(1);
     			ArrayList<Order> list = (ArrayList<Order>)sessioneMap.get("ordini");
     			for (Order b :list) {
     				if(a.getNumeroOrdine()==b.getNumeroOrdine()) {
@@ -138,18 +142,15 @@ public class ManagerOrderSearchIdControlTest extends Mockito {
     	
     	try {
     			sessioneMap=new HashMap<String, Object>();
-    			sessioneMap.put("manager", new Manager());
-			
+    			Manager man = new Manager();
+    			man.setEmail("giuseppe@techzone.it");
+    			sessioneMap.put("manager", man);
     			when(request.getSession()).thenReturn(session);
-    			when(request.getParameter("idOrder")).thenReturn("1210312300");
-    			assertNotEquals(sessioneMap.get("manager"),null);
+    			when(request.getParameter("idOrd")).thenReturn("1210312300");
     			ManagerOrderSearchIdControl servlet = new ManagerOrderSearchIdControl();
+    			servlet.init(sg);
     			servlet.doGet(request, response);
-    			ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
-    			verify(response).sendRedirect(captor.capture());
-    			assertEquals("OrdersManagerPage.jsp", captor.getValue());
-	    	
-    			assertEquals("Ordine non trovato",sessioneMap.get("AlertMsg"));
+    			assertEquals("Ordine non trovato",sessioneMap.get("alertMsg"));
     			flag2=true;
         		
     		
@@ -175,13 +176,13 @@ public class ManagerOrderSearchIdControlTest extends Mockito {
 		   
 	   			sessioneMap=new HashMap<String, Object>();
 		    	assertEquals(sessioneMap.get("manager"),null);
+		    	when(request.getSession()).thenReturn(session);
 		    	ManagerOrderSearchIdControl servlet = new ManagerOrderSearchIdControl();
     			servlet.doGet(request, response);
     			ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
     			verify(response).sendRedirect(captor.capture());
-    			assertEquals("HomePage.jsp", captor.getValue());
-	    	
-    			assertEquals("Operazione non valida",sessioneMap.get("AlertMsg"));
+    			assertEquals("./HomePage.jsp", captor.getValue());
+    			assertEquals("Operazione non autorizzata",sessioneMap.get("alertMsg"));
         		flag=true;
         		
 	   }

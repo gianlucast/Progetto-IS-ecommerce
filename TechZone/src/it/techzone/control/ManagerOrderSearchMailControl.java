@@ -19,17 +19,17 @@ public class ManagerOrderSearchMailControl extends HttpServlet{
 		HttpSession session=request.getSession();
 		try {
 				if(session.getAttribute("manager")!=null) {
-					
+					session.setAttribute("mailTest",request.getParameter("mailOrd"));
 					if(request.getParameter("mailOrd")==null) {
 						session.setAttribute("alertMsg", "Operazione non valida");
-						response.sendRedirect("HomePage.jsp");
+						response.sendRedirect("./HomePage.jsp");
 					}
 					else {
 						
 							ArrayList<Order> ordini=om.searchOrders(request.getParameter("mailOrd"));
 							if(ordini.size()==0) {
 								session.setAttribute("alertMsg", "Nessun ordine trovato per la mail: "+request.getParameter("mailOrd"));
-								response.sendRedirect("OrdersPage.jsp");
+								response.sendRedirect("./OrdersPage.jsp");
 							}else {
 								session.setAttribute("ordini",ordini);
 								RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/OrdersManagerPage.jsp");
@@ -40,7 +40,7 @@ public class ManagerOrderSearchMailControl extends HttpServlet{
 				
 				else {
 					session.setAttribute("alertMsg", "Operazione non autorizzata");
-					response.sendRedirect("./HomePage");
+					response.sendRedirect("./HomePage.jsp");
 			}
 		
 			

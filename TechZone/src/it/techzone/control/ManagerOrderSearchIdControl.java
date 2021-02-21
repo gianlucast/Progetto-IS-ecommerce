@@ -22,14 +22,14 @@ public class ManagerOrderSearchIdControl extends HttpServlet{
 					
 					if(request.getParameter("idOrd")==null) {
 						session.setAttribute("alertMsg", "Operazione non valida");
-						response.sendRedirect("HomePage.jsp");
+						response.sendRedirect("./HomePage.jsp");
 					}
 					else {
 						 
 							Order o=om.getOrderById(Long.parseLong(request.getParameter("idOrd")));
 							if(o==null) {
 								session.setAttribute("alertMsg", "Ordine non trovato");
-								response.sendRedirect("OrdersManagerPage.jsp");
+								response.sendRedirect("./OrdersManagerPage.jsp");
 							}else {
 								ArrayList<Order> array=new ArrayList<Order>();
 								array.add(o);
@@ -41,7 +41,7 @@ public class ManagerOrderSearchIdControl extends HttpServlet{
 					}
 				else {
 						session.setAttribute("alertMsg", "Operazione non autorizzata");
-						response.sendRedirect("./HomePage");
+						response.sendRedirect("./HomePage.jsp");
 				}
 			
 		}catch(Exception e) {
