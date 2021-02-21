@@ -20,7 +20,7 @@ public class ManagerOrderSearchIdControl extends HttpServlet{
 		try {
 				if(session.getAttribute("manager")!=null) {
 					
-					if(request.getParameter("iOrd")==null) {
+					if(request.getParameter("idOrd")==null) {
 						session.setAttribute("alertMsg", "Operazione non valida");
 						response.sendRedirect("./HomePage.jsp");
 					}

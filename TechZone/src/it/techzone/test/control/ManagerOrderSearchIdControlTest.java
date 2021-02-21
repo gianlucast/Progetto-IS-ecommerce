@@ -146,7 +146,7 @@ public class ManagerOrderSearchIdControlTest extends Mockito {
     			man.setEmail("giuseppe@techzone.it");
     			sessioneMap.put("manager", man);
     			when(request.getSession()).thenReturn(session);
-    			when(request.getParameter("iOrd")).thenReturn("1210312300");
+    			when(request.getParameter("idOrd")).thenReturn("1210312300");
     			ManagerOrderSearchIdControl servlet = new ManagerOrderSearchIdControl();
     			servlet.init(sg);
     			servlet.doGet(request, response);

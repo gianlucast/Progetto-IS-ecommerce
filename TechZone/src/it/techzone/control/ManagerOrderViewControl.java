@@ -27,7 +27,7 @@ public class ManagerOrderViewControl extends HttpServlet{
 					session.setAttribute("alertMsg", "Errore nella richiesta");
 					response.sendRedirect("./HomePage.jsp");
 				}else {
-						long idOrd=Long.parseLong(request.getParameter("iOrd"));
+						long idOrd=Long.parseLong(request.getParameter("idOrd"));
 						Order ordine=om.getOrderById(idOrd);
 						session.setAttribute("ordine",ordine);
 						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/OrderManagerDetailPage.jsp");
