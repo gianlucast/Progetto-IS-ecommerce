@@ -39,7 +39,7 @@ function ValidateEmail() {
 function ValidateIdOrd(){
 	
 	var idord=document.getElementById("inputOrdine").value;
-	if (/^\d{3}$/.test(idord))
+	if (/^[0-9]*$/.test(idord))
 	{
 		return true;
 	}
