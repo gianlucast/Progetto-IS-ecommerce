@@ -143,7 +143,7 @@ public class ManagerOrderSearchMailControlTest extends Mockito {
     			when(request.getParameter("mailOrd")).thenReturn("g.fantozzi@gmail.com");
     			ManagerOrderSearchMailControl servlet = new ManagerOrderSearchMailControl();
     			servlet.doGet(request, response);
-    			assertEquals(sessioneMap.get("alertMsg"),"Nessun ordine trovato per la mail: g.fantozzi@gmail.com");
+    			assertEquals(sessioneMap.get("aletMsg"),"Nessun ordine trovato per la mail: g.fantozzi@gmail.com");
     			flag2=true;
         		
     		

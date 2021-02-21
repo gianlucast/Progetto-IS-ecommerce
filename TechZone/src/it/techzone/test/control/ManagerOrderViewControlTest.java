@@ -139,7 +139,7 @@ public class ManagerOrderViewControlTest extends Mockito {
     			sessioneMap.put("manager", new Manager());
 			
     			when(request.getSession()).thenReturn(session);
-    			when(request.getParameter("idOrd")).thenReturn(null);
+    			when(request.getParameter("iOrd")).thenReturn(null);
     			assertNotEquals(sessioneMap.get("manager"),null);
     			ManagerOrderViewControl servlet = new ManagerOrderViewControl();
     			servlet.doGet(request, response);

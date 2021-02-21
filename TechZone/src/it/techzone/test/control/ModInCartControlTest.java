@@ -142,7 +142,7 @@ public class ModInCartControlTest extends Mockito {
         		servlet.doGet(request, response);
         		ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
         		verify(response).sendRedirect(captor.capture());
-        		assertEquals("./HomePage.jsp", captor.getValue());
+        		assertEquals("./HmePage.jsp", captor.getValue());
         		assertEquals("Accesso non autorizzato", sessioneMap.get("alertMsg"));
         		flag=true;
         		
