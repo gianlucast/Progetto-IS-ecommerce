@@ -47,7 +47,7 @@
     <div class="form-group col-md-5">
       <label for="inputPassword4">Password</label>
       <input type="password" class="form-control" id="inputPassword4" placeholder="Password" required name="userPass">
-      <span id="spanpassword" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci una password valida (fra 6 e 18 caratteri). </span>
+      <span id="spanpassword" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci una password valida (fra 6 e 18 caratteri, almeno una maiuscola, una minuscola e un numero). </span>
     </div>    
     </div>
     <div class="form-row">
@@ -57,7 +57,7 @@
     <span id="spantelefono" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci un numero di telefono valido (10 cifre). </span>
   </div>
   	<div class="form-group col-md-5">
-    <label for="inputAddress">Address</label>
+    <label for="inputAddress">Indirizzo</label>
     <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required name="userStreet">
     <span id="spanindirizzo" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci un indirizzo valido (può contenere caratteri, numeri e spazi). </span>
   </div>
@@ -71,11 +71,11 @@
     <div class="form-group col-md-4">
       <label for="inputState">Paese</label>
       <select id="inputState" class="form-control" required name="userCountry">
-      <span id="spanstate" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci un Paese valido (solo caratteri). </span>
-        <option selected>Choose...</option>
+        <option selected>Scegli...</option>
         <option>Italy</option>
         <option>USA</option>
       </select>
+      <span id="spanstate" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci un Paese valido (solo caratteri). </span>
     </div>
     <div class="form-group col-md-1">
       <label for="inputZip">CAP</label>
@@ -87,8 +87,7 @@
     <div class="form-group col-md-5">
       <label for="inputCity">Metodo di pagamento</label>
       <select id="inputPayment" class="form-control" required name="userPayment">
-      <span id="spanpay" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci una metodo di pagamento valido(solo caratteri). </span>
-        <option selected>Choose...</option>
+        <option selected>Scegli...</option>
         <option>Postepay</option>
         <option>Mastercard</option>
         <option>Bancomat</option>
@@ -96,6 +95,7 @@
         <option>Unicredit</option>
         <option>Paypal</option>
       </select>
+      <span id="spanpay" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci una metodo di pagamento valido(solo caratteri). </span>
     </div>
     <div class="form-group col-md-5">
       <label for="inputState">Codice</label>
@@ -103,12 +103,12 @@
         <span id="spancode" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci un codice valido (16 cifre). </span>
     </div>
     <div class="form-group col-md-4">
-      <label for="inputZip" >EXP MONTH</label>
+      <label for="inputZip" >Mese scadenza</label>
       <input type="number" class="form-control" id="inputMonth" min="1" max="12"  required name="userPaymentExpMonth">
       <span id="spanmonth" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci un mese valido. </span>
     </div>
     <div class="form-group col-md-4">
-      <label for="inputZip" >EXP YEAR</label>
+      <label for="inputZip" >Anno scadenza</label>
       <input type="number" class="form-control" id="inputYear" min="2021" required name="userPaymentExpYear">
       <span id="spanyear" style="display:none; font-family: 'Josefin Sans', sans-serif;"><i class="fa fa-info-circle" aria-hidden="true"></i> Inserisci un anno valido. </span>
     </div>

@@ -101,6 +101,21 @@ function ValidateSurname(){
 
 
 function ValidateDate(){
+	$("#inputMonth").focus(function(){
+	    $("#spanmonth").css("display", "inline")
+	});
+	
+	$("#inputYear").focus(function(){
+	    $("#spanyear").css("display", "inline")
+	});
+	
+	$("#inputMonth").blur(function(){
+	    $("#spanmonth").css("display", "none")
+	});
+	
+	$("#inputYear").blur(function(){
+	    $("#spanyear").css("display", "none")
+	});
 	
 	var data= new Date();
 	var scadenzamese = document.getElementById("inputMonth").value;
@@ -123,21 +138,7 @@ function ValidateDate(){
 		return true;
 	}
 	
-	$("#inputMonth").focus(function(){
-	    $("#spanmonth").css("display", "inline")
-	});
 	
-	$("#inputYear").focus(function(){
-	    $("#spanyear").css("display", "inline")
-	});
-	
-	$("#inputMonth").blur(function(){
-	    $("#spanmonth").css("display", "none")
-	});
-	
-	$("#inputYear").blur(function(){
-	    $("#spanyear").css("display", "none")
-	});
 	
 	
 	$("#inputMonth").focus();
