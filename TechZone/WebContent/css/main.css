@@ -166,6 +166,14 @@ h3{
 	padding: 10px 10px;
 }
 
+.casella{
+	font-family: 'Josefin Sans', sans-serif;
+	color: black;
+    border: 2px solid black;
+	font-size: 15px;
+	padding: 10px 10px;
+}
+
 .button:hover{
 	
 	font-family: 'Josefin Sans', sans-serif;
@@ -569,7 +577,7 @@ img.zoom1-img:hover {
 ------------------------------------------------------- */
 
 .block{
-	padding: 15px 15px;
+	padding: 15px 10px;
 	border: 15px double #E9E9E9;
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: 400;
@@ -1309,3 +1317,6 @@ img.zoom1-img:hover {
 }
 
 }
+
+
+
