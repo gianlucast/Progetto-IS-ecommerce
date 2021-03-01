@@ -194,7 +194,7 @@ public class OrderDao {
 		UserDAO userdao=new UserDAO();
 		ArrayList<Order> ordini =new ArrayList<Order>();
 		UtenteRegistrato utente=userdao.doRetrieveByMail(email);
-		if(utente==null) return null;
+		if(utente==null) return ordini;
 		String selectSQL = "SELECT * FROM " + ORDER_TABLE + " WHERE idUtente = ?";
 		try {
 			connection = DriverManagerConnectionPool.getConnection();
