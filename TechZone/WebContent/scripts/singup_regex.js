@@ -235,7 +235,7 @@ function ValidateCity(){
 
 	var city = document.getElementById("inputCity").value;
 	
-	if(/^[A-Za-z]+$/.test(city)){
+	if(/^(?:[A-Za-z]+)(?:[A-Za-z0-9 _]{5,64})$/.test(city)){
 	
 	return true;
 	}
