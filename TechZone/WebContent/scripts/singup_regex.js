@@ -81,7 +81,7 @@ function ValidateSurname(){
 	
 	var cognome=document.getElementById("inputSurname4").value;
 
-	if(/^[A-Za-z]+$/.test(cognome)){
+	if(/^(?:[A-Za-z]+)(?:[A-Za-z0-9 _]{1,64})$/.test(cognome)){
 	
 	return true;
 	}
