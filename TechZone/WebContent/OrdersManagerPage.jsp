@@ -31,7 +31,7 @@
         
         <!-- Boostrap Core CSS-->
         <link rel="stylesheet" href="css/bootstrap.min.css"> 
-        
+        <link rel="icon" href="./img/logo_techzone.png">
         <!-- Main CSS -->
         <link rel="stylesheet" href="css/main.css">
         

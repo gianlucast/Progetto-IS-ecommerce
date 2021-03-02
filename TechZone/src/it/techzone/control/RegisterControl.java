@@ -31,6 +31,7 @@ public class RegisterControl extends HttpServlet {
 					String address= addressC + ", "+addressCi + ", "+addressCa + ", "+addressSt;
 					
 					String paymentInst=request.getParameter("userPaymentInst");
+					
 					String paymentCo=request.getParameter("userPaymentCode");
 					String paymentExpMonth=request.getParameter("userPaymentExpMonth");
 					String paymentExpyear=request.getParameter("userPaymentExpYear");

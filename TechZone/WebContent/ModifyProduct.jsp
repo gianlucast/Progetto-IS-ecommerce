@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="css/main.css">
         
         <script src="./scripts/ValidateModifyProduct.js"></script>
-        
+        <link rel="icon" href="./img/logo_techzone.png">
 
         <!-- Google fonts -->
         <link href='http://fonts.googleapis.com/css?family=Open%20Sans:400,700,600' rel='stylesheet' type='text/css'>

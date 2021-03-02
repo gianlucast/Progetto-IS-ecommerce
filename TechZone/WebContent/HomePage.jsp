@@ -29,7 +29,7 @@
         <link rel="icon" href="./imgs/logo_techzone.png">
         <link rel="stylesheet" href="./css/main.css">
         
-        
+        <link rel="icon" href="./img/logo_techzone.png">
 
         <!-- Google fonts -->
         <link href='http://fonts.googleapis.com/css?family=Open%20Sans:400,700,600' rel='stylesheet' type='text/css'>

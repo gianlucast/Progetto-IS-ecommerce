@@ -43,6 +43,7 @@
 		color:red;
 	}
 	</style>
+	<link rel="icon" href="./img/logo_techzone.png">
 </head>
 
 <body>
