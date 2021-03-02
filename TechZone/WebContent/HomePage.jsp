@@ -43,24 +43,27 @@
      <!-- Portfolio -->
 
     <div class="container port-top">
+    	<% int cont=0; %>
     	<%if(session.getAttribute("alertMsg")!=null){%>
 		<h3><font color="red"><%=session.getAttribute("alertMsg")%></font></h3> 
 		<%session.setAttribute("alertMsg",""); 
 		session.setAttribute("redirect",null);
+		
 		%>
 		<%}%>
 
 		<div class="row">
-				    
+		<h1 style="font-family:'Josefin Sans', sans-serif; text-align:left"> I nostri Smartphone e Tablet</h1>		    
 				<%
 					if(products==null) %> Products null
 				<%  if(products.size()==0)  %> Products size 0
 				<%
 					if (products != null && products.size() != 0) {
 						Iterator<?> it = products.iterator();
-						while (it.hasNext()) {
+						while (it.hasNext()&& cont<6) {
+							
 							Product bean = (Product) it.next();
-							if(bean.getQuantita()>0){
+							if(bean.getQuantita()>0 && (bean.getCategoria().equalsIgnoreCase("Smartphone")|| bean.getCategoria().equalsIgnoreCase("Tablet"))){
 			%>
 			
 			<div class="col-md-4 col-sm-6">
@@ -89,7 +92,7 @@
 					
 						<%request.setAttribute("imgbean",bean);%>
 					
-			
+						<%cont++;%>
 				
 					</ul>
 					</div>
@@ -115,6 +118,163 @@
 				%>
 				
 		    </div>
+		    
+		    
+		    
+		    
+		    <div class="row">
+		<h1 style="font-family:'Josefin Sans', sans-serif; text-align:left">Elettrodomestici</h1>		    
+				<%
+					if(products==null) %> Products null
+				<%  if(products.size()==0)  %> Products size 0
+				<%
+					if (products != null && products.size() != 0) {
+						Iterator<?> it = products.iterator();
+						cont=0;
+						while (it.hasNext()&& cont<10) {
+							
+							Product bean = (Product) it.next();
+							if(bean.getQuantita()>0 && (bean.getCategoria().equalsIgnoreCase("Lavatrici")|| bean.getCategoria().equalsIgnoreCase("Condizionatori")||bean.getCategoria().equalsIgnoreCase("Frigoriferi"))){
+			%>
+			
+			<div class="col-md-4 col-sm-6">
+				
+				<div class="portfolio-item">
+				
+				
+					<div class="portfolio-image">
+						<div class="foto"><%if(bean.getImmagine()!=null){ %>
+						<img src="imgControl?id=<%=bean.getCodice()%>" style="width:250px ; height:250px">
+						
+						<% }else{%>
+						<img src="./imgs/no_disc.png" style="width:250px">
+						<%} %>
+					</div>	
+						
+					</div>
+				
+			        <div class="portfolio-info-fade">
+			        <ul>
+                        
+           			<li class="name"><%=bean.getNomeProd()%></li>
+					<li class="category"><%= bean.getCategoria()%></li>
+					<br><br>
+				    <li class="acquista"><a href="productviewcontrol?idProd=<%=bean.getCodice()%>" class="portfolio-btn">ACQUISTA</a></li>
+					
+						<%request.setAttribute("imgbean",bean);%>
+					
+						<%cont++;%>
+				
+					</ul>
+					</div>
+					
+					
+					 
+					
+				</div>	
+				</div>
+				
+					
+				<%
+							}	
+						}
+					} else {
+				%>
+				
+				<tr>
+					<td colspan="6">No products available</td>
+				</tr>
+				<%
+					}
+				%>
+				
+		    </div>
+		    
+		    
+		        <div class="row">
+		<h1 style="font-family:'Josefin Sans', sans-serif; text-align:left">Computer</h1>		    
+				<%
+					if(products==null) %> Products null
+				<%  if(products.size()==0)  %> Products size 0
+				<%
+					if (products != null && products.size() != 0) {
+						Iterator<?> it = products.iterator();
+						cont=0;
+						while (it.hasNext()&& cont<4) {
+							
+							Product bean = (Product) it.next();
+							if(bean.getQuantita()>0 && bean.getCategoria().equalsIgnoreCase("Computer")){
+			%>
+			
+			<div class="col-md-4 col-sm-6">
+				
+				<div class="portfolio-item">
+				
+				
+					<div class="portfolio-image">
+						<div class="foto"><%if(bean.getImmagine()!=null){ %>
+						<img src="imgControl?id=<%=bean.getCodice()%>" style="width:250px ; height:250px">
+						
+						<% }else{%>
+						<img src="./imgs/no_disc.png" style="width:250px">
+						<%} %>
+					</div>	
+						
+					</div>
+				
+			        <div class="portfolio-info-fade">
+			        <ul>
+                        
+           			<li class="name"><%=bean.getNomeProd()%></li>
+					<li class="category"><%= bean.getCategoria()%></li>
+					<br><br>
+				    <li class="acquista"><a href="productviewcontrol?idProd=<%=bean.getCodice()%>" class="portfolio-btn">ACQUISTA</a></li>
+					
+						<%request.setAttribute("imgbean",bean);%>
+					
+						<%cont++;%>
+				
+					</ul>
+					</div>
+					
+					
+					 
+					
+				</div>	
+				</div>
+				
+					
+				<%
+							}	
+						}
+					} else {
+				%>
+				
+				<tr>
+					<td colspan="6">No products available</td>
+				</tr>
+				<%
+					}
+				%>
+				
+		    </div>
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
 	</div>
 	
 	<br><br><br>
