@@ -19,11 +19,15 @@ public class CartViewControl extends HttpServlet{
 		
 		HttpSession session=request.getSession();
 		try {
+			//i manager non possono avere un carrello
 			if(session.getAttribute("manager")==null) {
+				//se non esiste un carrello in sessione, ne viene creato uno vuoto
 				if(!cm.cartExists(session)) cm.newCart(session);
+				//viene aperta la pagina con il carrello, che sia vuoto o meno
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CartView.jsp");
 				dispatcher.forward(request, response);
 			}else {
+				//I manager ritornano alla homepage se provano a visualizzare un carrello
 				session.setAttribute("alertMsg", "Non puoi accedere al carrello");
 				response.sendRedirect("HomePage.jsp");
 			}

@@ -19,21 +19,25 @@ static ProductManager pm= new ProductManager();
 		
 		HttpSession session= request.getSession();
 		try {
+			//i manager non possono avere un carrello
 			if(session.getAttribute("manager")==null) {
 				
-				
+						//se al momento dell'aggiunta del prodotto non è stato ancora creato un carrello,
+						//ne viene creato uno vuoto
 						if (!cm.cartExists(session))cm.newCart(session);
 						else cm.retrieveCart(session);
+						//viene preso dalla request l'id del prodotto e con la modcart avviene 
+						//la comunicazione con il DAO per aggiungerlo al carrello prendendolo dal database
 						Long idProd=Long.parseLong(request.getParameter("product"));
 						cm.modCart(idProd,1, session);
+						//viene aperta automaticamente la pagina del carrello
 						response.sendRedirect("./CartView.jsp");
 					
-					
-				
 				}
 				
 			
 			else {
+				//I manager ritornano alla home page quando provano ad aggiungere un prodotto al carrello
 				session.setAttribute("alertMsg","Accesso non autorizzato");
 				response.sendRedirect("./HomePage.jsp");
 				
