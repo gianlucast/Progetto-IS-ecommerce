@@ -21,7 +21,7 @@ static ProductManager pm= new ProductManager();
 		
 		HttpSession session= request.getSession();
 		try {
-			//i manager non possono avere un carrello
+			//i manager non possono avere un carrellos
 			if(session.getAttribute("manager")==null) {
 				
 						//se al momento dell'aggiunta del prodotto non è stato ancora creato un carrello,

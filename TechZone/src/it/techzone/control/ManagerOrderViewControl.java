@@ -20,7 +20,7 @@ public class ManagerOrderViewControl extends HttpServlet{
 		HttpSession session=request.getSession();
 		
 		try {
-			//view degli ordini riservata ai manager, riguarda la visualizzazione di uno degli ordini
+			//view degli ordini riservata ai manager, riguarda la visualizzazione di uno degli ordiniss
 			//con uno dei due possibili modi di ricerca
 			if(session.getAttribute("manager")==null) {
 				session.setAttribute("alertMsg", "Richiesta non valida");

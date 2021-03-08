@@ -17,7 +17,7 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) thro
 		HttpSession session=request.getSession();
 		
 		try { 
-			//se l'utente non è loggato, allora non può svolgere operazione di logout
+			//se l'utente non è loggato, allora non può svolgere operazione di logouts
 			if(session.getAttribute("utente")==null&&session.getAttribute("manager")==null) {
 				session.setAttribute("alertMsg", "Errore, utente non loggato");
 				response.sendRedirect("./HomePage.jsp");

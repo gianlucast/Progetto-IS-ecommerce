@@ -17,7 +17,7 @@ import it.techzone.model.managers.UserManager;
 public class LoginControl extends HttpServlet{
 	static UserManager um=new UserManager(); 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
-		//vengono presi i dati dal form di login
+		//vengono presi i dati dal form di logins
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
 		HttpSession session=request.getSession();

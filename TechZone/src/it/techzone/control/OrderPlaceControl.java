@@ -17,7 +17,7 @@ public class OrderPlaceControl extends HttpServlet{
 		public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 			HttpSession session=request.getSession();
 			try {
-				//solo gli utenti possono effettuare acquisti
+				//solo gli utenti possono effettuare acquistis
 				if(session.getAttribute("utente")==null) {
 					session.setAttribute("alertMsg", "Errore, utente non loggato");
 					response.sendRedirect("./Login.jsp");

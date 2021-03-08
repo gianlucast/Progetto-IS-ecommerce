@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import it.techzone.model.beans.Order;
 import it.techzone.model.beans.UtenteRegistrato;
 import it.techzone.model.managers.OrderManager;
-//visualizzazione della lista ordini effettuati dall'utente loggato
+//visualizzazione della lista ordini effettuati dall'utente loggatos
 public class UserOrderSearchControl extends HttpServlet{
 	static OrderManager om=new OrderManager();
 	

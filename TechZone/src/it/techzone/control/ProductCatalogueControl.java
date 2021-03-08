@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import it.techzone.model.beans.Product;
 import it.techzone.model.managers.ProductManager;
-//ricerca di un prodotto
+//ricerca di un prodottos
 public class ProductCatalogueControl extends HttpServlet{
 	static ProductManager pm=new ProductManager();
 	

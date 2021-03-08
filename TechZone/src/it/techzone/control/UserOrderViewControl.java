@@ -13,7 +13,7 @@ import it.techzone.model.beans.Order;
 import it.techzone.model.beans.UtenteRegistrato;
 import it.techzone.model.managers.OrderManager;
 
-//visualizzazione di un ordine effettuato dall'utente loggato
+//visualizzazione di un ordine effettuato dall'utente loggatos
 public class UserOrderViewControl extends HttpServlet{
 	static OrderManager om=new OrderManager();
 	
