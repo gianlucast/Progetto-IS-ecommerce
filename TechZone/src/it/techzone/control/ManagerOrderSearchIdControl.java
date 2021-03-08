@@ -18,19 +18,24 @@ public class ManagerOrderSearchIdControl extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session=request.getSession();
 		try {
+				//Solo i manager possono effettuare operazioni di ricerca degli ordini
 				if(session.getAttribute("manager")!=null) {
-					
+					//viene controllato che la richiesta contenga il parametro collegato all'id 
 					if(request.getParameter("idOrd")==null) {
 						session.setAttribute("alertMsg", "Operazione non valida");
 						response.sendRedirect("./HomePage.jsp");
 					}
 					else {
-						 
+						 	
 							Order o=om.getOrderById(Long.parseLong(request.getParameter("idOrd")));
+							//se non esistono ordini collegati all'id inserito, allora si ritorna alla pagina 
+							// di amministrazione
 							if(o==null) {
 								session.setAttribute("alertMsg", "Ordine non trovato");
 								response.sendRedirect("./OrdersManagerPage.jsp");
+								
 							}else {
+								//altrimenti, viene mostrato il risultato della ricerca nella pagina
 								ArrayList<Order> array=new ArrayList<Order>();
 								array.add(o);
 								session.setAttribute("ordini", array);
@@ -39,7 +44,9 @@ public class ManagerOrderSearchIdControl extends HttpServlet{
 							}
 						}
 					}
+				//gli utenti normali vengono reindirizzati alla homepage
 				else {
+						
 						session.setAttribute("alertMsg", "Operazione non autorizzata");
 						response.sendRedirect("./HomePage.jsp");
 				}
