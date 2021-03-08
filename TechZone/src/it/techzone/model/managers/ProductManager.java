@@ -10,24 +10,24 @@ public class ProductManager {
 	
 	public Product retrieveProduct(long id) throws SQLException {
 		productdao=new ProductDAO();
-		return productdao.retrieveProductById(id);
+		return productdao.retrieveProductById(id); //ritorna il prodotto con quell'id
 	}
 	
 	public ArrayList<Product> searchProductsByName(String nameProd) throws SQLException{
 		if(nameProd==null||nameProd=="") return null;
 		productdao=new ProductDAO();
-		return productdao.doRetrieveByName(nameProd);
+		return productdao.doRetrieveByName(nameProd); //ritorna la lista dei prodotti con corrispondenza al nomeProd
 	}
 	
 	public ArrayList<Product> searchProductsByCat(String categoria) throws SQLException{
 		if(categoria==null||categoria=="") return null;
 		productdao=new ProductDAO();
-		return productdao.doRetrieveByCat(categoria);
+		return productdao.doRetrieveByCat(categoria); //ritorna la lista dei prodotti con corrispondenza alla categoria
 	}
 	
 	public boolean deleteProduct(long id) throws SQLException{
 		productdao=new ProductDAO();
-		return productdao.doDeleteProduct(id);
+		return productdao.doDeleteProduct(id); //ritorna il risultato dell'eliminazione (true se è andata a buon fine, false altrimenti).
 	}
 	
 	public boolean updateProduct(long idProdotto, String descrizione, String nomeProd, int quantita, String categoria, String tipo, float costo) throws SQLException {
@@ -47,6 +47,6 @@ public class ProductManager {
 	public ArrayList<Product> getAllProducts(String ordinevisualizzazione) throws SQLException{
 		if(ordinevisualizzazione==null) return null;
 		productdao=new ProductDAO();
-		return productdao.doRetrieveAll(ordinevisualizzazione);
+		return productdao.doRetrieveAll(ordinevisualizzazione); //restituisce la lista di tutti i prodotti (non eliminati) del DB
 	}
 }
