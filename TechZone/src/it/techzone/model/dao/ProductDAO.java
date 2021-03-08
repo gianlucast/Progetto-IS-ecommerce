@@ -17,6 +17,9 @@ public class ProductDAO {
 	public synchronized Product retrieveProductById(long id) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
+		/*UTILIZZO DI eliminato. IL MOTIVO E' CHE NON VOGLIAMO PERDERE LE INFORMAZIONI DI UN PRODOTTO CHE POTREBBE ESSERE STATO ASSOCIATO AD UN ORDINE.
+		 QUINDI QUESTO CAMPO FUNGE DA FLAG PER LA VISUALIZZAZIONE.
+		*/
 		String selectSQL = "SELECT * FROM " +PRODUCT_TABLE+ " WHERE codiceProdotto = ? AND eliminato=0";
 		Product p=null;
 		try {
@@ -54,7 +57,9 @@ public class ProductDAO {
 		PreparedStatement preparedStatement = null;
 
 		int result = 0;
-
+		/*UTILIZZO DI eliminato. IL MOTIVO E' CHE NON VOGLIAMO PERDERE LE INFORMAZIONI DI UN PRODOTTO CHE POTREBBE ESSERE STATO ASSOCIATO AD UN ORDINE.
+		 QUINDI QUESTO CAMPO FUNGE DA FLAG PER LA VISUALIZZAZIONE.
+		*/
 		String deleteSQL = "UPDATE " + PRODUCT_TABLE + " SET eliminato = 1 WHERE codiceProdotto= ?";
 
 		try {
@@ -76,6 +81,9 @@ public class ProductDAO {
 	}
 
 	public synchronized ArrayList<Product> doRetrieveAll(String ordine) throws SQLException {
+		/*L'ordine in questo caso serve per una visualizzazione in ordine crescente/decrescente. Di fatto però, nel set limitato di operazioni implementate
+		 non viene utilizzato.
+		*/
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ArrayList<Product> products = new ArrayList<Product>();
@@ -136,6 +144,7 @@ public class ProductDAO {
 				prodotti.add(p);
 			}
 			con.commit();
+			//prodotti potrebbe anche essere vuoto, se non vengono trovati prodotti con quella categoria
 			return prodotti;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -147,6 +156,7 @@ public class ProductDAO {
 			if(nameProd==null||nameProd=="") throw new SQLException();
 			PreparedStatement ps = con.prepareStatement(
 					"SELECT * FROM "+PRODUCT_TABLE+" WHERE nomeProd LIKE ? AND eliminato=0");
+			//Qui vengono aggiunti i % al nome del prodotto per farlo corrispondere alla specifica di LIKE
 			ps.setString(1, "%"+nameProd+"%");
 			ArrayList<Product> prodotti = new ArrayList<Product>();
 			ResultSet rs = ps.executeQuery();
@@ -163,6 +173,7 @@ public class ProductDAO {
 				prodotti.add(p);
 			}
 			con.commit();
+			//prodotti potrebbe anche essere vuoto, se non vengono trovati prodotti con quel nome.
 			return prodotti;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);

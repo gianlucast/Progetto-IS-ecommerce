@@ -24,7 +24,7 @@ public class OrderDao {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		PreparedStatement preparedStatement2 = null;
-		
+		//Prima parte del salvataggio di un ordine. La query inserisce i dati nella tabella degli ordini.
 		String insertSQL="INSERT INTO "+ORDER_TABLE+" (dataInvio, totale, stato, idUtente) "
 				+ "VALUES (?,?,?,?)";
 		
@@ -40,15 +40,15 @@ public class OrderDao {
 			
 			preparedStatement.executeUpdate();
 			connection.commit();
-			
+			//Non posseggo il codice dell'ordine appena inserito, essendo questo generato automaticamente dal DBMS. Quindi seleziono l'ultimo ordine effettuato dall'utente
 			String selectSQL="SELECT MAX(numeroOrdine) FROM "+ORDER_TABLE+" WHERE `idUtente`=?";
 			preparedStatement2=connection.prepareStatement(selectSQL);
 			preparedStatement2.setFloat(1, order.getUtente().getId());
 			
 			ResultSet rs=preparedStatement2.executeQuery();
 			rs.next();
-			long idorder=rs.getLong(1);
-			
+			long idorder=rs.getLong(1); //Prendo l'id dell'ordine appena inserito.
+			//Questa query è quella che, per ogni prodotto acquistato, aggiorna la tabella dei ProductOrder.
 			String insert2="INSERT INTO "+PRODUCTORDER_TABLE+" (numeroOrdine, codiceProdotto, costo, quantita) "
 					+ "VALUES (?,?,?,?)";
 			
@@ -57,7 +57,7 @@ public class OrderDao {
 				connection = DriverManagerConnectionPool.getConnection();
 				preparedStatement = connection.prepareStatement(insert2);
 				ProductDAO prendiProd=new ProductDAO();
-				
+				//Prendo il prodotto in questo modo per poterne in seguito modificare la qta disponibile nel DB.
 				Product prodottoaggiornato= prendiProd.retrieveProductById(prodottoOrdine.getProdotto().getCodice());
 				preparedStatement.setLong(1, idorder);
 				preparedStatement.setLong(2, prodottoaggiornato.getCodice());
@@ -91,6 +91,7 @@ public class OrderDao {
 		String query="";
 		int tipo=0;
 		if(order.getStato().equalsIgnoreCase("Consegnato")) {
+			//Se l'ordine è stato consegnato, inseriamo anche la data di arrivo
 			query="UPDATE "+ORDER_TABLE+" SET stato='Consegnato', dataArrivo=? WHERE numeroOrdine=?";
 		}else {
 			query="UPDATE "+ORDER_TABLE+" SET stato=? WHERE numeroOrdine=?";
@@ -101,6 +102,7 @@ public class OrderDao {
 			connection = DriverManagerConnectionPool.getConnection();
 			preparedStatement = connection.prepareStatement(query);
 			if(tipo==0) {
+				//Data correte
 				Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 				preparedStatement.setTimestamp(1, timestamp);
 			}else 
@@ -133,6 +135,7 @@ public class OrderDao {
 		Connection connection2=null;
 		PreparedStatement preparedStatement = null;
 		PreparedStatement preparedStatement2 = null;
+		//Prima query che va a prendere i dati dell'ordine esclusi i prodotti in esso incluso.
 		String select="SELECT * FROM "+ORDER_TABLE+" WHERE numeroOrdine=?";
 		
 		try {
@@ -141,10 +144,12 @@ public class OrderDao {
 			preparedStatement.setLong(1, id);
 			ResultSet rs = preparedStatement.executeQuery();
 			if(rs.next()) {
+				//Se c'è un ordine con quell'id entra nell'if
 				ordine=new Order();
 				ordine.setNumeroOrdine(id);
 				ordine.setDataInvio(rs.getTimestamp("dataInvio"));
 				ordine.setStato(rs.getString("stato"));
+				//Se è consegnato, sarà presente anche la data di arrivo.
 				if(ordine.getStato().equalsIgnoreCase("Consegnato"))
 					ordine.setDataArrivo(rs.getTimestamp("dataArrivo"));
 				else
@@ -169,6 +174,7 @@ public class OrderDao {
 				connection.commit();
 				connection2.commit();
 			}
+			//CHE SIA NULL (Se non è stato trovato nessun ordine con quell'id) o un oggetto consistente.
 			return ordine;
 		}finally {
 			try {
@@ -193,8 +199,10 @@ public class OrderDao {
 		PreparedStatement preparedStatement2 = null;
 		UserDAO userdao=new UserDAO();
 		ArrayList<Order> ordini =new ArrayList<Order>();
+		//SELEZIONO IL CODICE IDENTIFICATIVO DELL'UTENTE CHE HA QUELLA MAIL (POSSIBILITA' CHE LA MAIL VARI, L'ID NON CAMBIA).
 		UtenteRegistrato utente=userdao.doRetrieveByMail(email);
 		if(utente==null) return ordini;
+		//SELEZIONO TUTTI GLI ORDINI EFFETTUATI DALL'UTENTE CHE HA QUELL'ID
 		String selectSQL = "SELECT * FROM " + ORDER_TABLE + " WHERE idUtente = ?";
 		try {
 			connection = DriverManagerConnectionPool.getConnection();
@@ -202,6 +210,7 @@ public class OrderDao {
 			preparedStatement.setLong(1, utente.getId());
 			ResultSet rs = preparedStatement.executeQuery();
 			while(rs.next()) {
+				//PER OGNUNO DI QUESTI, INVECE DI ANDARE AD EFFETTUARE UNA NUOVA PROCEDURA DI RIEMPIMENTO, RICHIAMO QUELLA GIA' FATTA.
 				ordini.add(retrieveOrderById(rs.getLong("numeroOrdine")));
 			}
 			connection.commit();

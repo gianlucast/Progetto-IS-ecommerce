@@ -81,7 +81,7 @@ public class Cart {
 		if(quantita<=0) return removeFromCart(prodotto);
 		if(quantita>prodotto.getQuantita()) return false;
 		productList.get(pos).setQuantita(quantita);
-		//aggiunta del calcolo prezzo dopo la modifica del carrello?
+		//prodotto aggiunto, ricalcola prezzo
 		calcolaPrezzoTotale();
 		return true;
 	}

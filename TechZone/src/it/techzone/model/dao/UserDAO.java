@@ -17,7 +17,7 @@ public class UserDAO {
 	public synchronized boolean doSaveUser(UtenteRegistrato user) throws SQLException {
 		Connection connection=null;
 		PreparedStatement preparedStatement=null;
-		
+		//Metodo attivato in seguito alla registrazione
 		String query="INSERT INTO "+ UTENTE_TABLE+" "
 				+ "(NOME, COGNOME, TELEFONO, `PASSWORD`, EMAIL, INDIRIZZO, MetodoPagamento) "
 				+ "VALUES (?,?,?,SHA1(?),?,?,?);";
