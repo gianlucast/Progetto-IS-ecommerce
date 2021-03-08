@@ -1,4 +1,6 @@
 package it.techzone.control;
+import java.io.IOException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,19 +12,22 @@ import it.techzone.model.beans.Cart;
 import it.techzone.model.beans.Product;
 import it.techzone.model.managers.CartManager;
 import it.techzone.model.managers.ProductManager;
-
+//modifica quantità di un prodotto nel carrello
 public class ModInCartControl extends HttpServlet {
 static CartManager cm= new CartManager();
 static ProductManager pm= new ProductManager();
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response) {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		HttpSession session= request.getSession();
 		try {
+			//solo gli utenti possono avere un carrello
 			if(session.getAttribute("manager")==null) {
-				
+						//viene modificata la quantità di un prodotto nel carrello e viene ricaricata la pagina
 						int changeQ = Integer.parseInt(request.getParameter("change"));
 						long id= Long.parseLong(request.getParameter("idProd"));
+						//Il manager comunica col DAO, quindi la modifica della quantità verrà gestita in base
+						//ai dati nel database
 						cm.changeQuantityCart(id, changeQ, session);
 						response.sendRedirect("./CartView.jsp");
 						
@@ -36,7 +41,10 @@ static ProductManager pm= new ProductManager();
 				
 			}
 		}
-		catch(Exception e2) {}
+		catch(Exception e2) {
+			
+		
+			}
 	}
 	
 }

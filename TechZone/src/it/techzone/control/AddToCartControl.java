@@ -1,4 +1,6 @@
 package it.techzone.control;
+import java.io.IOException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,12 +12,12 @@ import it.techzone.model.beans.Cart;
 import it.techzone.model.beans.Product;
 import it.techzone.model.managers.CartManager;
 import it.techzone.model.managers.ProductManager;
-
+//aggiunta di un prodotto al carrello
 public class AddToCartControl extends HttpServlet {
 static CartManager cm= new CartManager();
 static ProductManager pm= new ProductManager();
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response) {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
 		HttpSession session= request.getSession();
 		try {
@@ -39,11 +41,15 @@ static ProductManager pm= new ProductManager();
 			else {
 				//I manager ritornano alla home page quando provano ad aggiungere un prodotto al carrello
 				session.setAttribute("alertMsg","Accesso non autorizzato");
-				response.sendRedirect("./HomePage.jsp");
+				response.sendRedirect("HomePage.jsp");
 				
 			}
 		}
-		catch(Exception e2) {}
-	}
+		catch(Exception e2) {
+		
+				session.setAttribute("alertMsg","Errore, ritorno alla Homepage");
+				response.sendRedirect("./HomePage.jsp");	
+}
+}
 	
 }

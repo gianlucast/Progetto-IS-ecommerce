@@ -1,5 +1,7 @@
 package it.techzone.control;
 
+import java.io.IOException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -7,11 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import it.techzone.model.beans.Product;
 import it.techzone.model.managers.ProductManager;
-
-public class DeleteProductControl extends HttpServlet {
+//rimozione di un prodotto
+public class DeleteProductControl extends HttpServlet  {
 	
 	static ProductManager pm = new ProductManager();
-	public void doGet(HttpServletRequest request, HttpServletResponse response) {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
 		HttpSession session= request.getSession();
 		try {
@@ -39,12 +41,16 @@ public class DeleteProductControl extends HttpServlet {
 				//nel caso un utente provi ad utilizzare un url per rimuovere un prodotto, viene bloccato
 			}else {
 				session.setAttribute("alertMsg","Azione non autorizzata");
-				response.sendRedirect("./Homepage.jsp");
+				response.sendRedirect("./HomePage.jsp");
 			
 		}
 		
 	}
-		catch (Exception e2) {e2.printStackTrace();}
+		catch(Exception e2) {
+			
+			session.setAttribute("alertMsg","Errore, ritorno alla Homepage");
+			response.sendRedirect("./HomePage.jsp");	
+}
 	
 
 }

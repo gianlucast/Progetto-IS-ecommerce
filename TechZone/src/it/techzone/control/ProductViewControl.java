@@ -13,12 +13,14 @@ import javax.servlet.http.HttpSession;
 
 import it.techzone.model.beans.Product;
 import it.techzone.model.managers.ProductManager;
-
+//visualizzazione di un prodotto
 public class ProductViewControl extends HttpServlet{
 	static ProductManager pm=new ProductManager();
-	public void doGet(HttpServletRequest request, HttpServletResponse response) {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		HttpSession session=request.getSession();
 		try {
+			//viene controllato che la request nell'url sia regolare, e vengono mostrati nella pagina di
+			//amministrazione nel caso dell'admin, nella homepage nel caso dell'utente
 			if(request.getParameter("idProd")==null) {
 				ArrayList<Product> prodotti=pm.getAllProducts("");
 				request.setAttribute("prodotti", prodotti);
@@ -30,6 +32,7 @@ public class ProductViewControl extends HttpServlet{
 					dispatcher.forward(request, response);
 				}
 			}else {
+				// se la request è regolare, allora viene mostrato il prodotto nella pagina
 				if(request.getParameter("idProd")!=null) {
 					Long idProd=Long.parseLong(request.getParameter("idProd"));
 					Product prodotto=pm.retrieveProduct(idProd);
@@ -40,8 +43,10 @@ public class ProductViewControl extends HttpServlet{
 				}
 			}
 		
-		} catch (SQLException | ServletException | IOException e) {
-				e.printStackTrace();
+		} catch(Exception e2) {
+			
+			session.setAttribute("alertMsg","Errore, ritorno alla Homepage");
+			response.sendRedirect("./HomePage.jsp");	
 			}
 		}
 }

@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import it.techzone.model.beans.Product;
 import it.techzone.model.managers.ProductManager;
@@ -23,6 +24,7 @@ public class ImgControl extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			HttpSession session= request.getSession();
 			try {
 				if(request.getParameter("id")!=null) {
 					Product prod=pm.retrieveProduct(Long.parseLong(request.getParameter("id")));
@@ -36,16 +38,12 @@ public class ImgControl extends HttpServlet {
 					}
 					out.close();
 				}
-			} catch (NumberFormatException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			} 	
+			catch(Exception e2) {
+		
+				session.setAttribute("alertMsg","Errore, ritorno alla Homepage");
+				response.sendRedirect("./HomePage.jsp");	
+				}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

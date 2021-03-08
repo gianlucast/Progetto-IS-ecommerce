@@ -1,5 +1,7 @@
 package it.techzone.control;
 
+import java.io.IOException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,10 +13,10 @@ import it.techzone.model.beans.Manager;
 import it.techzone.model.beans.UtenteRegistrato;
 import it.techzone.model.managers.UserManager;
 
-
+//servlet di login
 public class LoginControl extends HttpServlet{
 	static UserManager um=new UserManager(); 
-	public void doGet(HttpServletRequest request, HttpServletResponse response) {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		//vengono presi i dati dal form di login
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
@@ -53,6 +55,10 @@ public class LoginControl extends HttpServlet{
 			}
 		  
 			
-		}catch (Exception e2) {System.out.println(e2);} 
+		}catch(Exception e2) {
+			
+			session.setAttribute("alertMsg","Errore, ritorno alla Homepage");
+			response.sendRedirect("./HomePage.jsp");	
+			}
 	}
 }

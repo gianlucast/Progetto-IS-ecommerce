@@ -1,5 +1,6 @@
 package it.techzone.control;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -11,11 +12,11 @@ import javax.servlet.http.HttpSession;
 import it.techzone.model.beans.Order;
 import it.techzone.model.beans.UtenteRegistrato;
 import it.techzone.model.managers.OrderManager;
-
+//ricerca ordine con id ordine
 public class ManagerOrderSearchIdControl extends HttpServlet{
 	static OrderManager om=new OrderManager();
 	
-	public void doGet(HttpServletRequest request, HttpServletResponse response) {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		HttpSession session=request.getSession();
 		try {
 				//Solo i manager possono effettuare operazioni di ricerca degli ordini
@@ -51,10 +52,11 @@ public class ManagerOrderSearchIdControl extends HttpServlet{
 						response.sendRedirect("./HomePage.jsp");
 				}
 			
-		}catch(Exception e) {
-			e.printStackTrace();
+		}catch(Exception e2) {
 			
-		}
+			session.setAttribute("alertMsg","Errore, ritorno alla Homepage");
+			response.sendRedirect("./HomePage.jsp");	
+			}
 	}
 	
 }

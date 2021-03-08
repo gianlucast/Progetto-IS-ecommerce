@@ -1,5 +1,7 @@
 package it.techzone.control;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -7,10 +9,10 @@ import javax.servlet.http.HttpSession;
 
 import it.techzone.model.beans.Manager;
 import it.techzone.model.beans.UtenteRegistrato;
-
+//servlet di logout
 public class LogoutControl extends HttpServlet{
 
-public void doGet(HttpServletRequest request, HttpServletResponse response) {
+public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		HttpSession session=request.getSession();
 		
@@ -27,7 +29,11 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) {
 				session.setAttribute("alertMsg", "Logout effettuato con successo.");
 				response.sendRedirect("./HomePage.jsp");
 			}
-		}catch (Exception e2) {System.out.println(e2);} 
+		}catch(Exception e2) {
+			
+			session.setAttribute("alertMsg","Errore, ritorno alla Homepage");
+			response.sendRedirect("./HomePage.jsp");	
+			}
 	}
 }
 

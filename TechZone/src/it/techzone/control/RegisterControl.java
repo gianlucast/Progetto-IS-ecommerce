@@ -9,7 +9,7 @@ import javax.servlet.http.*;
 
 import it.techzone.model.beans.UtenteRegistrato;
 import it.techzone.model.managers.UserManager;
-  
+//servlet della registrazione utente 
 public class RegisterControl extends HttpServlet {  
 	static UserManager um = new UserManager();
 	
@@ -17,7 +17,10 @@ public class RegisterControl extends HttpServlet {
 				
 				 
 				HttpSession session=request.getSession();
+				//se la sessione non vede nè un utente nè un manager loggato, allora la registrazione
+				// può essere effettuata
 				if(session.getAttribute("utente")==null&& session.getAttribute("manager")==null) {
+					//vengono presi i campi dal form
 					String nome=request.getParameter("userName");  
 					String cognome=request.getParameter("userSurname");
 					String psw=request.getParameter("userPass");  
@@ -40,6 +43,9 @@ public class RegisterControl extends HttpServlet {
 				
           
 					try{  
+						//con la saveuser si può salvare un utente nel database tramite il DAO
+						// se essa restituisce un oggetto UtenteRegistrato allora vuol dire
+						// che la registrazione è andata a buon fine, altrimenti no
 						UtenteRegistrato u=um.saveUser(email, nome, cognome, psw, tele, address, payment);
 							if( u==null) {
 								session.setAttribute("alertMsg", "Registrazione fallita.");
@@ -54,11 +60,11 @@ public class RegisterControl extends HttpServlet {
 								
 							}
           
-					}catch (Exception e2) {
-						System.out.println(e2);
-						session.setAttribute("alertMsg", "Registrazione fallita.");
-						response.sendRedirect("./Signup.jsp");
-					}
+					}catch(Exception e2) {
+						
+						session.setAttribute("alertMsg","Errore, ritorno alla Homepage");
+						response.sendRedirect("./HomePage.jsp");	
+						}
           
 				}else {
 					session.setAttribute("alertMsg", "Sei già loggato.");
