@@ -51,6 +51,7 @@ public class UserDAO {
 		PreparedStatement preparedStatement=null;
 		UtenteRegistrato u=null;
 		if(email==null||password==null||email==""||password=="") throw new SQLException();
+		//SHA1 perché la password è crittografata
 		String query="SELECT * FROM "+UTENTE_TABLE+" WHERE EMAIL=? AND `PASSWORD`=SHA1(?)";
 		
 		try {
@@ -60,7 +61,7 @@ public class UserDAO {
 			preparedStatement.setString(2, password);
 			
 			ResultSet rs=preparedStatement.executeQuery();
-			if(rs.next()) {
+			if(rs.next()) { //se la query ha un risultato
 				u=new UtenteRegistrato();
 				u.setId(rs.getLong("ID"));
 				u.setCognome(rs.getString("COGNOME"));
@@ -72,6 +73,7 @@ public class UserDAO {
 				u.setTelefono(rs.getLong("TELEFONO"));
 			}
 			connection.commit();
+			//u è null se non viene trovata corrispondenza nel db.
 			return u;
 		}finally {
 			try {
@@ -89,6 +91,7 @@ public class UserDAO {
 		PreparedStatement preparedStatement=null;
 		if(email==null||password==null||email==""||password=="") throw new SQLException();
 		Manager u=null;
+		//SHA1 perché la password è crittografata
 		String query="SELECT * FROM "+MANAGER_TABLE+" WHERE EMAIL=? AND `PASSWORD`=SHA1(?)";
 		
 		try {
@@ -98,7 +101,7 @@ public class UserDAO {
 			preparedStatement.setString(2, password);
 			
 			ResultSet rs=preparedStatement.executeQuery();
-			if(rs.next()) {
+			if(rs.next()) { //se viene trovato un risultato.
 				u=new Manager();
 				u.setId(rs.getLong("ID"));
 				u.setCognome(rs.getString("COGNOME"));
@@ -109,6 +112,7 @@ public class UserDAO {
 				u.setTelefono(rs.getLong("TELEFONO"));
 			}
 			connection.commit();
+			//u è null se non viene trovata corrispondenza nel db.
 			return u;
 		}finally {
 			try {
@@ -136,7 +140,7 @@ public class UserDAO {
 			preparedStatement=connection.prepareStatement(query1);
 			preparedStatement.setString(1, email);
 			rs=preparedStatement.executeQuery();
-			if(rs.next()) {
+			if(rs.next()) { //Se viene trovato un Manager con quella mail
 				return true;
 			}
 			
@@ -144,11 +148,12 @@ public class UserDAO {
 			preparedStatement2=connection.prepareStatement(query2);
 			preparedStatement2.setString(1, email);
 			rs=preparedStatement2.executeQuery();
-			if(rs.next()) {
+			if(rs.next()) { //Se viene trovato un Utente Registrato con quella mail
 				connection.commit();
 				return true;
 			}
 			connection.commit();
+			//se non viene trovata corrispondenza né tra i manager né tra gli utenti
 			return false;
 		}finally {
 			try {
@@ -175,7 +180,7 @@ public class UserDAO {
 			preparedStatement2=connection2.prepareStatement(query2);
 			preparedStatement2.setString(1, email);
 			rs=preparedStatement2.executeQuery();
-			while(rs.next()) {
+			while(rs.next()) { //se viene trovato un risultato.
 				utente=new UtenteRegistrato();
 				utente.setId(rs.getLong("ID"));
 				utente.setCognome(rs.getString("COGNOME"));
@@ -187,6 +192,7 @@ public class UserDAO {
 				utente.setTelefono(rs.getLong("TELEFONO"));
 			}
 			connection2.commit();
+			//utente è null se non viene trovato nessun utente con la mail passata come parametro
 			return utente;
 		}finally {
 			try {
@@ -223,6 +229,7 @@ public class UserDAO {
 				utente.setTelefono(rs.getLong("TELEFONO"));
 			}
 			connection2.commit();
+			//utente è null se non viene trovato un utente con l'id passato come parametro nel db
 			return utente;
 		}finally {
 			try {
