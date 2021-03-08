@@ -1,9 +1,11 @@
 package it.techzone.model.beans;
 
+import java.util.ArrayList;
+
 public class UtenteRegistrato extends User{
 	private String pagamento,indirizzo;
+	private ArrayList<Order> ordini;
 
-	
 	
 	
 	public UtenteRegistrato() {
@@ -15,12 +17,14 @@ public class UtenteRegistrato extends User{
 		super(id, telefono, nome, cognome, password, email);
 		this.pagamento=pagamento;
 		this.indirizzo=indirizzo;
+		this.ordini=new ArrayList<Order>();
 	}
 
 	public UtenteRegistrato(long telefono, String nome, String cognome, String password, String email, String pagamento, String indirizzo) {
 		super(telefono, nome, cognome, password, email);
 		this.pagamento=pagamento;
 		this.indirizzo=indirizzo;
+		this.ordini=new ArrayList<Order>();
 	}
 
 	public String getPagamento() {
@@ -39,5 +43,12 @@ public class UtenteRegistrato extends User{
 		this.indirizzo = indirizzo;
 	}
 
+	public ArrayList<Order> getOrdini() {
+		return ordini;
+	}
+
+	public void setOrdini(ArrayList<Order> ordini) {
+		this.ordini = ordini;
+	}
 	
 }

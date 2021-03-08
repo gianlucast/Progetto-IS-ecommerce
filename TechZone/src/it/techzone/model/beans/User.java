@@ -1,6 +1,6 @@
 package it.techzone.model.beans;
 
-public class User {
+public abstract class User {
 	
 	private	long id,telefono;
 	private	String nome,cognome,password,email;
