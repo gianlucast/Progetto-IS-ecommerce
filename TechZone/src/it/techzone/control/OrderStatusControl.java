@@ -12,7 +12,7 @@ import it.techzone.model.beans.Cart;
 import it.techzone.model.beans.UtenteRegistrato;
 import it.techzone.model.managers.OrderManager;
 import it.techzone.model.managers.UserManager;
-//modifica stato ordines
+//modifica stato ordine
 public class OrderStatusControl extends HttpServlet {
 	static OrderManager om = new OrderManager();
 		public void doGet (HttpServletRequest request, HttpServletResponse response) throws IOException {

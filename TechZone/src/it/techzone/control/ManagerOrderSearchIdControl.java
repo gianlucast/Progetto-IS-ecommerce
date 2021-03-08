@@ -19,7 +19,7 @@ public class ManagerOrderSearchIdControl extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		HttpSession session=request.getSession();
 		try {
-				//Solo i manager possono effettuare operazioni di ricerca degli ordiniss
+				//Solo i manager possono effettuare operazioni di ricerca degli ordini
 				if(session.getAttribute("manager")!=null) {
 					//viene controllato che la richiesta contenga il parametro collegato all'id 
 					if(request.getParameter("idOrd")==null) {

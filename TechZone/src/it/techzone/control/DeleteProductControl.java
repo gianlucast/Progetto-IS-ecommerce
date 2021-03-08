@@ -17,7 +17,7 @@ public class DeleteProductControl extends HttpServlet  {
 		
 		HttpSession session= request.getSession();
 		try {
-			//Solo i manager possono rimuovere prodotti dal sitos
+			//Solo i manager possono rimuovere prodotti dal sito
 			if(session.getAttribute("manager")!=null) {
 				//viene controllato la richiesta contenca il parametro collegato all'id del prodotto
 				//questo può avvenire se il manager prova a cancellare un prodotto tramite un

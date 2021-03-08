@@ -19,7 +19,7 @@ public class CartViewControl extends HttpServlet{
 		
 		HttpSession session=request.getSession();
 		try {
-			//i manager non possono avere un carrellos
+			//i manager non possono avere un carrello
 			if(session.getAttribute("manager")==null) {
 				//se non esiste un carrello in sessione, ne viene creato uno vuoto
 				if(!cm.cartExists(session)) cm.newCart(session);

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import it.techzone.model.beans.Product;
 import it.techzone.model.managers.ProductManager;
-//modifica di un prodottos
+//modifica di un prodotto
 public class UpdateProductControl extends HttpServlet{
 
  static ProductManager pm = new ProductManager();

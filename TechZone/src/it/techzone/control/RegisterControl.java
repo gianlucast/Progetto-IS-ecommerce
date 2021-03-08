@@ -9,7 +9,7 @@ import javax.servlet.http.*;
 
 import it.techzone.model.beans.UtenteRegistrato;
 import it.techzone.model.managers.UserManager;
-//servlet della registrazione utentes 
+//servlet della registrazione utente 
 public class RegisterControl extends HttpServlet {  
 	static UserManager um = new UserManager();
 	

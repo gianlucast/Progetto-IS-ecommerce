@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import it.techzone.model.beans.Product;
 import it.techzone.model.managers.ProductManager;
-//visualizzazione di un prodottos
+//visualizzazione di un prodotto
 public class ProductViewControl extends HttpServlet{
 	static ProductManager pm=new ProductManager();
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

@@ -19,7 +19,7 @@ public class ManagerOrderSearchMailControl extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		HttpSession session=request.getSession();
 		try {
-				//solo i manager possono effettuare la ricerca degli ordiniss
+				//solo i manager possono effettuare la ricerca degli ordini
 				if(session.getAttribute("manager")!=null) {
 					session.setAttribute("mailTest",request.getParameter("mailOrd"));
 					//viene controllato che la richiesta contenga il parametro collegato all'email

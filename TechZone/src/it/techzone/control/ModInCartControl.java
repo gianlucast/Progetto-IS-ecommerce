@@ -21,7 +21,7 @@ static ProductManager pm= new ProductManager();
 		
 		HttpSession session= request.getSession();
 		try {
-			//solo gli utenti possono avere un carrellos
+			//solo gli utenti possono avere un carrello
 			if(session.getAttribute("manager")==null) {
 						//viene modificata la quantità di un prodotto nel carrello e viene ricaricata la pagina
 						int changeQ = Integer.parseInt(request.getParameter("change"));
