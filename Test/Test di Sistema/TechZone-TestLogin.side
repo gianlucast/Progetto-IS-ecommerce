@@ -1,0 +1,502 @@
+{
+  "id": "709069fb-fec6-4351-bc55-8d7df70a5a63",
+  "version": "2.0",
+  "name": "TechZone-TestLogin",
+  "url": "http://localhost:8080/TechZone/Login.jsp",
+  "tests": [{
+    "id": "d730caba-784a-4700-965b-ecf5896ca639",
+    "name": "TC_GU_1",
+    "commands": [{
+      "id": "068893c5-ed8a-4317-bc57-23bd6c02dfe9",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/Login.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bd3e1a0c-8fbc-4565-9e05-d17ab5736ab4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bf532273-ae3f-4617-a64e-16edea377a5f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.h-100:nth-child(1)",
+      "targets": [
+        ["css=.h-100:nth-child(1)", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bceb057f-c48c-4266-b0cc-37da0de0803e",
+      "comment": "",
+      "command": "type",
+      "target": "id=mail",
+      "targets": [
+        ["id=mail", "id"],
+        ["name=email", "name"],
+        ["css=#mail", "css:finder"],
+        ["xpath=//input[@id='mail']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "g.simoninigmail.com"
+    }, {
+      "id": "aeea849b-0999-46c9-8e31-c6c00b2ced55",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mb-2 > .input-group-append",
+      "targets": [
+        ["css=.mb-2 > .input-group-append", "css:finder"],
+        ["xpath=//form/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8f8523be-d8ba-4b83-b998-3ee3ec704f19",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Testpassword1"
+    }, {
+      "id": "e62d775f-0d0f-4c85-b3ea-f5819bccbd47",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3434eb0a-19f9-41c3-ac99-8729446de28a",
+      "comment": "",
+      "command": "click",
+      "target": "id=mail",
+      "targets": [
+        ["id=mail", "id"],
+        ["name=email", "name"],
+        ["css=#mail", "css:finder"],
+        ["xpath=//input[@id='mail']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "af72d5f8-9b93-49aa-92b7-0df278441e91",
+      "comment": "",
+      "command": "click",
+      "target": "css=.h-100:nth-child(1)",
+      "targets": [
+        ["css=.h-100:nth-child(1)", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "643a1dc3-5456-48b4-be71-b22f5e48dc16",
+      "comment": "",
+      "command": "click",
+      "target": "id=mail",
+      "targets": [
+        ["id=mail", "id"],
+        ["name=email", "name"],
+        ["css=#mail", "css:finder"],
+        ["xpath=//input[@id='mail']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "45c9e124-5e51-4c13-8309-c0f0c9ec79c4",
+    "name": "TC_GU_2",
+    "commands": [{
+      "id": "981e06f8-2fdc-45a4-8e75-0357c1a87b10",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/Login.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "18f25131-d9c2-4d79-87b6-073d672533f6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9242b266-c752-4079-9ece-dd0cb617229c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mb-3 > .input-group-append",
+      "targets": [
+        ["css=.mb-3 > .input-group-append", "css:finder"],
+        ["xpath=//form/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f71f6e24-d3a8-49d0-9d95-af0105d5eae4",
+      "comment": "",
+      "command": "type",
+      "target": "id=mail",
+      "targets": [
+        ["id=mail", "id"],
+        ["name=email", "name"],
+        ["css=#mail", "css:finder"],
+        ["xpath=//input[@id='mail']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "g.simonini@gmail.com"
+    }, {
+      "id": "fd399bfb-8e56-4654-9f1f-b1b2a080dbcc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.h-100:nth-child(1)",
+      "targets": [
+        ["css=.h-100:nth-child(1)", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1cfe170-a99e-4549-9e01-d379af82c744",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "testpassword1"
+    }, {
+      "id": "189da425-ea1b-41aa-a5a5-9145ee8b8cea",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "390bc7e6-ae23-4974-8d17-fab64f6e8e7a",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d972a3e8-a04f-4674-a201-95b9dd15bf0c",
+    "name": "TC_GU_3",
+    "commands": [{
+      "id": "dc37ae78-2ff4-48f2-898b-a3fe8c972c4a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/Login.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "42043014-af26-41c7-8327-66d55abdccd3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1a64d850-953b-4aba-a060-081b80e86c9d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.h-100:nth-child(1)",
+      "targets": [
+        ["css=.h-100:nth-child(1)", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ea64a95-30af-46bb-b179-665933b288c3",
+      "comment": "",
+      "command": "type",
+      "target": "id=mail",
+      "targets": [
+        ["id=mail", "id"],
+        ["name=email", "name"],
+        ["css=#mail", "css:finder"],
+        ["xpath=//input[@id='mail']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "mailnonpresente@gmail.com"
+    }, {
+      "id": "9cc8b153-8d89-4504-84b9-904d1e934162",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mb-2 > .input-group-append",
+      "targets": [
+        ["css=.mb-2 > .input-group-append", "css:finder"],
+        ["xpath=//form/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c28af261-4cfd-40ed-b405-1294f3036ae9",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Testpassword1"
+    }, {
+      "id": "84a13f22-089a-404a-ac66-9dee54e65b63",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1188740d-9f52-4a2e-a306-1ce0b55a6590",
+      "comment": "",
+      "command": "click",
+      "target": "id=mail",
+      "targets": [
+        ["id=mail", "id"],
+        ["name=email", "name"],
+        ["css=#mail", "css:finder"],
+        ["xpath=//input[@id='mail']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "537945ff-44a0-470d-9211-9e866b3e057d",
+    "name": "TC_GU_4",
+    "commands": [{
+      "id": "aac4fe41-d394-4218-a6c9-f3aa6ea9f203",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/Login.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "16bfbff5-97ee-40eb-953a-4083d45713e9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "851da5b9-f960-4552-9674-db3f5304a885",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mb-3 > .input-group-append",
+      "targets": [
+        ["css=.mb-3 > .input-group-append", "css:finder"],
+        ["xpath=//form/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5d882f72-f731-41e6-81b8-02eeef6e292b",
+      "comment": "",
+      "command": "type",
+      "target": "id=mail",
+      "targets": [
+        ["id=mail", "id"],
+        ["name=email", "name"],
+        ["css=#mail", "css:finder"],
+        ["xpath=//input[@id='mail']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "g.simonini@gmail.com"
+    }, {
+      "id": "30fc5cdf-574d-4850-857f-5067fe48ae64",
+      "comment": "",
+      "command": "click",
+      "target": "css=.h-100:nth-child(1)",
+      "targets": [
+        ["css=.h-100:nth-child(1)", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "56e4d392-6259-4807-be29-e34495121a76",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Testpassword2"
+    }, {
+      "id": "87ec276e-b8ee-4d48-8fc2-d15ab35ce1c8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a1480a5-2bab-43b8-958d-47011cec6d15",
+      "comment": "",
+      "command": "click",
+      "target": "id=mail",
+      "targets": [
+        ["id=mail", "id"],
+        ["name=email", "name"],
+        ["css=#mail", "css:finder"],
+        ["xpath=//input[@id='mail']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "bf950e13-a401-4c63-b379-cd82cac66632",
+    "name": "TC_GU_5",
+    "commands": [{
+      "id": "a81d1bda-1ccd-45e1-a0bd-2abe12267073",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/Login.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "530d5f91-ec10-419a-bf9e-df7a03541c5a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "070b09ac-b5f3-410f-867d-eb7595239502",
+      "comment": "",
+      "command": "click",
+      "target": "css=.h-100:nth-child(1)",
+      "targets": [
+        ["css=.h-100:nth-child(1)", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "872665af-37cd-4bed-b684-2e566c8c6349",
+      "comment": "",
+      "command": "type",
+      "target": "id=mail",
+      "targets": [
+        ["id=mail", "id"],
+        ["name=email", "name"],
+        ["css=#mail", "css:finder"],
+        ["xpath=//input[@id='mail']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "g.simonini@gmail.com"
+    }, {
+      "id": "3865ecaf-f4bc-4dff-9002-405f63387c11",
+      "comment": "",
+      "command": "click",
+      "target": "css=.h-100:nth-child(1)",
+      "targets": [
+        ["css=.h-100:nth-child(1)", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "192e91ab-380d-4165-bf9a-ffe6228ac3db",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Testpassword1"
+    }, {
+      "id": "ccf3ba0a-cf13-4ac1-8ea2-9f1f5aef1fc2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "52df4fa1-9eab-4aca-af28-c8b1b61d011c",
+      "comment": "",
+      "command": "click",
+      "target": "css=font",
+      "targets": [
+        ["css=font", "css:finder"],
+        ["xpath=//font", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c482397-010a-4027-b2a2-381b165ae38b",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ffc9562-102a-411a-9d82-ba93c4d56e85",
+      "comment": "",
+      "command": "click",
+      "target": "css=font",
+      "targets": [
+        ["css=font", "css:finder"],
+        ["xpath=//font", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "5d4e081c-e6fe-442e-93d2-629124af485a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8080/TechZone/Login.jsp"],
+  "plugins": []
+}

@@ -1,0 +1,86 @@
+{
+  "id": "4607d875-2539-44bf-8c6d-5ef5843ceef9",
+  "version": "2.0",
+  "name": "Checkout ",
+  "url": "http://localhost:8080/TechZone/CartView.jsp",
+  "tests": [{
+    "id": "2c6cb146-5b6b-4493-9997-5e994b71d495",
+    "name": "TC_GO_12",
+    "commands": [{
+      "id": "7b07e8b4-ae62-401d-b26e-f96523420695",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/CartView.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c24b4b39-c0f6-4a0a-9787-e52dcb9a0e29",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "efbc8e3f-3417-42d6-a22b-191085ef8cbe",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(5) .button",
+      "targets": [
+        ["css=td:nth-child(5) .button", "css:finder"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Aggiungi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce5e0d81-6c34-40c8-95be-11226feb3928",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(27) > .button",
+      "targets": [
+        ["css=a:nth-child(27) > .button", "css:finder"],
+        ["xpath=//input[@value='CheckOut']", "xpath:attributes"],
+        ["xpath=//a/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d6e429cc-056c-4b3c-8dbd-5798da169c80",
+    "name": "TC_GO_13",
+    "commands": [{
+      "id": "544f4d63-36b1-43ef-ad3b-bd2a800b07dd",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/CartView.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "84d8f407-1549-42f7-86e4-5e2aab08feda",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7a9d943a-2f69-4b9d-9840-99619377526f",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(27) > .button",
+      "targets": [
+        ["css=a:nth-child(27) > .button", "css:finder"],
+        ["xpath=//input[@value='CheckOut']", "xpath:attributes"],
+        ["xpath=//a/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "3927fc43-d9f6-4f35-b256-4e11e1957950",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["2c6cb146-5b6b-4493-9997-5e994b71d495"]
+  }],
+  "urls": [],
+  "plugins": []
+}

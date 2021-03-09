@@ -1,0 +1,398 @@
+{
+  "id": "c65a9936-3ae2-497e-a6ea-ec35280dfcef",
+  "version": "2.0",
+  "name": "Gestione Ordini",
+  "url": "http://localhost:8080/TechZone/OrdersManagerPage.jsp",
+  "tests": [{
+    "id": "5b3241bd-8787-4a8e-bb03-7f93f05b4c4a",
+    "name": "TC_GO_3",
+    "commands": [{
+      "id": "4690b5e2-62be-4065-ba90-a6d411167a38",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/OrdersManagerPage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "93316393-8473-45bb-80f2-3fac35155149",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f94b7fc6-ee09-4ce4-b952-91178fa7e310",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputEmail",
+      "targets": [
+        ["id=inputEmail", "id"],
+        ["name=mailOrd", "name"],
+        ["css=#inputEmail", "css:finder"],
+        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "944adf0b-b241-4b50-93b5-3692d9a7b262",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputEmail",
+      "targets": [
+        ["id=inputEmail", "id"],
+        ["name=mailOrd", "name"],
+        ["css=#inputEmail", "css:finder"],
+        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": "vice56@gmail.com"
+    }, {
+      "id": "6ae9c581-115a-489c-8b8b-86d11f9b90a8",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(3) > .button",
+      "targets": [
+        ["css=form:nth-child(3) > .button", "css:finder"],
+        ["xpath=(//input[@value='Ricerca'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "5567166d-4f39-49c1-9b5b-50bf7e4f4734",
+    "name": "TC_GO_2",
+    "commands": [{
+      "id": "44570985-4ef3-4e4a-a7d7-95ef41170ede",
+      "comment": "",
+      "command": "open",
+      "target": "/TechZone/OrdersManagerPage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5fea0874-7b37-4346-ba6d-4257bbe8dcdd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2a0000fb-afd9-4342-b8e5-80cc0e98193c",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputEmail",
+      "targets": [
+        ["id=inputEmail", "id"],
+        ["name=mailOrd", "name"],
+        ["css=#inputEmail", "css:finder"],
+        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "49115aa0-a069-48cf-9852-b029b46dad43",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputEmail",
+      "targets": [
+        ["id=inputEmail", "id"],
+        ["name=mailOrd", "name"],
+        ["css=#inputEmail", "css:finder"],
+        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": "g.fortunato.libero"
+    }, {
+      "id": "2ed65feb-fcce-450f-8444-bfd3806f885a",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(3) > .button",
+      "targets": [
+        ["css=form:nth-child(3) > .button", "css:finder"],
+        ["xpath=(//input[@value='Ricerca'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "21ebde8c-a5ea-4203-832d-284a5eae1f4d",
+    "name": "TC_GO_4",
+    "commands": [{
+      "id": "4577225a-1c69-4f17-b76e-5b0540c0a04a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/OrdersManagerPage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2ffbcfa8-9690-428b-8376-39a25b1e51d5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "83a3cc46-55ab-4d64-80f5-5cc033c386e1",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputEmail",
+      "targets": [
+        ["id=inputEmail", "id"],
+        ["name=mailOrd", "name"],
+        ["css=#inputEmail", "css:finder"],
+        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb728d3a-f312-4400-a1e0-bab145d1d02d",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputEmail",
+      "targets": [
+        ["id=inputEmail", "id"],
+        ["name=mailOrd", "name"],
+        ["css=#inputEmail", "css:finder"],
+        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": "g.simonini@gmail.com"
+    }, {
+      "id": "0ae34123-619e-438c-8eef-9f4eb18f971c",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(3) > .button",
+      "targets": [
+        ["css=form:nth-child(3) > .button", "css:finder"],
+        ["xpath=(//input[@value='Ricerca'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f7028643-ebc7-43dd-9b1b-ca4a5ebfb8fd",
+    "name": "TC_GO_10",
+    "commands": [{
+      "id": "dd4711e7-282c-4cf0-a7d6-7b65984cee6b",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/OrdersManagerPage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fdad6f09-c3ea-478f-a5c0-2cf5ce96c8be",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ae9c180d-7d2b-424f-9f71-dc16fcb29fa2",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputEmail",
+      "targets": [
+        ["id=inputEmail", "id"],
+        ["name=mailOrd", "name"],
+        ["css=#inputEmail", "css:finder"],
+        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3ad0ce2-1528-4494-945a-9a1e94a69674",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputEmail",
+      "targets": [
+        ["id=inputEmail", "id"],
+        ["name=mailOrd", "name"],
+        ["css=#inputEmail", "css:finder"],
+        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": "g.simonini@gmail.com"
+    }, {
+      "id": "982fdde2-c7c0-402d-9f6e-0e9139390f7f",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(3) > .button",
+      "targets": [
+        ["css=form:nth-child(3) > .button", "css:finder"],
+        ["xpath=(//input[@value='Ricerca'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7f4e27e1-f0c3-4144-8886-9c9b4d804c14",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(6) > .button",
+      "targets": [
+        ["css=a:nth-child(6) > .button", "css:finder"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Mostra dettagli / Cambia stato')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "53af3e59-62fd-4776-8299-eb21a65dee87",
+      "comment": "",
+      "command": "click",
+      "target": "name=changeStatus",
+      "targets": [
+        ["name=changeStatus", "name"],
+        ["css=.form-select", "css:finder"],
+        ["xpath=//select[@name='changeStatus']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "510c35fb-ebc2-4e8f-aa2d-4b2e67e8c595",
+      "comment": "",
+      "command": "select",
+      "target": "name=changeStatus",
+      "targets": [],
+      "value": "label=In consegna"
+    }, {
+      "id": "3087118a-7324-4677-a558-86c870b87100",
+      "comment": "",
+      "command": "click",
+      "target": "name=changeStatus",
+      "targets": [
+        ["name=changeStatus", "name"],
+        ["css=.form-select", "css:finder"],
+        ["xpath=//select[@name='changeStatus']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87b7c0de-a471-4e4f-8246-92894d56e0c7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Cambia Stato']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "2aed1258-1311-435b-943f-c03dc1fca292",
+    "name": "TC_GO_11",
+    "commands": [{
+      "id": "8fd1cca1-e634-46a5-bd6e-82cc4e64cb11",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/OrdersManagerPage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "73895c43-c345-4311-b175-1742a8f60eda",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e8ae6276-a7ad-4efc-9132-46a24c2571cf",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputEmail",
+      "targets": [
+        ["id=inputEmail", "id"],
+        ["name=mailOrd", "name"],
+        ["css=#inputEmail", "css:finder"],
+        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "35c03653-304e-4c3d-8a37-cf66fa91738e",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputEmail",
+      "targets": [
+        ["id=inputEmail", "id"],
+        ["name=mailOrd", "name"],
+        ["css=#inputEmail", "css:finder"],
+        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": "g.simonini@gmail.com"
+    }, {
+      "id": "f7118efe-055d-42dc-b6fd-d640b17a1218",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(3) > .button",
+      "targets": [
+        ["css=form:nth-child(3) > .button", "css:finder"],
+        ["xpath=(//input[@value='Ricerca'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a96f897-53dd-4a73-bc96-b977bca29ea1",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(6) > .button",
+      "targets": [
+        ["css=a:nth-child(6) > .button", "css:finder"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Mostra dettagli / Cambia stato')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d70bdcd8-d1aa-499b-a6a7-ed5b8f5d4cc9",
+      "comment": "",
+      "command": "click",
+      "target": "name=changeStatus",
+      "targets": [
+        ["name=changeStatus", "name"],
+        ["css=.form-select", "css:finder"],
+        ["xpath=//select[@name='changeStatus']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f916f15e-8a7f-40e9-b0ba-e3d5a9d000c7",
+      "comment": "",
+      "command": "select",
+      "target": "name=changeStatus",
+      "targets": [],
+      "value": "label=Spedito"
+    }, {
+      "id": "a9812338-8dcd-4a03-ba26-023adfddcb18",
+      "comment": "",
+      "command": "click",
+      "target": "name=changeStatus",
+      "targets": [
+        ["name=changeStatus", "name"],
+        ["css=.form-select", "css:finder"],
+        ["xpath=//select[@name='changeStatus']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb886587-b17a-42b9-9805-aa1ed7115a44",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Cambia Stato']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "e25b26d4-2d70-458a-968c-b77080947891",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5b3241bd-8787-4a8e-bb03-7f93f05b4c4a"]
+  }],
+  "urls": ["http://localhost:8080/", "http://localhost:8080/TechZone/OrdersManagerPage.jsp"],
+  "plugins": []
+}

@@ -1,0 +1,921 @@
+{
+  "id": "d29d1607-57d4-434e-bafa-bc81925dd05f",
+  "version": "2.0",
+  "name": "prodotto modifica",
+  "url": "http://localhost:8080/TechZone/productviewcontrol",
+  "tests": [{
+    "id": "76122bd9-3757-4fe9-9ce2-02e4a79def25",
+    "name": "TC_GP_5",
+    "commands": [{
+      "id": "b29f35dd-cf41-486c-b23b-9c2c0902d2db",
+      "comment": "",
+      "command": "open",
+      "target": "/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "00ea79a3-7bdc-4ff6-8c96-3bb84bea929f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x726",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "12e38809-963b-469f-b9b3-6dba16ff9978",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Modifica",
+      "targets": [
+        ["linkText=Modifica", "linkText"],
+        ["css=tr:nth-child(1) a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Modifica')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'updateproductcontrol?idProd=1')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Modifica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d7ddcec4-ba13-40de-97d7-f272e060860b",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=inputNameProd",
+      "targets": [
+        ["id=inputNameProd", "id"],
+        ["name=nomeprod", "name"],
+        ["css=#inputNameProd", "css:finder"],
+        ["xpath=//input[@id='inputNameProd']", "xpath:attributes"],
+        ["xpath=//div/form/div/input", "xpath:position"]
+      ],
+      "value": "258.5749969482422,32.399993896484375"
+    }, {
+      "id": "4df34243-ac81-4569-bfaa-f78d50a44a26",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=inputNameProd",
+      "targets": [
+        ["id=inputNameProd", "id"],
+        ["name=nomeprod", "name"],
+        ["css=#inputNameProd", "css:finder"],
+        ["xpath=//input[@id='inputNameProd']", "xpath:attributes"],
+        ["xpath=//div/form/div/input", "xpath:position"]
+      ],
+      "value": "258.5749969482422,32.399993896484375"
+    }, {
+      "id": "932aacf0-d31d-482b-b71b-1cd8fa9fa8e4",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=inputNameProd",
+      "targets": [
+        ["id=inputNameProd", "id"],
+        ["name=nomeprod", "name"],
+        ["css=#inputNameProd", "css:finder"],
+        ["xpath=//input[@id='inputNameProd']", "xpath:attributes"],
+        ["xpath=//div/form/div/input", "xpath:position"]
+      ],
+      "value": "258.5749969482422,32.399993896484375"
+    }, {
+      "id": "45f18203-04e1-44fb-a8a6-e6b1e76f045e",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputNameProd",
+      "targets": [
+        ["id=inputNameProd", "id"],
+        ["name=nomeprod", "name"],
+        ["css=#inputNameProd", "css:finder"],
+        ["xpath=//input[@id='inputNameProd']", "xpath:attributes"],
+        ["xpath=//div/form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cbeffbd6-8270-4d9f-806a-9fe07ebc8ce9",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=inputNameProd",
+      "targets": [
+        ["id=inputNameProd", "id"],
+        ["name=nomeprod", "name"],
+        ["css=#inputNameProd", "css:finder"],
+        ["xpath=//input[@id='inputNameProd']", "xpath:attributes"],
+        ["xpath=//div/form/div/input", "xpath:position"]
+      ],
+      "value": "250.5749969482422,21.399993896484375"
+    }, {
+      "id": "02b6f4aa-cce4-475d-ab12-30286fd08072",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=inputNameProd",
+      "targets": [
+        ["id=inputNameProd", "id"],
+        ["name=nomeprod", "name"],
+        ["css=#inputNameProd", "css:finder"],
+        ["xpath=//input[@id='inputNameProd']", "xpath:attributes"],
+        ["xpath=//div/form/div/input", "xpath:position"]
+      ],
+      "value": "250.5749969482422,21.399993896484375"
+    }, {
+      "id": "ce65fef5-d9a9-4cb3-9a4a-15c2b3abac00",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=inputNameProd",
+      "targets": [
+        ["id=inputNameProd", "id"],
+        ["name=nomeprod", "name"],
+        ["css=#inputNameProd", "css:finder"],
+        ["xpath=//input[@id='inputNameProd']", "xpath:attributes"],
+        ["xpath=//div/form/div/input", "xpath:position"]
+      ],
+      "value": "250.5749969482422,21.399993896484375"
+    }, {
+      "id": "a84c26b7-4b6f-496b-bac5-f0c156fb7d1f",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputNameProd",
+      "targets": [
+        ["id=inputNameProd", "id"],
+        ["name=nomeprod", "name"],
+        ["css=#inputNameProd", "css:finder"],
+        ["xpath=//input[@id='inputNameProd']", "xpath:attributes"],
+        ["xpath=//div/form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "39996a6a-7073-47cf-893d-94af8fe62547",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eaca7ee4-28da-46a6-a8c0-43910d222028",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputNameProd",
+      "targets": [
+        ["id=inputNameProd", "id"],
+        ["name=nomeprod", "name"],
+        ["css=#inputNameProd", "css:finder"],
+        ["xpath=//input[@id='inputNameProd']", "xpath:attributes"],
+        ["xpath=//div/form/div/input", "xpath:position"]
+      ],
+      "value": "PS4@"
+    }, {
+      "id": "6ef1ff7b-df5b-481d-8655-b90642194b82",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=inputQuant",
+      "targets": [
+        ["id=inputQuant", "id"],
+        ["name=quantita", "name"],
+        ["css=#inputQuant", "css:finder"],
+        ["xpath=//input[@id='inputQuant']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "16.07501220703125,20.399993896484375"
+    }, {
+      "id": "c2179ed0-b484-47ba-8d07-46b63ed0138a",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=inputQuant",
+      "targets": [
+        ["id=inputQuant", "id"],
+        ["name=quantita", "name"],
+        ["css=#inputQuant", "css:finder"],
+        ["xpath=//input[@id='inputQuant']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "16.07501220703125,20.399993896484375"
+    }, {
+      "id": "7185da68-a2c3-42df-a76a-0c46380aa035",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=inputQuant",
+      "targets": [
+        ["id=inputQuant", "id"],
+        ["name=quantita", "name"],
+        ["css=#inputQuant", "css:finder"],
+        ["xpath=//input[@id='inputQuant']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "16.07501220703125,20.399993896484375"
+    }, {
+      "id": "ef18ee11-b821-4233-94f3-010799c71269",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputQuant",
+      "targets": [
+        ["id=inputQuant", "id"],
+        ["name=quantita", "name"],
+        ["css=#inputQuant", "css:finder"],
+        ["xpath=//input[@id='inputQuant']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c2775cf-0dc7-4067-95ab-b917ed02f354",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputQuant",
+      "targets": [
+        ["id=inputQuant", "id"],
+        ["name=quantita", "name"],
+        ["css=#inputQuant", "css:finder"],
+        ["xpath=//input[@id='inputQuant']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b913216-3bbb-407d-b603-3b8176b606dc",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "39e1d39a-a605-48fd-8099-0383d09bbd64",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputTipo",
+      "targets": [
+        ["id=inputTipo", "id"],
+        ["name=tipo", "name"],
+        ["css=#inputTipo", "css:finder"],
+        ["xpath=//input[@id='inputTipo']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "881954fd-05e3-4817-93e3-26c9e1a846eb",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=inputCosto",
+      "targets": [
+        ["id=inputCosto", "id"],
+        ["name=costo", "name"],
+        ["css=#inputCosto", "css:finder"],
+        ["xpath=//input[@id='inputCosto']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "110.07501220703125,4.399993896484375"
+    }, {
+      "id": "d3f99aa4-c162-4b81-b63b-b34fa4b82527",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=inputTipo",
+      "targets": [
+        ["id=inputTipo", "id"],
+        ["name=tipo", "name"],
+        ["css=#inputTipo", "css:finder"],
+        ["xpath=//input[@id='inputTipo']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "268.5749969482422,-12.600006103515625"
+    }, {
+      "id": "80651886-5921-4aa8-8978-5d32e3fc3f17",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=inputTipo",
+      "targets": [
+        ["id=inputTipo", "id"],
+        ["name=tipo", "name"],
+        ["css=#inputTipo", "css:finder"],
+        ["xpath=//input[@id='inputTipo']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "268.5749969482422,-12.600006103515625"
+    }, {
+      "id": "d27f7408-faed-4ef1-82f6-a86d6daca20c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-12",
+      "targets": [
+        ["css=.col-md-12", "css:finder"],
+        ["xpath=//form[@action='updateproductcontrol']", "xpath:attributes"],
+        ["xpath=//div/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9d25af2-4b2e-463e-b972-4d3e7729d7cf",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputCosto",
+      "targets": [
+        ["id=inputCosto", "id"],
+        ["name=costo", "name"],
+        ["css=#inputCosto", "css:finder"],
+        ["xpath=//input[@id='inputCosto']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02af63fb-aac4-476d-b7de-3d72f49dce1d",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputCat",
+      "targets": [
+        ["id=inputCat", "id"],
+        ["name=categoria", "name"],
+        ["css=#inputCat", "css:finder"],
+        ["xpath=//input[@id='inputCat']", "xpath:attributes"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b13f8bd-7d44-4740-a9a1-15d77596e126",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputCat",
+      "targets": [
+        ["id=inputCat", "id"],
+        ["name=categoria", "name"],
+        ["css=#inputCat", "css:finder"],
+        ["xpath=//input[@id='inputCat']", "xpath:attributes"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9e3865e-3017-4cdb-bba8-7500ee8f4e09",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbd81bb1-d72b-4bee-96ec-a9447723b91d",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputDescr",
+      "targets": [
+        ["id=inputDescr", "id"],
+        ["name=descrizione", "name"],
+        ["css=#inputDescr", "css:finder"],
+        ["xpath=//textarea[@id='inputDescr']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a85748da-ef5c-4a1b-bf02-b7a6a95ac5d3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary:nth-child(12)",
+      "targets": [
+        ["css=.btn-primary:nth-child(12)", "css:finder"],
+        ["xpath=//input[@value='Conferma modifiche']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f4247da-68e6-428c-84a9-53171185bc8a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.footer",
+      "targets": [
+        ["css=.footer", "css:finder"],
+        ["xpath=//div[@id='nav']/div", "xpath:idRelative"],
+        ["xpath=//div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "875e6084-3166-482a-8aee-0da5a680bc38",
+    "name": "TC_GP_6",
+    "commands": [{
+      "id": "d183ca7a-6617-480c-a365-a65d6d49d4bb",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "68779a0d-71fe-45e6-aff3-6920928b6a36",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x726",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e2946993-bbab-40d2-a3be-d8716b2e7670",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Modifica",
+      "targets": [
+        ["linkText=Modifica", "linkText"],
+        ["css=tr:nth-child(1) a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Modifica')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'updateproductcontrol?idProd=1')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Modifica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b56abbd3-13d8-4b57-a8b2-44f251d48532",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=center",
+      "targets": [
+        ["css=center", "css:finder"],
+        ["xpath=//center", "xpath:position"]
+      ],
+      "value": "264.1999969482422,82.5999526977539"
+    }, {
+      "id": "f3468522-0a7e-48cb-9466-d8991681defb",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=center",
+      "targets": [
+        ["css=center", "css:finder"],
+        ["xpath=//center", "xpath:position"]
+      ],
+      "value": "264.1999969482422,82.5999526977539"
+    }, {
+      "id": "34add478-4a1e-437c-a296-f2c6a82e9bd7",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=center",
+      "targets": [
+        ["css=center", "css:finder"],
+        ["xpath=//center", "xpath:position"]
+      ],
+      "value": "264.1999969482422,82.5999526977539"
+    }, {
+      "id": "97fd579b-98d4-4ddc-bd06-4630dadc4155",
+      "comment": "",
+      "command": "click",
+      "target": "css=center",
+      "targets": [
+        ["css=center", "css:finder"],
+        ["xpath=//center", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "967596fd-ff2a-4c87-8258-b852d8b29001",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputQuant",
+      "targets": [
+        ["id=inputQuant", "id"],
+        ["name=quantita", "name"],
+        ["css=#inputQuant", "css:finder"],
+        ["xpath=//input[@id='inputQuant']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "-3"
+    }, {
+      "id": "db9b55d8-f862-4ff9-8a17-3fe4555cb4ea",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary:nth-child(12)",
+      "targets": [
+        ["css=.btn-primary:nth-child(12)", "css:finder"],
+        ["xpath=//input[@value='Conferma modifiche']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "936788ab-b2fb-46bb-9646-c961f9caeedb",
+    "name": "TC_GP_9",
+    "commands": [{
+      "id": "58177607-c960-4f65-aa01-904cf02646ad",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8e2c84a7-de75-4661-b8be-e2a2aa239fb8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "41976d61-dbd6-4417-86e9-c9556f78f9a7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Modifica",
+      "targets": [
+        ["linkText=Modifica", "linkText"],
+        ["css=tr:nth-child(1) a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Modifica')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'updateproductcontrol?idProd=1')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Modifica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1fcd06d-e4be-4e70-bc46-4782cf62d099",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputCat",
+      "targets": [
+        ["id=inputCat", "id"],
+        ["name=categoria", "name"],
+        ["css=#inputCat", "css:finder"],
+        ["xpath=//input[@id='inputCat']", "xpath:attributes"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3140b17-8973-42bd-93fe-391b1dc90f76",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputCat",
+      "targets": [
+        ["id=inputCat", "id"],
+        ["name=categoria", "name"],
+        ["css=#inputCat", "css:finder"],
+        ["xpath=//input[@id='inputCat']", "xpath:attributes"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": "Smartphone@"
+    }, {
+      "id": "b3047410-0c1a-47e0-ba2c-095c97444cb0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary:nth-child(12)",
+      "targets": [
+        ["css=.btn-primary:nth-child(12)", "css:finder"],
+        ["xpath=//input[@value='Conferma modifiche']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "da99550c-3d5b-45e9-92fe-0f77f9607850",
+    "name": "TC_GP_7",
+    "commands": [{
+      "id": "abb3dbe1-b044-495a-903d-b3c0f8cfc565",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "abd4aa4d-1a10-45d8-81e3-f553fdd40580",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "93c5f2ba-6c52-4e55-9114-e36627ee3764",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Modifica",
+      "targets": [
+        ["linkText=Modifica", "linkText"],
+        ["css=tr:nth-child(1) a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Modifica')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'updateproductcontrol?idProd=1')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Modifica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a23b84d0-a777-4a89-a948-4d4089af2cbc",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputTipo",
+      "targets": [
+        ["id=inputTipo", "id"],
+        ["name=tipo", "name"],
+        ["css=#inputTipo", "css:finder"],
+        ["xpath=//input[@id='inputTipo']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c386ba3-0bcd-414b-8bbc-a27d59070cbe",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputTipo",
+      "targets": [
+        ["id=inputTipo", "id"],
+        ["name=tipo", "name"],
+        ["css=#inputTipo", "css:finder"],
+        ["xpath=//input[@id='inputTipo']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "Android@"
+    }, {
+      "id": "d7485bda-2d07-4a62-a714-d3302c6bf49d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary:nth-child(12)",
+      "targets": [
+        ["css=.btn-primary:nth-child(12)", "css:finder"],
+        ["xpath=//input[@value='Conferma modifiche']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "10e34448-781e-416d-843e-9615ebc8ba1f",
+    "name": "TC_GP_8",
+    "commands": [{
+      "id": "5717aafe-5a2f-457a-be2c-cb70a8244256",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c3eac833-b78c-40ab-a672-ea3581487b27",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d6535b23-9811-4c00-aca3-110fb5ab0eb8",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Modifica",
+      "targets": [
+        ["linkText=Modifica", "linkText"],
+        ["css=tr:nth-child(1) a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Modifica')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'updateproductcontrol?idProd=1')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Modifica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d439258a-6007-4e79-a045-3bc9163948e3",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputCosto",
+      "targets": [
+        ["id=inputCosto", "id"],
+        ["name=costo", "name"],
+        ["css=#inputCosto", "css:finder"],
+        ["xpath=//input[@id='inputCosto']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc303ce7-856d-42e1-9b83-17d085da25be",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputCosto",
+      "targets": [
+        ["id=inputCosto", "id"],
+        ["name=costo", "name"],
+        ["css=#inputCosto", "css:finder"],
+        ["xpath=//input[@id='inputCosto']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "-398.99"
+    }, {
+      "id": "b531ad62-8c57-48fe-91ea-b21a5cf3cd56",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary:nth-child(12)",
+      "targets": [
+        ["css=.btn-primary:nth-child(12)", "css:finder"],
+        ["xpath=//input[@value='Conferma modifiche']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "434ddf4b-3951-411a-9188-495c5304a3e0",
+    "name": "TC_GP_10",
+    "commands": [{
+      "id": "397942a2-e5b4-45b1-bf32-87aac3566b60",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "faef3531-4b14-4fcf-9f4e-5642a4519d32",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "47dc6d3d-0d4e-4cc0-b22e-747fbaf50369",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Modifica",
+      "targets": [
+        ["linkText=Modifica", "linkText"],
+        ["css=tr:nth-child(1) a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Modifica')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'updateproductcontrol?idProd=1')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Modifica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b64cbf1d-dd4f-43ee-b6e3-9f531f1124b9",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2156d100-630f-4230-a64e-147e53dfd7c6",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputDescr",
+      "targets": [
+        ["id=inputDescr", "id"],
+        ["name=descrizione", "name"],
+        ["css=#inputDescr", "css:finder"],
+        ["xpath=//textarea[@id='inputDescr']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Con"
+    }, {
+      "id": "87743294-5b37-49eb-8526-f3f3bdcb15f4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary:nth-child(12)",
+      "targets": [
+        ["css=.btn-primary:nth-child(12)", "css:finder"],
+        ["xpath=//input[@value='Conferma modifiche']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "7a6170e5-482b-464e-bfa9-c53880700c42",
+    "name": "TC_GP_11",
+    "commands": [{
+      "id": "3399983c-1d9d-4e9b-a64e-e70c3c1198a8",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c440115c-a10b-4561-a871-17afea63b12c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ada05957-810f-4633-89d9-b169575fee49",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Modifica",
+      "targets": [
+        ["linkText=Modifica", "linkText"],
+        ["css=tr:nth-child(1) a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Modifica')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'updateproductcontrol?idProd=1')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Modifica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "df8d9e71-dcb8-4eb9-b751-751636aebbc4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.section",
+      "targets": [
+        ["css=.section", "css:finder"],
+        ["xpath=//div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f9c3224-cb89-44e1-86d5-cccefeff910f",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputNameProd",
+      "targets": [
+        ["id=inputNameProd", "id"],
+        ["name=nomeprod", "name"],
+        ["css=#inputNameProd", "css:finder"],
+        ["xpath=//input[@id='inputNameProd']", "xpath:attributes"],
+        ["xpath=//div/form/div/input", "xpath:position"]
+      ],
+      "value": "PS4 slim"
+    }, {
+      "id": "8a5ed5c7-26bd-4899-847f-c12427a56bb9",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputQuant",
+      "targets": [
+        ["id=inputQuant", "id"],
+        ["name=quantita", "name"],
+        ["css=#inputQuant", "css:finder"],
+        ["xpath=//input[@id='inputQuant']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "ddb4c7b7-8feb-4054-9882-49f3224d98ee",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputTipo",
+      "targets": [
+        ["id=inputTipo", "id"],
+        ["name=tipo", "name"],
+        ["css=#inputTipo", "css:finder"],
+        ["xpath=//input[@id='inputTipo']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "Console"
+    }, {
+      "id": "e3038d35-abe8-4903-a342-b5af39db8132",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputCat",
+      "targets": [
+        ["id=inputCat", "id"],
+        ["name=categoria", "name"],
+        ["css=#inputCat", "css:finder"],
+        ["xpath=//input[@id='inputCat']", "xpath:attributes"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc089597-46d3-457a-b13c-f53fc4cb3bdd",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputCat",
+      "targets": [
+        ["id=inputCat", "id"],
+        ["name=categoria", "name"],
+        ["css=#inputCat", "css:finder"],
+        ["xpath=//input[@id='inputCat']", "xpath:attributes"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": "Videogiochi"
+    }, {
+      "id": "e6357910-4697-463b-9cf4-fe5620f954b8",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "169c4580-aa8a-486b-942b-f17ffea9682a",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputDescr",
+      "targets": [
+        ["id=inputDescr", "id"],
+        ["name=descrizione", "name"],
+        ["css=#inputDescr", "css:finder"],
+        ["xpath=//textarea[@id='inputDescr']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b745e282-9285-485c-8978-043fe519a92c",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputDescr",
+      "targets": [
+        ["id=inputDescr", "id"],
+        ["name=descrizione", "name"],
+        ["css=#inputDescr", "css:finder"],
+        ["xpath=//textarea[@id='inputDescr']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Console next gen"
+    }, {
+      "id": "e54fd8ae-97c7-468a-a19b-9460aabc3f79",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary:nth-child(12)",
+      "targets": [
+        ["css=.btn-primary:nth-child(12)", "css:finder"],
+        ["xpath=//input[@value='Conferma modifiche']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "44a6ff71-26cf-493b-9cce-61b3cb830241",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["76122bd9-3757-4fe9-9ce2-02e4a79def25"]
+  }],
+  "urls": ["http://localhost:8080/", "http://localhost:8080/TechZone/updateproductcontrol?idProd=1", "http://localhost:8080/TechZone/productviewcontrol"],
+  "plugins": []
+}

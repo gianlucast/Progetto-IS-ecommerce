@@ -1,0 +1,507 @@
+{
+  "id": "64df2a71-b625-429f-bfb0-184f9629fde8",
+  "version": "2.0",
+  "name": "Techzone test ricerca ordine per id",
+  "url": "http://localhost:8080/TechZone",
+  "tests": [{
+    "id": "7a5dedeb-a538-4484-9b59-f91f93766336",
+    "name": "TC_GO_7",
+    "commands": [{
+      "id": "2fd48b03-92c7-4612-80fe-b17d3608acde",
+      "comment": "",
+      "command": "open",
+      "target": "/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e92e508f-2bf5-4f5d-baed-9bed467ceba3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x680",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b0b9ca3d-c9c8-4fc7-8103-57feb5d98655",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(2) > a",
+      "targets": [
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'Login.jsp')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "638f28a1-dfb2-4b26-b6b0-f725807ebc2b",
+      "comment": "",
+      "command": "click",
+      "target": "id=mail",
+      "targets": [
+        ["id=mail", "id"],
+        ["name=email", "name"],
+        ["css=#mail", "css:finder"],
+        ["xpath=//input[@id='mail']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "631e74be-6da6-41e7-89ed-4ed5174d9200",
+      "comment": "",
+      "command": "type",
+      "target": "id=mail",
+      "targets": [
+        ["id=mail", "id"],
+        ["name=email", "name"],
+        ["css=#mail", "css:finder"],
+        ["xpath=//input[@id='mail']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "giuseppe@techzone.it"
+    }, {
+      "id": "1ee7d91e-8d7a-4bea-94cd-bf3b9fcd87c9",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Amministratore1"
+    }, {
+      "id": "1786ae90-c5b4-45d4-8289-68c8da159e77",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4a69416-a416-4476-a595-cee16b88b26d",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(2) > a",
+      "targets": [
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Area Manager')]", "xpath:link"],
+        ["xpath=//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'OrdersManagerPage.jsp')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4b2bf87-f0c7-4c4f-8eca-6f0eff906827",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputOrdine",
+      "targets": [
+        ["id=inputOrdine", "id"],
+        ["name=idOrd", "name"],
+        ["css=#inputOrdine", "css:finder"],
+        ["xpath=//input[@id='inputOrdine']", "xpath:attributes"],
+        ["xpath=//div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aee6f66b-433b-4c79-b4b1-5668dd90e7b1",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputOrdine",
+      "targets": [
+        ["id=inputOrdine", "id"],
+        ["name=idOrd", "name"],
+        ["css=#inputOrdine", "css:finder"],
+        ["xpath=//input[@id='inputOrdine']", "xpath:attributes"],
+        ["xpath=//div/form/input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "1428281e-a64e-443e-ac53-e11c03d6e7f5",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(1) > .button",
+      "targets": [
+        ["css=form:nth-child(1) > .button", "css:finder"],
+        ["xpath=//input[@value='Ricerca']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d6efbe5-b8a9-4d4b-a6fa-a5dd7dd170d3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(1)",
+      "targets": [
+        ["css=.button:nth-child(1)", "css:finder"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Mostra dettagli / Cambia stato')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "a6ff51de-5a73-47ea-b031-a047314f1b3c",
+    "name": "TC_GO_5",
+    "commands": [{
+      "id": "88a677e7-5b2a-4377-ba5f-379520cc6dbe",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9831b4c2-15bf-4e75-9da5-34c164ec41ca",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x696",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f093250f-0c93-4c4f-8901-2c3b1a11ac0b",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(2) > a",
+      "targets": [
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'Login.jsp')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "398faf56-3431-410e-a926-e4ee0b60de45",
+      "comment": "",
+      "command": "click",
+      "target": "id=mail",
+      "targets": [
+        ["id=mail", "id"],
+        ["name=email", "name"],
+        ["css=#mail", "css:finder"],
+        ["xpath=//input[@id='mail']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "beb79262-671c-42eb-bc16-1b8e161dda0e",
+      "comment": "",
+      "command": "type",
+      "target": "id=mail",
+      "targets": [
+        ["id=mail", "id"],
+        ["name=email", "name"],
+        ["css=#mail", "css:finder"],
+        ["xpath=//input[@id='mail']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "giuseppe@techzone.it"
+    }, {
+      "id": "b2e06e79-77b6-4571-b689-d600ecb2e6f4",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Amministratore1"
+    }, {
+      "id": "9ce99b32-6423-4511-87ad-72d0e2ae77b5",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "f9754c61-dbc6-477f-bab2-9c7173452efc",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(2) > a",
+      "targets": [
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Area Manager')]", "xpath:link"],
+        ["xpath=//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'OrdersManagerPage.jsp')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2317f660-5fcc-4516-b75c-eb4252658cdc",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputOrdine",
+      "targets": [
+        ["id=inputOrdine", "id"],
+        ["name=idOrd", "name"],
+        ["css=#inputOrdine", "css:finder"],
+        ["xpath=//input[@id='inputOrdine']", "xpath:attributes"],
+        ["xpath=//div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4eac312b-ce1c-40d2-a2ff-2687d4238413",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputOrdine",
+      "targets": [
+        ["id=inputOrdine", "id"],
+        ["name=idOrd", "name"],
+        ["css=#inputOrdine", "css:finder"],
+        ["xpath=//input[@id='inputOrdine']", "xpath:attributes"],
+        ["xpath=//div/form/input", "xpath:position"]
+      ],
+      "value": "asd"
+    }, {
+      "id": "d3a6f92e-5f09-4638-be7a-3f0aae5e450a",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(1) > .button",
+      "targets": [
+        ["css=form:nth-child(1) > .button", "css:finder"],
+        ["xpath=//input[@value='Ricerca']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4611c0d-1046-4f4d-830e-070cc2d030be",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputOrdine",
+      "targets": [
+        ["id=inputOrdine", "id"],
+        ["name=idOrd", "name"],
+        ["css=#inputOrdine", "css:finder"],
+        ["xpath=//input[@id='inputOrdine']", "xpath:attributes"],
+        ["xpath=//div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e17713b9-0d65-468f-968b-3caab31ee759",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "css=form:nth-child(1) > .button",
+      "targets": [
+        ["css=form:nth-child(1) > .button", "css:finder"],
+        ["xpath=//input[@value='Ricerca']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "73dc67f3-92c4-4075-a10c-939fdbacaaf2",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "id=inputOrdine",
+      "targets": [
+        ["id=inputOrdine", "id"],
+        ["name=idOrd", "name"],
+        ["css=#inputOrdine", "css:finder"],
+        ["xpath=//input[@id='inputOrdine']", "xpath:attributes"],
+        ["xpath=//div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b570e21-1e38-47da-8d7f-75a803e4c0e1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row > form:nth-child(1)",
+      "targets": [
+        ["css=.row > form:nth-child(1)", "css:finder"],
+        ["xpath=//form[@action='managerordersearchidcontrol']", "xpath:attributes"],
+        ["xpath=//div/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc2867bb-c3a3-41ea-af14-ef8db44ef49f",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(1) > .button",
+      "targets": [
+        ["css=form:nth-child(1) > .button", "css:finder"],
+        ["xpath=//input[@value='Ricerca']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "8d2965fd-28d1-4a7d-97db-58e285ce090c",
+    "name": "TC_GO_6",
+    "commands": [{
+      "id": "d16c1833-71dd-4d6f-8b69-9a5d7441a5d7",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9497f4ae-d78c-41c1-8534-47d530773dac",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x696",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f25af0b5-7ca7-425f-8724-2774108af743",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(2) > a",
+      "targets": [
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'Login.jsp')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5b7a40f-42be-4b36-8863-5c047af6fa78",
+      "comment": "",
+      "command": "click",
+      "target": "id=mail",
+      "targets": [
+        ["id=mail", "id"],
+        ["name=email", "name"],
+        ["css=#mail", "css:finder"],
+        ["xpath=//input[@id='mail']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6cdfc27b-036d-427d-b1c4-343acfbc5415",
+      "comment": "",
+      "command": "type",
+      "target": "id=mail",
+      "targets": [
+        ["id=mail", "id"],
+        ["name=email", "name"],
+        ["css=#mail", "css:finder"],
+        ["xpath=//input[@id='mail']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "giuseppe@techzone.it"
+    }, {
+      "id": "f8d1ddd9-97ff-41e0-9056-75c96979b82a",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Amministratore1"
+    }, {
+      "id": "ce072b5c-df26-4376-891f-611740c735fc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e98cbc1-fa69-4af1-a4bf-c68b49010ee8",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(2) > a",
+      "targets": [
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Area Manager')]", "xpath:link"],
+        ["xpath=//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'OrdersManagerPage.jsp')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8aecd6c5-60a8-4b59-a1e3-37bb64a1b4a4",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputOrdine",
+      "targets": [
+        ["id=inputOrdine", "id"],
+        ["name=idOrd", "name"],
+        ["css=#inputOrdine", "css:finder"],
+        ["xpath=//input[@id='inputOrdine']", "xpath:attributes"],
+        ["xpath=//div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f468262f-9dc6-43de-81fe-a935a1acc3f9",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputOrdine",
+      "targets": [
+        ["id=inputOrdine", "id"],
+        ["name=idOrd", "name"],
+        ["css=#inputOrdine", "css:finder"],
+        ["xpath=//input[@id='inputOrdine']", "xpath:attributes"],
+        ["xpath=//div/form/input", "xpath:position"]
+      ],
+      "value": "123"
+    }, {
+      "id": "a32fcab3-2360-4d31-86ec-dded7489f04f",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(1) > .button",
+      "targets": [
+        ["css=form:nth-child(1) > .button", "css:finder"],
+        ["xpath=//input[@value='Ricerca']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ccbcb8a-b413-46fe-aea2-475f458daf6d",
+      "comment": "",
+      "command": "click",
+      "target": "css=font",
+      "targets": [
+        ["css=font", "css:finder"],
+        ["xpath=//font", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "03306bec-6e00-4762-b72b-91bc4c0f23ba",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputOrdine",
+      "targets": [
+        ["id=inputOrdine", "id"],
+        ["name=idOrd", "name"],
+        ["css=#inputOrdine", "css:finder"],
+        ["xpath=//input[@id='inputOrdine']", "xpath:attributes"],
+        ["xpath=//div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "fd5f47be-8911-454f-aa5c-0c65531c5ac8",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["7a5dedeb-a538-4484-9b59-f91f93766336"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}

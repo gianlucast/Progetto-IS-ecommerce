@@ -1,0 +1,179 @@
+{
+  "id": "4e43df72-add4-4aae-ad95-eafe1f980595",
+  "version": "2.0",
+  "name": "TechZone-TestSearch",
+  "url": "http://localhost:8080/TechZone/productviewcontrol",
+  "tests": [{
+    "id": "3d15a9c0-e903-4b6d-b962-8661e7af476b",
+    "name": "TC_GP_3",
+    "commands": [{
+      "id": "52e41da4-160a-4af9-b686-8bcf81d5e358",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3ee64715-31ef-4c8f-a161-d39a12de2eac",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "11eae747-baaa-4726-a3d2-5b358203b557",
+      "comment": "",
+      "command": "click",
+      "target": "id=s",
+      "targets": [
+        ["id=s", "id"],
+        ["name=q", "name"],
+        ["css=#s", "css:finder"],
+        ["xpath=//input[@id='s']", "xpath:attributes"],
+        ["xpath=//div[@id='contenitore_search']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "06461168-7a3d-4768-846b-de098ef9a56e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-search",
+      "targets": [
+        ["css=.fa-search", "css:finder"],
+        ["xpath=//button[@id='bottone_ricerca']/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "385bfc64-5693-402b-a0af-4b61f0c574ab",
+    "name": "TC_GP_4",
+    "commands": [{
+      "id": "b479bc8f-991c-4b5c-a32f-203d0f529b03",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "54edd31d-ea71-4f91-9a35-ee69498922d6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3855f9f5-3139-4180-bf63-5a5b309209d6",
+      "comment": "",
+      "command": "click",
+      "target": "id=s",
+      "targets": [
+        ["id=s", "id"],
+        ["name=q", "name"],
+        ["css=#s", "css:finder"],
+        ["xpath=//input[@id='s']", "xpath:attributes"],
+        ["xpath=//div[@id='contenitore_search']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c16d31e-80b2-40b5-ac7b-d04f31e311b8",
+      "comment": "",
+      "command": "type",
+      "target": "id=s",
+      "targets": [
+        ["id=s", "id"],
+        ["name=q", "name"],
+        ["css=#s", "css:finder"],
+        ["xpath=//input[@id='s']", "xpath:attributes"],
+        ["xpath=//div[@id='contenitore_search']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "a"
+    }, {
+      "id": "11c70ec8-6465-420f-8a12-498c543a9f1f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-search",
+      "targets": [
+        ["css=.fa-search", "css:finder"],
+        ["xpath=//button[@id='bottone_ricerca']/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a82aba9a-15fd-43d9-a7b0-d34d8d91d55f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-4:nth-child(5) ul",
+      "targets": [
+        ["css=.col-md-4:nth-child(5) ul", "css:finder"],
+        ["xpath=//div[5]/div/div[2]/ul", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "366c438a-a32f-4675-973b-143f08f92d8b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-4:nth-child(4) .acquista",
+      "targets": [
+        ["css=.col-md-4:nth-child(4) .acquista", "css:finder"],
+        ["xpath=//div[4]/div/div[2]/ul/li", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb37e845-f347-42f0-b9aa-7ed03a8f6c78",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-4:nth-child(4) b",
+      "targets": [
+        ["css=.col-md-4:nth-child(4) b", "css:finder"],
+        ["xpath=//div[4]/p/b", "xpath:position"],
+        ["xpath=//b[contains(.,'Macchina fotografica Canon EOS M50')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "de39d053-32f9-4441-a449-f3d892d67445",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-4:nth-child(2) > .category",
+      "targets": [
+        ["css=.col-md-4:nth-child(2) > .category", "css:finder"],
+        ["xpath=//div[2]/p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'Smartphone')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "170d4ddb-d6d8-453a-bb1f-507535def6b6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-4:nth-child(3)",
+      "targets": [
+        ["css=.col-md-4:nth-child(3)", "css:finder"],
+        ["xpath=//div/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "95046171-0742-4f2f-a101-3965651c7d6a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-4:nth-child(3) .portfolio-info-fade",
+      "targets": [
+        ["css=.col-md-4:nth-child(3) .portfolio-info-fade", "css:finder"],
+        ["xpath=//div[3]/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "8754487f-a38d-4f31-bdc7-a850f20c121e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8080/TechZone/productviewcontrol"],
+  "plugins": []
+}

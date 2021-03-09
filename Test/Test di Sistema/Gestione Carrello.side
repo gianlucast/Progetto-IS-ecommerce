@@ -1,0 +1,183 @@
+{
+  "id": "d8e68220-878d-447e-b249-ba03f23a9a4d",
+  "version": "2.0",
+  "name": "Gestione Carrello",
+  "url": "http://localhost:8080/TechZone/productviewcontrol",
+  "tests": [{
+    "id": "7a6da06b-8946-43b2-8cf7-ac66ad7bff5f",
+    "name": "TC_GC_2",
+    "commands": [{
+      "id": "721bf6db-6828-4b04-adf2-95e050f8507c",
+      "comment": "",
+      "command": "open",
+      "target": "/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8eaf89c6-3cbc-496b-b9c2-97d9f1261058",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x726",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ad3f04d-3ffa-4913-bd97-2821f9b34846",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ACQUISTA",
+      "targets": [
+        ["linkText=ACQUISTA", "linkText"],
+        ["css=.col-md-4:nth-child(1) .portfolio-btn", "css:finder"],
+        ["xpath=//a[contains(text(),'ACQUISTA')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'productviewcontrol?idProd=1')]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'ACQUISTA')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a4a55c82-4d5d-4985-a466-0d4512a6365a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button",
+      "targets": [
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@value='Aggiungi al carrello']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "ecf67a89-9592-40bd-9468-327cbbb20fbc",
+    "name": "TC_GC_3",
+    "commands": [{
+      "id": "e21a2dfd-6b8a-4d65-8ab8-d561dd8f42f3",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "13b09af2-c0d4-4d25-8776-a80ad382a9b0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c54f7a64-323a-4703-a771-62adaa3d3e6c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ACQUISTA",
+      "targets": [
+        ["linkText=ACQUISTA", "linkText"],
+        ["css=.col-md-4:nth-child(1) .portfolio-btn", "css:finder"],
+        ["xpath=//a[contains(text(),'ACQUISTA')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'productviewcontrol?idProd=1')]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'ACQUISTA')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ad3ad02-b503-46b1-889d-20e3332f9ae8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button",
+      "targets": [
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@value='Aggiungi al carrello']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "cd74e7a3-e74a-4a88-bcc6-0b7ba4ba8e34",
+    "name": "TC_GC_4",
+    "commands": [{
+      "id": "2f4ee2aa-c3d1-480e-a5ed-4f25ceeaad0e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ce95f9d-47c3-42ea-8cd3-0569453df4b2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a909ec3b-634b-4d0c-b53c-2bb2f3b79611",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-shopping-cart",
+      "targets": [
+        ["css=.fa-shopping-cart", "css:finder"],
+        ["xpath=//div[@id='bs-example-navbar-collapse-1']/ul/li[4]/a/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e534c586-35de-4f22-90cf-b4621eedf1bf",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(5) .button",
+      "targets": [
+        ["css=td:nth-child(5) .button", "css:finder"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Aggiungi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "2b00d8ea-a794-46d4-9c2f-48bbd701ee79",
+    "name": "TC_GC_5",
+    "commands": [{
+      "id": "4694731b-b068-4204-a670-ec3289310e4d",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/TechZone/productviewcontrol",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6211521d-412c-4ab6-a769-a04e6438a038",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1c878e61-a414-4a34-a9ff-5fdf01e49a77",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-shopping-cart",
+      "targets": [
+        ["css=.fa-shopping-cart", "css:finder"],
+        ["xpath=//div[@id='bs-example-navbar-collapse-1']/ul/li[4]/a/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2bf79ee1-013e-4f6a-8d3f-563d44408617",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(5) .button",
+      "targets": [
+        ["css=td:nth-child(5) .button", "css:finder"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Aggiungi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "8ff27742-8557-439c-8fd1-e6c6123850e1",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["7a6da06b-8946-43b2-8cf7-ac66ad7bff5f"]
+  }],
+  "urls": ["http://localhost:8080/", "http://localhost:8080/TechZone/productviewcontrol"],
+  "plugins": []
+}
