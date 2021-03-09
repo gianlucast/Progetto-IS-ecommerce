@@ -1,0 +1,160 @@
+TestResults
+
+it.techzone.test.dao	
+	UserDAOTest results	
+		Result: testDoRetrieveById passed!
+		Result: testCheckEmailUsed passed!
+		Result: testAuthenticateException passed!
+		Result: testAuthenticate passed!
+		Result: testDoRetrieveByIdException passed!
+		Result: testDoRetrieveByMailException passed!
+		Result: testDoSaveUser passed!
+		Result: testAuthenticateManager passed!
+		Result: testDoSaveUserException passed!
+		Result: testDoRetrieveByEmail passed!
+		Result: testCheckEmailUsedException passed!
+		Result: testAuthenticateManagerException passed!
+
+	ProductDAOTest results:
+		Result: testDoRetrieveByCat passed!
+		Result: testDoRetrieveByNameException passed!
+		Result: testdoRetrieveAll passed!
+		Result: testRetrieveProductById passed!
+		Result: testRetrieveProductByIdException passed!
+		Result: testDoRetrieveByCatException passed!
+		Result: testDoRetrieveByName passed!
+		Result: testDoDeleteProduct passed!
+		Result: testDoUpdateException passed!
+		Result: testDoDeleteProductException passed!
+		Result: testDoUpdate passed!
+
+	OrderDAOTest results:
+		Result: testRetrieveOrderByMailException passed!
+		Result: testRetrieveOrderById passed!
+		Result: testDoUpdateOrderException passed!
+		Result: testRetrieveOrdersByMail passed!
+		Result: testDoUpdateOrder passed!
+		Result: testDoSaveOrderException passed!
+		Result: testRetrieveOrderByIdException passed!
+		Result: testDoSaveOrder passed!
+
+
+it.techzone.test.managers
+	CartManagerTest results:
+		Result: testCheckQuantity passed!
+		Result: testChangeQuantityCart passed!
+		Result: testCheckQuantityException passed!
+		Result: testCartExists passed!
+		Result: testNewCart passed!
+		Result: testModCar passed!
+		Result: testChangeQuantityCartException passed!
+		Result: testRetrieveCart passed!
+
+	OrderManagerTest results:
+		Result: testSearchOrdersException passed!
+		Result: testPlaceOrder passed!
+		Result: testChangeStatusException passed!
+		Result: testCheckStatus passed!
+		Result: testGetOrderById passed!
+		Result: testGetOrderByIdException passed!
+		Result: testSearchOrders passed!
+	
+	ProductManagerTest results:
+		Result: testUpdateProductException passed!
+		Result: testSearchProductsByName passed!
+		Result: testRetrieveProduct passed!
+		Result: testSearchProductsByCat passed!
+		Result: testSearchProductsByCatException passed!
+		Result: testRetrieveProductException passed!
+		Result: testSearchProductsByNameException passed!
+		Result: testGetAllProductsException passed!
+		Result: testUpdateProduct passed!
+		Result: testDeleteProduct passed!
+		Result: testGetAllProducts passed!
+		Result: testDeleteProductException passed!
+
+	UserManagerTest results:
+		Result: testSaveUser passed!
+		Result: testSaveUserException passed!
+		Result: testAuthentication passed!
+		Result: testAuthenticationException passed!
+		Result: testAuthenticationManager passed!
+		Result: testEmailAlreadyUsed passed!
+		Result: testAuthenticationManagerException passed!
+
+
+it.techzone.test.control
+	AddToCartControlTest results:
+		Result: testAddToCart passed!
+		Result: testAddToCartFail passed!
+	
+	CartViewControlTest results:
+		Result: testCartViewFail passed!
+		Result: testCartView passed!
+	
+	DeleteProductControlTest results:
+		Result: testDeleteProductFail passed!
+		Result: testDeleteProduct passed!
+	
+	LoginControlTest results:
+		Result: testLogin passed!
+		Result: testLoginFail passed!
+		Result: testLoginManager passed!
+		
+	LogoutControlTest results:
+		Result: testLogoutManager passed!
+		Result: testLogoutFail passed!
+		Result: testLogout passed!
+	
+	ManagerOrderSearchIdControlTest results:
+		Result: testYManagerYId passed!
+		Result: testNManager passed!
+	
+	ManagerOrderSearchMailControlTest results:
+		Result: testYManagerYId passed!
+		Result: testNManager passed!
+		
+	ManagerOrderViewControlTest results:
+		Result: testYManagerYId passed!
+		Result: testNManager passed!
+		
+	ModInCartControlTest results:
+		Result: testModInCartYManager passed!
+		Result: testModInCartNManager passed!
+		
+	OrderPlaceControlTest results:
+		Result: testOrderPlace passed!
+		Result: testOrderPlaceFail passed!
+	
+	OrderStatusControlTest results:
+		Result: testOrderStatusChange passed!
+		Result: testOrderStatusChangeFail passed!
+	
+	ProductCatalogueControlTest results:
+		Result: testSearchByName passed!
+		Result: testGetAllProducts passed!
+		Result: testSearchByCategoria passed!
+	
+	ProductViewControlTest results:
+		Result: testProductViewControl passed!
+		Result: testProductViewControlNoIdProd passed!
+	
+	RegisterControlTest results:
+		Result: testRegistrationFail passed!
+		Result: testRegistration passed!
+	
+	UpdateProductControlTest results:
+		Result: testUpdateProductSuccess passed!
+		Result: testUpdateProductFail passed!
+		Result: testGetToUpdateProductPage passed!
+		Result: testGetToUpdateProductPageFail passed!
+	
+	UserOrderSearchControlTest results:
+		Result: testUpdateProductSuccess passed!
+		Result: testUpdateProductFail passed!
+		Result: testGetToUpdateProductPage passed!
+		Result: testGetToUpdateProductPageFail passed!
+	
+	UserOrderViewControlTest results:
+		Result: testUserOrderViewFail passed!
+		Result: testUserOrderView passed!
